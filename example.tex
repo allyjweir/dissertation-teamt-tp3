@@ -1,0 +1,189 @@
+% This example An LaTeX document showing how to use the l3proj class to
+% write your report. Use pdflatex and bibtex to process the file, creating
+% a PDF file as output (there is no need to use dvips when using pdflatex).
+
+% Modified
+
+\documentclass{l3proj}
+\begin{document}
+\title{Multi-device Recording System}
+\author{Alastair Weir \\
+        Gordon Adam \\
+        Peter Yordanov \\
+        Keir Smith \\
+        Georgi Dimitrov}
+\date{28 March 2014}
+\maketitle
+\begin{abstract}
+
+Create a mobile first approach to capturing locational audio centred around
+social and political events with the aim of crowdsourcing new insights and
+perspectives on events in our cities.
+
+\end{abstract}
+\educationalconsent
+\tableofcontents
+%==============================================================================
+\chapter{Introduction}
+\label{intro}
+
+%==============================================================================
+\chapter{Planning}
+\label{Planning}
+
+Plans in here will come in handy
+
+%==============================================================================
+\chapter{Research}
+\label{Research}
+
+Research in here will come in handy
+
+%==============================================================================
+\chapter{Design}
+\label{design}
+
+The core of our design sprung from early storyboarding and imagined user
+profiles which informed us extensively to what a possible system might look
+like. As previously discussed, MDRS was viewed as a tool to democratise access
+to information at large scale events and share intimate moments or memories of a
+place and time through an interactive storytelling medium.
+
+
+%==============================================================================
+\chapter{Implementation}
+\label{impl}
+
+In this chapter, we describe how the implemented the system.
+
+%------------------------------------------------------------------------------
+\section{Web Application}
+
+Blah blah blah
+Blah blah blah
+Blah blah blah
+Blah blah blah
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsection{Server and Django configuration}
+
+Blah blah blah
+Blah blah blah
+Blah blah blah
+Blah blah blah
+
+%------------------------------------------------------------------------------
+\section{Android Application}
+
+\begin{enumerate}
+\item Blah blah blah
+\item Blah blah blah
+\item Blah blah blah
+\item Blah blah blah
+\end{enumerate}
+
+
+
+%==============================================================================
+\chapter{Evaluation}
+
+We evaluated the project by...
+
+%==============================================================================
+\chapter{Challenges}
+\label{Challenges}
+
+A number of the challenges we encountered were through a lack of previous
+experience and inaccurate expectations held by each member of the team. The
+development process offered a lot of flexibility in finding weaknesses in our
+ideas and restructuring them forge better working practices and develop new
+insights into the workings of a small scale agile team.
+
+\subsection{Technological}
+
+Our main technological issues were over-complication
+and over dependence on multiple services for specific channels of communication.
+As previously described we embarked on the project with the intention of using a
+Redmine instance to keep track of project details, GitHub as our VCS and
+Facebook for communication. This convoluted mix made it near impossible to keep
+track of discussion about specific issues and problems. While the messaging
+component of Facebook was a thoroughly successful choice for social
+communication about our Team's work, the group page wasn't as successful. Some
+features such as a tracker of who has seen a particular message, it failed due
+to posts not being kept in chronological order and no way to easily track
+important information.
+
+Through other project work and happenstance, the team discovered GitHub's issue
+tracker and wiki features which are individual to each repository. These quickly
+became the default means of tracking progress for MDRS, replacing Redmine. The
+customisable labels and ability to cross reference issues from commits were
+invaluable. GitHub's fast and responsive web interface scaled well across
+devices and meant everyone was able to be involved in decisions and contribute
+issues to work on. Most of all it succeeded due to the team members being on the
+service already whereas Redmine required an intent to go visit it.
+
+Surprisingly email notifications became a great source of information. As
+default, GitHub sends out emails for every comment or new issue created. While
+filling up inboxes, this device agnostic communication platform made for great
+commute reading. While notifications can easily be lost in a endless-scroll, the
+emails were small, actionable pieces of key information to keep track of the
+project's direction as a whole.
+
+In future, due to the distributed nature of the team and constantly shifting
+focus of attention for different deadlines the team would leverage email more.
+Weekly status reports would serve as talking points to hopefully make meetings
+more productive, giving members time to prepare their thoughts. These would also
+serve as evidence of communication and would be easily accessible at a later
+date in a chronological order.
+
+Other technological issues revolved around a lack of experience and knowledge at
+the beginning of the project. Issues such as handling dependencies from pip with
+a requirements.txt poorly made setting up a new virtual environment a challenge.
+This was resolved later but mean the team lacked consistency of tools being used
+early on.
+
+A major misunderstanding came with the team using VCS. To begin with we did not
+understand the workflow of working and testing locally then pushing to the
+repository. Initially we were all using SSH to access our server and then
+working directly on the server, creating conflicts and locking file issues. This
+was quickly resolved when the team researched the issue, quickly changing to the
+correct workflow.
+
+\subsection{Organisational}
+Our main issue was in poor communication. As
+previously discussed we struggled with too many communication channels but this
+improved with more face to face interactions in the laboratory and using the
+social chat group more for continuous, incremental updates and communication in
+the team.
+
+At the beginning of the development cycle, agile roles were assigned for scrum
+master, communications with supervisor, librarian and developer. Throughout
+development these roles merged and adhered to the agile principles even further.
+Due to the ad-hoc nature of the development team and shifting focus amongst
+projects, a different team member shifted into the scrum master role who handled
+the majority of secretarial jobs, keeping the team on track with tasks assigned
+to them to complete. These tasks were assigned taking into consideration each
+team member’s strengths and interests. This increased productivity within the
+team, pushing our development further and allowing us to expand on the feature
+set included in the final project.
+
+%==============================================================================
+\chapter{Future Work}
+\label{Future Work}
+
+Future work in here will come in handy
+
+%==============================================================================
+\chapter{Conclusion}
+
+A great project!
+
+%==============================================================================
+\section{Contributions}
+
+Conclusion here
+
+%==============================================================================
+\bibliographystyle{plain}
+\bibliography{example}
+\end{document}
