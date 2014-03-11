@@ -171,7 +171,6 @@ finding place for flair within the constructs the team placed on themselves.
 
 INSERT INITIAL DESIGN PROTOTYPE HERE
 
-
 This first UI design offers a split with both a map and view through the camera
 lens. The influence for the central record button came from Foursquare’s
 prominent placement of their check-in button, placing the key functionality
@@ -216,14 +215,62 @@ Blah blah blah
 %------------------------------------------------------------------------------
 \section{Android Application}
 
-\begin{enumerate}
-\item Blah blah blah
-\item Blah blah blah
-\item Blah blah blah
-\item Blah blah blah
-\end{enumerate}
+\subsection{Early development} With very little experience in developing for
+Android, the aim was to take the most key requirements and individually create
+demos of each aspect. Then taking all the knowledge gained from this process,
+create an application with the must have features, ready to develop it further
+if time allowed. d Development Tools) plugin. This reduced the number of new
+tools to learn and avoided using unstable software while trying to learn a new
+SDK.
 
+Audio recording is key to MDRS' premise so was the first thing to be
+implemented. Using Android's MediaRecorder class, a number of demo applications
+were prototyped to test audio recording. These repeatedly caused issues and were
+by far the longest stage of early development. Consistently the MediaRecorder
+would crash the test device (MediaRecorder is not compatible with an emulated
+device) with little debug information given by the error logs. Combined with
+poor understanding of the Android SDK these tests caused many issues and took up
+all Android development time between Mid-November and late December 2013.
+Eventually through extensive research surrounding MediaRecorder and learning
+more about debugging Android code, the main problem was found to be in
+interacting with external storage and the dichotomy between truly external
+storage, such as a removeable SD Card, and internal-but-external storage. With
+this problem found, the issue was resolved and development could continue.
 
+The next thing to integrate was Google Play Services. This library gives
+developers extensive access to many of Google's services such as Maps, In App
+Purchases, their Location API, Google+ and Drive. Integrating this library into
+the project caused a few issues. While adding a library should be a relatively
+simple task, there were wildly varying instructions on how to do this, leading
+to a lot of confusion for the team member working on this. Another issue came
+down to Eclipse which stores the location of the library's folder on the
+computer statically instead of just its path inside the current workspace
+directory. This meant when switching between development environments (Windows
+and OSX) that it had to be manually updated. Once these kinks were resolved
+development could continue to make use of the Maps and Location APIs.
+
+Using Google's excellent documentation for their APIs and the various example
+applications on their developer's portal, the initial implementation of the maps
+was relatively simple. Making use of the LocationService abstract data type and
+using LocationManager allowed the application to gather information from the
+device's GPS module or the next most accurate source of positional data. This is
+then stored in a LinkedHashMap. Using this data structure allowed the Location
+objects collected from LocationService to be stored in a chronological order
+with their timestamp acting as each object's key. Parsing this information into
+JSON later in the upload process was trivial due to this structured approach at
+the data capture stage.
+
+At this stage in development, the basis of what would form the application had
+been tested and was found to work roughly as expected. One aspect of development
+which had been unplanned was the structure and exact methods required for the
+Android application. These first few features were all in one main activity. An
+activity in Android is defined as (INSERT A BLOCK QUOTE FROM HERE:
+http://developer.android.com/guide/components/activities.html).
+
+REMEMBER TO TALK ABOUT STRUCTURE. HOW I TRIED TO MAKE IT ONE BIG ACTIVITY AND
+THEN BROKE IT INTO THREE SUPPORTED BY MULTIPLE CLASSES. IN FUTURE WOULD CHANGE
+THIS FURTHER TO BREAK ALL THE ACTIVITIES INTO SUB-ACTIVITIES EFFECTIVELY. BREAK
+FUNCTIONALITY OUT INTO THEIR OWN CLASSES.
 
 %==============================================================================
 \chapter{Evaluation}
