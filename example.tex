@@ -231,48 +231,20 @@ As development began, an early decision made was to askew the use of Google's ne
 
 A Nexus 5 and Nexus 7 (2012 model) were used as testing devices. As Google designed models, the Nexus range are a good standard for development as they run a clean install of Android on common hardware shared across the device ecosystem. This reduced the amount of testing required and avoided troubleshooting vendor specific errors or bugs. These devices also allowed the UI/UX could be tested on varying screen sizes to see how it reacted. As testing expanded, the application was also tested on an HTC One and a Samsung Galaxy Note.
 
-\subsubsection{Audio Recording}
-Audio recording is key to MDRS' premise so was the first thing to be
-implemented. Through our learning resources the MediaRecorder class was chosen to implement this functionality. The alternative to this was AudioRecord. This class captures the raw bytes of audio data which allows for much more control over processing and format choices but at a higher degree of difficulty. External Java libraries would be required alongside a more complicated implementation making MediaRecorder the simpler choice while still meeting our needs.
+\subsubsection{Audio Recording}    Audio recording is key to MDRS' premise so was the first thing to be implemented. Through our learning resources the MediaRecorder class was chosen to implement this functionality. The alternative to this was AudioRecord. This class captures the raw bytes of audio data which allows for much more control over processing and format choices but at a higher degree of difficulty. External Java libraries would be required alongside a more complicated implementation making MediaRecorder the simpler choice while still meeting our needs.
 
-Prototypes were rapidly built referencing various tutorials. However these prototypes repeatedly ran into complex issues and consumed an extensive portion of development time available. MediaRecorder would consistently crash the test devices (MediaRecorder is not compatible with an emulated
-device) with little debug information given by the error logs. Combined with
-poor understanding of the Android SDK these tests caused many issues and took up
-all Android development time between Mid-November and late December 2013.
-Eventually through extensive research surrounding MediaRecorder and learning
-more about debugging Android code, the main problem was found to be in
-interacting with external storage and the dichotomy between truly external
-storage, such as a removeable SD Card, and internal-but-external storage. With
-this problem found, the issue was resolved and development could continue.
+Prototypes were rapidly built referencing various tutorials. However these prototypes repeatedly ran into complex issues and consumed an extensive portion of development time available. MediaRecorder would consistently crash the test devices with little debug information given by the error logs. Testing was further slowed down as MediaRecorder doesn't work in the Android Virtual Machine availble. This meant all testing was done on devices, complicating the entire process. Combined with poor understanding of the Android SDK these tests caused many issues and took up all Android development time between Mid-November and late December 2013.
 
-The next thing to integrate was Google Play Services. This library gives
-developers extensive access to many of Google's services such as Maps, In App
-Purchases, their Location API, Google+ and Drive. Integrating this library into
-the project caused a few issues. While adding a library should be a relatively
-simple task, there were wildly varying instructions on how to do this, leading
-to a lot of confusion for the team member working on this. Another issue came
-down to Eclipse which stores the location of the library's folder on the
-computer statically instead of just its path inside the current workspace
-directory. This meant when switching between development environments (Windows
-and OSX) that it had to be manually updated. Once these kinks were resolved
-development could continue to make use of the Maps and Location APIs.
+Eventually through extensive research surrounding MediaRecorder and learning more about debugging Android code, the main problem was found to be in interacting with external storage and the dichotomy between truly external storage, such as a removeable SD Card, and internal-but-external storage. As vendors moved to add internal storage in their Android devices, the OS would still recognise that as an external source compared to ROM on the chipset. This means that while it is internal, the OS views it as external. By creating a /textit{Catch-22}, it made it difficult to access the correct storage in which to place MDRS' data. With this problem found, the issue was resolved and development continued.
 
-Using Google's excellent documentation for their APIs and the various example
-applications on their developer's portal, the initial implementation of the maps
-was relatively simple. Making use of the LocationService abstract data type and
-using LocationManager allowed the application to gather information from the
-device's GPS module or the next most accurate source of positional data. This is
-then stored in a LinkedHashMap. Using this data structure allowed the Location
-objects collected from LocationService to be stored in a chronological order
-with their timestamp acting as each object's key. Parsing this information into
-JSON later in the upload process was trivial due to this structured approach at
-the data capture stage.
+\subsubsection{Google Play Services}    The next thing to integrate was the Google Play Services library. This gives Android developers extensive access to many of Google's services. For MDRS, the interest was soley in the Maps and Location APIs. Integrating this library into the project rasied a multiple, initial issues. While adding a library should be a relatively simple task, there were wildly varying instructions on how to do this, leading to a lot of confusion for the team member working on this. While it is possible to link it to the build path by manually downloading the library and then linking it using Eclipse, other instruction sets described the use of Apache's Ant or Maven files to decalre the dependencies. In practice however these were didn't work reliably. It was chosen to store the library locally in the project's repository. This led to an issue with Eclipse. Eclipse stores the full path to the library's folder on the computer statically instead of just its path inside the current workspace directory. This meant when switching between development environments (Windows and OSX) that it had to be manually updated. Once these  dependency problems were resolved development quickly continued to the implementation of Maps.
 
-At this stage in development, the basis of what would form the application had
-been tested and was found to work roughly as expected. One aspect of development
-which had been unplanned was the structure and exact methods required for the
-Android application. These first few features were all in one main activity. An
-activity in Android is defined as (INSERT A BLOCK QUOTE FROM HERE:
+MAPS IMPL HERE!!
+
+Using Google's excellent documentation for their APIs and the various example applications on their developer's portal, the initial implementation of the maps was relatively simple. Making use of the LocationService abstract data type and using LocationManager allowed the application to gather information from the device's GPS module or the next most accurate source of positional data. This is then stored in a LinkedHashMap. Using this data structure allowed the Location objects collected from LocationService to be stored in a chronological order with their timestamp acting as each object's key. Parsing this information into JSON later in the upload process was trivial due to this structured approach at the data capture stage.
+
+\subsection{Application Structure}
+At this stage in development, the basis of what would form the application had been tested and was found to work roughly as expected. One aspect of development which had been unplanned was the structure and exact methods required for the Android application. These first few features were all in one main activity. An activity in Android is defined as (INSERT A BLOCK QUOTE FROM HERE:
 http://developer.android.com/guide/components/activities.html).
 
 REMEMBER TO TALK ABOUT STRUCTURE. HOW I TRIED TO MAKE IT ONE BIG ACTIVITY AND
