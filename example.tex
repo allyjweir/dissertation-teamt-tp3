@@ -46,21 +46,23 @@ place and time through an interactive storytelling medium.
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.75\textwidth]{images/ally-storyboard.jpg}
-\caption{Initial storyboard for MDRS.}
+\caption{An initial storyboard for MDRS.}
 \end{figure}
-NEED TO ADD MORE IN HERE ABOUT IMAGES ETC {\bf bold}
 
-\section{User Interface}
-The realisation that the project would be spread
-across both mobile and static devices raised the need for two interaction models
-for MDRS was found quickly. For capturing the various forms of data a mobile
+Include another storyboard here {\bf bold}
+
+From our storyboards we realised that MDRS had to be more than an audio recorder with location tracking. By allowing the user to capture images, we could combine these three sources of information into a virtual environment that other users could explore.
+
+\section{User Interface} The realisation that the project would be spread across
+both mobile and static devices raised the need for two interaction models for
+MDRS was found quickly. For capturing the various forms of data a mobile
 implementation was key. Android was quickly chosen as the frontrunner for its
 proliferation in the market, an expected ease of development due to its Java
 base, which much of the team had experience in, and access to test devices
 amongst the team. A web application counterpart was planned for the flexibility
 of web technologies which allowed a wide variety of devices and users to access
-this facet of the project rather than, for example, a native client for Windows
-would.
+this facet of the project rather than a native application for any given
+Operating System would.
 
 \subsection{Web Application}   Given the nature of MDRS, the team look to the
 Distributed Information Management course taught in second semester as a source
@@ -97,6 +99,8 @@ was chosen for its simple API and reasonable access for free users. Ultimately
 is offered 100,000 map loads a month for free. We estimated for a typical user
 spending 15 minutes on the website that 4 map loads would be needed making this
 a workable figure for at least 25,000 user visits a month.
+
+Alongside the standard access to maps, early on in development we prototyped a version which would incorporate Google's Street View allowing the user to follow a recording's location trail even more closely. By harvesting the orientation of the recording device we could show where they were looking, showing the Street View at that angle, and overlay any of the user's own images they captured on top of this. While this immersed the user even deeper into the recording, it was unfortunately not taken beyond this prototype stage due to the complexity of implementation.
 
 \begin{figure}[ht!]
   \centering
