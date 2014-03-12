@@ -222,15 +222,20 @@ our aim was to take the most key requirements and create simple demos of each
 aspect. Then taking all the basic knowledge gained from this process, create an
 application with the must have features, structured in a way to allow further development if time constraints allowed.
 
+\subsubsection{Learning Resources and Tools}
 Google's Android tutorials served as an early touchstone in development, offering an understanding of an application's structure and layout in development. These go into great depth about most of the classes and APIs useful to MDRS but often this depth was made them inpenetrable. For example, you can either implement an interface for an Activity though your Activity's .java file programmatically or in a separate layout .xml file. Google's tutorials would switch between these methods, muddying the Android developer's understanding of how to work in this new development environment while adhering to good code standards.
 
-As development began, an early decision made was to askew the plan to use Google's Android Studio to use Eclipse with the ADT (Android Development Tools) plugin. This reduced the number of new tools to learn and avoided using unstable software while trying to learn a new SDK. All of the development was done on personal devices due to the University's lab machines not having the required software and refusal from technicians to have it installed in a useful manner. This limited development time as it had to be carried out almost exclusively at home in off-hours. It also limited the chance of gaining any help from other student's insights to solve common issues in Android development. Overall poor access to tools caused extensive issues in the protracted  development cycle.
+Other learning resources were scarce and when found usually weren't to a good enough standard to be useful. This meant that alongside Google's tutorials, Stack Overflow was the main resource used to aid development. This crowdsourced Q&A service served invaluable in fixing bugs and explaining topics. The answers far exceeded the quality found in some textbooks that were used.
 
+As development began, an early decision made was to askew the use of Google's new Android Studio to use Eclipse with the ADT (Android Development Tools) plugin. This reduced the number of new tools to learn and avoided using unstable software while trying to learn a new SDK. All of the development was done on personal devices due to the University's lab machines not having the required software and refusal from technicians to have it installed in a useful manner. This limited development time as it had to be carried out almost exclusively at home in off-hours. It also limited the chance of gaining any help from other student's insights to solve common issues in Android development. Overall poor access to tools caused extensive issues in the protracted  development cycle.
+
+A Nexus 5 and Nexus 7 (2012 model) were used as testing devices. As Google designed models, the Nexus range are a good standard for development as they run a clean install of Android on common hardware shared across the device ecosystem. This reduced the amount of testing required and avoided troubleshooting vendor specific errors or bugs. These devices also allowed the UI/UX could be tested on varying screen sizes to see how it reacted. As testing expanded, the application was also tested on an HTC One and a Samsung Galaxy Note.
+
+\subsubsection{Audio Recording}
 Audio recording is key to MDRS' premise so was the first thing to be
-implemented. Using Android's MediaRecorder class, a number of demo applications
-were prototyped to test audio recording. These repeatedly caused issues and were
-by far the longest stage of early development. Consistently the MediaRecorder
-would crash the test device (MediaRecorder is not compatible with an emulated
+implemented. Through our learning resources the MediaRecorder class was chosen to implement this functionality. The alternative to this was AudioRecord. This class captures the raw bytes of audio data which allows for much more control over processing and format choices but at a higher degree of difficulty. External Java libraries would be required alongside a more complicated implementation making MediaRecorder the simpler choice while still meeting our needs.
+
+Prototypes were rapidly built referencing various tutorials. However these prototypes repeatedly ran into complex issues and consumed an extensive portion of development time available. MediaRecorder would consistently crash the test devices (MediaRecorder is not compatible with an emulated
 device) with little debug information given by the error logs. Combined with
 poor understanding of the Android SDK these tests caused many issues and took up
 all Android development time between Mid-November and late December 2013.
