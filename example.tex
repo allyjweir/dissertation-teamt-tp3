@@ -239,6 +239,9 @@ Eventually through extensive research surrounding MediaRecorder and learning mor
 
 \subsubsection{Google Play Services}    The next thing to integrate was the Google Play Services library. This gives Android developers extensive access to many of Google's services. For MDRS, the interest was soley in the Maps and Location APIs. Integrating this library into the project rasied a multiple, initial issues. While adding a library should be a relatively simple task, there were wildly varying instructions on how to do this, leading to a lot of confusion for the team member working on this. While it is possible to link it to the build path by manually downloading the library and then linking it using Eclipse, other instruction sets described the use of Apache's Ant or Maven files to decalre the dependencies. In practice however these were didn't work reliably. It was chosen to store the library locally in the project's repository. This led to an issue with Eclipse. Eclipse stores the full path to the library's folder on the computer statically instead of just its path inside the current workspace directory. This meant when switching between development environments (Windows and OSX) that it had to be manually updated. Once these  dependency problems were resolved development quickly continued to the implementation of Maps.
 
+GOT TO HERE WED 12th--------
+
+
 MAPS IMPL HERE!!
 
 Using Google's excellent documentation for their APIs and the various example applications on their developer's portal, the initial implementation of the maps was relatively simple. Making use of the LocationService abstract data type and using LocationManager allowed the application to gather information from the device's GPS module or the next most accurate source of positional data. This is then stored in a LinkedHashMap. Using this data structure allowed the Location objects collected from LocationService to be stored in a chronological order with their timestamp acting as each object's key. Parsing this information into JSON later in the upload process was trivial due to this structured approach at the data capture stage.
@@ -272,19 +275,14 @@ development process offered a lot of flexibility in finding weaknesses in our
 ideas and restructuring them forge better working practices and develop new
 insights into the workings of a small scale agile team.
 
-\subsection{Technological}
+\subsection{Communicational}
+Our main communication issues was the over-complication and over dependence on multiple services for specific channels of communication. This diffused each team member's attention, turning a lot of communication into asking where other information was kept instead of working on the project.
 
-Our main technological issues were over-complication
-and over dependence on multiple services for specific channels of communication.
-As previously described we embarked on the project with the intention of using a
-Redmine instance to keep track of project details, GitHub as our VCS and
-Facebook for communication. This convoluted mix made it near impossible to keep
-track of discussion about specific issues and problems. While the messaging
-component of Facebook was a thoroughly successful choice for social
-communication about our Team's work, the group page wasn't as successful. Some
-features such as a tracker of who has seen a particular message, it failed due
-to posts not being kept in chronological order and no way to easily track
-important information.
+As previously described we embarked on the project with the intention of using a Redmine instance to keep track of project details, GitHub as our VCS and Facebook for communication. This convoluted mix made it near impossible to keep track of discussion about specific issues and problems.
+
+Our success with Facebook as a means of communication was varied. Its IM service was excellent allowing the team to communicate about the project as a group or one-to-one. Facebook's mobile applications made this easy to access while in transit which was an added benefit for those who commuted.
+
+The Team's group page however was wholly unsucessful in our desired use case. The main point of weakness was the lack of chronological discourse of our messages. This meant you might have to scroll past a dozen posts to get yesterday's discussion just because it wasn't the most commented on post. The page's bloat UI also made it difficult to navigate with no search function to quickly find an old post quickly. While its feature which tells you who in the group has read the post was useful, the rest of the functionality was subpar.
 
 Through other project work and happenstance, the team discovered GitHub's issue
 tracker and wiki features which are individual to each repository. These quickly
@@ -292,8 +290,7 @@ became the default means of tracking progress for MDRS, replacing Redmine. The
 customisable labels and ability to cross reference issues from commits were
 invaluable. GitHub's fast and responsive web interface scaled well across
 devices and meant everyone was able to be involved in decisions and contribute
-issues to work on. Most of all it succeeded due to the team members being on the
-service already whereas Redmine required an intent to go visit it.
+issues to work on. Most of all it succeeded due to the team members being on GitHub to check commits of various projects and to collaborate on other projects. Whereas Redmine required an intent to visit it and keep up to date, GitHub just merged this information into an efficient user experience that had become a daily destination for the team during their work.
 
 Surprisingly email notifications became a great source of information. As
 default, GitHub sends out emails for every comment or new issue created. While
@@ -302,13 +299,16 @@ commute reading. While notifications can easily be lost in a endless-scroll, the
 emails were small, actionable pieces of key information to keep track of the
 project's direction as a whole.
 
+We also found by replacing web-based interaction with face to face communication improved our productivity immensely. Even a quick 2 minute conversation could convey the same information a 20 minute IM chat could. While each team member kept their own schedule, we always took advantage of these conversations to keep one another up to date.
+
 In future, due to the distributed nature of the team and constantly shifting
-focus of attention for different deadlines the team would leverage email more.
+focus of attention for different deadlines, the team would leverage email more.
 Weekly status reports would serve as talking points to hopefully make meetings
 more productive, giving members time to prepare their thoughts. These would also
 serve as evidence of communication and would be easily accessible at a later
-date in a chronological order.
+date in a chronological order. While the agile principles can definitely be applied to a distributed workforce, using the methodology when the team cannot focus on one project for an extended period of time, in our usage, does not work. Switching between various projects and deadlines meant agile was reduced to agily moving between disciplines to complete the most important task to create a better end product.
 
+\subsection{Technological}
 Other technological issues revolved around a lack of experience and knowledge at
 the beginning of the project. Issues such as handling dependencies from pip with
 a requirements.txt poorly made setting up a new virtual environment a challenge.
