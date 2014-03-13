@@ -309,18 +309,10 @@ serve as evidence of communication and would be easily accessible at a later
 date in a chronological order. While the agile principles can definitely be applied to a distributed workforce, using the methodology when the team cannot focus on one project for an extended period of time, in our usage, does not work. Switching between various projects and deadlines meant agile was reduced to agily moving between disciplines to complete the most important task to create a better end product.
 
 \subsection{Technological}
-Other technological issues revolved around a lack of experience and knowledge at
-the beginning of the project. Issues such as handling dependencies from pip with
-a requirements.txt poorly made setting up a new virtual environment a challenge.
-This was resolved later but mean the team lacked consistency of tools being used
-early on.
+Most technological issues revolved around a lack of experience and knowledge at
+the beginning of the project. Issues such as handling dependencies with the package management system \textit{pip} with, initially, no requirements.txt file made setting up a new virtual environment a challenge. Everything had to be manually installed allowing for greater risk for failure and variation between team member's development environment. Our ignorance regarding virutal environments also made maintaining consistency harder throughout development. After working on Django development using /textit{Tango with Django}, the team studied and began to use virtual environments to simplify development. Until resolved, these issues caused a lot of problems for certain team members.
 
-A major misunderstanding came with the team using VCS. To begin with we did not
-understand the workflow of working and testing locally then pushing to the
-repository. Initially we were all using SSH to access our server and then
-working directly on the server, creating conflicts and locking file issues. This
-was quickly resolved when the team researched the issue, quickly changing to the
-correct workflow.
+Another major misunderstanding came with the team using our version control system, git. If used correctly, git allows each developer to work on their local machine, testing and committing any changes to the repository. In our case this should have then been pulled on the server, effectively \'deploying\' our changes. Initially we were all using SSH to access our server and then working directly in the terminal, creating conflicts and locking file issues. This was quickly resolved when the team researched the issue, quickly changing to the correct workflow.
 
 \subsection{Organisational}
 Our main issue was in poor communication. As
