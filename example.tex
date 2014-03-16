@@ -1,6 +1,8 @@
 % Modified
 \documentclass{l3proj}
 \usepackage{wrapfig}
+\usepackage{csquotes}
+\SetBlockEnvironment{quotation}
 \begin{document}
 \title{Multi-device Recording System}
 \author{Alastair Weir \\
@@ -237,7 +239,7 @@ Other learning resources were scarce and when found usually weren't to a good
 enough standard to be useful. This meant that alongside Google's tutorials,
 Stack Overflow was the main resource used to aid development. This crowdsourced
 Q&A service served invaluable in fixing bugs and explaining topics. The answers
-far exceeded the quality found in some textbooks that were used.
+far exceeded the quality found in some textbooks that were used. Twitter also served as a direct communication to the development community with advice and encouragement coming from prominent developers.
 
 As development began, an early decision made was to askew the use of Google's
 new Android Studio to use Eclipse with the ADT (Android Development Tools)
@@ -291,23 +293,40 @@ development continued.
 
 \subsubsection{Google Play Services}    The next thing to integrate was the
 Google Play Services library. This gives Android developers extensive access to
-many of Google's services. For MDRS, the interest was soley in the Maps and
-Location APIs. Integrating this library into the project rasied multiple initial
+many of Google's services. For MDRS, the interest was soley in the Maps and Location APIs. Integrating this library into the project rasied multiple initial
 issues. While adding a library should be a relatively simple task, there were
 wildly varying instructions on how to do this, leading to a lot of confusion.
 While it is possible to link it to the build path by manually downloading the
 library and then linking it using Eclipse, other instruction sets described the
 use of Apache's Ant or Maven files to decalre the dependencies. In practice
-however these didn't work reliably. In the end it was decided to store the library
-locally in the project's repository. This led to an issue with Eclipse. Eclipse
-stores the full path to the library's folder on the computer statically instead
-of just its path inside the current workspace directory. This meant when
+however these didn't work reliably. In the end it was decided to store the
+library locally in the project's repository. This led to an issue with Eclipse.
+Eclipse stores the full path to the library's folder on the computer statically
+instead of just its path inside the current workspace directory. This meant when
 switching between development environments (Windows and OSX) that it had to be
 manually updated. Once these dependency problems were resolved development
 quickly continued to the implementation of Maps.
 
+For MDRS we required two map views, one as the main point of interest on the start screen and a second in the upload screen indicating the path their recording took with a start and end pin. These relatively simple requirements meant a lot of the code required could be reused from Google's example applications. The code required was relatively short but by using Play Services there was a lot of boilerplate code needed to check that it was installed on a device and to connect to Google's servers. A series of small tweaks were made to the default map, removing certain UI elements and changing the zoom levels. This manifested the team's first experience of inconsistency between devices. When running on a Nexus 5, the \'Show my location\' button, despite being explicitly declared, didn't appear while the same build of MDRS running on an HTC One did show the button.
 
-GOT TO HERE WED 12th--------
+The main issue that was found with the implementation of Maps was a bug which crashed the app if it was opened before another application using Google Maps had been opened on the device. While puzzling and initially demonstrating an erratic manifestation pattern, the problem was found to be referencing the device's last location, using getLastLocation(), when it didn't have one passing a null value and crashing the app.
+
+Placing the map into an activity's layout was done by referring to a map fragment element which was then initialised programmatically. This displayed the benefits of Android's flexibility. Where initially having the option to programmatically do the layout or use XML was confusing, in this case it allowed the map to be placed in XML then modified in code. This made populating the map with pins and other markers a simple call of a method and feeding in data from the Location API.
+
+While Android has its own Location classes, the Play Services' API was chosen for its higher level abstraction and excellent learning resources. While Android only had the reference documents, Play Services' was accompanied by tutorials and getting started guides. This sped up development while saving the team member working on it a lot of research for good learning resources.
+
+\subsection{Main Development}
+With these prototypes and test applications complete and the advent of the new year, the previous codebase was scrapped in early January. This fresh slate streamlined any previously written code and allowed a rethink of the structure from previous plans. While the application was originally going to be a single activity which would dynamically change, research showed this to be completely wrong. An activity as defined in Android is:
+
+\blockquote{An Activity is an application component that provides a screen with which users can interact in order to do something, such as dial the phone, take a photo, send an email, or view a map. Each activity is given a window in which to draw its user interface. The window typically fills the screen, but may be smaller than the screen and float on top of other windows.}
+
+Taking this into consideration the app was broken into three key stages, a MapView, recording and upload activity. This separation of concerns made the code more readable and easily understood. As development continued and more external classes were used and while not activitys were included in the \'src\' directory it could be seen that, while three activitys was better than one, a lot of the code required for the three main views the user had of the app could be separated into their own \'.java\' files to make the code much easier to understand but by this point there was not enough development time to refactor the entire application.
+
+
+
+
+
+
 
 
 MAPS IMPL HERE!!
