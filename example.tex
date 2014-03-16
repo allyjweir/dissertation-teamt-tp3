@@ -25,7 +25,46 @@ Surrounding us in city life there are unqiue moments that are missed by viewing 
 \chapter{Research}
 \label{Research}
 
-Research in here will come in handy
+\section{Technologies}
+
+\subsection{Timeline}
+
+TimelineJS has an attractive UI with obvious boxes for each event that when clicked on centre on the timeline and the metadata is displayed in an upper section. It shows very clearly the difference between start times as there is a vertical line on the timeline for each event.The upper section which although is unnecessary for the front page, is crucial for the user page. This timeline also is importantly supported on mobile devices.
+
+Another timeline that was researched was the SIMILIE Timeline, developed by MIT. The main point of contention with this timeline is in it’s appearance, which falls much further short of it’s contenders. There was also some questions about it’s compatibility with Internet Explorer and mobile devices. The upside however is that it offers a greater level of customisation, allowing much more flexibility with it’s styling. 
+
+<Picture of TimelineJS> alongside <Picture of SIMILIE Timeline>
+
+After a comparison TimelineJS was chosen due to its ease of use for the end user and its attractive user interface which was deemed a more important feature than greater customisability. Also the compatability issues of the SIMILIE timeline could have caused problems further down the line, which we may not have been able to resolve.
+ 
+
+\subsection{Map}
+
+OpenStreetMap was thoroughly considered though it’s most important downfall lay in the fact that we would have to store the raw map data, which uncompressed comprised 400GB. Storing this on our server would be an impossibility. The default style for open maps was also far more detailed which in keeping with the simplistic theme of the website could lead the map to clash as it appears more cluttered.
+
+Google Maps was also considered, unlike OpenStreetMap however licencing had to be taken under much more important consideration as it was far more limited. It was discovered that after the obtaining of an API key however we would have access to 25,000 user visits a month. The default map style for google maps was far more simplistic as well which fitted more neatly with our theme. The API Documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
+
+<Picture of OpenStreetMap> alongside <Picture of Google Maps>
+
+Taking these points into account it was decided that we would use Google Maps as we would not have to store the raw map data on our server and the API appeared to be easier to use as well.
+ 
+
+\subsection{Front-End Framework}
+
+PureCSS as described on its website is “A set of small, responsive CSS modules that you can use in every web project.” This was an ideal candidate for the front-end framework as it was minimalistic in both size and appearance with the entire set of modules coming in at only 4.5KB (compressed). The documentation for PureCSS was also extensive which would help to ease problems during the development process of the front end.
+
+Bootstrap appeared to be a more complete solution for the problem. It provided icons, styling, and a number of UI elements. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of it’s own character. The documentation with bootstrap was also really good, appearing to be more extensive than that provided with PureCSS.
+
+PureCSS was chosen in the end as it was far more lightweight and flexible It gave a really nice foundation on which to build our website from. Although Bootstrap is really powerful it would have been an overkill for what we were trying to achieve.
+ 
+
+\subsection{Audio}
+
+Buzz is a JavaScript library that utilises the HTML5 audio element. This library worked well grouping multiple audio files together and playing them simultaneously.
+
+JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. And for that matter you were also lumbered with having to use the JPlayer UI.
+
+It was easily decided to use the Buzz JavaScript library as it was exactly what we were looking for on this particular occasion.
 
 %==============================================================================
 \chapter{Planning}
