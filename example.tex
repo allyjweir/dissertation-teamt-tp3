@@ -421,23 +421,26 @@ These recordings were then plotted on the map by creating multiple instances of:
 \begin{verbatim}
 google.maps.Marker
 \end{verbatim}
-i.e. one for each recording. If the map was panned and a recording fell outwith the bounds of the current view then this pin would be removed, and then added back in again if it is brought back in again to view. It was an initial requirement that support for the "selection" of multiple recordings must be incorporated into the map so that these recordings can then be played back in sync. Selection is not
+i.e. one for each recording. These markers must be created using this object:
 \begin{verbatim}
 google.maps.LatLng
 \end{verbatim}
-
-
-
+This is the latitude and longitude of the marker, which is created using the data that has been returned from the database. The data that is used to create this object is the latitude and longitude of the recording when it first started. 
+We decided to use a custom icon for the default marker to give a more consistent theme, also in order to differentiate between non-selected and selected markers a separate custom selected marker was used. This was done by creating the object:
 \begin{verbatim}
 google.maps.Icon
 \end{verbatim}
+and passing it into the Marker class upon instantiation.
 
+The behaviour of the markers had to be defined manually this was done using JavaScript such behaviour was if the map was panned and a recording fell outwith the bounds of the current view then this pin would be removed, and then added back in again if it is brought back in again to view. It was an initial requirement that support for the "selection" of multiple recordings must be incorporated into the map so that these recordings can then be played back in sync. What was written allowed a pin to remain selected even if it was not currently in the view of the map. In other words when a pin is selected it is saved in memory until such time as it is deselected.
+
+Originally the google maps infoWindow was used to display the metadata to the user defined in the API as: 
 \begin{verbatim}
 google.maps.InfoWindow
 \end{verbatim}
+however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these infoWindow’s would prove to be overly complicated, for that reason it was decided that when a marker was clicked there should be a separate div component opened as shown in fig ?. Which in the long run would hopefully save time and have a more refined appearance.
 
-Originally the google maps infoWindow was used to display the metadata to the user, however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these infoWindow’s would prove to be overly complicated, for that reason when a marker was clicked a separate div component was opened shown in fig ? in the section User Interface.
-
+There was little debate as to how routes would be displayed on the map
 \begin{verbatim}
 google.maps.Polyline
 \end{verbatim}
