@@ -121,6 +121,100 @@ Mark is a very keen supporter of the young Bulgarian rising star but cannot be a
 
 
 
+
+\section{MoSCoW requirements}
+
+Here are the project functional requirements we have identified with their priority rating based on the MoSCoW system:
+
+	\subsection{MUST}
+		Web application:
+			- the system needs a website with a backend support for audio processing
+
+		Mobile application:
+			- the system also comprises of an Android application for audio capture to be submitted to the database of the website via an upload form
+
+		User Authentication:
+			- potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations
+
+		Recording audio:
+			- the system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button
+
+		Recording submission:
+			- interaction between the Android app and the webapp
+
+		Storing audio recordings:
+			- the mobile app needs to store recordings on the server for processing
+
+		Audio synchronisation:
+			- audio synchronization functionality on recording selection
+
+		Recording timeline:
+			- a timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings)
+
+	\subsection{SHOULD}
+
+		Playback selection:
+			- users need to be able to listen to all the recordings and be able to select 
+
+		Geo location:
+			- the system needs to store current user location
+
+
+	\subsection{COULD}
+
+		Route tracking:
+			- once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished
+
+		Taking photos:
+			- the Android application needs to enable the user to take photos while recording to make the playback experience more realistic and detailed
+
+		Filter recordings depending on times:
+			- a nice feature will be to provide users the option to filter recordings and display only those from a specific time period on the map and the timeline
+
+	\subsection{WOULD}
+
+		User account enhancements:
+			- it would be nice to provide users the opportunity to change their avatar
+
+		Recording grouping in events:
+			- after uploading a recording it would be a nice feature to provide the option of creating an event as a property of the recording object or selecting one from the list of events that have already been created
+
+		Recording tags:
+			- users could add relevant tags to their recordings which will enable easy search and recording filtering
+
+
+\section{Planning Timeline}
+
+Here is some chronological information on the planning tasks we carried out from the start of the first semester and explanation of the different phases the project design went through.
+
+During week one we filled the consent forms that were distributed to us after the group allocations were announced and submitted the ballot.
+
+We had a couple of days to make a final decision on the final six projects from all the project proposals and created a Facebook page to help with the communication between group members in general and more specifically, as a form for project management beside the RedMine project management system we decided to use as a primary one.
+After we understood the team project allocation, we started researching and planning about the key functional requirements how we are going to implement them, consulting the project supervisor on how to approach each design and implementation phase.
+
+Having organised a couple of team meetings, we exchanged contact information and made a final decision on the system for version control and project management - Github and RedMine accordingly. Following a quick discussion we also took the decision to use the agile framework for the team structure and chose Keir as our scrum master.
+
+After submitting the organizational document on Moodle we met with the project supervisor and asked questions about server space, user interface structure and basic requirements explanation in general. Not long after that meeting we had our own development server provided by the university.
+
+For next week at the start of November we were all designing sample user stories in the form of comic story boards to present on the supervisor meeting. The whole month (October) was devoted to requirements interpretation, planning and design - decision making in general.
+
+The following couple of weeks we spent thinking of user interface ideas/ mock-ups for the web and mobile application and prepared some quick sketches which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system. 
+
+We started thinking about what technology our project is going to utilise and how to implement the key features we had identified. One of the main tasks was to make a decision on audio time synchronisation, which could be done in a number of ways so we had to think about it thoroughly before making a final decision. A possible option was to use an NTP - network time protocol with a reference clock. Other viable options were GPS clock synchronisation or OS clock synchronisation. (Finally we chose NTP as it seemed the most reliable and easy to implement option.)
+
+At the end of October we decided to make a choice on the web middleware framework for our project. The main candidates were Django (Python based) and the SPRING (Java oriented) development frameworks which are really easy to use and make code maintainability very efficient. After considering the pros and cons of the two frameworks, we chose to use Django as it seemed to be better documented and would perfectly suit the needs of the multi-device-audio project web application. Apart from that, we also knew that our coursework and material in the second semester’s Distributed Information Management 3 course would require us to learn how to use Django, so this made the choice even easier.
+
+We spent the next couple of weeks familiarising ourselves with the framework and testing out various tutorials using the Tango with Django online book which is a great guide containing a lot of great information and useful design and feature implementation techniques.
+
+We organised group meetings a few times a week in order to make plans about the database schema and the application flow of control. After reaching final decisions on these matters, we set up the database classes and created a population script using the tutorials from the book in order to test that everything is working as expected. Also designed the project logo prototypes and started to think more thoroughly about the system’s user interface.
+
+The work continued as we divided the functional requirements into bite-sized smaller chunks and different group members were allocated different tasks with set deadlines which were all monitored on RedMine.
+
+\textbf{<GANTT chart from RedMine, GitHub activity diagram>}
+
+
+
+
 %==============================================================================
 \chapter{Design}
 \label{design}
