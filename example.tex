@@ -4,6 +4,7 @@
 \usepackage{csquotes}
 \SetBlockEnvironment{quotation}
 \begin{document}
+\setcounter{secnumdepth}{3}
 \title{Multi-device Recording System}
 \author{Alastair Weir \\
         Gordon Adam \\
@@ -392,7 +393,13 @@ Blah blah blah
 
 \subsection{Map}
 
-\subsubsection{Google Maps API}
+When creating 
+
+\subsubsection{Map API}
+
+The map API that was decided upon as discussed in the research section was Google Maps. 
+
+The Google Maps API was used extensively throughout the development of the home page with many of the Javascript classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble.
 
 \begin{verbatim}
 google.maps.Map
@@ -415,10 +422,18 @@ google.maps.Icon
 \end{verbatim}
 
 \begin{verbatim}
+google.maps.InfoWindow
+\end{verbatim}
+
+Originally the google maps infoWindow was used to display the metadata to the user, however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these infoWindow’s would prove to be overly complicated, for that reason when a marker was clicked a separate div component was opened shown in fig ? in the section User Interface.
+
+\begin{verbatim}
 google.maps.Polyline
 \end{verbatim}
 
 \subsubsection{Geolocation}
+
+
 
 \subsubsection{JQuery} 
 
