@@ -388,6 +388,34 @@ Blah blah blah
 Blah blah blah
 Blah blah blah
 
+
+
+\subsection{Timeline (Implementation)}
+
+In order to display the recording information in a convenient way for the end user, we identified the implementation of a timeline containing the recording objects as a key functional requirement for the MDRS project. After carefully discussing and sharing our thoughts on the required specifications that we would expect from that component, we made a list of what it would display to the user. The recording metadata contains the following characteristics:
+
+- recording duration
+- recording start/ end time
+- location
+- ID
+- recording description
+- images/ photos taken while recording
+
+After having clearly specified and documented the functional requirements, we started researching in order to try and find the best way to implement this key component for the system. Having tested a number of different open source javascript implementations of different timelines, among which were the following, we made a final decision which was based on the implementation differences and the degree of customization those products offered:
+
+
+- \textbf{SIMILE timeline} - http://www.simile-widgets.org/timeline/
+
+- \textbf{Timeline JS} - http://timeline.knightlab.com/ (GitHub repository - https://github.com/NUKnightLab/TimelineJS)
+
+- \textbf{Chronoline} - http://stoicloofah.github.io/chronoline.js/
+
+- \textbf{TimeGlider} - https://github.com/timeglider/jquery_widget (moved here a year ago: http://timeglider.com/widget/)
+
+- \textbf{Chaps Timeline} - http://almende.github.io/chap-links-library/timeline.html
+
+
+
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsection{Server and Django configuration}
 
