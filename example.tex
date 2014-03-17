@@ -440,10 +440,11 @@ google.maps.InfoWindow
 \end{verbatim}
 however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these infoWindow’s would prove to be overly complicated, for that reason it was decided that when a marker was clicked there should be a separate div component opened as shown in fig ?. Which in the long run would hopefully save time and have a more refined appearance.
 
-There was little debate as to how routes would be displayed on the map
+There was little debate as to how routes would be displayed on the map as the only two options were to use:
 \begin{verbatim}
 google.maps.Polyline
 \end{verbatim}
+and the Google Maps Directions Service. However the Directions Service could only make use of roads and paths, which quickly brings up problems, for example if a recording is made inside a building or if a route is incomplete on google maps. Polylines take an array of latitude and longitude objects to create it along with any styling of the line
 
 \subsubsection{Geolocation}
 
