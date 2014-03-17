@@ -401,21 +401,32 @@ The map API that was decided upon as discussed in the research section was Googl
 
 The Google Maps API was used extensively throughout the development of the home page with many of the Javascript classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble.
 
+In order to create an instance of the map the class that was used was:
 \begin{verbatim}
 google.maps.Map
 \end{verbatim}
-
+There was very little that had to be changed in the code from the simple example provided on the Google Maps website in order to create the instance of the map, during the entire development process. Bearing testimony to the simplicity provided from using this API. There was only a few changes that were made to the way the map appeared, such as removing certain UI elements that come with the map as a standard. For example it was decided to remove "pegman" as we would not be incorporating street view into our product and his presence could prove to be an unnecessary distraction. This was done using the object:
 \begin{verbatim}
 google.maps.MapOptions
 \end{verbatim}
+With the variables contained inside being set to the desired values.
 
+After having created an instance of the map and it was styled correctly, we were then able to receive the bounds of the map displayed on the screen. this was called using the method:
+\begin{verbatim}
+getBounds()
+\end{verbatim}
+This was important as from this we were then able to query our database using JQuery (this method will be covered in a the JQuery section) and receive from the database only the recordings that would be currently visible on the timeline. For were we not able to receive the bounds of the map and just all the recordings were returned, this would prove a serious problem in scalability.
+
+These recordings were then plotted on the map by creating multiple instances of:
+\begin{verbatim}
+google.maps.Marker
+\end{verbatim}
+i.e. one for each recording. If the map was panned and a recording fell outwith the bounds of the current view then this pin would be removed, and then added back in again if it is brought back in again to view. It was an initial requirement that support for the "selection" of multiple recordings must be incorporated into the map so that these recordings can then be played back in sync. Selection is not
 \begin{verbatim}
 google.maps.LatLng
 \end{verbatim}
 
-\begin{verbatim}
-google.maps.Marker
-\end{verbatim}
+
 
 \begin{verbatim}
 google.maps.Icon
