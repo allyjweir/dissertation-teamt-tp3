@@ -448,8 +448,10 @@ and the Google Maps Directions Service. However the Directions Service could onl
 
 \subsubsection{Geolocation}
 
-
-
+Getting the end users current location in order to use it as a reference point for centering the map and displaying it with a blue dot when they open up the webapp was achieved comparatively easily with the use of the W3C Geolocation API with only a few lines of code we were able to track the users current position by first checking to see if the browser supports it (Which most modern browsers do) then if so; create a new marker anchoring it at their location.
+\begin{verbatim}
+navigator.geolocation.getCurrentPosition()
+\end{verbatim}
 \subsubsection{JQuery} 
 
 \subsection{Timeline (Implementation)}
