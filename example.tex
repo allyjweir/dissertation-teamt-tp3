@@ -417,8 +417,14 @@ been created. We would use this layout and put our efforts into other
 areas instead. Earlier on in the development all the UI controls were
 located within the Navigation Menu, however it became quickly apparent
 that this would leave it massively cluttered. So the controls for the
-map were relocated to a separate box, and a button opening the box on
-the page was located in the Navigation Menu. 
+map were relocated to a separate control box, and a button opening the box on
+the page was located in the Navigation Menu. This menu also utilizes django's 
+user authentication system, so that if a user is logged in there username is 
+displayed on the menu item that would otherwise be named user. The current 
+page is also highlighted in the navigation menu, so as to cause the least 
+amount of confusion to the user. There is a button that allows the timeline to 
+be hidden, just in case more space is required due to smaller screens or just to 
+tidy it up. 
 
 \subsubsection{Control Box}
 The control box is separated into three logical sections; Select in
@@ -435,10 +441,11 @@ feel to selecting a date. Originally when a date was selected it came
 up in the American format, though this was easily changed by modifying
 the setting at initialisation. 
 
-It was decided to use JQuery Timepicker for selecting a time, this was
-not integrated initially, however it was quickly realised that
-datepicker on it's own was not much use for selecting recordings at a
-similar time as it was far too wide a margin. 
+It was decided to use JQuery Timepicker for selecting a time, this 
+timepicker has a similar appearance to that of the timepicker on google 
+calendar this was not integrated initially, however it was quickly 
+realised that the datepicker on it's own was not much use for selecting 
+recordings at a similar time as it was far too wide a margin. 
 
 \subsubsection{Recording Box}
 This box displays the meta data associated with the recording that has
@@ -446,7 +453,12 @@ been clicked. The colours chosen were picked to fit as closely with
 the sites theme as much as possible. If the description is too long to
 fit into to the description box it displays a custom  scroll bar. It
 should work in most modern browsers though degrades gracefully if it
-is not the supported.
+is not the supported. There are a number of buttons in this box each with 
+a separate purpose. The first three are audio controls for "Play", 
+"Pause" and "Stop"; they utilize buzz for playing the recording 
+associated with the record currently loaded in the box. The next button 
+is "View Pictures" which loads the Picture Box with the images for that 
+record.
 
 \subsubsection{Picture Box}
 The Picture box was kept as simple as possible with next and previous
