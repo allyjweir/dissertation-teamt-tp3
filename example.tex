@@ -593,6 +593,20 @@ navigator.geolocation.getCurrentPosition()
 
 \subsubsection{JQuery} 
 
+During the late stages of development here was a period of many months
+where it was seming impossible o intgrate the timeline onto the same
+page as the map. Thankfuly however the problem was found to be with the
+use of conflicting JQuery requests between the timeline and the
+map. These get requests were:
+\begin{verbatim}
+$.getJSON()
+$.get()
+\end{verbatim}
+Once this issue was found, there also proved to be a conflict withing
+google maps aswell, and maps had to be removed from the timeline in
+order to allow for full integration.
+
+
 \subsection{Timeline (Implementation)}
 
 In order to display the recording information in a convenient way for the end user, we identified the implementation of a timeline containing the recording objects as a key functional requirement for the MDRS project. After carefully discussing and sharing our thoughts on the required specifications that we would expect from that component, we made a list of what it would display to the user. The recording metadata contains the following characteristics:
