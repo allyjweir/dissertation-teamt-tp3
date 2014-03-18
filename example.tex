@@ -64,9 +64,9 @@ Taking these points into account it was decided that we would use Google Maps as
 
 PureCSS as described on its website is “A set of small, responsive CSS modules that you can use in every web project.” This was an ideal candidate for the front-end framework as it was minimalistic in both size and appearance with the entire set of modules coming in at only 4.5KB (compressed). The documentation for PureCSS was also extensive which would help to ease problems during the development process of the front end.
 
-Bootstrap appeared to be a more complete solution for the problem. It provided icons, styling, and a number of UI elements. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of it’s own character. The documentation with bootstrap was also really good, appearing to be more extensive than that provided with PureCSS.
+Bootstrap appeared to be a more complete solution for the problem. It provided icons, styling, and a number of UI elements. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of it’s own character. The documentation with bootstrap was also very detailed, appearing to be more extensive than that provided with PureCSS.
 
-PureCSS was chosen in the end as it was far more lightweight and flexible It gave a really nice foundation on which to build our website from. Although Bootstrap is really powerful it would have been an overkill for what we were trying to achieve.
+PureCSS was chosen in the end as it was far more lightweight and flexible It gave a solid foundation on which to build our website from. Although Bootstrap is powerful it would have complicated our application unnecessarily.
  
 
 \subsection{Audio}
@@ -75,7 +75,7 @@ Buzz is a JavaScript library that utilises the HTML5 audio element. This library
 
 JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. And for that matter you were also lumbered with having to use the JPlayer UI.
 
-It was easily decided to use the Buzz JavaScript library as it was exactly what we were looking for on this particular occasion.
+The team took the decision to use the Buzz JavaScript library as it was exactly what we were looking for on this particular occasion.
 
 %==============================================================================
 \chapter{Planning}
@@ -88,7 +88,7 @@ Use Cases
 
 \section{2.4 Use Cases}
 
-Before starting the actual implementation of the application features, we thought of and documented the possible use cases of the system in the form of paper-drawn user stories.
+Before starting the actual implementation of the application features, we thought of, and documented, the possible use cases of the system in the form of paper-drawn user stories.
 
 Below are some examples of our initial ideas regarding the various utilisation opportunities this software provides.
 
@@ -125,7 +125,7 @@ Mark is a very keen supporter of the young Bulgarian rising star but cannot be a
 
 \section{MoSCoW requirements}
 
-Here are the project functional requirements we have identified with their priority rating based on the MoSCoW system:
+Listed below are the project functional requirements we have identified together with their priority rating based on the MoSCoW system:
 
 	\subsection{MUST}
 		Web application:
@@ -188,7 +188,7 @@ Here are the project functional requirements we have identified with their prior
 
 Here is some chronological information on the planning tasks we carried out from the start of the first semester and explanation of the different phases the project design went through.
 
-During week one we filled the consent forms that were distributed to us after the group allocations were announced and submitted the ballot.
+During week one we filled the consent forms which were distributed to us after the group allocations were announced and submitted the ballot.
 
 We had a couple of days to make a final decision on the final six projects from all the project proposals and created a Facebook page to help with the communication between group members in general and more specifically, as a form for project management beside the RedMine project management system we decided to use as a primary one.
 After we understood the team project allocation, we started researching and planning about the key functional requirements how we are going to implement them, consulting the project supervisor on how to approach each design and implementation phase.
@@ -199,15 +199,15 @@ After submitting the organizational document on Moodle we met with the project s
 
 For next week at the start of November we were all designing sample user stories in the form of comic story boards to present on the supervisor meeting. The whole month (October) was devoted to requirements interpretation, planning and design - decision making in general.
 
-The following couple of weeks we spent thinking of user interface ideas/ mock-ups for the web and mobile application and prepared some quick sketches which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system. 
+The following couple of weeks were spent thinking of user interface ideas/mock-ups for the web and mobile application. Some quick sketches where prepared which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system. 
 
-We started thinking about what technology our project is going to utilise and how to implement the key features we had identified. One of the main tasks was to make a decision on audio time synchronisation, which could be done in a number of ways so we had to think about it thoroughly before making a final decision. A possible option was to use an NTP - network time protocol with a reference clock. Other viable options were GPS clock synchronisation or OS clock synchronisation. (Finally we chose NTP as it seemed the most reliable and easy to implement option.)
+We started thinking about what technology our project is going to utilise and how to implement the key features we had identified. One of the main tasks was to make a decision on audio time synchronisation, which could be done in a number of ways; a great deal of research had to be undertaken before making a final decision. A possible option was to use an NTP - network time protocol with a reference clock. Other viable options were GPS clock synchronisation or OS clock synchronisation. NTP was chosen as it seemed the most reliable and easy to implement option.
 
-At the end of October we decided to make a choice on the web middleware framework for our project. The main candidates were Django (Python based) and the SPRING (Java oriented) development frameworks which are really easy to use and make code maintainability very efficient. After considering the pros and cons of the two frameworks, we chose to use Django as it seemed to be better documented and would perfectly suit the needs of the multi-device-audio project web application. Apart from that, we also knew that our coursework and material in the second semester’s Distributed Information Management 3 course would require us to learn how to use Django, so this made the choice even easier.
+At the end of October we decided to make a choice on the web middleware framework for our project. The main candidates were Django (Python based) and the SPRING (Java oriented) development frameworks, both of which are well designed, simple to understand and make code maintainability very efficient. After considering the pros and cons of the two frameworks, we chose to use Django as it seemed to be better documented and would perfectly suit the needs of the multi-device-audio project web application. Apart from that, we also knew that our coursework and material in the second semester’s Distributed Information Management 3 course would require us to learn how to use Django, further strengthening our choice.
 
-We spent the next couple of weeks familiarising ourselves with the framework and testing out various tutorials using the Tango with Django online book which is a great guide containing a lot of great information and useful design and feature implementation techniques.
+We spent the next couple of weeks familiarising ourselves with the framework and testing various tutorials using the 'Tango with Django' online book which is a through guide containing a lot of detailed information with useful design and feature implementation techniques included.
 
-We organised group meetings a few times a week in order to make plans about the database schema and the application flow of control. After reaching final decisions on these matters, we set up the database classes and created a population script using the tutorials from the book in order to test that everything is working as expected. Also designed the project logo prototypes and started to think more thoroughly about the system’s user interface.
+We organised group meetings a two to three times a week in order to make plans about the database schema and the application flow of control. After reaching final decisions on these matters, we set up the database classes and created a population script using the tutorials from the book in order to test that everything is working as expected. Also designed the project logo prototypes and started to think more thoroughly about the system’s user interface.
 
 The work continued as we divided the functional requirements into bite-sized smaller chunks and different group members were allocated different tasks with set deadlines which were all monitored on RedMine.
 
@@ -222,7 +222,7 @@ The work continued as we divided the functional requirements into bite-sized sma
 
 The core of our design sprung from early storyboarding and imagined user
 profiles which informed us extensively to what a possible system might look
-like. Each team member chose a different scenario that they thought MDRS could be used and created a visual aid to describe the user's experience as they interacted with it As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
+like. Each team member chose a different scenario which they thought MDRS could be used and created a visual aid to describe the user's experience as they interacted with it. As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
 
 \begin{figure}[ht!]
   \centering
@@ -384,10 +384,7 @@ In this chapter, we describe how the implemented the system.
 %------------------------------------------------------------------------------
 \section{Web Application}
 
-Blah blah blah
-Blah blah blah
-Blah blah blah
-Blah blah blah
+%Intro?
 
 \subsection{User Interface}
 
@@ -566,10 +563,19 @@ MORE TO ADD HERE//
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsection{Server and Django configuration}
 
-Blah blah blah
-Blah blah blah
-Blah blah blah
-Blah blah blah
+At the outset of the project the team had planned to build two independent platforms, one back-end server used to process audio and a separate client application to view and amend data. However the team took time to discuss the positives and negatives of this approach; the result of which was decided this was not the most sensible solution. 
+The team supervisor suggested we look into Django as a all in one solution, as it provided many of the features this project includes and the team would also benefit from using a simple and also familiar language like Python. 
+To be more specific, Django provided the team with built in user authentication, a reliable and easy to use model view controller structure, full database support and integration with the application and the simple fact Django is a web application framework allows the application to be used across almost any device without much regard of portability.
+
+With this decision made a GitHub repository was made and a skeleton Django project was set up. No-one on the team had used Django before however all members were experienced in Python. A little research was done and a series of tutorials entitled “Tango With Django” was discovered.
+Upon seeing the clarity and level of detail of this document, it was decided to use this as a reference with which to build the web application. 
+Team members were given chapter numbers to reach by deadlines; however these were not always met by all team members. The team made good progress in learning and understanding how to construct a Django application correctly. 
+Once everyone was familiar with the process and details of the Django framework tasks were dealt out and members of the team were expected to achieve certain levels of work each week. However it became quickly obvious that many parts of the application relied on others, meaning one member’s work would be held back while another finished theirs. This held back productivity in certain areas of the application, certainly when involving the database and the models associated with it.
+
+Progress with the web application was steady, the back-end was actually a fairly simple affair in comparison to the front-end which was heavy with scripting. 
+Back-end scripting mostly involved getting the models to suit what was needed correctly, it took several trial and error attempts however once the team managed to work out the correct collection of models it was mostly left alone. The only real issue the team ran into was some of the audio formats in the later stages of the project. At the outset OGG was decided as the format to use as it had a great compression to quality ratio; however it was discovered that Android could not, in fact, encode audio to OGG directly. Since a majority of the web code had already been written a decision was made to simply take a format Android could encode in and then convert it to OGG upon upload to the server. 
+
+%More added later
 
 %------------------------------------------------------------------------------
 \section{Android Application}
@@ -734,6 +740,11 @@ Our success with Facebook as a means of communication was varied. Its IM service
 
 The Team's group page however was wholly unsucessful in our desired use case. The main point of weakness was the lack of chronological discourse of our messages. This meant you might have to scroll past a dozen posts to get yesterday's discussion just because it wasn't the most commented on post. The page's bloat UI also made it difficult to navigate with no search function to quickly find an old post quickly. While its feature which tells you who in the group has read the post was useful, the rest of the functionality was subpar.
 
+At the outset, Redmine was easy to set-up and seemingly simple to use. However it became quickly appaerent this tool sees it's uses in far bigger, more indepth projects. 
+Redmine allows for depth and breadth for a large scale software solution. It's built in wiki, GitHub intergration, news feature and outstandingly detailed issue tracking were simply overcomplicated and bloated for our uses.
+The team used the platform for at least a month, religiously creating issues correctly and handing them out. It was only after a large number (at least 60) issues with sub issues were created that it became blindingly obvious Redmine was simply dragging the entire project back.
+A second, large, issue was simply the disconnection from GitHub. Redmine boasts a GitHub intergration, however this is little more than an output of the latest commits and a diff view; offering none of the excellent tools and views GitHub offers.
+
 Through other project work and happenstance, the team discovered GitHub's issue
 tracker and wiki features which are individual to each repository. These quickly
 became the default means of tracking progress for MDRS, replacing Redmine. The
@@ -745,8 +756,8 @@ issues to work on. Most of all it succeeded due to the team members being on Git
 Surprisingly email notifications became a great source of information. As
 default, GitHub sends out emails for every comment or new issue created. While
 filling up inboxes, this device agnostic communication platform made for great
-commute reading. While notifications can easily be lost in a endless-scroll, the
-emails were small, actionable pieces of key information to keep track of the
+commute reading. While notifications can easily be lost in a endless-scroll, a quick glance at the subject line would keep each team member up to date instantly. The
+emails were also small, actionable pieces of key information to keep track of the
 project's direction as a whole.
 
 We also found by replacing web-based interaction with face to face communication improved our productivity immensely. Even a quick 2 minute conversation could convey the same information a 20 minute IM chat could. While each team member kept their own schedule, we always took advantage of these conversations to keep one another up to date.
@@ -780,6 +791,7 @@ A great project!
 %==============================================================================
 \section{Contributions}
 
+%Wasn't this written somewhere?
 Conclusion here
 
 %==============================================================================
