@@ -397,11 +397,7 @@ the end user as possible. Any unnecessary buttons were removed and
 functionality was designed to be as intuitive as we could make it, as
 opposed to lots of options.
 
-The visibility of the boxes and there behaviour including
-dragging, animations and visibility are all controlled using
-JQuery. The inclusion of JQuery to do this proved to be a great
-addition requiring very few lines of code and little time in order to
-greatly enhance the end user experience.
+
 
 \begin{figure}[ht!]
   \centering
@@ -471,7 +467,6 @@ in a slideshow format.
 
 \subsection{Map}
 
-When creating 
 
 \subsubsection{Map API}
 
@@ -511,7 +506,7 @@ displayed on the screen. this was called using the method:
 \begin{verbatim}
 getBounds()
 \end{verbatim}
-This was important as from this we were then able to query our
+on the map object. This was important as from this we were then able to query our
 database using JQuery (this method will be covered in a the JQuery
 section) and receive from the database only the recordings that would
 be currently visible on the timeline. For were we not able to receive
@@ -590,6 +585,20 @@ so; create a new marker anchoring it at their location.
 \begin{verbatim}
 navigator.geolocation.getCurrentPosition()
 \end{verbatim}
+
+\subsection{JQuery}
+JQuery only began to be fully used in the later stages of development, 
+this was largely due to having very little experience in it's uses
+for development. However after completing a few basic tutorials on the 
+codeacademy website. It quickly became apparent how it could be used 
+to effectively and easily aid in the creation of an interactive 
+environment for the user.
+
+The behaviour of the boxes including dragging, animations and visibility 
+in the User Interface are all controlled using JQuery. The inclusion of 
+JQuery to do this proved to be a great addition requiring very few 
+lines of code and little time in order to greatly enhance the end user
+experience.
 
 \subsection{Integration} 
 
