@@ -403,6 +403,12 @@ JQuery. The inclusion of JQuery to do this proved to be a great
 addition requiring very few lines of code and little time in order to
 greatly enhance the end user experience.
 
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.95\textwidth]{images/ui-elements.jpg}
+\caption{Navigation Menu, Control Box, Picture Box and Recording Box}
+\end{figure}
+
 \subsubsection{Navigation Menu}
 
 The navigation menu came as a layout on the PureCSS website, it was
@@ -413,11 +419,6 @@ located within the Navigation Menu, however it became quickly apparent
 that this would leave it massively cluttered. So the controls for the
 map were relocated to a separate box, and a button opening the box on
 the page was located in the Navigation Menu. 
-\begin{figure}[ht!]
-  \centering
-\includegraphics[width=0.15\textwidth]{images/nav-bar.jpg}
-\caption{Navigation Bar}
-\end{figure}
 
 \subsubsection{Control Box}
 The control box is separated into three logical sections; Select in
@@ -438,11 +439,6 @@ It was decided to use JQuery Timepicker for selecting a time, this was
 not integrated initially, however it was quickly realised that
 datepicker on it's own was not much use for selecting recordings at a
 similar time as it was far too wide a margin. 
-\begin{figure}[ht!]
-  \centering
-\includegraphics[width=0.35\textwidth]{images/ctrl-box.jpg}
-\caption{Control Box}
-\end{figure}
 
 \subsubsection{Recording Box}
 This box displays the meta data associated with the recording that has
@@ -451,11 +447,6 @@ the sites theme as much as possible. If the description is too long to
 fit into to the description box it displays a custom  scroll bar. It
 should work in most modern browsers though degrades gracefully if it
 is not the supported.
-\begin{figure}[ht!]
-  \centering
-\includegraphics[width=0.35\textwidth]{images/rec-box.jpg}
-\caption{Recording Box}
-\end{figure}
 
 \subsubsection{Picture Box}
 The Picture box was kept as simple as possible with next and previous
@@ -463,11 +454,8 @@ buttons the same as the rest of the buttons in the user interface,
 this box displays all the images associated with a recording. It uses
 SlidesJS which is a plug-in for JQuery that allows you to view images
 in a slideshow format.
-\begin{figure}[ht!]
-  \centering
-\includegraphics[width=0.35\textwidth]{images/pic-box.jpg}
-\caption{Picture Box}
-\end{figure}
+
+
 
 \subsection{Map}
 
@@ -591,11 +579,11 @@ so; create a new marker anchoring it at their location.
 navigator.geolocation.getCurrentPosition()
 \end{verbatim}
 
-\subsubsection{JQuery} 
+\subsection{Integration} 
 
-During the late stages of development here was a period of many months
-where it was seming impossible o intgrate the timeline onto the same
-page as the map. Thankfuly however the problem was found to be with the
+During the late stages of development there was a period of many months
+where it was seeming impossible to integrate the timeline onto the same
+page as the map. Thankfully however the problem was found to be with the
 use of conflicting JQuery requests between the timeline and the
 map. These get requests were:
 \begin{verbatim}
