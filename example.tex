@@ -4,6 +4,7 @@
 \usepackage{csquotes}
 \SetBlockEnvironment{quotation}
 \begin{document}
+\setcounter{secnumdepth}{3}
 \title{Multi-device Recording System}
 \author{Alastair Weir \\
         Gordon Adam \\
@@ -35,7 +36,11 @@ TimelineJS has an attractive UI with obvious boxes for each event that when clic
 
 Another timeline that was researched was the SIMILIE Timeline, developed by MIT. The main point of contention with this timeline is in it’s appearance, which falls much further short of it’s contenders. There was also some questions about it’s compatibility with Internet Explorer and mobile devices. The upside however is that it offers a greater level of customisation, allowing much more flexibility with it’s styling. 
 
-<Picture of TimelineJS> alongside <Picture of SIMILIE Timeline>
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.75\textwidth]{images/similie_knightlab_timeline.jpg}
+\caption{MIT's SIMILIE Timeline (top) Knightlab's Timeline JS (bottom)}
+\end{figure}
 
 After a comparison TimelineJS was chosen due to its ease of use for the end user and its attractive user interface which was deemed a more important feature than greater customisability. Also the compatability issues of the SIMILIE timeline could have caused problems further down the line, which we may not have been able to resolve.
  
@@ -46,7 +51,11 @@ OpenStreetMap was thoroughly considered though it’s most important downfall la
 
 Google Maps was also considered, unlike OpenStreetMap however licencing had to be taken under much more important consideration as it was far more limited. It was discovered that after the obtaining of an API key however we would have access to 25,000 user visits a month. The default map style for google maps was far more simplistic as well which fitted more neatly with our theme. The API Documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
 
-<Picture of OpenStreetMap> alongside <Picture of Google Maps>
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.75\textwidth]{images/openstreetmap_google-map.jpg}
+\caption{OpenStreetMap (left) Google Map (right)}
+\end{figure}
 
 Taking these points into account it was decided that we would use Google Maps as we would not have to store the raw map data on our server and the API appeared to be easier to use as well.
  
@@ -55,9 +64,9 @@ Taking these points into account it was decided that we would use Google Maps as
 
 PureCSS as described on its website is “A set of small, responsive CSS modules that you can use in every web project.” This was an ideal candidate for the front-end framework as it was minimalistic in both size and appearance with the entire set of modules coming in at only 4.5KB (compressed). The documentation for PureCSS was also extensive which would help to ease problems during the development process of the front end.
 
-Bootstrap appeared to be a more complete solution for the problem. It provided icons, styling, and a number of UI elements. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of it’s own character. The documentation with bootstrap was also really good, appearing to be more extensive than that provided with PureCSS.
+Bootstrap appeared to be a more complete solution for the problem. It provided icons, styling, and a number of UI elements. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of it’s own character. The documentation with bootstrap was also very detailed, appearing to be more extensive than that provided with PureCSS.
 
-PureCSS was chosen in the end as it was far more lightweight and flexible It gave a really nice foundation on which to build our website from. Although Bootstrap is really powerful it would have been an overkill for what we were trying to achieve.
+PureCSS was chosen in the end as it was far more lightweight and flexible It gave a solid foundation on which to build our website from. Although Bootstrap is powerful it would have complicated our application unnecessarily.
  
 
 \subsection{Audio}
@@ -66,7 +75,7 @@ Buzz is a JavaScript library that utilises the HTML5 audio element. This library
 
 JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. And for that matter you were also lumbered with having to use the JPlayer UI.
 
-It was easily decided to use the Buzz JavaScript library as it was exactly what we were looking for on this particular occasion.
+The team took the decision to use the Buzz JavaScript library as it was exactly what we were looking for on this particular occasion.
 
 %==============================================================================
 \chapter{Planning}
@@ -75,13 +84,145 @@ It was easily decided to use the Buzz JavaScript library as it was exactly what 
 Plans in here will come in handy
 
 
+Use Cases
+
+\section{2.4 Use Cases}
+
+Before starting the actual implementation of the application features, we thought of, and documented, the possible use cases of the system in the form of paper-drawn user stories.
+
+Below are some examples of our initial ideas regarding the various utilisation opportunities this software provides.
+
+<paper user stories images>
+
+\subsection{2.4.1 Recording at a demonstration.} The synchronisation of multiple audio streams at a protest or any other type of public demonstration would enable the listener to hear different perspectives of the demonstration. What is more, they can switch between the source audio streams in order to distinguish speech, conversations, etc.
+
+Scenario: John is a lecturer at a public protest in Glasgow regarding the academic salaries in the UK. He is at the protest with a couple of friends - Jane and Chris, who are also a part of the academic society. However, the protest has not managed to attract that many people and there has been no effect to date.
+
+The three friends are trying to attract their colleagues by installing the MDRS mobile application on their Android cellphones and recording conversations while at the protest. Then sharing the different views people express in their statements from multiple vantage points at the protest can be listened to by their fellow lecturers, tutors, etc. - members of the academic community in Glasgow in order to make them realise the need to take part in the event and try to change their lives for the better.
+
+\subsection{2.4.2 Music festival audio synchronization.} Being able to synchronize multiple recordings from a music festival for instance is also a possible use case for this application. It will give end users the opportunity to listen to the music event as if they attended it considering the various vantage points used for audio recording. Also, noisy audio streams can be switched off to improve the audio quality of the playback.
+
+Scenario: There is a music festival on a statium in London and Tom (from Aberdeen) and Kate (originally from London), who know each other, have bought tickets and are going to attend the festival. However, they are not going together and do not know that are both going to be attending. Tom has a ticket for the front rows because he has been expecting to see his favourite band live for months, while Kate is there just for fun and has grabbed herself a cheaper ticket somewhere in the back.
+
+They are both recording the event using the MDRS mobile app to upload it to their personal timeline later.
+
+After the event, meet each other by accident and talk to each other about how they are getting on with their lives. After uploading the recordings they made on the festivel online, with the MDRS web application they will be able to compare/ switch between the audio streams and listen to both of them at the same time - the louder and clearer recording Tom made and the more noisy one Kate recorded.
+
+\subsection{2.4.3 Home party recording.} The multi-device audio system can also be used for other entertainment purposes, such as recording conversations from different locations at a house party. Synchronized playback ofthe audio will be great fun to listen to on the next day after the party.
+
+Scenario: John is hosting a house party and everyone starts recording people’s conversations with their mobile devices scattered around in the rooms.
+
+The next day after the fun is over, it is going to be greatly entertaining to listen to all the gossip people have been discussing.
+
+\subsection{2.4.4 Recording a sports event.} If there is a sports event such as a championship or a tournament which involves matches being played on numerous locations at the same time, it would be nice to be able to record commentators discussing the game and synchronizing their statements to keep track of the present result.
+
+Scenario: Mark is a great fan of tennis and is attending the tennis tournament in Dubai in 2012. He idolises Rafael Nadal and has bought tickets for his tennis match against Novak Djokovic, court 1. At the same time, however, on court 4 plays Roger Federer against Grigor Dimitrov. 
+
+Mark is a very keen supporter of the young Bulgarian rising star but cannot be at that court at the same time. By using MDRS to record the match on court 4, one of Mark’s friends who is also attending the tournament but has a ticket for the other section is able to deliver Mark the audio stream from the other tennis court, making it possible for mark to listen to judges on both courts to keep track of the result.
+
+
+
+
+\section{MoSCoW requirements}
+
+Listed below are the project functional requirements we have identified together with their priority rating based on the MoSCoW system:
+
+	\subsection{MUST}
+		Web application:
+			- the system needs a website with a backend support for audio processing
+
+		Mobile application:
+			- the system also comprises of an Android application for audio capture to be submitted to the database of the website via an upload form
+
+		User Authentication:
+			- potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations
+
+		Recording audio:
+			- the system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button
+
+		Recording submission:
+			- interaction between the Android app and the webapp
+
+		Storing audio recordings:
+			- the mobile app needs to store recordings on the server for processing
+
+		Audio synchronisation:
+			- audio synchronization functionality on recording selection
+
+		Recording timeline:
+			- a timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings)
+
+	\subsection{SHOULD}
+
+		Playback selection:
+			- users need to be able to listen to all the recordings and be able to select 
+
+		Geo location:
+			- the system needs to store current user location
+
+
+	\subsection{COULD}
+
+		Route tracking:
+			- once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished
+
+		Taking photos:
+			- the Android application needs to enable the user to take photos while recording to make the playback experience more realistic and detailed
+
+		Filter recordings depending on times:
+			- a nice feature will be to provide users the option to filter recordings and display only those from a specific time period on the map and the timeline
+
+	\subsection{WOULD}
+
+		User account enhancements:
+			- it would be nice to provide users the opportunity to change their avatar
+
+		Recording grouping in events:
+			- after uploading a recording it would be a nice feature to provide the option of creating an event as a property of the recording object or selecting one from the list of events that have already been created
+
+		Recording tags:
+			- users could add relevant tags to their recordings which will enable easy search and recording filtering
+
+
+\section{Planning Timeline}
+
+Here is some chronological information on the planning tasks we carried out from the start of the first semester and explanation of the different phases the project design went through.
+
+During week one we filled the consent forms which were distributed to us after the group allocations were announced and submitted the ballot.
+
+We had a couple of days to make a final decision on the final six projects from all the project proposals and created a Facebook page to help with the communication between group members in general and more specifically, as a form for project management beside the RedMine project management system we decided to use as a primary one.
+After we understood the team project allocation, we started researching and planning about the key functional requirements how we are going to implement them, consulting the project supervisor on how to approach each design and implementation phase.
+
+Having organised a couple of team meetings, we exchanged contact information and made a final decision on the system for version control and project management - Github and RedMine accordingly. Following a quick discussion we also took the decision to use the agile framework for the team structure and chose Keir as our scrum master.
+
+After submitting the organizational document on Moodle we met with the project supervisor and asked questions about server space, user interface structure and basic requirements explanation in general. Not long after that meeting we had our own development server provided by the university.
+
+For next week at the start of November we were all designing sample user stories in the form of comic story boards to present on the supervisor meeting. The whole month (October) was devoted to requirements interpretation, planning and design - decision making in general.
+
+The following couple of weeks were spent thinking of user interface ideas/mock-ups for the web and mobile application. Some quick sketches where prepared which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system. 
+
+We started thinking about what technology our project is going to utilise and how to implement the key features we had identified. One of the main tasks was to make a decision on audio time synchronisation, which could be done in a number of ways; a great deal of research had to be undertaken before making a final decision. A possible option was to use an NTP - network time protocol with a reference clock. Other viable options were GPS clock synchronisation or OS clock synchronisation. NTP was chosen as it seemed the most reliable and easy to implement option.
+
+At the end of October we decided to make a choice on the web middleware framework for our project. The main candidates were Django (Python based) and the SPRING (Java oriented) development frameworks, both of which are well designed, simple to understand and make code maintainability very efficient. After considering the pros and cons of the two frameworks, we chose to use Django as it seemed to be better documented and would perfectly suit the needs of the multi-device-audio project web application. Apart from that, we also knew that our coursework and material in the second semester’s Distributed Information Management 3 course would require us to learn how to use Django, further strengthening our choice.
+
+We spent the next couple of weeks familiarising ourselves with the framework and testing various tutorials using the 'Tango with Django' online book which is a through guide containing a lot of detailed information with useful design and feature implementation techniques included.
+
+We organised group meetings a two to three times a week in order to make plans about the database schema and the application flow of control. After reaching final decisions on these matters, we set up the database classes and created a population script using the tutorials from the book in order to test that everything is working as expected. Also designed the project logo prototypes and started to think more thoroughly about the system’s user interface.
+
+The work continued as we divided the functional requirements into bite-sized smaller chunks and different group members were allocated different tasks with set deadlines which were all monitored on RedMine.
+
+\textbf{<GANTT chart from RedMine, GitHub activity diagram>}
+
+
+
+
 %==============================================================================
 \chapter{Design}
 \label{design}
 
 The core of our design sprung from early storyboarding and imagined user
 profiles which informed us extensively to what a possible system might look
-like. Each team member chose a different scenario that they thought MDRS could be used and created a visual aid to describe the user's experience as they interacted with it As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
+like. Each team member chose a different scenario which they thought MDRS could be used and created a visual aid to describe the user's experience as they interacted with it. As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
 
 \begin{figure}[ht!]
   \centering
@@ -243,18 +384,316 @@ In this chapter, we describe how the implemented the system.
 %------------------------------------------------------------------------------
 \section{Web Application}
 
-Blah blah blah
-Blah blah blah
-Blah blah blah
-Blah blah blah
+%Intro?
+
+\subsection{User Interface}
+
+When developing the User Interface we chose to use PureCSS for reasons
+discussed in the research section.
+
+It was the aim when approaching the User Interface to try and achieve
+a consistent colour scheme and layout to make it as easy to use for
+the end user as possible. Any unnecessary buttons were removed and
+functionality was designed to be as intuitive as we could make it, as
+opposed to lots of options.
+
+The visibility of the boxes and there behaviour including
+dragging, animations and visibility are all controlled using
+JQuery. The inclusion of JQuery to do this proved to be a great
+addition requiring very few lines of code and little time in order to
+greatly enhance the end user experience.
+
+\subsubsection{Navigation Menu}
+
+The navigation menu came as a layout on the PureCSS website, it was
+decided by the group that opposed to trying to create what has already
+been created. We would use this layout and put our efforts into other
+areas instead. Earlier on in the development all the UI controls were
+located within the Navigation Menu, however it became quickly apparent
+that this would leave it massively cluttered. So the controls for the
+map were relocated to a separate box, and a button opening the box on
+the page was located in the Navigation Menu. 
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.15\textwidth]{images/nav-bar.jpg}
+\caption{Navigation Bar}
+\end{figure}
+
+\subsubsection{Control Box}
+The control box is separated into three logical sections; Select in
+range, Audio controls, Search. If the Start Date is left blank within
+Select in range it is assumed that all dates prior to the End Date are
+desired. The opposite is true for End Date; and if both dates are left
+blank all are selected. To create options for this could lead to a
+more complicated UI though it proved unnecessary as this was intuited
+by most people during testing.
+
+JQuery Datepicker was used as the User Interface for selecting a date,
+the colours were also edited to give a more consistent, and integrated
+feel to selecting a date. Originally when a date was selected it came
+up in the American format, though this was easily changed by modifying
+the setting at initialisation. 
+
+It was decided to use JQuery Timepicker for selecting a time, this was
+not integrated initially, however it was quickly realised that
+datepicker on it's own was not much use for selecting recordings at a
+similar time as it was far too wide a margin. 
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.35\textwidth]{images/ctrl-box.jpg}
+\caption{Control Box}
+\end{figure}
+
+\subsubsection{Recording Box}
+This box displays the meta data associated with the recording that has
+been clicked. The colours chosen were picked to fit as closely with
+the sites theme as much as possible. If the description is too long to
+fit into to the description box it displays a custom  scroll bar. It
+should work in most modern browsers though degrades gracefully if it
+is not the supported.
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.35\textwidth]{images/rec-box.jpg}
+\caption{Recording Box}
+\end{figure}
+
+\subsubsection{Picture Box}
+The Picture box was kept as simple as possible with next and previous
+buttons the same as the rest of the buttons in the user interface,
+this box displays all the images associated with a recording. It uses
+SlidesJS which is a plug-in for JQuery that allows you to view images
+in a slideshow format.
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.35\textwidth]{images/pic-box.jpg}
+\caption{Picture Box}
+\end{figure}
+
+\subsection{Map}
+
+When creating 
+
+\subsubsection{Map API}
+
+The map API that was decided upon as discussed in the research section
+was Google Maps. 
+
+The Google Maps API was used extensively throughout the development of
+the home page with many of the Javascript classes and objects used. On
+the Google Maps API website there was many examples given showing how
+these could be used, these resources were invaluable during the
+development process, especially during the early development process
+allowing rough prototypes of certain features to be created with very
+little trouble.
+
+In order to create an instance of the map the class that was used was:
+\begin{verbatim}
+google.maps.Map
+\end{verbatim}
+There was very little that had to be changed in the code from the
+simple example provided on the Google Maps website in order to create
+the instance of the map, during the entire development
+process. Bearing testimony to the simplicity provided from using this
+API. There was only a few changes that were made to the way the map
+appeared, such as removing certain UI elements that come with the map
+as a standard. For example it was decided to remove "pegman" as we
+would not be incorporating street view into our product and his
+presence could prove to be an unnecessary distraction. This was done
+using the object:
+\begin{verbatim}
+google.maps.MapOptions
+\end{verbatim}
+With the variables contained inside being set to the desired values.
+
+After having created an instance of the map and it was styled
+correctly, we were then able to receive the bounds of the map
+displayed on the screen. this was called using the method:
+\begin{verbatim}
+getBounds()
+\end{verbatim}
+This was important as from this we were then able to query our
+database using JQuery (this method will be covered in a the JQuery
+section) and receive from the database only the recordings that would
+be currently visible on the timeline. For were we not able to receive
+the bounds of the map and just all the recordings were returned, this
+would prove a serious problem in scalability.
+
+These recordings were then plotted on the map by creating multiple
+instances of:
+\begin{verbatim}
+google.maps.Marker
+\end{verbatim}
+i.e. one for each recording. These markers must be created using this
+object:
+\begin{verbatim}
+google.maps.LatLng
+\end{verbatim}
+This is the latitude and longitude of the marker, which is created
+using the data that has been returned from the database. The data that
+is used to create this object is the latitude and longitude of the
+recording when it first started. 
+We decided to use a custom icon for the default marker to give a more
+consistent theme, also in order to differentiate between non-selected
+and selected markers a separate custom selected marker was used. This
+was done by creating the object:
+\begin{verbatim}
+google.maps.Icon
+\end{verbatim}
+and passing it into the Marker class upon instantiation.
+
+The behaviour of the markers had to be defined manually this was done
+using JavaScript such behaviour was if the map was panned and a
+recording fell outwith the bounds of the current view then this pin
+would be removed, and then added back in again if it is brought back
+in again to view. It was an initial requirement that support for the
+"selection" of multiple recordings must be incorporated into the map
+so that these recordings can then be played back in sync. What was
+written allowed a pin to remain selected even if it was not currently
+in the view of the map. In other words when a pin is selected it is
+saved in memory until such time as it is deselected.
+
+Originally the google maps infoWindow was used to display the metadata
+to the user defined in the API as: 
+\begin{verbatim}
+google.maps.InfoWindow
+\end{verbatim}
+however in the late stages of development this approach proved to be
+inflexible as any minor changes to the appearance or positioning of
+these infoWindow’s would prove to be overly complicated, for that
+reason it was decided that when a marker was clicked there should be a
+separate div component opened as shown in fig ?. Which in the long run
+would hopefully save time and have a more refined appearance.
+
+There was little debate as to how routes would be displayed on the map
+as the only two options were to use:
+\begin{verbatim}
+google.maps.Polyline
+\end{verbatim}
+and the Google Maps Directions Service. However the Directions Service
+could only make use of roads and paths, which quickly brings up
+problems, for example if a recording is made inside a building or if a
+route is incomplete on google maps. Polylines take an array of
+latitude and longitude objects to create it along with any styling of
+the line, this allows for a very accurate trace of the route taken,
+even in unorthodox areas that may crop up; with a styling that can be
+made to fit the theme of the website.
+
+\subsubsection{Geolocation}
+
+Getting the end users current location in order to use it as a
+reference point for centering the map and displaying it with a blue
+dot when they open up the webapp was achieved comparatively easily
+with the use of the W3C Geolocation API with only a few lines of code
+we were able to track the users current position by first checking to
+see if the browser supports it (Which most modern browsers do) then if
+so; create a new marker anchoring it at their location.
+\begin{verbatim}
+navigator.geolocation.getCurrentPosition()
+\end{verbatim}
+
+\subsubsection{JQuery} 
+
+During the late stages of development here was a period of many months
+where it was seming impossible o intgrate the timeline onto the same
+page as the map. Thankfuly however the problem was found to be with the
+use of conflicting JQuery requests between the timeline and the
+map. These get requests were:
+\begin{verbatim}
+$.getJSON()
+$.get()
+\end{verbatim}
+Once this issue was found, there also proved to be a conflict withing
+google maps aswell, and maps had to be removed from the timeline in
+order to allow for full integration.
+
+
+\subsection{Timeline (Implementation)}
+
+In order to display the recording information in a convenient way for the end user, we identified the implementation of a timeline containing the recording objects as a key functional requirement for the MDRS project. After carefully discussing and sharing our thoughts on the required specifications that we would expect from that component, we made a list of what it would display to the user. The recording metadata contains the following characteristics:
+
+- recording duration
+- recording start/ end time
+- location
+- ID
+- recording description
+- images/ photos taken while recording
+
+After having clearly specified and documented the functional requirements, we started researching in order to try and find the best way to implement this key component for the system. Having tested a number of different open source javascript implementations of different timelines, among which were the following, we made a final decision which was based on the implementation differences and the degree of customization those products offered:
+
+
+- \textbf{SIMILE timeline} - http://www.simile-widgets.org/timeline/
+
+- \textbf{Timeline JS} - http://timeline.knightlab.com/ (GitHub repository - https://github.com/NUKnightLab/TimelineJS)
+
+- \textbf{Chronoline} - http://stoicloofah.github.io/chronoline.js/
+
+- \textbf{TimeGlider} - https://github.com/timeglider/jquery_widget (moved here a year ago: http://timeglider.com/widget/)
+
+- \textbf{Chaps Timeline} - http://almende.github.io/chap-links-library/timeline.html
+
+
+
+\textbf{SIMILE}
+
+<SIMILE timeline image> HERE
+
+The SIMILE timeline for example (this product is implemented in javascript), is a very good example of an efficient and compact timebar able to accommodate a number of events in a relatively small space without looking too clustered with unnecessary information. It also supports scrolldown horizontal movement and  you can click and drag using your mouse. However, there are a number of drawbacks associated with this open source implementation. To start with, its maintainability is poor - the last change that was made to the source code was in May 2009 which is very very long ago. We also researched the opinions of people who have tested it online and found out that there are mixed feelings regarding the SIMILE timebar. Another problem it had was the memory leaks that were caused especially when dynamically loading and unloading events to the timeline. The poor maintenance of this product also had caused numerous people troubles with the implementation in different browsers as apparently there are many unidentified bugs that continue to increase with each browser update. Some people even had strange experiences of browser crashing as a result of using SIMILE. Customisation and updates are also very difficult considering the relative lack of documentation or poorly documented code segments which was also one of the main reasons why we decided that it will not be the most suitable option for what the user interface requires.
+
+
+\textbf{Chronoline}
+
+<Chronoline timeline image> HERE
+
+The Chronoline timeline (implemented in javascript) was also a very attractive alternative and it is really compact indeed. However, for the purposes of the multi-device recording system, it looked too simplistic and did not provide enough options for further customization in order to make it work as we would require. It also does not support mouse dragging when switching between the recording objects. After a thorough research we discovered a number of people that were having issues with this timeline and, although it is indeed a nice and maintained product, appears to also not be documented very well because it was not very clear how and to what extent we could modify it.
+
+
+\textbf{Timeglider JS}
+
+<Timeglider JS timeline image>
+
+Timeglider JS was the option which really captured the attention and took some time to test in order to see whether it would be a good option. It supports many features and has a number of sub-components, however, they were making it a little bit too complicated for what we actually needed and it looked kind of too demanding for the average user as it required some time to get used to and understand how to interact with it. This product is entirely coded in javascript and is clearly documented, containing detailed information on how to use the api to customize it on the website which was created about a year ago when the code from the GitHub repository was transfered to timeglider.com. After carefully considering this option, we decided to take the search a little further before making the final decision.
+
+
+\textbf{Chaps}
+
+<Chaps timeline image> HERE
+
+The Chaps timeline, another implementation using javascript, was also really impressive and amazingly designed - not very heavy and at the same time, not too simplistic for what we needed. It supports mouse scrolling for zoom-in / zoom-out and mouse dragging in order to slide it horizontally. It was also one of the viable options which we left to the side before making our final decision. However, when considering it, we noted a not very serious, but still significant drawback, which was easily fixable - it does not look very elegant and is not very dynamic, not allowing the user to switch between the objecte using left and right horizontal arrows.
+
+
+\textbf{KnightLab Timeline JS}
+
+<KnightLab Timeline JS timeline image> HERE
+
+Last but not least important candidate - Timeline JS. This product has its own website where it could be downloaded from but it is also very well maintained and constantly changed on its GitHub repository (https://github.com/NUKnightLab/TimelineJS), making it very user friendly and easy to test. It looked like a really flexible and easy to customize solution right from the start, but this needed to be verified after testing the product’s functions. Timeline JS is coded in javascript, CSS for styling and some python is used too.
+
+One thing which really distinguishes it from the rest of the candidates is the fact that it is thoroughly documented in the repository as well as the website. And everyone is welcome to ask questions on their community forum or make changes and / or suggest some alterations to the code in the GitHub repo by opening new tickets for enhancements or bug fixing. We had some questions for the json template as we intended to use this format to dynamically feed the timeline with information extracted from the database and contacted their team. They responded quickly and gave us all the answers we needed (thanks to @Joe Germuska) so this proved how well maintained this open source software is and made it even more attractive. It also provides simple and easy interaction when used from a mobile device such as a smartphone or a tablet, or any other touch-screen device.
+
+Timeline JS also provides a number of customization options which are clearly documented on the website and it has a nice display field for which could be using for the recordings’ metadata. The interface is extremely responsive and provides an elegant way of switching between recordings’ information either by clicking a recording object or by using the provided left and right arrows for horizontal sliding. What is more, it has a bookmarking built-in function which allows for recording object to be easily linked by using the format - #number - a hash tag followed by the recording id which would definitely prove useful at a later implementation phase. On top of that, we thought that being able to specify the exact starting point for the objects on the timeline was another huge benefit.
+
+After comparing timeline JS with the other viable options and having contacted their representatives or making research on other people’s opinions all over the internet, we were ready to make the final decision of the implementation to use. The fact that many developers, who were looking for an elegant and easy to customize, well documented, and clearly structured open source project easy to feed with dynamically generated json, after trying various different options, had discovered that Knight Lab’s Timeline JS works best for them, made us confident that choosing it would be the right thing to do. And so we did.
+
+
+MORE TO ADD HERE//
+
+
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsection{Server and Django configuration}
 
-Blah blah blah
-Blah blah blah
-Blah blah blah
-Blah blah blah
+At the outset of the project the team had planned to build two independent platforms, one back-end server used to process audio and a separate client application to view and amend data. However the team took time to discuss the positives and negatives of this approach; the result of which was decided this was not the most sensible solution. 
+The team supervisor suggested we look into Django as a all in one solution, as it provided many of the features this project includes and the team would also benefit from using a simple and also familiar language like Python. 
+To be more specific, Django provided the team with built in user authentication, a reliable and easy to use model view controller structure, full database support and integration with the application and the simple fact Django is a web application framework allows the application to be used across almost any device without much regard of portability.
+
+With this decision made a GitHub repository was made and a skeleton Django project was set up. No-one on the team had used Django before however all members were experienced in Python. A little research was done and a series of tutorials entitled “Tango With Django” was discovered.
+Upon seeing the clarity and level of detail of this document, it was decided to use this as a reference with which to build the web application. 
+Team members were given chapter numbers to reach by deadlines; however these were not always met by all team members. The team made good progress in learning and understanding how to construct a Django application correctly. 
+Once everyone was familiar with the process and details of the Django framework tasks were dealt out and members of the team were expected to achieve certain levels of work each week. However it became quickly obvious that many parts of the application relied on others, meaning one member’s work would be held back while another finished theirs. This held back productivity in certain areas of the application, certainly when involving the database and the models associated with it.
+
+Progress with the web application was steady, the back-end was actually a fairly simple affair in comparison to the front-end which was heavy with scripting. 
+Back-end scripting mostly involved getting the models to suit what was needed correctly, it took several trial and error attempts however once the team managed to work out the correct collection of models it was mostly left alone. The only real issue the team ran into was some of the audio formats in the later stages of the project. At the outset OGG was decided as the format to use as it had a great compression to quality ratio; however it was discovered that Android could not, in fact, encode audio to OGG directly. Since a majority of the web code had already been written a decision was made to simply take a format Android could encode in and then convert it to OGG upon upload to the server. 
+
+%More added later
 
 %------------------------------------------------------------------------------
 \section{Android Application}
@@ -419,6 +858,11 @@ Our success with Facebook as a means of communication was varied. Its IM service
 
 The Team's group page however was wholly unsucessful in our desired use case. The main point of weakness was the lack of chronological discourse of our messages. This meant you might have to scroll past a dozen posts to get yesterday's discussion just because it wasn't the most commented on post. The page's bloat UI also made it difficult to navigate with no search function to quickly find an old post quickly. While its feature which tells you who in the group has read the post was useful, the rest of the functionality was subpar.
 
+At the outset, Redmine was easy to set-up and seemingly simple to use. However it became quickly appaerent this tool sees it's uses in far bigger, more indepth projects. 
+Redmine allows for depth and breadth for a large scale software solution. It's built in wiki, GitHub intergration, news feature and outstandingly detailed issue tracking were simply overcomplicated and bloated for our uses.
+The team used the platform for at least a month, religiously creating issues correctly and handing them out. It was only after a large number (at least 60) issues with sub issues were created that it became blindingly obvious Redmine was simply dragging the entire project back.
+A second, large, issue was simply the disconnection from GitHub. Redmine boasts a GitHub intergration, however this is little more than an output of the latest commits and a diff view; offering none of the excellent tools and views GitHub offers.
+
 Through other project work and happenstance, the team discovered GitHub's issue
 tracker and wiki features which are individual to each repository. These quickly
 became the default means of tracking progress for MDRS, replacing Redmine. The
@@ -430,8 +874,8 @@ issues to work on. Most of all it succeeded due to the team members being on Git
 Surprisingly email notifications became a great source of information. As
 default, GitHub sends out emails for every comment or new issue created. While
 filling up inboxes, this device agnostic communication platform made for great
-commute reading. While notifications can easily be lost in a endless-scroll, the
-emails were small, actionable pieces of key information to keep track of the
+commute reading. While notifications can easily be lost in a endless-scroll, a quick glance at the subject line would keep each team member up to date instantly. The
+emails were also small, actionable pieces of key information to keep track of the
 project's direction as a whole.
 
 We also found by replacing web-based interaction with face to face communication improved our productivity immensely. Even a quick 2 minute conversation could convey the same information a 20 minute IM chat could. While each team member kept their own schedule, we always took advantage of these conversations to keep one another up to date.
@@ -465,6 +909,7 @@ A great project!
 %==============================================================================
 \section{Contributions}
 
+%Wasn't this written somewhere?
 Conclusion here
 
 %==============================================================================
