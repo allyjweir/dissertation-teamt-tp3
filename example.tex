@@ -393,7 +393,11 @@ Blah blah blah
 
 When developing the User Interface we chose to use PureCSS for reasons discussed in the research section.
 
+It was the aim when approaching the User Interface to try and achieve a consistent colour scheme and layout to make it as easy to use for the end user as possible. Any unnecessary buttons were removed and functionality was designed to be as intuitive as we could make it, as opposed to lots of options.
+
 \subsubsection{Navigation Menu}
+
+The navigation menu came as a layout on the PureCSS website, it was decided by the group that opposed to trying to create what has already been created. We would use this layout and put our efforts into other areas instead. Earlier on in the development all the UI controls were located within the Navigation Menu, however it became quickly apparent that this would leave it massively cluttered. So the controls for the map were relocated to a separate box, and a button opening the box on the page was located in the Navigation Menu. 
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.15\textwidth]{images/nav-bar.jpg}
@@ -401,6 +405,7 @@ When developing the User Interface we chose to use PureCSS for reasons discussed
 \end{figure}
 
 \subsubsection{Control Box}
+The control box is separated into three logical sections; Select in range, Audio controls, Search. If the Start Date is left blank within Select in range it is assumed that all dates prior to the End Date are desired. The opposite is true for End Date; and if both dates are left blank all are selected. To create options for this could lead to a more complicated UI though it proved unnecessary as this was intuited by most people during testing 
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.35\textwidth]{images/ctrl-box.jpg}
@@ -408,6 +413,7 @@ When developing the User Interface we chose to use PureCSS for reasons discussed
 \end{figure}
 
 \subsubsection{Recording Box}
+Displays meta data, description box displays a custom scroll bar in most browsers if the description is too long to fit into to the description box.
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.35\textwidth]{images/rec-box.jpg}
@@ -415,6 +421,7 @@ When developing the User Interface we chose to use PureCSS for reasons discussed
 \end{figure}
 
 \subsubsection{Picture Box}
+Picture box next and previous buttons are kept the same as the rest of the buttons in the user interface.
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.35\textwidth]{images/pic-box.jpg}
