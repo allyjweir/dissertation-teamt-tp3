@@ -46,7 +46,6 @@ After a comparison TimelineJS was chosen due to its ease of use for the end user
 
 
 \subsection{Map}
-
 OpenStreetMap was thoroughly considered though it’s most important downfall lay in the fact that we would have to store the raw map data, which uncompressed comprised 400GB. Storing this on our server would be an impossibility. The default style for open maps was also far more detailed which in keeping with the simplistic theme of the website could lead the map to clash as it appears more cluttered.
 
 Google Maps was also considered, unlike OpenStreetMap however licencing had to be taken under much more important consideration as it was far more limited. It was discovered that after the obtaining of an API key however we would have access to 25,000 user visits a month. The default map style for google maps was far more simplistic as well which fitted more neatly with our theme. The API Documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
@@ -827,7 +826,15 @@ Another major misunderstanding came with the team using our version control syst
 \chapter{Future Work}
 \label{Future Work}
 
-Future work in here will come in handy
+Throughout development, a number of compromises and mistakes were made due to inexperience and limited development time. In retrospect, the team has acknowledged and recognised a number of improvements that could be made to the project as a whole that could be worked on in the future.
+
+As modification to the project’s central vision, the team would include search as a key feature. While the current project’s timeline and map offer a unique way to explore the recordings, this wouldn't scale well to thousands of recordings. Integrating search engine alongside the introduction of tags would improve a user’s experience. Hopefully it would spur an users to stay on  the website for longer. They would be able to explore all the recordings better and find more relevant content. Ultimately MDRS could produce large sets of data and not integrating a proper  search functionality would be detrimental.
+
+With the integration of these features to the web application, the user interface would have to be rethought. The use of a responsive framework such as Twitter’s Bootstrap or Zurb’s Foundation could offer a streamlined interface and improved interaction models. The team would also make changes to the timeline feature. While TimelineJS offered a flexible model, recent research has shown that we could have taken advantage of Django itself to more efficiently populate and render the timeline in our web application. This refactoring would greatly simplify our current codebase and improve performance significantly. The team have also recognised that giving users options to log into MDRS through existing social accounts (through systems such as OpenID) would be beneficial and smooth their introduction to the system as a whole.
+
+The team would also hope to use the orientation data being pulled from the Android device to create an enhanced ‘Street View’ that, when viewing an individual recording, could display the recorder’s perspective as they moved and overlay their images on top of Google’s Street View imagery. This innovative perspective would help further differentiate MDRS from its competitor, offering a unique comparison of the constantly changing state of our cityscapes, depending on events or times of year.
+
+The Android application would ideally be completely rebuilt. While the current iteration meets most of our functional and non-functional requirements, it has fundamental flaws associated with the severely limited development resources. Login with Social Auth would be integrated and background recording would be a must have feature from the beginning.
 
 %==============================================================================
 \chapter{Conclusion}
