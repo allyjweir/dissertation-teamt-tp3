@@ -34,7 +34,7 @@ Surrounding us in city life there are unqiue moments that are missed by viewing 
 
 TimelineJS has an attractive UI with obvious boxes for each event that when clicked on centre on the timeline and the metadata is displayed in an upper section. It shows very clearly the difference between start times as there is a vertical line on the timeline for each event.The upper section which although is unnecessary for the front page, is crucial for the user page. This timeline also is importantly supported on mobile devices.
 
-Another timeline that was researched was the SIMILIE Timeline, developed by MIT. The main point of contention with this timeline is in it’s appearance, which falls much further short of it’s contenders. There was also some questions about it’s compatibility with Internet Explorer and mobile devices. The upside however is that it offers a greater level of customisation, allowing much more flexibility with it’s styling. 
+Another timeline that was researched was the SIMILIE Timeline, developed by MIT. The main point of contention with this timeline is in it’s appearance, which falls much further short of it’s contenders. There was also some questions about it’s compatibility with Internet Explorer and mobile devices. The upside however is that it offers a greater level of customisation, allowing much more flexibility with it’s styling.
 
 \begin{figure}[ht!]
   \centering
@@ -43,7 +43,7 @@ Another timeline that was researched was the SIMILIE Timeline, developed by MIT.
 \end{figure}
 
 After a comparison TimelineJS was chosen due to its ease of use for the end user and its attractive user interface which was deemed a more important feature than greater customisability. Also the compatability issues of the SIMILIE timeline could have caused problems further down the line, which we may not have been able to resolve.
- 
+
 
 \subsection{Map}
 
@@ -58,7 +58,7 @@ Google Maps was also considered, unlike OpenStreetMap however licencing had to b
 \end{figure}
 
 Taking these points into account it was decided that we would use Google Maps as we would not have to store the raw map data on our server and the API appeared to be easier to use as well.
- 
+
 
 \subsection{Front-End Framework}
 
@@ -67,7 +67,7 @@ PureCSS as described on its website is “A set of small, responsive CSS modules
 Bootstrap appeared to be a more complete solution for the problem. It provided icons, styling, and a number of UI elements. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of it’s own character. The documentation with bootstrap was also very detailed, appearing to be more extensive than that provided with PureCSS.
 
 PureCSS was chosen in the end as it was far more lightweight and flexible It gave a solid foundation on which to build our website from. Although Bootstrap is powerful it would have complicated our application unnecessarily.
- 
+
 
 \subsection{Audio}
 
@@ -116,7 +116,7 @@ The next day after the fun is over, it is going to be greatly entertaining to li
 
 \subsection{2.4.4 Recording a sports event.} If there is a sports event such as a championship or a tournament which involves matches being played on numerous locations at the same time, it would be nice to be able to record commentators discussing the game and synchronizing their statements to keep track of the present result.
 
-Scenario: Mark is a great fan of tennis and is attending the tennis tournament in Dubai in 2012. He idolises Rafael Nadal and has bought tickets for his tennis match against Novak Djokovic, court 1. At the same time, however, on court 4 plays Roger Federer against Grigor Dimitrov. 
+Scenario: Mark is a great fan of tennis and is attending the tennis tournament in Dubai in 2012. He idolises Rafael Nadal and has bought tickets for his tennis match against Novak Djokovic, court 1. At the same time, however, on court 4 plays Roger Federer against Grigor Dimitrov.
 
 Mark is a very keen supporter of the young Bulgarian rising star but cannot be at that court at the same time. By using MDRS to record the match on court 4, one of Mark’s friends who is also attending the tournament but has a ticket for the other section is able to deliver Mark the audio stream from the other tennis court, making it possible for mark to listen to judges on both courts to keep track of the result.
 
@@ -155,7 +155,7 @@ Listed below are the project functional requirements we have identified together
 	\subsection{SHOULD}
 
 		Playback selection:
-			- users need to be able to listen to all the recordings and be able to select 
+			- users need to be able to listen to all the recordings and be able to select
 
 		Geo location:
 			- the system needs to store current user location
@@ -199,7 +199,7 @@ After submitting the organizational document on Moodle we met with the project s
 
 For next week at the start of November we were all designing sample user stories in the form of comic story boards to present on the supervisor meeting. The whole month (October) was devoted to requirements interpretation, planning and design - decision making in general.
 
-The following couple of weeks were spent thinking of user interface ideas/mock-ups for the web and mobile application. Some quick sketches where prepared which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system. 
+The following couple of weeks were spent thinking of user interface ideas/mock-ups for the web and mobile application. Some quick sketches where prepared which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system.
 
 We started thinking about what technology our project is going to utilise and how to implement the key features we had identified. One of the main tasks was to make a decision on audio time synchronisation, which could be done in a number of ways; a great deal of research had to be undertaken before making a final decision. A possible option was to use an NTP - network time protocol with a reference clock. Other viable options were GPS clock synchronisation or OS clock synchronisation. NTP was chosen as it seemed the most reliable and easy to implement option.
 
@@ -263,25 +263,9 @@ to learn it later through coursework made the framework choice an easy one.
 \caption{Prototype of map view.}
 \end{figure}
 
-The key interaction between the user and MDRS is location therefore it made
-sense to make a map the central interface. The user would be able to explore the
-map and click on pins representing recordings. This would then project the path
-of the recording, indicating where images were captured along the way. Users
-could then play it back individually or select multiple recordings for
-synchronous playback. With such an important role, the choice of which mapping
-API to leverage was extensive in the early stages of the project.
+The key interaction between the user and MDRS is location therefore it made sense to make a map the central interface. The user would be able to explore the map and click on pins representing recordings. This would then project the path of the recording, indicating where images were captured along the way. Users could then play it back individually or select multiple recordings for synchronous playback. With such an important role, the choice of which mapping API to leverage was extensive in the early stages of the project.
 
-Initially the team were attracted to OpenStreetMap with the very lightweight
-Javascript library Leaflet. This would give us unlimited access, as the maps
-were open source, but would require us to host the map tiles which amounted to
-multiple gigabytes depending on the level of detail chosen. Other disadvantages
-were the additional difficulty in initial configuration and setup. Another
-option was Microsoft’s Bing maps which didn’t require as much configuration but
-were more limited in their free level of access. As an alternative Google Maps
-was chosen for its simple API and reasonable access for free users. Ultimately
-is offered 100,000 map loads a month for free. We estimated for a typical user
-spending 15 minutes on the website that 4 map loads would be needed making this
-a workable figure for at least 25,000 user visits a month.
+Initially the team were attracted to OpenStreetMap with the very lightweight Javascript library Leaflet. This would give us unlimited access, as the maps were open source, but would require us to host the map tiles which amounted to multiple gigabytes depending on the level of detail chosen. Other disadvantages were the additional difficulty in initial configuration and setup. Another option was Microsoft’s Bing maps which didn’t require as much configuration but were more limited in their free level of access. As an alternative Google Maps was chosen for its simple API and reasonable access for free users. Ultimately is offered 100,000 map loads a month for free. We estimated for a typical user spending 15 minutes on the website that 4 map loads would be needed making this a workable figure for at least 25,000 user visits a month.
 
 Alongside our use of maps, early on in development we prototyped a version which would incorporate Google's Street View. This would allow the user to follow a recording's location trail even more closely. By harvesting the orientation of the recording device we could show where they were looking, showing the Street View at that angle, and overlay any of the user's own images they captured on top of this. While this immersed the user even deeper into the recording, it was unfortunately not taken beyond this prototype stage due to the complexity of implementation.
 
@@ -291,26 +275,9 @@ Alongside our use of maps, early on in development we prototyped a version which
 \caption{An example of TimelineJS by KnightLab.}
 \end{figure}
 
-A second key component to this interface is the interactive timeline. This was
-hoped to show the length of each recording and where they overlapped. Upon
-clicking on one a dialog would show its metadata such as name, description, the
-user who captured it and accompanying images. Early prototypes also show the
-ability to move the current position of playback along the timeline to skip to
-different positions. This level of manipulation was simplified upon selection of
-TimelineJS which we used to construct it.
+A second key component to this interface is the interactive timeline. This was hoped to show the length of each recording and where they overlapped. Upon clicking on one a dialog would show its metadata such as name, description, the user who captured it and accompanying images. Early prototypes also show the ability to move the current position of playback along the timeline to skip to different positions. This level of manipulation was simplified upon selection of TimelineJS which we used to construct it.
 
-Early web interface designs featured a prominent header bar and a floating menu
-panel which floated over the map. From early prototypes and wireframes this was
-realised to waste a lot of screen real estate, detracting from the reason the
-user was on the website. The header bar in particular became wasteful as the
-ability to search all recordings was downgraded in importance within the
-application. Through discussion in the team it was decided that users would more
-likely be interested in audio based on location (the key paradigm of MDRS)
-rather than searching through keyword. It gave us a stretch goal to aim for if
-development moved along smoothly. Upon research into interface frameworks the
-CSS library, PureCSS, was found as a replacement to create an engaging and
-simple menu interface. Its simplicity favoured our team’s limited prior
-experience with web design and it’s accompanying documentation is excellent.
+Early web interface designs featured a prominent header bar and a floating menu panel which floated over the map. From early prototypes and wireframes this was realised to waste a lot of screen real estate, detracting from the reason the user was on the website. The header bar in particular became wasteful as the ability to search all recordings was downgraded in importance within the application. Through discussion in the team it was decided that users would more likely be interested in audio based on location (the key paradigm of MDRS) rather than searching through keyword. It gave us a stretch goal to aim for if development moved along smoothly. Upon research into interface frameworks the CSS library, PureCSS, was found as a replacement to create an engaging and simple menu interface. Its simplicity favoured our team’s limited prior experience with web design and it’s accompanying documentation is excellent.
 
 \begin{figure}[ht!]
   \centering
@@ -412,7 +379,7 @@ areas instead. Earlier on in the development all the UI controls were
 located within the Navigation Menu, however it became quickly apparent
 that this would leave it massively cluttered. So the controls for the
 map were relocated to a separate box, and a button opening the box on
-the page was located in the Navigation Menu. 
+the page was located in the Navigation Menu.
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.15\textwidth]{images/nav-bar.jpg}
@@ -432,12 +399,12 @@ JQuery Datepicker was used as the User Interface for selecting a date,
 the colours were also edited to give a more consistent, and integrated
 feel to selecting a date. Originally when a date was selected it came
 up in the American format, though this was easily changed by modifying
-the setting at initialisation. 
+the setting at initialisation.
 
 It was decided to use JQuery Timepicker for selecting a time, this was
 not integrated initially, however it was quickly realised that
 datepicker on it's own was not much use for selecting recordings at a
-similar time as it was far too wide a margin. 
+similar time as it was far too wide a margin.
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.35\textwidth]{images/ctrl-box.jpg}
@@ -471,12 +438,12 @@ in a slideshow format.
 
 \subsection{Map}
 
-When creating 
+When creating
 
 \subsubsection{Map API}
 
 The map API that was decided upon as discussed in the research section
-was Google Maps. 
+was Google Maps.
 
 The Google Maps API was used extensively throughout the development of
 the home page with many of the Javascript classes and objects used. On
@@ -531,7 +498,7 @@ google.maps.LatLng
 This is the latitude and longitude of the marker, which is created
 using the data that has been returned from the database. The data that
 is used to create this object is the latitude and longitude of the
-recording when it first started. 
+recording when it first started.
 We decided to use a custom icon for the default marker to give a more
 consistent theme, also in order to differentiate between non-selected
 and selected markers a separate custom selected marker was used. This
@@ -546,14 +513,14 @@ using JavaScript such behaviour was if the map was panned and a
 recording fell outwith the bounds of the current view then this pin
 would be removed, and then added back in again if it is brought back
 in again to view. It was an initial requirement that support for the
-"selection" of multiple recordings must be incorporated into the map
+\"selection\" of multiple recordings must be incorporated into the map
 so that these recordings can then be played back in sync. What was
 written allowed a pin to remain selected even if it was not currently
 in the view of the map. In other words when a pin is selected it is
 saved in memory until such time as it is deselected.
 
 Originally the google maps infoWindow was used to display the metadata
-to the user defined in the API as: 
+to the user defined in the API as:
 \begin{verbatim}
 google.maps.InfoWindow
 \end{verbatim}
@@ -591,7 +558,7 @@ so; create a new marker anchoring it at their location.
 navigator.geolocation.getCurrentPosition()
 \end{verbatim}
 
-\subsubsection{JQuery} 
+\subsubsection{JQuery}
 
 During the late stages of development here was a period of many months
 where it was seming impossible o intgrate the timeline onto the same
@@ -681,109 +648,40 @@ MORE TO ADD HERE//
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsection{Server and Django configuration}
 
-At the outset of the project the team had planned to build two independent platforms, one back-end server used to process audio and a separate client application to view and amend data. However the team took time to discuss the positives and negatives of this approach; the result of which was decided this was not the most sensible solution. 
-The team supervisor suggested we look into Django as a all in one solution, as it provided many of the features this project includes and the team would also benefit from using a simple and also familiar language like Python. 
+At the outset of the project the team had planned to build two independent platforms, one back-end server used to process audio and a separate client application to view and amend data. However the team took time to discuss the positives and negatives of this approach; the result of which was decided this was not the most sensible solution.
+The team supervisor suggested we look into Django as a all in one solution, as it provided many of the features this project includes and the team would also benefit from using a simple and also familiar language like Python.
 To be more specific, Django provided the team with built in user authentication, a reliable and easy to use model view controller structure, full database support and integration with the application and the simple fact Django is a web application framework allows the application to be used across almost any device without much regard of portability.
 
 With this decision made a GitHub repository was made and a skeleton Django project was set up. No-one on the team had used Django before however all members were experienced in Python. A little research was done and a series of tutorials entitled “Tango With Django” was discovered.
-Upon seeing the clarity and level of detail of this document, it was decided to use this as a reference with which to build the web application. 
-Team members were given chapter numbers to reach by deadlines; however these were not always met by all team members. The team made good progress in learning and understanding how to construct a Django application correctly. 
+Upon seeing the clarity and level of detail of this document, it was decided to use this as a reference with which to build the web application.
+Team members were given chapter numbers to reach by deadlines; however these were not always met by all team members. The team made good progress in learning and understanding how to construct a Django application correctly.
 Once everyone was familiar with the process and details of the Django framework tasks were dealt out and members of the team were expected to achieve certain levels of work each week. However it became quickly obvious that many parts of the application relied on others, meaning one member’s work would be held back while another finished theirs. This held back productivity in certain areas of the application, certainly when involving the database and the models associated with it.
 
-Progress with the web application was steady, the back-end was actually a fairly simple affair in comparison to the front-end which was heavy with scripting. 
-Back-end scripting mostly involved getting the models to suit what was needed correctly, it took several trial and error attempts however once the team managed to work out the correct collection of models it was mostly left alone. The only real issue the team ran into was some of the audio formats in the later stages of the project. At the outset OGG was decided as the format to use as it had a great compression to quality ratio; however it was discovered that Android could not, in fact, encode audio to OGG directly. Since a majority of the web code had already been written a decision was made to simply take a format Android could encode in and then convert it to OGG upon upload to the server. 
+Progress with the web application was steady, the back-end was actually a fairly simple affair in comparison to the front-end which was heavy with scripting.
+Back-end scripting mostly involved getting the models to suit what was needed correctly, it took several trial and error attempts however once the team managed to work out the correct collection of models it was mostly left alone. The only real issue the team ran into was some of the audio formats in the later stages of the project. At the outset OGG was decided as the format to use as it had a great compression to quality ratio; however it was discovered that Android could not, in fact, encode audio to OGG directly. Since a majority of the web code had already been written a decision was made to simply take a format Android could encode in and then convert it to OGG upon upload to the server.
 
 %More added later
 
 %------------------------------------------------------------------------------
 \section{Android Application}
 
-\subsection{Early development} With little experience in developing for Android,
-our aim was to take the most key requirements and create simple demos of each
-aspect. Then taking all the basic knowledge gained from this process, create an
-application with the must have features, structured in a way to allow further development if time constraints allowed.
+\subsection{Early development} With little experience in developing for Android, our aim was to take the most key requirements and create simple demos of each aspect. Then taking all the basic knowledge gained from this process, create an application with the must have features, structured in a way to allow further development if time constraints allowed.
 
-\subsubsection{Learning Resources and Tools} Google's Android tutorials served
-as an early touchstone in development, offering an understanding of an
-application's structure and layout in development. These go into great depth
-about most of the classes and APIs useful to MDRS but often this depth was made
-them inpenetrable. For example, you can either implement an interface for an
-Activity though your Activity's .java file programmatically or in a separate
-layout .xml file. Google's tutorials would switch between these methods,
-muddying the Android developer's understanding of how to work in this new
-development environment while adhering to good code standards.
+\subsubsection{Learning Resources and Tools} Google's Android tutorials served as an early touchstone in development, offering an understanding of an application's structure and layout in development. These go into great depth about most of the classes and APIs useful to MDRS but often this depth was made them inpenetrable. For example, you can either implement an interface for an Activity though your Activity's .java file programmatically or in a separate layout .xml file. Google's tutorials would switch between these methods, muddying the team's understanding of how to work in this new development environment while adhering to good code standards.
 
-Other learning resources were scarce and when found usually weren't to a good
-enough standard to be useful. This meant that alongside Google's tutorials,
-Stack Overflow was the main resource used to aid development. This crowdsourced
-Q&A service served invaluable in fixing bugs and explaining topics. The answers
-far exceeded the quality found in some textbooks that were used. Twitter also served as a direct communication to the development community with advice and encouragement coming from prominent developers.
+Other learning resources were scarce and when found usually weren't to a good enough standard to be useful. This meant that alongside Google's tutorials, Stack Overflow was the main resource used to aid development. This crowdsourced Q&A service served invaluable in fixing bugs and explaining topics. The answers far exceeded the quality found in some textbooks that were used. Twitter also served as a direct communication to the development community with advice and encouragement coming from other Android developers.
 
-As development began, an early decision made was to askew the use of Google's
-new Android Studio to use Eclipse with the ADT (Android Development Tools)
-plugin. This reduced the number of new tools to learn and avoided using unstable
-software while trying to learn a new SDK. All of the development was done on
-personal devices due to the University's lab machines not having the required
-software and refusal from technicians to have it installed in a useful manner.
-This limited development time as it had to be carried out almost exclusively at
-home in off-hours. It also limited the chance of gaining any help from other
-student's insights to solve common issues in Android development. Overall poor
-access to tools caused extensive issues in the protracted  development cycle.
+As development began, an early decision made was to askew the use of Google's new Android Studio to use Eclipse with the ADT (Android Development Tools) plugin. This reduced the number of new tools to learn and avoided using unstable software while trying to learn a new SDK. All of the development was done on personal devices due to the University's lab machines not having the required software and refusal from technicians to have it installed in a useful manner. This limited development time as it had to be carried out almost exclusively at home in off-hours. It also limited the chance of gaining any help from other student's insights to solve common issues in Android development. Overall poor access to tools caused extensive issues in the protracted  development cycle.
 
-A Nexus 5 and Nexus 7 (2012 model) were used as testing devices. As Google
-designed models, the Nexus range are a good standard for development as they run
-a clean install of Android on common hardware shared across the device
-ecosystem. This reduced the amount of testing required and avoided
-troubleshooting vendor specific errors or bugs. These devices also allowed the
-UI/UX could be tested on varying screen sizes to see how it reacted. As testing
-expanded, the application was also later tested on an HTC One and a Samsung Galaxy
-Note.
+A Nexus 5 and Nexus 7 (2012 model) were used as testing devices. As Google designed models, the Nexus range are a good standard for development as they run a clean install of Android on common hardware shared across the device ecosystem. This reduced the amount of testing required and avoided troubleshooting vendor specific errors or bugs. These devices also allowed the UI/UX could be tested on varying screen sizes to see how it reacted. As testing expanded, the application was also later tested on an HTC One and a Samsung Galaxy Note.
 
-\subsubsection{Audio Recording}    Audio recording is key to MDRS' premise so
-was the first thing to be implemented. Through our learning resources the
-MediaRecorder class was chosen to implement this functionality. The alternative
-to this was AudioRecord. This class captures the raw bytes of audio data which
-allows for much more control over processing and format choices but at a higher
-degree of difficulty. External Java libraries would be required alongside a more
-complicated implementation making MediaRecorder the simpler choice while still
-meeting our needs.
+\subsubsection{Audio Recording}    Audio recording is key to MDRS' premise so was the first thing to be implemented. Through our learning resources the MediaRecorder class was chosen to implement this functionality. The alternative to this was AudioRecord. This class captures the raw bytes of audio data which allows for much more control over processing and format choices but at a higher degree of difficulty. External Java libraries would be required alongside a more complicated implementation making MediaRecorder the simpler choice while still meeting our needs.
 
-Prototypes were rapidly built referencing various tutorials. However these
-prototypes repeatedly ran into complex issues and consumed an extensive portion
-of development time available. MediaRecorder would consistently crash the test
-devices with little debug information given by the error logs. Testing was
-further slowed down as MediaRecorder doesn't work in the Android Virtual Machine
-availble. This meant all testing was done on devices, complicating the entire
-process. Combined with poor understanding of the Android SDK these tests caused
-many issues and took up all Android development time between Mid-November and
-late December 2013.
+Prototypes were rapidly built referencing various tutorials. However these prototypes repeatedly ran into complex issues and consumed an extensive portion of development time available. MediaRecorder would consistently crash the test devices with little debug information given by the error logs. Testing was further slowed down as MediaRecorder doesn't work in the Android Virtual Machine availble. This meant all testing was done on devices, complicating the entire process. Combined with poor understanding of the Android SDK these tests caused many issues and took up all Android development time between Mid-November and late December 2013.
 
-Eventually through extensive research surrounding MediaRecorder and learning
-more about debugging Android code, the main problem was found to be in
-interacting with external storage and the dichotomy between truly external
-storage, such as a removeable SD Card, and internal-but-external storage. As
-vendors moved to add internal storage in their Android devices, the OS would
-still recognise that as an external source compared to ROM on the chipset. This
-means that while it is internal, the OS views it as external. By creating a
-/textit{Catch-22}, it made it difficult to access the correct storage in which
-to place MDRS' data. With this problem found, the issue was resolved and
-development continued.
+Eventually through extensive research surrounding MediaRecorder and learning more about debugging Android code, the main problem was found to be in interacting with external storage and the dichotomy between truly external storage, such as a removeable SD Card, and internal-but-external storage. As vendors moved to add internal storage in their Android devices, the OS would still recognise that as an external source compared to ROM on the chipset. This means that while it is internal, the OS views it as external. By creating a /textit{Catch-22}, it made it difficult to access the correct storage in which to place MDRS' data. With this problem found, the issue was resolved and development continued.
 
-\subsubsection{Google Play Services}    The next thing to integrate was the
-Google Play Services library. This gives Android developers extensive access to
-many of Google's services. For MDRS, the interest was soley in the Maps and Location APIs. Integrating this library into the project rasied multiple initial
-issues. While adding a library should be a relatively simple task, there were
-wildly varying instructions on how to do this, leading to a lot of confusion.
-While it is possible to link it to the build path by manually downloading the
-library and then linking it using Eclipse, other instruction sets described the
-use of Apache's Ant or Maven files to decalre the dependencies. In practice
-however these didn't work reliably. In the end it was decided to store the
-library locally in the project's repository. This led to an issue with Eclipse.
-Eclipse stores the full path to the library's folder on the computer statically
-instead of just its path inside the current workspace directory. This meant when
-switching between development environments (Windows and OSX) that it had to be
-manually updated. Once these dependency problems were resolved development
-quickly continued to the implementation of Maps.
+\subsubsection{Google Play Services}    The next thing to integrate was the Google Play Services library. This gives Android developers extensive access to many of Google's services. For MDRS, the interest was soley in the Maps and Location APIs. Integrating this library into the project rasied multiple initial issues. While adding a library should be a relatively simple task, there were wildly varying instructions on how to do this, leading to a lot of confusion. While it is possible to link it to the build path by manually downloading the library and then linking it using Eclipse, other instruction sets described the use of Apache's Ant or Maven files to decalre the dependencies. In practice however these didn't work reliably. In the end it was decided to store the library locally in the project's repository. This led to an issue with the IDE. Eclipse stores the full path to the library's folder on the computer statically instead of just its path inside the current workspace directory. This meant when switching between development environments (Windows and OSX) that it had to be manually updated. Once these dependency problems were resolved development quickly continued to the implementation of Maps.
 
 For MDRS we required two map views, one as the main point of interest on the start screen and a second in the upload screen indicating the path their recording took with a start and end pin. These relatively simple requirements meant a lot of the code required could be reused from Google's example applications. The code required was relatively short but by using Play Services there was a lot of boilerplate code needed to check that it was installed on a device and to connect to Google's servers. A series of small tweaks were made to the default map, removing certain UI elements and changing the zoom levels. This manifested the team's first experience of inconsistency between devices. When running on a Nexus 5, the \'Show my location\' button, despite being explicitly declared, didn't appear while the same build of MDRS running on an HTC One did show the button.
 
@@ -791,48 +689,40 @@ The main issue that was found with the implementation of Maps was a bug which cr
 
 Placing the map into an activity's layout was done by referring to a map fragment element which was then initialised programmatically. This displayed the benefits of Android's flexibility. Where initially having the option to programmatically do the layout or use XML was confusing, in this case it allowed the map to be placed in XML then modified in code. This made populating the map with pins and other markers a simple call of a method and feeding in data from the Location API.
 
-While Android has its own Location classes, the Play Services' API was chosen for its higher level abstraction and excellent learning resources. While Android only had the reference documents, Play Services' was accompanied by tutorials and getting started guides. This sped up development while saving the team member working on it a lot of research for good learning resources.
+While Android has its own Location classes, the Play Services' API was chosen for its higher level abstraction and excellent learning resources. While Android only had the reference documents, Play Services' was accompanied by tutorials and getting started guides. This sped up development, saving the a lot of time researching for good learning resources. Making use of the LocationService and LocationManagers allowed the application to gather information from the device's GPS module or the next most accurate source of positional data. This was then stored in a LinkedHashMap. Using this data structure allowed the Location objects collected to be stored in a chronological order with their timestamp acting as each object's key. Parsing this information into JSON later in the upload process was trivial due to this structured approach at the data capture stage.
 
 \subsection{Main Development}
+\subsubsection{Application Restructure}
 With these prototypes and test applications complete and the advent of the new year, the previous codebase was scrapped in early January. This fresh slate streamlined any previously written code and allowed a rethink of the structure from previous plans. While the application was originally going to be a single activity which would dynamically change, research showed this to be completely wrong. An activity as defined in Android is:
 
 \blockquote{An Activity is an application component that provides a screen with which users can interact in order to do something, such as dial the phone, take a photo, send an email, or view a map. Each activity is given a window in which to draw its user interface. The window typically fills the screen, but may be smaller than the screen and float on top of other windows.}
 
-Taking this into consideration the app was broken into three key stages, a MapView, recording and upload activity. This separation of concerns made the code more readable and easily understood. As development continued and more external classes were used and while not activitys were included in the \'src\' directory it could be seen that, while three activitys was better than one, a lot of the code required for the three main views the user had of the app could be separated into their own \'.java\' files to make the code much easier to understand but by this point there was not enough development time to refactor the entire application.
+Taking this into consideration the app was broken into three key stages, a start screen, recording and upload activity. This separation of concerns made the code more readable and easily understood. As development continued and more external classes were used and while not activities were included in the \'src\' directory it could be seen that, while three activitys was better than one, a lot of the code required for the three main views the user had of the app could be separated into their own \'.java\' files to make the code much easier to understand but by this point there was not enough development time to refactor the entire application.
 
+PLACE UML DIAGRAM OF APPLICATION HERE
 
+\subsubsection{Modifications to Existing Features}
+To begin, the maps and location tracking features were extended. The ability to plot a recording’s path on a map was developed using the excellent Google Maps APIs documentation available. This was used on the final upload screen, giving a sense of the journey travelled. Improvements to time keeping were also attempted. The inclusion of an external Java library which could import SNTP time was hoped to be used. The Simple Network Time Protocol is designed for simplified access to nuclear time servers where sub-nanosecond accuracy is unnecessary. Ultimately due to time constraints and restrictions on modifying an Android device’s system time, the time from GPS was relied on. While less accurate still gave sub-millisecond accuracy which was satisfactory for our uses. In addition to retrieving time stamps and Latitude and Longitude, the Location object also offered the orientation of device. By passing all of this information along, it offered the project scope for stretch goals such as an immersive exploratory street view if development finished early.
 
+The MediaRecorder implementation was also modified to use AAC compression instead of the originally planned OGG. This offered higher quality audio fidelity while keeping a small file size for efficient upload to the web application.
 
+\subsubsection{Image Capture}
+As a modification of the original specification, the team had added capturing images as a must have requirement to allow the user to create a richer experience to share on the web application. As a core requirement of our application, this was the next feature to be implemented in MDRS Mobile. With Android there are two methods of capturing images within an application. An app can send an intent to the OS, taking the user to their default camera app with which they can take an individual image. The user will then be taken back into the original application with the image in hand. This simple approach is useful if capturing individual images. For MDRS Mobile this would be an unintuitive approach. Every time the user tried to take an image they would have to wait for the app to safely send the audio and location capture to an asynchronous background thread and then wait for the camera application to load. Depending on the device, this was found through testing to take anywhere between 2 and 10 seconds. To avoid this, the application uses a custom written ‘Camera Preview’ which allows a fragment to be embedded within the interface through which to see a device’s camera view. Surrounding this it was necessary to add a button to capture images. In initial implementations this was a separate button. This allowed for easier testing. A major problem found while putting this functionality in place was saving the file while still allowing the user to capture more images. The asynchronous thread dedicated to saving the file would become overloaded with requests to save. To solve the problem, while giving the user a visual indicator of successful image capture, a 3 second ‘freeze frame’ was put in place. This gave the thread enough time to save the image while letting the application continue capturing images at the user’s request. As development of features finished and UI/UX corrections were made a transparent ImageButton was placed over the camera preview and the visible button was removed. Users could tap anywhere on the screen while recording to take an image and continue their recording without interruption. This functionality is communicated to the user through an on screen prompt as they start recording.
 
+\subsubsection {Data Processing and Upload}
+Once the user has completed their recording, they are brought to the upload screen. Here all the information gathered is prepared and bundled for upload to the server, either manually or using the mobile connection/WiFi. The AAC audio file was sent uncompressed for processing by the server. The location data gathered and stored in the LinkedHashMap was stored in a JSON file for transfer. A title and description were also gathered for storage in a JSON file. This was done using the built in Java JSONArray functionality with the native FileWriter to write it on the device.
+(FOOTNOTE - ALL DATA WAS STORED IN AN INDIVIDUAL FOLDER WITHIN A MASTER MDRS FOLDER ON EXT. STORAGE DENOTED BY STARTTIME)
+With the high resolution of images being captured, compression was essential for transfer of these files. While Apache’s Common Compression appeared to be the most used library to create .tar.gz files, the team opted for JArchive. This library serves as a wrapper to Apache’s work, simplifying the creation of an archive significantly. Implementation of these JSON and archiving was quick due to the clarity of their associated documentation. While the libraries used were not the most feature complete, their simplicity was the key to faster development on an already tight schedule.
 
+With a ‘should have’ status, the ability to upload directly from the device was one of the final features to be implemented. After research, (INCLUDE LINK)Android Asynchronous Http Client was chosen. This library is used in applications ranging from online multiplayer games to Instagram. It is a great option for efficiently transferring data to and from servers from within an Android application. It’s continual development and widespread use made the support surrounding it easier to find. This again was easily implemented within the application, supporting direct upload from the application to the web app. Unfortunately the server side processing could not handle POST requests from the app. This was found out at an extremely late stage in development. Alternative implementations using (INCLUDE LINKS!!) Square’s okhttp and Retrofit libraries and Apache’s Java HttpClient were attempted to alleviate the issue. These offered no better results and with no time to refactor large sections of the Django back-end, this feature had to be left written but unsupported.
 
+\subsubsection{Aside}
+Another feature which the team tried to implement was background recording. To make a truly useful application, it would have to let the user conserve their battery life by being able to turn their screens off while still capturing audio and location. They could then reopen the app to capture images as and when they pleased. An extensive amount of development time was dedicated to this ‘should have’ feature. Unfortunately this was attempted in the middle of development and, again, time constraints limited the team’s ability to refactor large amounts of the application to make this work. Many parts would have needed completely rewritten. This feature was dropped in favour for completing the key requirements.
 
-MAPS IMPL HERE!!
+\subsubsection{Finishing Touches}
+With all the needed features implemented, the last development work required was refinement of the UI/UX. With the help of an external graphic designer, new graphics were produced for the recording button and a new logo was developed from the team’s original designs. Working with the XML layout files was a frustrating experience, requiring a lot of patience. To enhance the upload screen a gallery of the user’s captured images was implemented. This view was horizontally scrollable to allow the user to check all their images before upload. In the original prototypes, it was hoped the user could dismiss these with a swipe but this was unimplemented in the final application.
 
-Using Google's excellent documentation for their APIs and the various example
-applications on their developer's portal, the initial implementation of the maps
-was relatively simple. Making use of the LocationService abstract data type and
-using LocationManager allowed the application to gather information from the
-device's GPS module or the next most accurate source of positional data. This is
-then stored in a LinkedHashMap. Using this data structure allowed the Location
-objects collected from LocationService to be stored in a chronological order
-with their timestamp acting as each object's key. Parsing this information into
-JSON later in the upload process was trivial due to this structured approach at
-the data capture stage.
-
-\subsection{Application Structure}
-At this stage in development, the basis of what would form the application had been tested and was found to work roughly as expected. One aspect of development which had been unplanned was the structure and exact methods required for the Android application. These first few features were all in one main activity. An activity in Android is defined as (INSERT A BLOCK QUOTE FROM HERE:
-http://developer.android.com/guide/components/activities.html).
-
-REMEMBER TO TALK ABOUT STRUCTURE. HOW I TRIED TO MAKE IT ONE BIG ACTIVITY AND
-THEN BROKE IT INTO THREE SUPPORTED BY MULTIPLE CLASSES. IN FUTURE WOULD CHANGE
-THIS FURTHER TO BREAK ALL THE ACTIVITIES INTO SUB-ACTIVITIES EFFECTIVELY. BREAK
-FUNCTIONALITY OUT INTO THEIR OWN CLASSES.
-
-Google's Android tutorials served as an early touchstone in development,
-offering an understanding of an application's structure and layout in
-development. An early decision made was to askew the plan to use Google's
-Android Studio to use Eclipse with the ADT (Android Development Tools) plugin.
+Overall, the application met the must have requirements desired while offering an easy to use and attractive interface through which to use it.
 
 %==============================================================================
 \chapter{Evaluation}
@@ -858,7 +748,7 @@ Our success with Facebook as a means of communication was varied. Its IM service
 
 The Team's group page however was wholly unsucessful in our desired use case. The main point of weakness was the lack of chronological discourse of our messages. This meant you might have to scroll past a dozen posts to get yesterday's discussion just because it wasn't the most commented on post. The page's bloat UI also made it difficult to navigate with no search function to quickly find an old post quickly. While its feature which tells you who in the group has read the post was useful, the rest of the functionality was subpar.
 
-At the outset, Redmine was easy to set-up and seemingly simple to use. However it became quickly appaerent this tool sees it's uses in far bigger, more indepth projects. 
+At the outset, Redmine was easy to set-up and seemingly simple to use. However it became quickly appaerent this tool sees it's uses in far bigger, more indepth projects.
 Redmine allows for depth and breadth for a large scale software solution. It's built in wiki, GitHub intergration, news feature and outstandingly detailed issue tracking were simply overcomplicated and bloated for our uses.
 The team used the platform for at least a month, religiously creating issues correctly and handing them out. It was only after a large number (at least 60) issues with sub issues were created that it became blindingly obvious Redmine was simply dragging the entire project back.
 A second, large, issue was simply the disconnection from GitHub. Redmine boasts a GitHub intergration, however this is little more than an output of the latest commits and a diff view; offering none of the excellent tools and views GitHub offers.
