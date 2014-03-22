@@ -75,10 +75,28 @@ To fully understand this dissertation, the following knowledege would be benefic
 \chapter{Research}
 \label{Research}
 
-With the idea of the potential for MDRS, it was key for the team to research key features and tools they hoped to integrate into the project and to find things that would fit well into our imagined product.
+At the very early stages of research it was decided to split the project into two seperate parts, the web application and the mobile application. This decision was come to by researching pre-existing mobile applications such as foursquare; it was found that the end users experience can be greatly enhanced with the inclusion of a web application to accompany the mobile side. This would also allow a greater number of features to be incorporated into the project, for were we to have just the mobile application with all the features intended for the web application it could lead to a user interface far too cluttered and complicated to be navigated effectively by the end user.
 
-\section{Technologies}
-\subsection{Timeline}
+We also all agreed this would help make the distribution of work flow more effectively. On the other hand it was recognised that it could lead to a greater amount of work to be taken on by the group to complete these two applications. However everyone was enthusiastic about making this extra effort in order to make a more rounded and complete final product. 
+
+For the recordings taken by the mobile application to be represented as clearly as possibile on the web application we consulted as a group as well as with our project supervisor, it was decided that each recording would have to be represented in both time and space. To do this as effectively as possible, it was agreed visual aids would be the clearest way to represent this information. So the use of a map view was decided to represent the recordings spatially and a timeline to represent them chronologically. 
+
+With the idea of the potential for MDRS, it was essential for the team to research key features and tools that we hoped to integrate into the project and to find things that would fit well into our imagined product, the following sections outline each technology that was researched and how we came to the final decision of the technology that was used. 
+
+\section{Map}
+OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as Leaflet, the potential was excellent. It’s downfall lay in the fact that we would have to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
+
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.75\textwidth]{images/openstreetmap_google-map.jpg}
+\caption{OpenStreetMap (left) Google Map (right)}
+\end{figure}
+
+Google Maps was seen as an strong alternative. While it was not open source, it offered comparative quality. A weakness found in the limitations set on the free use of the API. It was discovered that after the obtaining of an API key however we would have access to 25,000 user visits a month. It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
+
+Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use as well.
+
+\section{Timeline}
 The use of a timeline of recordings was central to MDRS' interation conceit. TimelineJS offered an attractive UI populated with clear boxes for each event that when clicked on, centred the timeline to that element and associated metadata would be displayed above it. It was found to be effective in clearly communicating the difference between recordings, portraying a vertical line on the timeline for each event. The metadata view above the timline, while unnecessary for the front page, would be crucial for the user's profile view. Importantly for MDRS, this timeline is also well supported on mobile devices.
 
 \begin{figure}[ht!]
@@ -92,21 +110,7 @@ Another timeline that was researched was the SIMILIE Timeline, developed by MIT.
 After a comparison TimelineJS was chosen due to its ease of use for the end user and its attractive user interface which was deemed a more important feature than greater customisability. Also the compatability issues of the SIMILIE timeline could have caused problems further down the line, which we may not have been able to resolve.
 
 
-\subsection{Map}
-OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as Leaflet, the potential was excellent. It’s downfall lay in the fact that we would have to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
-
-\begin{figure}[ht!]
-  \centering
-\includegraphics[width=0.75\textwidth]{images/openstreetmap_google-map.jpg}
-\caption{OpenStreetMap (left) Google Map (right)}
-\end{figure}
-
-Google Maps was seen as an strong alternative. While it was not open source, it offered comparative quality. A weakness found in the limitations set on the free use of the API. It was discovered that after the obtaining of an API key however we would have access to 25,000 user visits a month. It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
-
-Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use as well.
-
-
-\subsection{Front-End Web Framework}
+\section{Front-End Web Framework}
 PureCSS is described on its website as,
 
 \blockquote{“A set of small, responsive CSS modules that you can use in every web project.”}
@@ -118,7 +122,7 @@ Twitter's Bootstrap framework appeared to be a more complete solution. It provid
 PureCSS was chosen in the end as it was far more lightweight and met our simple requirements. It gave a solid foundation on which to build our website from. Although Bootstrap is powerful it would have complicated our application unnecessarily.
 
 
-\subsection{Audio Playback}
+\section{Audio Playback}
 Buzz is a JavaScript library that utilises the HTML5 audio element. This library worked well grouping multiple audio files together and playing them simultaneously.
 
 JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface.
@@ -390,16 +394,9 @@ In this chapter, we describe how the implemented the system.
 
 \subsection{User Interface}
 
-When developing the User Interface we chose to use PureCSS for reasons
-discussed in the research section.
+When developing the User Interface we chose to use PureCSS for reasons discussed in the research section.
 
-It was the aim when approaching the User Interface to try and achieve
-a consistent colour scheme and layout to make it as easy to use for
-the end user as possible. Any unnecessary buttons were removed and
-functionality was designed to be as intuitive as we could make it, as
-opposed to lots of options.
-
-
+It was the aim when approaching the User Interface to try and achieve a consistent colour scheme and layout to make it as easy to use for the end user as possible. Any unnecessary buttons were removed and functionality was designed to be as intuitive as we could make it, as opposed to lots of options.
 
 \begin{figure}[ht!]
 \centering
@@ -409,236 +406,116 @@ opposed to lots of options.
 
 \subsubsection{Navigation Menu}
 
-The navigation menu came as a layout on the PureCSS website, it was
-decided by the group that opposed to trying to create what has already
-been created. We would use this layout and put our efforts into other
-areas instead. Earlier on in the development all the UI controls were
-located within the Navigation Menu, however it became quickly apparent
-that this would leave it massively cluttered. So the controls for the
-map were relocated to a separate box, and a button opening the box on
-the page was located in the Navigation Menu.
+The navigation menu came as a layout on the PureCSS website, it was decided by the group that opposed to trying to create what has already been created. We would use this layout and put our efforts into other areas instead. Earlier on in the development all the UI controls were located within the Navigation Menu, however it became quickly apparent that this would leave it massively cluttered. So the controls for the map were relocated to a separate box, and a button opening the box on the page was located in the Navigation Menu.
+
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.15\textwidth]{images/nav-bar.jpg}
 \caption{Navigation Bar}
 \end{figure}
-=======
-map were relocated to a separate control box, and a button opening the box on
-the page was located in the Navigation Menu. This menu also utilizes django's
-user authentication system, so that if a user is logged in there username is
-displayed on the menu item that would otherwise be named user. The current
-page is also highlighted in the navigation menu, so as to cause the least
-amount of confusion to the user. There is a button that allows the timeline to
-be hidden, just in case more space is required due to smaller screens or just to
-tidy it up.
->>>>>>> 4945247cbc128907a4986bbd12704fb038e19275
+
+map were relocated to a separate control box, and a button opening the box on the page was located in the Navigation Menu. This menu also utilizes django's user authentication system, so that if a user is logged in there username is displayed on the menu item that would otherwise be named user. The current page is also highlighted in the navigation menu, so as to cause the least amount of confusion to the user. There is a button that allows the timeline to be hidden, just in case more space is required due to smaller screens or just to tidy it up.
 
 \subsubsection{Control Box}
-The control box is separated into three logical sections; Select in
-range, Audio controls, Search. If the Start Date is left blank within
-Select in range it is assumed that all dates prior to the End Date are
-desired. The opposite is true for End Date; and if both dates are left
-blank all are selected. To create options for this could lead to a
-more complicated UI though it proved unnecessary as this was intuited
-by most people during testing.
 
-JQuery Datepicker was used as the User Interface for selecting a date,
-the colours were also edited to give a more consistent, and integrated
-feel to selecting a date. Originally when a date was selected it came
-up in the American format, though this was easily changed by modifying
-the setting at initialisation.
+The control box is separated into three logical sections; Select in range, Audio controls, Search. If the Start Date is left blank within Select in range it is assumed that all dates prior to the End Date are desired. The opposite is true for End Date; and if both dates are left blank all are selected. To create options for this could lead to amore complicated UI though it proved unnecessary as this was intuited by most people during testing.
 
-It was decided to use JQuery Timepicker for selecting a time, this was
-not integrated initially, however it was quickly realised that
-datepicker on it's own was not much use for selecting recordings at a
-similar time as it was far too wide a margin.
+JQuery Datepicker was used as the User Interface for selecting a date, the colours were also edited to give a more consistent, and integrated feel to selecting a date. Originally when a date was selected it came up in the American format, though this was easily changed by modifying the setting at initialisation.
+
+It was decided to use JQuery Timepicker for selecting a time, this was not integrated initially, however it was quickly realised that datepicker on it's own was not much use for selecting recordings at a similar time as it was far too wide a margin.
+
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.35\textwidth]{images/ctrl-box.jpg}
 \caption{Control Box}
 \end{figure}
-=======
-It was decided to use JQuery Timepicker for selecting a time, this
-timepicker has a similar appearance to that of the timepicker on google
-calendar this was not integrated initially, however it was quickly
-realised that the datepicker on it's own was not much use for selecting
-recordings at a similar time as it was far too wide a margin.
->>>>>>> 4945247cbc128907a4986bbd12704fb038e19275
+
+It was decided to use JQuery Timepicker for selecting a time, this timepicker has a similar appearance to that of the timepicker on google calendar this was not integrated initially, however it was quickly realised that the datepicker on it's own was not much use for selecting recordings at a similar time as it was far too wide a margin.
 
 \subsubsection{Recording Box}
-This box displays the meta data associated with the recording that has
-been clicked. The colours chosen were picked to fit as closely with
-the sites theme as much as possible. If the description is too long to
-fit into to the description box it displays a custom  scroll bar. It
-should work in most modern browsers though degrades gracefully if it
-is not the supported. There are a number of buttons in this box each with
-a separate purpose. The first three are audio controls for "Play",
-"Pause" and "Stop"; they utilize buzz for playing the recording
-associated with the record currently loaded in the box. The next button
-is "View Pictures" which loads the Picture Box with the images for that
-record.
+
+This box displays the meta data associated with the recording that has been clicked. The colours chosen were picked to fit as closely with the sites theme as much as possible. If the description is too long to fit into to the description box it displays a custom  scroll bar. It should work in most modern browsers though degrades gracefully if it is not the supported. There are a number of buttons in this box each with a separate purpose. The first three are audio controls for "Play", "Pause" and "Stop"; they utilize buzz for playing the recording associated with the record currently loaded in the box. The next button is "View Pictures" which loads the Picture Box with the images for that record.
 
 \subsubsection{Picture Box}
-The Picture box was kept as simple as possible with next and previous
-buttons the same as the rest of the buttons in the user interface,
-this box displays all the images associated with a recording. It uses
-SlidesJS which is a plug-in for JQuery that allows you to view images
-in a slideshow format.
 
-
+The Picture box was kept as simple as possible with next and previous buttons the same as the rest of the buttons in the user interface, this box displays all the images associated with a recording. It uses SlidesJS which is a plug-in for JQuery that allows you to view images in a slideshow format.
 
 \subsection{Map}
 
 When creating
-=======
 
 \subsubsection{Map API}
 
-The map API that was decided upon as discussed in the research section
-was Google Maps.
+The map API that was decided upon as discussed in the research section was Google Maps.
 
-The Google Maps API was used extensively throughout the development of
-the home page with many of the Javascript classes and objects used. On
-the Google Maps API website there was many examples given showing how
-these could be used, these resources were invaluable during the
-development process, especially during the early development process
-allowing rough prototypes of certain features to be created with very
-little trouble.
+The Google Maps API was used extensively throughout the development of the home page with many of the Javascript classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble.
 
 In order to create an instance of the map the class that was used was:
 \begin{verbatim}
 google.maps.Map
 \end{verbatim}
-There was very little that had to be changed in the code from the
-simple example provided on the Google Maps website in order to create
-the instance of the map, during the entire development
-process. Bearing testimony to the simplicity provided from using this
-API. There was only a few changes that were made to the way the map
-appeared, such as removing certain UI elements that come with the map
-as a standard. For example it was decided to remove "pegman" as we
-would not be incorporating street view into our product and his
-presence could prove to be an unnecessary distraction. This was done
+There was very little that had to be changed in the code from the simple example provided on the Google Maps website in order to create the instance of the map, during the entire development process. Bearing testimony to the simplicity provided from using this API. There was only a few changes that were made to the way the map appeared, such as removing certain UI elements that come with the map as a standard. For example it was decided to remove "pegman" as we would not be incorporating street view into our product and his presence could prove to be an unnecessary distraction. This was done
 using the object:
 \begin{verbatim}
 google.maps.MapOptions
 \end{verbatim}
 With the variables contained inside being set to the desired values.
 
-After having created an instance of the map and it was styled
-correctly, we were then able to receive the bounds of the map
-displayed on the screen. this was called using the method:
+After having created an instance of the map and it was styled correctly, we were then able to receive the bounds of the map displayed on the screen. this was called using the method:
 \begin{verbatim}
 getBounds()
 \end{verbatim}
-on the map object. This was important as from this we were then able to query our
-database using JQuery (this method will be covered in a the JQuery
-section) and receive from the database only the recordings that would
-be currently visible on the timeline. For were we not able to receive
-the bounds of the map and just all the recordings were returned, this
-would prove a serious problem in scalability.
+on the map object. This was important as from this we were then able to query our database using JQuery (this method will be covered in a the JQuery section) and receive from the database only the recordings that would be currently visible on the timeline. For were we not able to receive the bounds of the map and just all the recordings were returned, this would prove a serious problem in scalability.
 
-These recordings were then plotted on the map by creating multiple
-instances of:
+These recordings were then plotted on the map by creating multiple instances of:
 \begin{verbatim}
 google.maps.Marker
 \end{verbatim}
-i.e. one for each recording. These markers must be created using this
-object:
+i.e. one for each recording. These markers must be created using this object:
 \begin{verbatim}
 google.maps.LatLng
 \end{verbatim}
-This is the latitude and longitude of the marker, which is created
-using the data that has been returned from the database. The data that
-is used to create this object is the latitude and longitude of the
-recording when it first started.
-We decided to use a custom icon for the default marker to give a more
-consistent theme, also in order to differentiate between non-selected
-and selected markers a separate custom selected marker was used. This
-was done by creating the object:
+This is the latitude and longitude of the marker, which is created using the data that has been returned from the database. The data that is used to create this object is the latitude and longitude of the recording when it first started. We decided to use a custom icon for the default marker to give a more consistent theme, also in order to differentiate between non-selected and selected markers a separate custom selected marker was used. This was done by creating the object:
 \begin{verbatim}
 google.maps.Icon
 \end{verbatim}
 and passing it into the Marker class upon instantiation.
 
-The behaviour of the markers had to be defined manually this was done
-using JavaScript such behaviour was if the map was panned and a
-recording fell outwith the bounds of the current view then this pin
-would be removed, and then added back in again if it is brought back
-in again to view. It was an initial requirement that support for the
-\"selection\" of multiple recordings must be incorporated into the map
-so that these recordings can then be played back in sync. What was
-written allowed a pin to remain selected even if it was not currently
-in the view of the map. In other words when a pin is selected it is
-saved in memory until such time as it is deselected.
+The behaviour of the markers had to be defined manually this was done using JavaScript such behaviour was if the map was panned and a recording fell outwith the bounds of the current view then this pin would be removed, and then added back in again if it is brought back in again to view. It was an initial requirement that support for the "selection" of multiple recordings must be incorporated into the map so that these recordings can then be played back in sync. What was written allowed a pin to remain selected even if it was not currently in the view of the map. In other words when a pin is selected it is saved in memory until such time as it is deselected.
 
-Originally the google maps infoWindow was used to display the metadata
-to the user defined in the API as:
+Originally the google maps infoWindow was used to display the metadata to the user defined in the API as:
 \begin{verbatim}
 google.maps.InfoWindow
 \end{verbatim}
-however in the late stages of development this approach proved to be
-inflexible as any minor changes to the appearance or positioning of
-these infoWindow’s would prove to be overly complicated, for that
-reason it was decided that when a marker was clicked there should be a
-separate div component opened as shown in fig ?. Which in the long run
-would hopefully save time and have a more refined appearance.
+however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these infoWindow’s would prove to be overly complicated, for that reason it was decided that when a marker was clicked there should be a separate div component opened as shown in fig ?. Which in the long run would hopefully save time and have a more refined appearance.
 
-There was little debate as to how routes would be displayed on the map
-as the only two options were to use:
+There was little debate as to how routes would be displayed on the map as the only two options were to use:
 \begin{verbatim}
 google.maps.Polyline
 \end{verbatim}
-and the Google Maps Directions Service. However the Directions Service
-could only make use of roads and paths, which quickly brings up
-problems, for example if a recording is made inside a building or if a
-route is incomplete on google maps. Polylines take an array of
-latitude and longitude objects to create it along with any styling of
-the line, this allows for a very accurate trace of the route taken,
-even in unorthodox areas that may crop up; with a styling that can be
-made to fit the theme of the website.
+and the Google Maps Directions Service. However the Directions Service could only make use of roads and paths, which quickly brings up problems, for example if a recording is made inside a building or if a route is incomplete on google maps. Polylines take an array of latitude and longitude objects to create it along with any styling of the line, this allows for a very accurate trace of the route taken, even in unorthodox areas that may crop up; with a styling that can be made to fit the theme of the website.
 
 \subsubsection{Geolocation}
 
-Getting the end users current location in order to use it as a
-reference point for centering the map and displaying it with a blue
-dot when they open up the webapp was achieved comparatively easily
-with the use of the W3C Geolocation API with only a few lines of code
-we were able to track the users current position by first checking to
-see if the browser supports it (Which most modern browsers do) then if
-so; create a new marker anchoring it at their location.
+Getting the end users current location in order to use it as a reference point for centering the map and displaying it with a blue dot when they open up the webapp was achieved comparatively easily with the use of the W3C Geolocation API with only a few lines of code we were able to track the users current position by first checking to see if the browser supports it (Which most modern browsers do) then if so; create a new marker anchoring it at their location.
 \begin{verbatim}
 navigator.geolocation.getCurrentPosition()
 \end{verbatim}
 
 \subsection{JQuery}
-JQuery only began to be fully used in the later stages of development,
-this was largely due to having very little experience in it's uses
-for development. However after completing a few basic tutorials on the
-codeacademy website. It quickly became apparent how it could be used
-to effectively and easily aid in the creation of an interactive
-environment for the user.
+JQuery only began to be fully used in the later stages of development, this was largely due to having very little experience in it's uses for development. However after completing a few basic tutorials on the codeacademy website. It quickly became apparent how it could be used to effectively and easily aid in the creation of an interactive environment for the user.
 
-The behaviour of the boxes including dragging, animations and visibility
-in the User Interface are all controlled using JQuery. The inclusion of
-JQuery to do this proved to be a great addition requiring very few
-lines of code and little time in order to greatly enhance the end user
-experience.
+The behaviour of the boxes including dragging, animations and visibility in the User Interface are all controlled using JQuery. The inclusion of
+JQuery to do this proved to be a great addition requiring very few lines of code and little time in order to greatly enhance the end user experience.
 
 \subsection{Integration}
 
-During the late stages of development there was a period of many months
-where it was seeming impossible to integrate the timeline onto the same
-page as the map. Thankfully however the problem was found to be with the
-use of conflicting JQuery requests between the timeline and the
-map. These get requests were:
+During the late stages of development there was a period of many months where it was seeming impossible to integrate the timeline onto the same page as the map. Thankfully however the problem was found to be with the use of conflicting JQuery requests between the timeline and the map. These get requests were:
 \begin{verbatim}
 $.getJSON()
 $.get()
 \end{verbatim}
-Once this issue was found, there also proved to be a conflict withing
-google maps aswell, and maps had to be removed from the timeline in
-order to allow for full integration.
-
+Once this issue was found, there also proved to be a conflict withing google maps aswell, and maps had to be removed from the timeline in order to allow for full integration.
 
 \subsection{Timeline (Implementation)}
 
