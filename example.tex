@@ -4,10 +4,75 @@
 \usepackage{csquotes}
 \usepackage{glossaries}
 
-\newglossaryentry{jquery}
+\newglossaryentry{JQuery}
 {
 	name=JQuery,
-	description={A free and open source JavaScript library that is used by Web developers to navigate HTML documents, handle events, perform animations and add AJAX interactions to Web pages}
+	description={A free and open source JavaScript library that is used by Web developers to navigate HTML documents, handle events, perform animations and add \gls{AJAX} interactions to Web pages}
+}
+\newglossaryentry{HTML}
+{
+	name=HTML,
+	description={HyperText Markup Language, the authoring language used to create documents on the World Wide Web.}
+}
+\newglossaryentry{CSS}
+{
+	name=CSS,
+	description={Short for Cascading Style Sheets, a new feature being added to HTML that gives both Web site developers and users more control over how pages are displayed}
+}
+\newglossaryentry{Python}
+{
+	name=Python,
+	description={An interpreted, object-oriented programming language developed by Guido van Rossum.}
+}
+\newglossaryentry{Javascript}
+{
+	name=JavaScript,
+	description={A scripting language developed by Netscape to enable Web authors to design interactive sites.}
+}
+\newglossaryentry{Leaflet}
+{
+	name=Leaflet,
+	description={A modern open-source JavaScript library for mobile-friendly interactive maps.}
+}
+\newglossaryentry{API}
+{
+	name=API,
+	description={Application Program Interface, is a set of routines, protocols, and tools for building software applications. }
+}
+\newglossaryentry{Django}
+{
+	name=Django,
+	description={A free and open source web application framework, written in Python, which follows the model–view–controller architectural pattern.}
+}
+\newglossaryentry{MySQL}
+{
+	name=MySQL,
+	description={MySQL is an open source relational database management system that relies on SQL for processing the data in the database.}
+}
+\newglossaryentry{Git}
+{
+	name=Git,
+	description={A distributed revision control and source code management system with an emphasis on speed.}
+}
+\newglossaryentry{PIP}
+{
+	name=PIP,
+	description={A package management system used to install and manage software packages written in Python}
+}
+\newglossaryentry{Ubuntu}
+{
+	name=Ubuntu,
+	description={A community-developed Linux-based operating system that can be used on desktops, laptops and servers.}
+}
+\newglossaryentry{W3C}
+{
+	name=W3C,
+	description={World Wide Web Consortium, an international consortium of companies involved with the Internet and the Web.}
+}
+\newglossaryentry{AJAX}
+{
+	name=AJAX,
+	description={Asynchronous JavaScript and XML, it is a term that describes a new approach to using a number of existing technologies together.}
 }
 
 \makeglossaries
@@ -54,9 +119,9 @@ A web application will allow users to explore the recordings uploaded in an inte
 \section{Background}
 Mobile was an interest in many of the team members and a trending sector in the technology industry. These devices have surpassed the use of computers in the home and are of particular interest to User Interface/User Experience designers. Their screen sizes, use cases and interaction models are very different to traditional devices and developers are constantly finding new innovations in this field. With the proliferation of wearable devices such as smartwatches with arrays of sensors embedded, finding new use cases are an area of interest.  Android’s support for varied screen sizes and device types gives the team a welcome technical challenge while making use of our existing knowledge of Java.
 
-Designing for the web incorporates numerous disciplines and a good foundation in a number of syntaxes. This makes for a steep learning curve but by leveraging previous experience and through other coursework undertaken throughout the year, acquisition of the required skills becomes much easier. To build a lightweight web client means leveraging core web technologies such as HTML and CSS to their fullest to improve the user’s experience as much as possible while keeping the application lean and fast. Where needed Javascript is used to add more dynamic features desired to the project.
+Designing for the web incorporates numerous disciplines and a good foundation in a number of syntaxes. This makes for a steep learning curve but by leveraging previous experience and through other coursework undertaken throughout the year, acquisition of the required skills becomes much easier. To build a lightweight web client means leveraging core web technologies such as \gls{HTML} and \gls{CSS} to their fullest to improve the user’s experience as much as possible while keeping the application lean and fast. Where needed \gls{Javascript} is used to add more dynamic features desired to the project.
 
-Deploying a web application can be done in many different ways with innumerable frameworks and tools available to use. Again, hoping to use pre-existing skills we researched and hoped to use a Python based framework as the basis for MDRS’ backend.  The language's versatility made it an ideal choice while not adding to the heavy workload the project demanded with another new language to learn.
+Deploying a web application can be done in many different ways with innumerable frameworks and tools available to use. Again, hoping to use pre-existing skills we researched and hoped to use a \gls{Python} based framework as the basis for MDRS’ backend.  The language's versatility made it an ideal choice while not adding to the heavy workload the project demanded with another new language to learn.
 
 Today in the market, very few systems similar to MDRS can be found for use. Services such as Soundcloud or Audioboo allow the user to easily record audio and upload it to a website for sharing but beyond that offer limited functionality. These both heavily focus on the social interaction around each recording. Software such as Audacity would allow the user to manually stitch the audio together but this process is technical and time consuming.
 
@@ -66,7 +131,7 @@ The only product that matches more of MDRS’ aims is Broadcastr. A New York Cit
 To fully understand this dissertation, the following knowledege would be beneficial:
 \begin{itemize}
 \item A basic understanding of the construction of an Android application
-\item A basic understanding of how Django projects function
+\item A basic understanding of how \gls{Django} projects function
 \item Syntactic understanding of Java, Javascript and Python
 \item Willingness to follow the links to the various resources used as part of MDRS
 \end{itemize}
@@ -113,7 +178,7 @@ With the idea of the potential for MDRS, it was essential for the team to resear
 
 \subsection{Map}
 
-OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as Leaflet, the potential was excellent. It’s downfall lay in the fact that we would have to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
+OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as \gls{Leaflet}, the potential was excellent. It’s downfall lay in the fact that we would have to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
   \centering
@@ -121,7 +186,7 @@ OpenStreetMap was thoroughly researched. It's open source roots and excellent le
 \caption{OpenStreetMap (left) Google Map (right)}
 \end{figure}
 
-Google Maps was seen as an strong alternative. While it was not open source, it offered comparative quality. A weakness found in the limitations set on the free use of the API. It was discovered that after the obtaining of an API key however we would have access to 25,000 user visits a month. It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
+Google Maps was seen as an strong alternative. While it was not open source, it offered comparative quality. A weakness found in the limitations set on the free use of the \gls{API}. It was discovered that after the obtaining of an API key however we would have access to 25,000 user visits a month. It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
 
 Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use as well.
 
@@ -278,7 +343,7 @@ All communication amongst the team will be transparent and visible to all. The t
 
 For more indepth organisation we have set up a Redmine instance; this will allow us to keep track of our project, keep up with issues, track bugs, keep a wiki and assign roles/jobs. This is the project management system where we are going to record minutes of meetings as well as important discussions and decision.
 
-We have decided to use Git for version control as it’s a fantastic, free platform for multiple concurrent users working on a single project. We can also track this Git project via Redmine and keep the whole team up to date.
+We have decided to use \gls{Git} for version control as it’s a fantastic, free platform for multiple concurrent users working on a single project. We can also track this Git project via Redmine and keep the whole team up to date.
 
 Also available is a shared team Dropbox for backup purposes. We will also use Google Drive’s collaborative documents feature when working on our dissertation and other hand-ins.
 
@@ -585,7 +650,7 @@ In this chapter, we describe how the implemented the system.
 
 \subsubsection{Server Configuration}
 Being granted use of a university server, the team had a server to base all of their work off of. One team member was given the task to set-up and maintain the server.
-Set-up was a simple case of installing the necessary packages from the Ubuntu repositories such as Git, Python, Django, PIP, MySQL etc. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
+Set-up was a simple case of installing the necessary packages from the \gls{Ubuntu} repositories such as Git, Python, Django, \gls{PIP}, \gls{MySQL} etc. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
 This, having been completed, lead to cloning the team Git repository to the server. Some permissions teething problems were immediately encountered as some members could not edit files. However these were minor issues dealt with some basic configurations.
 Having the file set now on the server it was a simple case to initialise a database for the project and get it to a working state. However there was immediately an issue in that regular users could not host the server on port 80 (the standard port for HTTP requests and the server's only open port) without administrator privileges. This meant that each team member would need to login as our shared super user account to simply run the server; this slowed workflow and so a solution was devised. By manipulating the IP tables on the server, the team successfully managed to route port 8080 internally to port 80. Simply put this meant the team was fooling the server into thinking it was hosting harmlessly on port 8080 whereas it was getting rerouted, after the user invoked the command, to port 80. Exactly where the team needed the socket bound to.
 Later issues appeared as development continued, many of them minor issues such as the database needing reinitialised or the server rebooted and the IP tabled reconfigured. All issues were dealt with swiftly and with little to no impact to the development of the project.
@@ -623,7 +688,7 @@ This menu also utilizes Django's user authentication system, so that if a user i
 
 The control box is separated into three logical sections; "Select in Range", "Audio Controls" and "Search". To keep options to a minimum within this box proved to be a challenge. For example in the "Select Range" section if the start date is left blank it is assumed that all dates prior to the end date are desired. The opposite is true for end date if it is left blank; and if both dates are left blank all are selected. To create options for this in the box could lead to a more complicated UI though it proved unnecessary to do this as these features were intuited by most people during testing.
 
-JQuery Datepicker was used as the User Interface for selecting a date with great success, the colours were edited to give a more consistent, and integrated feel to selecting a date. Originally when a date was selected it came up in the American format, though this was easily changed by using the documentation provided with the JavaScript library on GitHub.
+\gls{JQuery} Datepicker was used as the User Interface for selecting a date with great success, the colours were edited to give a more consistent, and integrated feel to selecting a date. Originally when a date was selected it came up in the American format, though this was easily changed by using the documentation provided with the JavaScript library on GitHub.
 
 It was decided to use JQuery Timepicker for selecting a time, this timepicker has a similar appearance to that of the timepicker on Google calendar. It was not integrated in earlier versions, however it was quickly realised during testing that a datepicker on it's own was a fairly naive approach. Selecting recordings at a similar time by date alone was far too wide a margin for any practical use, as recordings on average were only a minute in length.
 
@@ -689,7 +754,7 @@ There was little debate as to how routes would be displayed on the map as the on
 
 \subsubsection{Geolocation}
 
-Getting the end users current location in order to use it as a reference point, for centering the map and displaying it with a blue dot when they open up the webapp was achieved comparatively easily. This was accomplished through the use of the W3C Geolocation API with only a few lines of code we were then able to track the users current position by first checking to see if the browser supports it (Which most modern browsers do) then if so; create a new marker anchoring it at their location.
+Getting the end users current location in order to use it as a reference point, for centering the map and displaying it with a blue dot when they open up the webapp was achieved comparatively easily. This was accomplished through the use of the \gls{W3C} Geolocation API with only a few lines of code we were then able to track the users current position by first checking to see if the browser supports it (Which most modern browsers do) then if so; create a new marker anchoring it at their location.
 
 \begin{verbatim}
 navigator.geolocation.getCurrentPosition()
