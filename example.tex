@@ -173,7 +173,7 @@ Plans in here will come in handy
 
 All team members will be developers working on the different facets of our wide ranging project. Some members may take preference to certain areas of the project but ultimately it is down to the scrum master, after consultation, to what each member will be working on at any one time.
 
-\subsection{Authority}Decisions in the group will be based on a democratic structure. Decisions shall firstly be discussed between the team members, either face to face or via one of our stated methods of communication. If we have a case where all team members agree on a given solution during discussion, there will be no need for a vote or further discussion. 
+\subsection{Authority}Decisions in the group will be based on a democratic structure. Decisions shall firstly be discussed between the team members, either face to face or via one of our stated methods of communication. If we have a case where all team members agree on a given solution during discussion, there will be no need for a vote or further discussion.
 
 If there is however a conflict between three or more members, the scrum master is to take control and a vote shall be cast and/or further discussion shall be held and led by the scrum master until a decision is made.
 
@@ -183,7 +183,7 @@ In case the conflict cannot be resolved by the steps taken as described above, w
 
 All communication amongst the team will be transparent and visible to all. The tools we have selected will hopefully facilitate this successfully.
 
-\subsection{Information Management}Our prefered methods of communication all keep logs of our conversations which allows us to review why we made decisions. In face to face meetings a secretary will take notes, so we can review our meetings and record how we have progressed through the development cycle. 
+\subsection{Information Management}Our prefered methods of communication all keep logs of our conversations which allows us to review why we made decisions. In face to face meetings a secretary will take notes, so we can review our meetings and record how we have progressed through the development cycle.
 
 For more indepth organisation we have set up a Redmine instance; this will allow us to keep track of our project, keep up with issues, track bugs, keep a wiki and assign roles/jobs. This is the project management system where we are going to record minutes of meetings as well as important discussions and decision.
 
@@ -322,8 +322,8 @@ The work continued as we divided the functional requirements into bite-sized sma
 \label{design}
 
 The core of our design sprung from early storyboarding and imagined user
-profiles which informed us extensively to what a possible system might look
-like. Each team member chose a different scenario which they thought MDRS could be used and created a visual aid to describe the user's experience as they interacted with it. As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
+profiles which informed us extensively on what a possible system might look
+like. Each team member chose a different scenario where they thought MDRS could be used and created a visual aid to describe the user's experience as they interacted with it. As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
 
 \begin{figure}[ht!]
 \centering
@@ -331,22 +331,15 @@ like. Each team member chose a different scenario which they thought MDRS could 
 \caption{An initial storyboard for MDRS.}
 \end{figure}
 
-The project's use in public safety was of particular interest to the team. MDRS could serve as an equaliser offering a non-invasive and non-threatening way for police officers to monitor their patrol. It could hold the officers and those they interact with accountable in a alternative way to current methods such as mounted video cameras.
+The project's use in public safety was of particular interest to the team. MDRS could serve as a non-invasive and non-threatening way for police officers to monitor their patrol. It could also hold those officers and those they interact with accountable in a alternative way to current methods such as mounted video cameras.
 
 Include another storyboard here {\bf bold}
 
-From our storyboards we realised that MDRS should be more than an audio recorder with location tracking. By allowing the user to capture images, we could combine these three sources of information into a virtual environment that other users could explore.
+From our storyboards we realised that MDRS should be more than an audio recorder with location tracking. By allowing the user to capture images, we could combine these three information sources into a virtual environment that other users could explore.
 
 \section{User Interface} The realisation that the project would be spread across
 both mobile and static devices raised the need for two interaction models for
-MDRS was found quickly. For capturing the various forms of data a mobile
-implementation was key. Android was quickly chosen as the frontrunner for its
-proliferation in the market, an expected ease of development due to its Java
-base, which much of the team had experience in, and access to test devices
-amongst the team. A web application counterpart was planned for the flexibility
-of web technologies which allowed a wide variety of devices and users to access
-this facet of the project rather than a native application for any given
-Operating System would.
+MDRS. For capturing the various forms of data a mobile implementation was key. The choice of Android was advantageous in the design stage as it has a flexible framework within which to design an application's interface compared to iOS which is much more restrictive in what is possible. A web counterpart served excellently as the best platform to portray any data collected. Visualising our complex data on a small device's screen would have been limiting. The internet meant we could take risks in how we communicated our ideas.
 
 \subsection{Web Application}
 
@@ -364,15 +357,7 @@ Operating System would.
 %Progress with the web application was steady, the back-end was actually a fairly simple affair in comparison to the front-end which was heavy with scripting.
 %Back-end scripting mostly involved getting the models to suit what was needed correctly, it took several trial and error attempts however once the team managed to work out the correct collection of models it was mostly left alone. The only real issue the team ran into was some of the audio formats in the later stages of the project. At the outset OGG was decided as the format to use as it had a great compression to quality ratio; however it was discovered that Android could not, in fact, encode audio to OGG directly. Since a majority of the web code had already been written a decision was made to simply take a format Android could encode in and then convert it to OGG upon upload to the server.
 
-Given the nature of MDRS, the team look to the
-Distributed Information Management course taught in second semester as a source
-of possible tools. Taught by Leif Azzopardi, the course is structured around the
-use of Django, a Python based web framework which would offer us the flexibility
-to create a rich, dynamic application easily deployable and widely available to
-possible users. Widely used, Django had a wide range of support materials
-available including Tango with Django written by Azzopardi and Glasgow
-University postgraduate David Maxwell. This resource and knowing we would have
-to learn it later through coursework made the framework choice an easy one.
+Given the nature of MDRS, the team looked to the Distributed Information Management course taught in second semester as a source of possible tools. The course is structured around the use of Django, a Python based web framework which we considered  would offer us the flexibility to create a rich, dynamic application easily deployable to possible users. Widely used, Django had a wide range of support materials available including Tango with Django written by Leif Azzopardi and Glasgow University postgraduate student David Maxwell. This resource and knowing we would have to learn it later through coursework made the framework choice an easy one.
 
 \begin{figure}[ht!]
 \centering
@@ -382,7 +367,7 @@ to learn it later through coursework made the framework choice an easy one.
 
 The key interaction between the user and MDRS is location therefore it made sense to make a map the central interface. The user would be able to explore the map and click on pins representing recordings. This would then project the path of the recording, indicating where images were captured along the way. Users could then play it back individually or select multiple recordings for synchronous playback. With such an important role, the choice of which mapping API to leverage was extensive in the early stages of the project.
 
-Initially the team were attracted to OpenStreetMap with the very lightweight Javascript library Leaflet. This would give us unlimited access, as the maps were open source, but would require us to host the map tiles which amounted to multiple gigabytes depending on the level of detail chosen. Other disadvantages were the additional difficulty in initial configuration and setup. Another option was Microsoft’s Bing maps which didn't require as much configuration but were more limited in their free level of access. As an alternative Google Maps was chosen for its simple API and reasonable access for free users. Ultimately is offered 100,000 map loads a month for free. We estimated for a typical user spending 15 minutes on the website that 4 map loads would be needed making this a workable figure for at least 25,000 user visits a month.
+Our choice of Google Maps was immediately found to be the correct one while prototyping our interface. The simple API made it easy to test out different styles of visualising recordings. To get these prototypes off the ground all the team needed to do was include the Javascript library in the HTML file. After multiple tests it was decided that a custom marker would mark the beginning of each recording. Once clicked on, this would trace the route of the recording, showing its terminus. While earlier approaches showed the paths all the time, this cluttered the interface. Another test tried having the map blank to begin with and only populate as the user chose their recordings from a list. This was found unengaging and the team felt users would lose interest without visual stimulation as soon as the page loaded.
 
 Alongside our use of maps, early on in development we prototyped a version which would incorporate Google's Street View. This would allow the user to follow a recording's location trail even more closely. By harvesting the orientation of the recording device we could show where they were looking, showing the Street View at that angle, and overlay any of the user's own images they captured on top of this. While this immersed the user even deeper into the recording, it was unfortunately not taken beyond this prototype stage due to the complexity of implementation.
 
@@ -392,9 +377,9 @@ Alongside our use of maps, early on in development we prototyped a version which
 \caption{An example of TimelineJS by KnightLab.}
 \end{figure}
 
-A second key component to this interface is the interactive timeline. This was hoped to show the length of each recording and where they overlapped. Upon clicking on one a dialog would show its metadata such as name, description, the user who captured it and accompanying images. Early prototypes also show the ability to move the current position of playback along the timeline to skip to different positions. This level of manipulation was simplified upon selection of TimelineJS which we used to construct it.
+A second key component to this interface is the interactive timeline. This was hoped to show the length of each recording and where they overlapped. Upon clicking on a recording, a dialog would show its metadata such as name, description, the user who captured it and accompanying images. Early prototypes also show the ability to move the current position of playback along the timeline to skip to different positions. This level of manipulation was simplified upon selection of TimelineJS which we used to construct it.
 
-Early web interface designs featured a prominent header bar and a floating menu panel which floated over the map. From early prototypes and wireframes this was realised to waste a lot of screen real estate, detracting from the reason the user was on the website. The header bar in particular became wasteful as the ability to search all recordings was downgraded in importance within the application. Through discussion in the team it was decided that users would more likely be interested in audio based on location (the key paradigm of MDRS) rather than searching through keyword. It gave us a stretch goal to aim for if development moved along smoothly. Upon research into interface frameworks the CSS library, PureCSS, was found as a replacement to create an engaging and simple menu interface. Its simplicity favoured our team's limited prior experience with web design and it’s accompanying documentation is excellent.
+Early web interface designs featured a prominent header bar and a floating menu panel which moved over the map. From early prototypes and wireframes this was realised to waste a lot of screen real estate, detracting from the reason the user was on the website. The header bar in particular became wasteful as the ability to search all recordings was downgraded in importance within the application. Through discussion in the team it was decided that users would more likely be interested in audio based on location (the key paradigm of MDRS) rather than searching through keyword. It gave us a stretch goal to aim for if development moved along smoothly. Upon research into interface frameworks the CSS library, PureCSS, was found as a replacement to create an engaging and simple menu interface. Its simplicity favoured our team's limited prior experience with web design and it’s accompanying documentation is excellent.
 
 \begin{figure}[ht!]
 \centering
@@ -410,13 +395,10 @@ service. Along with all the other tools mentioned, the foundations of our
 web application's interface were laid.
 
 \subsection{Android Application} It was decided early on to approach this
-element of the project realistically and define a simple set of requirements to
-make the application simpler to implement and make the user experience focused
-on the core of MDRS, capturing information from the world around us. This meant
-it was purely a capture and upload system and it wouldn't be an alternative to
-the desktop viewing interface for interaction with other user's recordings. Our
-focus made the application more achievable while leaving scope for extension in
-future development for these playback features.
+element of the project realistically and working from a simple set of requirements to
+make the application simple to implement. This would allow us to make the user experience focused on the core of MDRS, capturing information from the world around us. This meant it was purely a capture and upload system and it wouldn't be an alternative to the desktop viewing interface for interaction with other user's recordings. Our focus made the application more achievable while leaving scope for extension in future development for these playback features.
+
+To develop an engaging user interface on Android, the team looked for a scalable and intuitive design, drawing influence from a wide range of applications such as Foursquare, Snapchat and Google Play’s suite of applications. Google's Android Design Guidelines were consistently referred to throughout this process for inspiration.  Foursquare's integration of a map into a larger whole was seen as an excellent touchstone while Snapchat's unconventional, yet intuitive navigation model was seen as a strength of the application the team could borrow from. Google's applications portrayed the strength and beauty of clear typography and the undeniable rule of mobile design where less is more. Sources such as Android Niceties were also used to find innovative design that could help with MDRS. A utilitarian minimalism through design was the team's goal. The core functionality of the application was single use and the flow through it was clear, allowing for a relatively simple approach to be taken, finding a place for flair within the constructs the team placed on themselves.
 
 \begin{wrapfigure}{r}{0.35\textwidth}
 \begin{center}
@@ -425,40 +407,56 @@ future development for these playback features.
 \caption{Initial interface design}
 \end{wrapfigure}
 
-In developing an engaging user interface on Android devices, the team looked for
-a scalable and intuitive design drawing influence from a wide range of
-applications such as Foursquare, Snapchat and Google Play’s suite of
-applications while consistently referring to Google's Android Design Guidelines.
-Foursquare was looked to for its integration of a map into a larger whole while
-Snapchat's unconventional, yet intuitive navigation model was seen as a strength
-of the application while making an attractive UI. Google's applications
-portrayed the strength and beauty of clear typography and the undeniable rule of
-mobile design where less is often more. A utilitarian minimalism through design
-was the goal. The core functionality of the application was single use and the
-flow through it was clear allowing for a relatively simple approach to be taken,
-finding place for flair within the constructs the team placed on themselves.
-
-INSERT INITIAL DESIGN PROTOTYPE HERE
-
 This first UI design offers a split with both a map and view through the camera
 lens. The influence for the central record button came from Foursquare’s
 prominent placement of their check-in button, placing the key functionality
-centrally to draw attention. Downsides to this were its limitations across
+centrally to draw attention. The downsides to this were its limitations across
 smaller screens and a confusing interaction model. Could a user interact and
-capture an image before hitting record? This lack of clarity(dw) lead to a
+capture an image before hitting record? This lack of clarity lead to a
 revisionary second prototype.
 
-INSERT SECOND DESIGN PROTOTYPE HERE
+\begin{wrapfigure}{r}{0.35\textwidth}
+\begin{center}
+  \includegraphics[width=0.34\textwidth]{images/android-digital-prototype-2.jpg}
+\end{center}
+\caption{Initial interface design}
+\end{wrapfigure}
 
 This prototype drew more influence from Snapchat’s sliding interface, replacing
 its horizontal movement with a vertical one. Again showing the record button on
 the divide between a map and camera view, once the record was initiated the map
 would slide up bringing up the camera view which would reveal from behind a
 frosted glass effect the user's view into the world they were recording,
-prompting them to capture images. This was found very visually appealing and
-ended up mostly being used in the final application.
+prompting them to capture images.
 
+While these both informed the team in the direction of the application's design some aspects such as the sliding divide between map and camera were removed to accomodate a clearer path the user could follow through the application while simplifying the implementation required.
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{android-home-view.jpg}
+\caption{Final design prototype}
+\label{overflow}
+\end{figure}
+
+This final design exudes simplicity with a single actionable button on the main view. This was to allow MDRS to blend even more into the background. The application's aim was to capture its surroundings while reducing the user's interaction with their device to a minimum. The map would automatically centre on the current location and indicate the user's orientation. Briefly the team considered if the map would rotate to match the orientation but it was felt an unfamiliar perspective on a map traditionally viewed oriented north could confuse. It was decided the marker's directionality would be enough of a suggestion.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{android-recording-view.jpg}
+\caption{Recording view of final prototype}
+\label{overflow}
+\end{figure}
+
+When the record button was pressed the entire screen would transistion to this view. Every detail was included to inform the user of the application's intent and current state. A brief notification would alert the user that they could capture images by clicking on the viewfinder. A soundwave visualisation demonstrated that audio was being captured and the map on the previous screen was intended to make the user aware that they position was being followed.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{android-upload-view.jpg}
+\caption{Final upload view prototype}
+\label{overflow}
+\end{figure}
+
+Finally the upload screen informed them of their path through the map view. The option was then given to define their recording with metadata such as a title, description and tags. These three separate views informed the final implementation extensively and aimed to create an intuitive experience for the user.
 %==============================================================================
 \chapter{Implementation}
 \label{impl}
@@ -466,6 +464,22 @@ ended up mostly being used in the final application.
 In this chapter, we describe how the implemented the system.
 
 %------------------------------------------------------------------------------
+\subsection{Server and Django configuration}
+
+\subsubsection{Server Configuration}
+Being granted use of a university server, the team had a server to base all of their work off of. One team member was given the task to set-up and maintain the server.
+Set-up was a simple case of installing the necessary packages from the Ubuntu repositories such as Git, Python, Django, PIP, MySQL etc. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
+This, having been completed, lead to cloning the team Git repository to the server. Some permissions teething problems were immediately encountered as some members could not edit files. However these were minor issues dealt with some basic configurations.
+Having the file set now on the server it was a simple case to initialise a database for the project and get it to a working state. However there was immediately an issue in that regular users could not host the server on port 80 (the standard port for HTTP requests and the server's only open port) without administrator privileges. This meant that each team member would need to login as our shared super user account to simply run the server; this slowed workflow and so a solution was devised. By manipulating the IP tables on the server, the team successfully managed to route port 8080 internally to port 80. Simply put this meant the team was fooling the server into thinking it was hosting harmlessly on port 8080 whereas it was getting rerouted, after the user invoked the command, to port 80. Exactly where the team needed the socket bound to.
+Later issues appeared as development continued, many of them minor issues such as the database needing reinitialised or the server rebooted and the IP tabled reconfigured. All issues were dealt with swiftly and with little to no impact to the development of the project.
+
+\subsubsection{Django Configuration}
+Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boiler plate, as in it is uniform across many applications with little custom settings.
+The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing Python files.
+The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
+The configuration involved in this was minimal, simply using the manage script the team created the web app partition and began work straight away.
+As development continued only minor edits had to be made to the settings of the project. One key edit made was to include the session cookie plugin to allow users to log in and maintain their sessions correctly.
+
 \section{Web Application}
 
 %Intro?
@@ -679,21 +693,7 @@ During development there were several occasions in which the models had to be ed
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-\subsection{Server and Django configuration}
 
-\subsubsection{Server Configuration}
-Being granted use of a university server, the team had a server to base all of their work off of. One team member was given the task to set-up and maintain the server.
-Set-up was a simple case of installing the necessary packages from the Ubuntu repositories such as Git, Python, Django, PIP, MySQL etc. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
-This, having been completed, lead to cloning the team Git repository to the server. Some permissions teething problems were immediately encountered as some members could not edit files. However these were minor issues dealt with some basic configurations.
-Having the file set now on the server it was a simple case to initialise a database for the project and get it to a working state. However there was immediately an issue in that regular users could not host the server on port 80 (the standard port for HTTP requests and the server's only open port) without administrator privileges. This meant that each team member would need to login as our shared super user account to simply run the server; this slowed workflow and so a solution was devised. By manipulating the IP tables on the server, the team successfully managed to route port 8080 internally to port 80. Simply put this meant the team was fooling the server into thinking it was hosting harmlessly on port 8080 whereas it was getting rerouted, after the user invoked the command, to port 80. Exactly where the team needed the socket bound to.
-Later issues appeared as development continued, many of them minor issues such as the database needing reinitialised or the server rebooted and the IP tabled reconfigured. All issues were dealt with swiftly and with little to no impact to the development of the project.
-
-\subsubsection{Django Configuration}
-Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boiler plate, as in it is uniform across many applications with little custom settings.
-The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing Python files.
-The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
-The configuration involved in this was minimal, simply using the manage script the team created the web app partition and began work straight away.
-As development continued only minor edits had to be made to the settings of the project. One key edit made was to include the session cookie plugin to allow users to log in and maintain their sessions correctly.
 
 %------------------------------------------------------------------------------
 \section{Android Application}
