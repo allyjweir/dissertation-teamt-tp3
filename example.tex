@@ -75,15 +75,41 @@ To fully understand this dissertation, the following knowledege would be benefic
 \chapter{Research}
 \label{Research}
 
-At the very early stages of research it was decided to split the project into two seperate parts, the web application and the mobile application. This decision was come to by researching pre-existing mobile applications such as foursquare; it was found that the end users experience can be greatly enhanced with the inclusion of a web application to accompany the mobile side. This would also allow a greater number of features to be incorporated into the project, for were we to have just the mobile application with all the features intended for the web application it could lead to a user interface far too cluttered and complicated to be navigated effectively by the end user.
+The first step in conducting our research was to research pre-existing applications both on mobile and the web. 
+
+\section{pre-existing applications}
+
+We investigated a number of applications that were already established on the market, in order to learn whatt had already been tried and tested, and also to learn what had been proven not to work.
+
+\subsection{Soundcloud}
+
+Soundcloud according to it's website is:
+
+\blockquote{An audio platform that enables sound creators to upload, record, promote and share their originally-created sounds.}
+
+This website offers an excellent way for artists to share there music with many other people and for other users to comment on their tracks, even at particular points in the track. This social side of it is largely the appeal of the website. However the majority of people uploading on this website are artists uploading their music. In MDRS we aspire for everyone to be able to upload the recordings they take in many different situations.
+
+\subsection{Audacity}
+
+On the desktop there are a number of applications that allow you to manipulate audio. Audacity in particular is a desktop application that allows the user to record and convert audio. It also allows the user to cut, copy and splice together recordings. This aspect of being able to merge audio together is something that we would need to integrate in our web application. However it would need to be done "on the fly" so as to allow the user to quickly change which audio files were played back together. In order to acccomplish this task in audacity is far more time consuming.
+
+\subsection{Foursquare}
+
+Foursquare is a location based mobile app that the group found to incorporate much of the functionality we desired in our project- minus the audio aspect - as it allowed users to "check in" at certain locations and add comments or pictures about the place they are in.  There is also a web application allowing other users to see the most recent data in there area very easily. The ability however to playback audio synchronously with nearby surrounding recordings will completely change the users experience with this application, as it will give a far more immersive insight into what the mobile users surroundings were like.
+
+\section{Conclusions}
+
+After this it was decided to split the project into two seperate parts, the web application and the mobile application. This decision was come to by researching the research carried out, in particular to foursquare; it was found that the end users experience can be greatly enhanced with the inclusion of a web application to accompany the mobile side. This would also allow a greater number of features to be incorporated into the project, for were we to have just the mobile application with all the features intended for the web application it could lead to a user interface far too cluttered and complicated to be navigated effectively by the end user.
 
 We also all agreed this would help make the distribution of work flow more effectively. On the other hand it was recognised that it could lead to a greater amount of work to be taken on by the group to complete these two applications. However everyone was enthusiastic about making this extra effort in order to make a more rounded and complete final product. 
 
-For the recordings taken by the mobile application to be represented as clearly as possibile on the web application we consulted as a group as well as with our project supervisor, it was decided that each recording would have to be represented in both time and space. To do this as effectively as possible, it was agreed visual aids would be the clearest way to represent this information. So the use of a map view was decided to represent the recordings spatially and a timeline to represent them chronologically. 
+For the recordings taken by the mobile application to be represented as clearly as possibile on the web application we consulted as a group as well as with our project supervisor, it was decided that each recording would have to be represented in both time and space. To do this as effectively as possible, it was agreed visual aids would be the clearest way to represent this information. So the use of a map view was decided to represent the recordings spatially and a timeline to represent them chronologically.
+
+\section{Technologies} 
 
 With the idea of the potential for MDRS, it was essential for the team to research key features and tools that we hoped to integrate into the project and to find things that would fit well into our imagined product, the following sections outline each technology that was researched and how we came to the final decision of the technology that was used. 
 
-\section{Map}
+\subsection{Map}
 OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as Leaflet, the potential was excellent. It’s downfall lay in the fact that we would have to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
@@ -96,7 +122,7 @@ Google Maps was seen as an strong alternative. While it was not open source, it 
 
 Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use as well.
 
-\section{Timeline}
+\subsection{Timeline}
 The use of a timeline of recordings was central to MDRS' interation conceit. TimelineJS offered an attractive UI populated with clear boxes for each event that when clicked on, centred the timeline to that element and associated metadata would be displayed above it. It was found to be effective in clearly communicating the difference between recordings, portraying a vertical line on the timeline for each event. The metadata view above the timline, while unnecessary for the front page, would be crucial for the user's profile view. Importantly for MDRS, this timeline is also well supported on mobile devices.
 
 \begin{figure}[ht!]
@@ -110,7 +136,7 @@ Another timeline that was researched was the SIMILIE Timeline, developed by MIT.
 After a comparison TimelineJS was chosen due to its ease of use for the end user and its attractive user interface which was deemed a more important feature than greater customisability. Also the compatability issues of the SIMILIE timeline could have caused problems further down the line, which we may not have been able to resolve.
 
 
-\section{Front-End Web Framework}
+\subsection{Front-End Web Framework}
 PureCSS is described on its website as,
 
 \blockquote{“A set of small, responsive CSS modules that you can use in every web project.”}
@@ -122,7 +148,7 @@ Twitter's Bootstrap framework appeared to be a more complete solution. It provid
 PureCSS was chosen in the end as it was far more lightweight and met our simple requirements. It gave a solid foundation on which to build our website from. Although Bootstrap is powerful it would have complicated our application unnecessarily.
 
 
-\section{Audio Playback}
+\subsection{Audio Playback}
 Buzz is a JavaScript library that utilises the HTML5 audio element. This library worked well grouping multiple audio files together and playing them simultaneously.
 
 JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface.
