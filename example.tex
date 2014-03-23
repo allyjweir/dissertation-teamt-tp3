@@ -518,9 +518,9 @@ As development continued only minor edits had to be made to the settings of the 
 
 \subsection{User Interface}
 
-When developing the User Interface we chose to use PureCSS for reasons discussed in the research section.
+The User Interface went through a number of iterations during the the development cycle. The early interface was built from the ground up causing innumerable problems, this was down to a lack of experience in web design by the team members. After discussions within the group however and research being carried out into suitable frameworks for the front end to ease development, it was decided to use PureCSS.
 
-It was the aim when approaching the User Interface to try and achieve a consistent colour scheme and layout to make it as easy to use for the end user as possible. Any unnecessary buttons were removed and functionality was designed to be as intuitive as we could make it, as opposed to lots of options.
+It was the aim when approaching the User Interface to try and achieve a consistency in the colour scheme and layout to make it as easy to use for the end user as possible. Buttons and options were kept to a minimum and functionality was designed to be as intuitive as we could make it.
 
 \begin{figure}[ht!]
 \centering
@@ -530,39 +530,35 @@ It was the aim when approaching the User Interface to try and achieve a consiste
 
 \subsubsection{Navigation Menu}
 
-The navigation menu came as a layout on the PureCSS website, it was decided by the group that opposed to trying to create what has already been created. We would use this layout and put our efforts into other areas instead. Earlier on in the development all the UI controls were located within the Navigation Menu, however it became quickly apparent that this would leave it massively cluttered. So the controls for the map were relocated to a separate box, and a button opening the box on the page was located in the Navigation Menu.
+The navigation menu came as a layout on the PureCSS website, it was decided by the group that opposed to trying to create what has already been created. We would use this layout and put our efforts into other areas instead. Earlier on in the development all the UI controls were located within the Navigation Menu, however it became quickly apparent that this would leave it overly cluttered and unproffessional in appearance. So the controls for the map were relocated to a separate box, and a button opening the box on the page was located within the Navigation Menu. This button also changes it's text dynamically relative to whether the box is open or closed.
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=0.15\textwidth]{images/nav-bar.jpg}
-\caption{Navigation Bar}
-\end{figure}
-
-map were relocated to a separate control box, and a button opening the box on the page was located in the Navigation Menu. This menu also utilizes Django's user authentication system, so that if a user is logged in there username is displayed on the menu item that would otherwise be named user. The current page is also highlighted in the navigation menu, so as to cause the least amount of confusion to the user. There is a button that allows the timeline to be hidden, just in case more space is required due to smaller screens or just to tidy it up.
+This menu also utilizes Django's user authentication system, so that if a user is logged in there username is displayed on the menu item that would otherwise be named user offering a more responsive interface. The current page is also highlighted in the navigation menu, so as to cause the least amount of confusion to the user. There is a button that allows the timeline to be hidden, just in case more space is required due to smaller screens or just to simply tidy the map view.
 
 \subsubsection{Control Box}
 
-The control box is separated into three logical sections; Select in range, Audio controls, Search. If the Start Date is left blank within Select in range it is assumed that all dates prior to the End Date are desired. The opposite is true for End Date; and if both dates are left blank all are selected. To create options for this could lead to a more complicated UI though it proved unnecessary as this was intuited by most people during testing.
+The control box is separated into three logical sections; "Select in Range", "Audio Controls" and "Search". To keep options to a minimum within this box proved to be a challenge. For example in the "Select Range" section if the start date is left blank it is assumed that all dates prior to the end date are desired. The opposite is true for end date if it is left blank; and if both dates are left blank all are selected. To create options for this in the box could lead to a more complicated UI though it proved unnecessary to do this as these features were intuited by most people during testing.
 
-JQuery Datepicker was used as the User Interface for selecting a date, the colours were also edited to give a more consistent, and integrated feel to selecting a date. Originally when a date was selected it came up in the American format, though this was easily changed by modifying the setting at initialisation.
+JQuery Datepicker was used as the User Interface for selecting a date with great success, the colours were edited to give a more consistent, and integrated feel to selecting a date. Originally when a date was selected it came up in the American format, though this was easily changed by using the documentation provided with the JavaScript library on GitHub.
 
-It was decided to use JQuery Timepicker for selecting a time, this was not integrated initially, however it was quickly realised that datepicker on it's own was not much use for selecting recordings at a similar time as it was far too wide a margin.
+It was decided to use JQuery Timepicker for selecting a time, this timepicker has a similar appearance to that of the timepicker on Google calendar. It was not integrated in earlier versions, however it was quickly realised during testing that a datepicker on it's own was a fairly naive approach. Selecting recordings at a similar time by date alone was far too wide a margin for any practical use, as recordings on average were only a minute in length.
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=0.35\textwidth]{images/ctrl-box.jpg}
-\caption{Control Box}
-\end{figure}
+The second section in the control box "Audio Controls" offers support for playing multiple recordings all at once, this feature utilises Buzz and it's support for grouping multiple audio files together. This feature works by using the earliest recording in the group of selected recordings as it's datum, from where all other recordings are synced from. This approach has it's drawbacks, though a more intuitive system was not an option due to the limited timescale imposed on the group.
 
-It was decided to use JQuery Timepicker for selecting a time, this timepicker has a similar appearance to that of the timepicker on Google calendar this was not integrated initially, however it was quickly realised that the datepicker on it's own was not much use for selecting recordings at a similar time as it was far too wide a margin.
+Finally the third section is "Search" this section allows the user to search for a recording using the name of that recording. This functionality unfortunately was found during testing to not scale well, as if you did not know the name of a recording there was no other option to find it by using things such as tags, or by user. There was also performance issues, with it taking all the recordings from the database for the autocomplete no matter what was entered into the search bar. 
 
 \subsubsection{Recording Box}
 
-This box displays the meta data associated with the recording that has been clicked. The colours chosen were picked to fit as closely with the sites theme as much as possible. If the description is too long to fit into to the description box it displays a custom  scroll bar. It should work in most modern browsers though degrades gracefully if it is not the supported. There are a number of buttons in this box each with a separate purpose. The first three are audio controls for "Play", "Pause" and "Stop"; they utilize buzz for playing the recording associated with the record currently loaded in the box. The next button is "View Pictures" which loads the Picture Box with the images for that record.
+This box displays the meta data associated with the recording that has been clicked. The colours chosen were picked to fit as closely with the sites theme as much as possible. If the description is too long to fit into to the description box it displays a custom  scroll bar. It should work in most modern browsers though degrades gracefully if it is not supported. There are a number of buttons in this box each with a separate purpose. 
+
+The first three are audio controls for "Play", "Pause" and "Stop" represented by the usual symbols; these buttons utilize buzz for playing the recording associated with the record currently loaded in the box. The next button is "View Pictures" which loads the Picture Box with the images for that record.
+
+Finally there is a button for viewing the position of a recording on the timeline, as there can be any number of recordings on the timeline all at once, to do this manually would be infeasible. So when the button is pressed, the timeline will scroll to the recording loaded in this box and will be selected on the timeline.
 
 \subsubsection{Picture Box}
 
 The Picture box was kept as simple as possible with next and previous buttons the same as the rest of the buttons in the user interface, this box displays all the images associated with a recording. It uses SlidesJS which is a plug-in for JQuery that allows you to view images in a slideshow format.
+
+There was a number of issues during development of this feature as dynamically changing the images in the slideshow was not something supported by this plugin. However was neccessary in order to change the images when a different recording was selected. Workarounds were unfortunately put in place to get this feature working, however inelegantly on the backend due to the limited timescale.
 
 \subsection{Map}
 
