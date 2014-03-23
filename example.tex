@@ -95,7 +95,13 @@ On the desktop there are a number of applications that allow you to manipulate a
 
 \subsection{Foursquare}
 
-Foursquare is a location based mobile app that the group found to incorporate much of the functionality we desired in our project- minus the audio aspect - as it allowed users to "check in" at certain locations and add comments or pictures about the place they are in.  There is also a web application allowing other users to see the most recent data in there area very easily. The ability however to playback audio synchronously with nearby surrounding recordings will completely change the users experience with this application, as it will give a far more immersive insight into what the mobile users surroundings were like.
+Foursquare is a location based mobile app that the group found to incorporate much of the functionality we desired in our project - minus the audio aspect - as it allowed users to "check in" at certain locations and add comments or pictures about the place they are in.  There is also a web application allowing other users to see the most recent data in there area very easily. The ability however to playback audio synchronously with nearby surrounding recordings will completely change the users experience with this application, as it will give a far more immersive insight into what the mobile users surroundings were like.
+
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.75\textwidth]{images/foursquare.jpg}
+\caption{Foursquare Mobile App (left) Foursquare Web App (right)}
+\end{figure}
 
 \section{Conclusions}
 
@@ -110,6 +116,7 @@ For the recordings taken by the mobile application to be represented as clearly 
 With the idea of the potential for MDRS, it was essential for the team to research key features and tools that we hoped to integrate into the project and to find things that would fit well into our imagined product, the following sections outline each technology that was researched and how we came to the final decision of the technology that was used.
 
 \subsection{Map}
+
 OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as Leaflet, the potential was excellent. It’s downfall lay in the fact that we would have to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
@@ -123,6 +130,7 @@ Google Maps was seen as an strong alternative. While it was not open source, it 
 Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use as well.
 
 \subsection{Timeline}
+
 The use of a timeline of recordings was central to MDRS' iteration conceit. TimelineJS offered an attractive UI populated with clear boxes for each event that when clicked on, centred the timeline to that element and associated metadata would be displayed above it. It was found to be effective in clearly communicating the difference between recordings, portraying a vertical line on the timeline for each event. The metadata view above the timline, while unnecessary for the front page, would be crucial for the user's profile view. Importantly for MDRS, this timeline is also well supported on mobile devices.
 
 \begin{figure}[ht!]
@@ -137,6 +145,7 @@ After a comparison TimelineJS was chosen due to its ease of use for the end user
 
 
 \subsection{Front-End Web Framework}
+
 PureCSS is described on its website as,
 
 \blockquote{“A set of small, responsive CSS modules that you can use in every web project.”}
@@ -149,6 +158,7 @@ PureCSS was chosen in the end as it was far more lightweight and met our simple 
 
 
 \subsection{Audio Playback}
+
 Buzz is a JavaScript library that utilises the HTML5 audio element. This library worked well grouping multiple audio files together and playing them simultaneously.
 
 JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface.
@@ -294,17 +304,25 @@ During week one we filled the consent forms which were distributed to us after t
 We had a couple of days to make a final decision on the final six projects from all the project proposals and created a Facebook page to help with the communication between group members in general and more specifically, as a form for project management beside the RedMine project management system we decided to use as a primary one.
 After we understood the team project allocation, we started researching and planning about the key functional requirements how we are going to implement them, consulting the project supervisor on how to approach each design and implementation phase.
 
-Having organised a couple of team meetings, we exchanged contact information and made a final decision on the system for version control and project management - Github and RedMine accordingly. Following a quick discussion we also took the decision to use the agile framework for the team structure and chose Keir as our scrum master.
+Having organised a couple of team meetings, we exchanged contact information and made a final decision on the system for version control and project management - Github and RedMine accordingly. Following a quick discussion we also took the decision to use the agile framework for the team structure and chose Keir as our scrum master. Most of us did not have experience using project management and version control software at first so we needed some time to learn the basics and get used to it. The more experienced team members helped those who had issues and gave advice in order to resolve contribution conflicts with the version control system.
+
+During this period we also made important communication decisions. The team decided to meet face-to-face at least once on a weekly basis right before the supervisor meeting which we chose to be on Tuesday at 4 pm. in the afternoon. This team meeting we would use to discuss progress made during the previous week, analyze the targets met and potential experienced issues, as well as introduce new goals and tasks for the forthcoming week. Regarding virtual communication, we had a discussion about what software would suit our needs best and the possible alternatives were Facebook, Skype and Google+. The benefit of Facebook was that everyone is using it all the time and Google+ offers very good video conferencing. After careful thought we came to the conclusion that Facebook would be more than enough as we already had a project page with a lot of published information and a group chat which was regularly updated.
 
 After submitting the organizational document on Moodle we met with the project supervisor and asked questions about server space, user interface structure and basic requirements explanation in general. Not long after that meeting we had our own development server provided by the university.
 
 For next week at the start of November we were all designing sample user stories in the form of comic story boards to present on the supervisor meeting. The whole month (October) was devoted to requirements interpretation, planning and design - decision making in general.
 
-The following couple of weeks were spent thinking of user interface ideas/mock-ups for the web and mobile application. Some quick sketches where prepared which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system.
+According to our plans, by the end of October/ early November we should have completed the design process and be ready to commence actual development and basic features implementation. After having consulted the project suprevisor we set a deadline for a prototype with basic features implemented and working by the end of January. And last but not least, implementing all of the required functionality, doing any refinements and imrpovements, testing and evaluation, should be completed around the middle of March. With all the major deadlines set, we were able to distribute the tasks in time and balance the workload between the team members.
+
+\subsection{Research}
+
+As the planning process continued, the following couple of weeks were spent thinking of user interface ideas/mock-ups for the web and mobile application. Some quick sketches where prepared which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system.
 
 We started thinking about what technology our project is going to utilise and how to implement the key features we had identified. One of the main tasks was to make a decision on audio time synchronisation, which could be done in a number of ways; a great deal of research had to be undertaken before making a final decision. A possible option was to use an NTP - network time protocol with a reference clock. Other viable options were GPS clock synchronisation or OS clock synchronisation. NTP was chosen as it seemed the most reliable and easy to implement option.
 
 At the end of October we decided to make a choice on the web middleware framework for our project. The main candidates were Django (Python based) and the SPRING (Java oriented) development frameworks, both of which are well designed, simple to understand and make code maintainability very efficient. After considering the pros and cons of the two frameworks, we chose to use Django as it seemed to be better documented and would perfectly suit the needs of the multi-device-audio project web application. Apart from that, we also knew that our coursework and material in the second semester's Distributed Information Management 3 course would require us to learn how to use Django, further strengthening our choice.
+
+\subsection{Design}
 
 We spent the next couple of weeks familiarising ourselves with the framework and testing various tutorials using the 'Tango with Django' online book which is a through guide containing a lot of detailed information with useful design and feature implementation techniques included.
 
@@ -313,6 +331,8 @@ We organised group meetings a two to three times a week in order to make plans a
 The work continued as we divided the functional requirements into bite-sized smaller chunks and different group members were allocated different tasks with set deadlines which were all monitored on RedMine.
 
 \textbf{<GANTT chart from RedMine, GitHub activity diagram>}
+
+\subsection{Implementation}
 
 
 
