@@ -312,7 +312,23 @@ of web technologies which allowed a wide variety of devices and users to access
 this facet of the project rather than a native application for any given
 Operating System would.
 
-\subsection{Web Application}   Given the nature of MDRS, the team look to the
+\subsection{Web Application}  
+
+%I put this in the wrong section, it really belongs here, I'm an idiot and probably wasted time on this but we might be able to shoe horn it in for extra content
+
+%At the outset of the project the team had planned to build two independent platforms, one back-end server used to process audio and a separate client application to view and amend data. However the team took time to discuss the positives and negatives of this approach; the result of which was decided this was not the most sensible solution.
+%The team supervisor suggested we look into Django as a all in one solution, as it provided many of the features this project includes and the team would also benefit from using a simple and also familiar language like Python.
+%To be more specific, Django provided the team with built in user authentication, a reliable and easy to use model view controller structure, full database support and integration with the application and the simple fact Django is a web application framework allows the application to be used across almost any device without much regard of portability.
+
+%With this decision made a GitHub repository was made and a skeleton Django project was set up. No-one on the team had used Django before however all members were experienced in Python. A little research was done and a series of tutorials entitled “Tango With Django” was discovered.
+%Upon seeing the clarity and level of detail of this document, it was decided to use this as a reference with which to build the web application.
+%Team members were given chapter numbers to reach by deadlines; however these were not always met by all team members. The team made progress in learning and understanding how to construct a Django application correctly.
+%Once everyone was familiar with the process and details of the Django framework tasks were dealt out and members of the team were expected to achieve certain levels of work each week. However it became quickly obvious that many parts of the application relied on others, meaning one member's work would be held back while another finished theirs. This held back productivity in certain areas of the application, certainly when involving the database and the models associated with it.
+
+%Progress with the web application was steady, the back-end was actually a fairly simple affair in comparison to the front-end which was heavy with scripting.
+%Back-end scripting mostly involved getting the models to suit what was needed correctly, it took several trial and error attempts however once the team managed to work out the correct collection of models it was mostly left alone. The only real issue the team ran into was some of the audio formats in the later stages of the project. At the outset OGG was decided as the format to use as it had a great compression to quality ratio; however it was discovered that Android could not, in fact, encode audio to OGG directly. Since a majority of the web code had already been written a decision was made to simply take a format Android could encode in and then convert it to OGG upon upload to the server.
+
+Given the nature of MDRS, the team look to the
 Distributed Information Management course taught in second semester as a source
 of possible tools. Taught by Leif Azzopardi, the course is structured around the
 use of Django, a Python based web framework which would offer us the flexibility
@@ -616,19 +632,19 @@ MORE TO ADD HERE//
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsection{Server and Django configuration}
 
-At the outset of the project the team had planned to build two independent platforms, one back-end server used to process audio and a separate client application to view and amend data. However the team took time to discuss the positives and negatives of this approach; the result of which was decided this was not the most sensible solution.
-The team supervisor suggested we look into Django as a all in one solution, as it provided many of the features this project includes and the team would also benefit from using a simple and also familiar language like Python.
-To be more specific, Django provided the team with built in user authentication, a reliable and easy to use model view controller structure, full database support and integration with the application and the simple fact Django is a web application framework allows the application to be used across almost any device without much regard of portability.
+\subsubsection{Server Configuration}
+Being granted use of a university server, the team had a server to base all of their work off of. One team member was given the task to set-up and maintain the server.
+Set-up was a simple case of installing the necessary packages from the Ubuntu repositories such as Git, Python, Django, PIP, MySQL etc. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
+This, having been completed, lead to cloning the team Git repository to the server. Some permissions teething problems were immediately encountered as some members could not edit files. However these were minor issues dealt with some basic configurations.
+Having the file set now on the server it was a simple case to initialise a database for the project and get it to a working state. However there was immediately an issue in that regular users could not host the server on port 80 (the standard port for HTTP requests and the server's only open port) without administrator privileges. This meant that each team member would need to login as our shared super user account to simply run the server; this slowed workflow and so a solution was devised. By manipulating the IP tables on the server, the team successfully managed to route port 8080 internally to port 80. Simply put this meant the team was fooling the server into thinking it was hosting harmlessly on port 8080 whereas it was getting rerouted, after the user invoked the command, to port 80. Exactly where the team needed the socket bound to.
+Later issues appeared as development continued, many of them minor issues such as the database needing reinitialised or the server rebooted and the IP tabled reconfigured. All issues were dealt with swiftly and with little to no impact to the development of the project.
 
-With this decision made a GitHub repository was made and a skeleton Django project was set up. No-one on the team had used Django before however all members were experienced in Python. A little research was done and a series of tutorials entitled “Tango With Django” was discovered.
-Upon seeing the clarity and level of detail of this document, it was decided to use this as a reference with which to build the web application.
-Team members were given chapter numbers to reach by deadlines; however these were not always met by all team members. The team made good progress in learning and understanding how to construct a Django application correctly.
-Once everyone was familiar with the process and details of the Django framework tasks were dealt out and members of the team were expected to achieve certain levels of work each week. However it became quickly obvious that many parts of the application relied on others, meaning one member’s work would be held back while another finished theirs. This held back productivity in certain areas of the application, certainly when involving the database and the models associated with it.
-
-Progress with the web application was steady, the back-end was actually a fairly simple affair in comparison to the front-end which was heavy with scripting.
-Back-end scripting mostly involved getting the models to suit what was needed correctly, it took several trial and error attempts however once the team managed to work out the correct collection of models it was mostly left alone. The only real issue the team ran into was some of the audio formats in the later stages of the project. At the outset OGG was decided as the format to use as it had a great compression to quality ratio; however it was discovered that Android could not, in fact, encode audio to OGG directly. Since a majority of the web code had already been written a decision was made to simply take a format Android could encode in and then convert it to OGG upon upload to the server.
-
-%More added later
+\subsubsection{Django Configuration}
+Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boiler plate, as in it is uniform across many applications with little custom settings.
+The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing Python files.
+The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
+The configuration involved in this was minimal, simply using the manage script the team created the web app partition and began work straight away.
+As development continued only minor edits had to be made to the settings of the project. One key edit made was to include the session cookie plugin to allow users to log in and maintain their sessions correctly. 
 
 %------------------------------------------------------------------------------
 \section{Android Application}
