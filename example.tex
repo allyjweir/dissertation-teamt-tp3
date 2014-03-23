@@ -628,6 +628,13 @@ After comparing timeline JS with the other viable options and having contacted t
 MORE TO ADD HERE//
 
 
+\subsection{Database}
+For this project MySQL was the database back-end the team decided to use.
+Once the university server was set-up correctly, the team could initialise the database and write the Django models for it. To explain further, Django supports a high level model based abstraction from the database. This allows developers, in this case the team working on this project, to avoid tedious database manipulations and allows great flexibility in the structure of the overall application. 
+Using previously designed models and an entity relation (ER) diagram it was a case of filling in the gaps using a Python script in Django's syntax to populate and give structure to the database.
+Once this script had been created, and double checked, a blank database, with a user setup for Django to use, was created. Simply invoking Django's built in function to synchronise the database created all the tables and relations needed for the project to function.
+During development there were several occasions in which the models had to be edited and therefore the database had to be dropped and re-synchronised to continue. This did cause hick-ups in development but overall had little impact as a database re-sync only took 5 minutes to preform. The biggest issue was the loss of any test data originally in the database when dropped, as this had to be re-added. However most of the time it was redundant data as changes had been made significant enough to render the old data useless.
+
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsection{Server and Django configuration}
