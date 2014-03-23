@@ -95,7 +95,13 @@ On the desktop there are a number of applications that allow you to manipulate a
 
 \subsection{Foursquare}
 
-Foursquare is a location based mobile app that the group found to incorporate much of the functionality we desired in our project- minus the audio aspect - as it allowed users to "check in" at certain locations and add comments or pictures about the place they are in.  There is also a web application allowing other users to see the most recent data in there area very easily. The ability however to playback audio synchronously with nearby surrounding recordings will completely change the users experience with this application, as it will give a far more immersive insight into what the mobile users surroundings were like.
+Foursquare is a location based mobile app that the group found to incorporate much of the functionality we desired in our project - minus the audio aspect - as it allowed users to "check in" at certain locations and add comments or pictures about the place they are in.  There is also a web application allowing other users to see the most recent data in there area very easily. The ability however to playback audio synchronously with nearby surrounding recordings will completely change the users experience with this application, as it will give a far more immersive insight into what the mobile users surroundings were like.
+
+\begin{figure}[ht!]
+  \centering
+\includegraphics[width=0.75\textwidth]{images/foursquare.jpg}
+\caption{Foursquare Mobile App (left) Foursquare Web App (right)}
+\end{figure}
 
 \section{Conclusions}
 
@@ -110,6 +116,7 @@ For the recordings taken by the mobile application to be represented as clearly 
 With the idea of the potential for MDRS, it was essential for the team to research key features and tools that we hoped to integrate into the project and to find things that would fit well into our imagined product, the following sections outline each technology that was researched and how we came to the final decision of the technology that was used.
 
 \subsection{Map}
+
 OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as Leaflet, the potential was excellent. It’s downfall lay in the fact that we would have to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
@@ -123,6 +130,7 @@ Google Maps was seen as an strong alternative. While it was not open source, it 
 Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use as well.
 
 \subsection{Timeline}
+
 The use of a timeline of recordings was central to MDRS' iteration conceit. TimelineJS offered an attractive UI populated with clear boxes for each event that when clicked on, centred the timeline to that element and associated metadata would be displayed above it. It was found to be effective in clearly communicating the difference between recordings, portraying a vertical line on the timeline for each event. The metadata view above the timline, while unnecessary for the front page, would be crucial for the user's profile view. Importantly for MDRS, this timeline is also well supported on mobile devices.
 
 \begin{figure}[ht!]
@@ -137,6 +145,7 @@ After a comparison TimelineJS was chosen due to its ease of use for the end user
 
 
 \subsection{Front-End Web Framework}
+
 PureCSS is described on its website as,
 
 \blockquote{“A set of small, responsive CSS modules that you can use in every web project.”}
@@ -149,6 +158,7 @@ PureCSS was chosen in the end as it was far more lightweight and met our simple 
 
 
 \subsection{Audio Playback}
+
 Buzz is a JavaScript library that utilises the HTML5 audio element. This library worked well grouping multiple audio files together and playing them simultaneously.
 
 JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface.
