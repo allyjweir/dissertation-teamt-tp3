@@ -443,7 +443,7 @@ Listed below are the project functional requirements the team identified with th
 	\item \boldit{Filter recordings by time and date:} Provide users the option to filter recordings and display only those from a specific time period on the map and the timeline.
 
 	\end{itemize}
-	
+
 
 \subsection{Would Have}
 
@@ -457,7 +457,7 @@ Listed below are the project functional requirements the team identified with th
 	\item \boldit{Descriptive Tags:} Users could add relevant tags to their recordings which will enable easy search and recording filtering.
 
 	\end{itemize}
-	
+
 
 \section{Project Timeline}		From the outset, the team laid out a flexible timetable for the project, accounting for the series of phases a project must undergo.
 
@@ -810,7 +810,7 @@ This solution implements two more functions. A stop() function which can be used
 Despite the extensive research undertaken in order to implement it, this solution turned out to be too complicated for the requirements set and so was discarded in favour of the solution outlined below.
 
 \subsubsection{Solution without HTML5 Web Workers}
-The second implementation utilises the Buzz! “group” function to collect the recordings that need to be synchronously played and store them in ordered manner in an array. All the recordings currently selected for playback are saved and a check is run in order to determine if they overlap. If that is the case they are sorted by their start time. The sync_group array holds the sorted Buzz! sound objects. These are played in a sequential order and using the start time difference the synchronisation is calibrated. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files. 
+The second implementation utilises the Buzz! “group” function to collect the recordings that need to be synchronously played and store them in ordered manner in an array. All the recordings currently selected for playback are saved and a check is run in order to determine if they overlap. If that is the case they are sorted by their start time. The sync_group array holds the sorted Buzz! sound objects. These are played in a sequential order and using the start time difference the synchronisation is calibrated. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files.
 
 In this implementation GET requests are used in order to query the database through the Django views. This allows for dynamic file acquisition.
 
@@ -845,7 +845,7 @@ Eventually through extensive research surrounding MediaRecorder and learning mor
 
 \subsubsection{Google Play Services}    The next thing to integrate was the Google Play Services library. This gives Android developers extensive access to many of Google's services. For MDRS, the interest was solely in the Maps and Location APIs. Integrating this library into the project raised multiple initial issues. While adding a library should be a relatively simple task, there were wildly varying instructions on how to do this, leading to a lot of confusion. While it is possible to link it to the build path by manually downloading the library and then linking it using Eclipse, other instruction sets described the use of Apache's Ant or Maven files to declare the dependencies. In practice however these didn't work reliably. In the end it was decided to store the library locally in the project's repository. This led to an issue with the IDE. Eclipse stores the full path to the library's folder on the computer statically instead of just its path inside the current workspace directory. This meant when switching between development environments (Windows and OSX) that it had to be manually updated. Once these dependency problems were resolved development quickly continued to the implementation of Maps.
 
-For MDRS we required two map views, one as the main point of interest on the start screen and a second in the upload screen indicating the path their recording took with a start and end pin. These relatively simple requirements meant a lot of the code required could be reused from Google's example applications. The code required was relatively short but by using Play Services there was a lot of boilerplate code needed to check that it was installed on a device and to connect to Google's servers. A series of small tweaks were made to the default map, removing certain UI elements and changing the zoom levels. This manifested the team's first experience of inconsistency between devices. When running on a Nexus 5, the 'Show my location' button, despite being explicitly declared, didn't appear while the same build of MDRS running on an HTC One did show the button.
+For MDRS we required two map views, one as the main point of interest on the start screen and a second in the upload screen indicating the path their recording took with a start and end pin. These relatively simple requirements meant a lot of the code required could be reused from Google's example applications. The code required was relatively short but by using Play Services there was a lot of boilerplate code needed to check that it was installed on a device and to connect to Google's servers. A series of small tweaks were made to the default map, removing certain UI elements and changing the zoom levels. This manifested the team's first experience of inconsistency between devices. When running on a Nexus 5, the 'Show my location' button, despite being explicitly declared, didn't appear, while the same build of MDRS running on an HTC One did show the button.
 
 The main issue that was found with the implementation of maps was a bug which crashed the app if it was opened before another app that uses Google Maps had been open. This puzzling and initially demonstrated an erratic manifestation pattern, mainly due to the irregular reboots that mobile devices need. When found, it was discovered that MDRS was referencing the device's last location and couldn't handle the null value sometimes passed to it. This would crash the app. The problem was discovered so late in development that the team did not have time to correct it, though a fix would be simple to implement.
 
@@ -861,22 +861,44 @@ With these prototypes and test applications complete and the advent of the new y
 
 Taking this into consideration the app was broken into three key stages, a start screen, recording and upload activity. This separation of concerns made the code more readable and easily understood. As development continued and more external classes were used and while not activities were included in the 'src' directory it could be seen that, while three activities were better than one, a lot of the code required for the three main views the user had of the app could be separated into their own class files to make the code much easier to understand. These could then have been referenced when required and easily replaced with new modules if later improved. By this point in development however, there was not enough time to refactor the entire application.
 
-PLACE UML DIAGRAM OF APPLICATION HERE
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.75\textwidth]{images/android-app-structure.png}
+\caption{Diagram of restructured application desgin.}
+\end{figure}
 
 \subsubsection{Modifications to Existing Features}
 To begin, the maps and location tracking features were extended. The ability to plot a recording's path on a map was developed using the excellent Google Maps APIs documentation available. This was used on the final upload screen, giving a sense of the journey travelled. Improvements to time keeping were also attempted. The inclusion of an external Java library which could import Simple Network Time Protocol time was hoped to be used. The SNTP is designed for simplified access to extremely accurate time servers where sub-nanosecond accuracy is unnecessary. Ultimately due to time constraints and restrictions on modifying an Android device's system time through an app, the time from GPS was relied on. While less accurate, this still gave sub-millisecond accuracy which was satisfactory for our uses. In addition to retrieving time stamps and Latitude and Longitude, the Location object also offered the orientation of device. By passing all of this information along, it offered the project scope for future development.
 
 The MediaRecorder implementation was also modified to use AAC compression instead of the originally planned OGG. This offered higher quality audio while keeping a small file size for efficient upload to the web application.
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.34\textwidth]{images/start-screen-final.png}
+\caption{Final start screen of Android app.}
+\end{figure}
+
 \subsubsection{Image Capture}
 As a modification of the original specification, the team had added capturing images as a 'must have' requirement to allow the user to create a richer experience to share on the web application. As a core requirement of our application, this was the next feature to be implemented in MDRS Mobile. With Android there are two methods of capturing images within an application. An app can send an intent to the OS, taking the user to their default camera app with which they can take an individual image. The user will then be taken back into the original application with the image in hand. This simple approach is useful if capturing individual images. For MDRS Mobile this would be an unintuitive approach. Every time the user tried to take an image they would have to wait for the app to safely send the audio and location capture to an asynchronous background thread and then wait for the camera application to load. Depending on the device, this was found through testing to take anywhere between 2 and 10 seconds. To avoid this, the application uses a custom written ‘Camera Preview’ which allows a fragment to be embedded within the interface through which to see a device’s camera view. Surrounding this it was necessary to add a button to capture images. In initial implementations this was a separate button. This allowed for easier testing. A major problem found while putting this functionality in place was saving the file while still allowing the user to capture more images. The asynchronous thread dedicated to saving the file would become overloaded with requests to save. To solve the problem, while giving the user a visual indicator of successful image capture, a 3 second ‘freeze frame’ was put in place. This gave the thread enough time to save the image while letting the application continue capturing images at the user's request. As development of features finished and UI/UX corrections were made a transparent ImageButton was placed over the camera preview and the visible button was removed. Users could tap anywhere on the screen while recording to take an image and continue their recording without interruption. This functionality is communicated to the user through an on screen prompt as they start recording.
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.34\textwidth]{images/record-screen-final.png}
+\caption{Image capture interface in recording activity.}
+\end{figure}
+
 \subsubsection {Data Processing and Upload}
-Once the user has completed their recording, they are brought to the upload screen. Here all the information gathered is prepared and bundled for upload to the server, either manually or using the mobile connection/WiFi. The AAC audio file was sent uncompressed for processing by the server. The location data gathered and stored in the LinkedHashMap was stored in a JSON file for transfer. A title and description were also gathered for storage in a JSON file. This was done using the built in Java JSONArray functionality with the native FileWriter to write it on the device.
-(FOOTNOTE - ALL DATA WAS STORED IN AN INDIVIDUAL FOLDER WITHIN A MASTER MDRS FOLDER ON EXT. STORAGE DENOTED BY STARTTIME)
+Once the user has completed their recording, they are brought to the upload screen. Here all the information gathered is prepared and bundled for upload to the server, either manually or using the mobile connection/WiFi. The AAC audio file was sent uncompressed for processing by the server. The location data gathered and stored in the LinkedHashMap was stored in a JSON file for transfer. A title and description were also gathered for storage in a JSON file. This was done using the built in Java JSONArray functionality with the native FileWriter to write it on the device.\footnote{All data was stored in an individual folder within a master MDRS folder on external storage denoted by start time.}
+
 With the high resolution of images being captured, compression was essential for transfer of these files. While Apache’s Common Compression appeared to be the most used library to create .tar.gz files, the team opted for JArchive. This library serves as a wrapper to Apache’s work, simplifying the creation of an archive significantly. Implementation of these JSON and archiving was quick due to the clarity of their associated documentation. While the libraries used were not the most feature complete, their simplicity was the key to faster development on an already tight schedule.
 
-With a ‘should have’ status, the ability to upload directly from the device was one of the final features to be implemented. After research, (INCLUDE LINK)Android Asynchronous Http Client was chosen. This library is used in applications ranging from online multiplayer games to Instagram. It is a great option for efficiently transferring data to and from servers from within an Android application. It's continual development and widespread use made the support surrounding it easier to find. This again was easily implemented within the application, supporting direct upload from the application to the web app. Unfortunately the server side processing could not handle POST requests from the app. This was found out at an extremely late stage in development. Alternative implementations using (INCLUDE LINKS!!) Square's okhttp and Retrofit libraries and Apache’s Java HttpClient were attempted to alleviate the issue. These offered no better results and with no time to refactor large sections of the Django back-end, this feature had to be left written but unsupported.
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.34\textwidth]{images/final-upload-screen.png}
+\caption{Final iteration of upload screen on Android app.}
+\end{figure}
+
+With a ‘should have’ status, the ability to upload directly from the device was one of the final features to be implemented. After research, Android Asynchronous Http Client was chosen. This library is used in applications ranging from online multiplayer games to Instagram. It is a great option for efficiently transferring data to and from servers from within an Android application. It's continual development and widespread use made the support surrounding it easier to find. This again was easily implemented within the application, supporting direct upload from the application to the web app. Unfortunately the server side processing could not handle POST requests from the app. This was found out at an extremely late stage in development. Alternative implementations using (INCLUDE LINKS!!) Square's okhttp and Retrofit libraries and Apache’s Java HttpClient were attempted to alleviate the issue. These offered no better results and with no time to refactor large sections of the Django back-end, this feature had to be left written but unsupported.
 
 \subsubsection{Aside}
 Another feature which the team tried to implement was background recording. To make a truly useful application, it would have to let the user conserve their battery life by being able to turn their screens off while still capturing audio and location. They could then reopen the app to capture images as and when they pleased. An extensive amount of development time was dedicated to this ‘should have’ feature. Unfortunately this was attempted in the middle of development and, again, time constraints limited the team's ability to refactor large amounts of the application to make this work. Many parts would have needed completely rewritten. This feature was dropped in favour for completing the key requirements.
