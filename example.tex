@@ -631,7 +631,13 @@ Finally the upload screen informed them of their path through the map view. The 
 \chapter{Implementation}
 \label{impl}
 
-\subsection{Server and Django configuration}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.85\textwidth]{images/project-imp.jpg}
+\caption{System architecture}
+\end{figure}
+
+\section{Server and Django configuration}
 Being granted use of a university server, the team had a server to base all of their work off of. One team member was given the task to set-up and maintain the server.
 Set-up was a simple case of installing the necessary packages from the \gls{Ubuntu} repositories such as Git, Python, Django, \gls{PIP} and \gls{MySQL}. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
 
@@ -640,13 +646,19 @@ Having the file set now on the server it was a simple case to initialise a datab
 
 Later issues appeared as development continued, many of them minor issues such as the database needing reinitialised or the server rebooted and the IP tabled reconfigured. All issues were dealt with swiftly and with little to no impact to the development of the project.
 
-\subsubsection{Django Configuration}		Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boilerplate.\footnote{These parts are uniform across many applications with few custom settings required for MDRS.}
+\subsection{Django Configuration}		Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boilerplate.\footnote{These parts are uniform across many applications with few custom settings required for MDRS.}
 
 The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing Python files. The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
 
 The configuration involved in this was minimal, simply using the manage script the team created the web app partition and began work straight away. As development continued only minor edits had to be made to the settings of the project. One key edit made was to include the session cookie plugin to allow users to log in and maintain their sessions correctly.
 
 \section{Web Application}		During development worked required for the web application was separated into discrete parts. With team members working across these parts spread the work effectively. When extra help was required, another team member would assist the current 'specialist' of a feature. This for the most part didn't cause any issues due to effective communication between the two developers. This was usually done using GitHub Issues or more informally through Facebook chat or 'face-to-face' communication.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.85\textwidth]{images/webapp-imp.jpg}
+\caption{Seperate components of the webapp}
+\end{figure}
 
 \subsection{User Interface}		The UI went through a number of iterations during the the development cycle. The early interface was built from the ground up causing innumerable problems, this was down to a lack of experience in web design by the team members. Once a PureCSS alternative was put in place, the development's pace recouperated and continued.
 
