@@ -562,7 +562,7 @@ web application's design were laid.
 
 \subsection{Android Application} It was decided early on to approach this
 element of the project realistically and working from a simple set of requirements to
-make the application simple to implement. This would allow us to make the user experience focused on the core of MDRS, capturing information from the world around us. This meant it was purely a capture and upload system and it wouldn't be an alternative to the desktop viewing interface for interaction with other user's recordings. Our focus made the application more achievable while leaving scope for extension in future development for these playback features.
+make the application easier to implement. This would allow us to make the user experience focused on the core of MDRS, capturing information from the world around us. This meant it was purely a capture and upload system and it wouldn't be an alternative to the desktop viewing interface for interaction with other user's recordings. Our focus made the application more achievable while leaving scope for extension in future development for these playback features.
 
 To develop an engaging user interface on Android, the team looked for a scalable and intuitive design, drawing influence from a wide range of applications such as Foursquare, Snapchat and Google Play’s suite of applications. Google's Android Design Guidelines were consistently referred to throughout this process for inspiration.  Foursquare's integration of a map into a larger whole was seen as an excellent touchstone while Snapchat's unconventional, yet intuitive navigation model was seen as a strength of the application the team could borrow from. Google's applications portrayed the strength and beauty of clear typography and the undeniable rule of mobile design where less is more. Sources such as Android Niceties were also used to find innovative design that could help with MDRS. A utilitarian minimalism through design was the team's goal. The core functionality of the application was single use and the flow through it was clear, allowing for a relatively simple approach to be taken, finding a place for flair within the constructs the team placed on themselves.
 
@@ -642,7 +642,7 @@ The configuration involved in this was minimal, simply using the manage script t
 
 \section{Web Application}		During development worked required for the web application was separated into discrete parts. With team members working across these parts spread the work effectively. When extra help was required, another team member would assist the current 'specialist' of a feature. This for the most part didn't cause any issues due to effective communication between the two developers. This was usually done using GitHub Issues or more informally through Facebook chat or 'face-to-face' communication.
 
-\subsection{User Interface}		The UI went through a number of iterations during the the development cycle. The early interface was built from the ground up causing innumerable problems, this was down to a lack of experience in web design by the team members. After discussions within the group however and research being carried out into suitable frameworks for the front end to ease development, it was decided to use PureCSS.
+\subsection{User Interface}		The UI went through a number of iterations during the the development cycle. The early interface was built from the ground up causing innumerable problems, this was down to a lack of experience in web design by the team members. Once a PureCSS alternative was put in place, the development's pace recouperated and continued.
 
 It was the aim when approaching the UI to achieve a consistency in the colour scheme and layout throughout the application to promote ease of use. Buttons and options were kept to a minimum and functionality was designed to be as clear and intuitive as possible.
 
@@ -654,101 +654,76 @@ It was the aim when approaching the UI to achieve a consistency in the colour sc
 
 \subsubsection{Navigation Menu}		PureCSS was leveraged for the navigation of the web application. By using the framework we saved a lot of development time to focus on other areas. Earlier on in the development all the UI controls were located within the navigation menu, however it became quickly apparent that this would create an overly cluttered and unprofessional appearance. So the controls for the map were relocated to a separate box, and a button opening the box was located within the navigation menu. This button also changes it's text dynamically relative to whether the box is open or closed.
 
-This menu also utilizes Django's user authentication system, so that if a user is logged in there username is displayed on the menu item that would otherwise be named user offering a more responsive interface. The current page is also highlighted in the navigation menu, so as to cause the least amount of confusion to the user as to where they are in the sitemap. There is a button also located within the menu that allows the timeline to be hidden, just in case more space is required due to smaller screens or just to simply tidy the map view.
+This menu also utilizes Django's object relational mapping (ORM), so that if a user is logged in, their username would be displayed on the menu as a link to their profile. This personalisation was hoped to make the website easier to navigate, clarifying that link's function. The current page is also highlighted in the navigation menu, to improve their navigation around the application. A button in the menu allows the timeline to be hidden in case the user wants to completely focus on the map.
 
-\subsubsection{Control Box}		The control box is separated into three logical sections; "Select in Range", "Audio Controls" and "Search". To keep options to a minimum within this box proved to be a challenge. For example in the "Select Range" section if the start date is left blank it is assumed that all dates prior to the end date are desired. The opposite is true for end date, however if both dates are left blank all are selected. To create options for this in the box could lead to a more complicated UI though it proved unnecessary to do this as these features were intuited by most people during testing.
+\subsubsection{Control Box}		Another feature created to keep the interface simplified was the control box. This dialog holds a number of controls over the application as a whole. The control box is separated into three logical sections; 'Select in Range', 'Audio Controls' and 'Search'. Only including options that were useful and could meaningfully modify the data was key in the construction of this dialog. For example in the 'Select Range' section if the start date is left blank it is assumed that all dates prior to the end date are desired. The opposite is true for end date, however if both dates are left blank all are selected. To create options for this in the box could lead to a more complicated UI though it proved unnecessary to do this as these features were intuited by most people during testing.
 
 \gls{JQuery} Datepicker was used as the user interface for selecting a date with great success, the colours were edited to give a more consistent appearance and integrated feel. Originally when a date was selected it came up in the American format, though this was easily changed by using the documentation provided with the JavaScript library on GitHub.
 
-It was decided to use JQuery Timepicker for selecting a time, this timepicker has a similar appearance to that of the timepicker on Google calendar. It was not integrated in earlier versions, however it was quickly realised during testing that a datepicker on it's own was a fairly naive approach. Selecting recordings at a similar time by date alone was far too wide a margin for any practical use, as recordings on average were only a minute in length.
+During internal testing, the team realised filtering by date alone was not enough as the scope of recordings narrowed down to could still be huge. It was decided to use JQuery Timepicker for selecting a time. This timepicker has a similar appearance to that of the timepicker on Google calendar.
 
-The second section in the control box "Audio Controls" offers support for playing multiple recordings all at once, this feature utilises 'Buzz!' and it's support for grouping multiple audio files together. This feature works by using the earliest recording in the group of selected recordings as it's datum, from there all other recordings are synchronised. This approach has it's drawbacks, though a more intuitive system was not an option due to the limited timescale imposed on the group.
+The second section in the control box 'Audio Controls' offers the ability to play multiple recordings all at once, this feature utilises 'Buzz!' and its support for grouping multiple audio files together. This feature works by using the earliest recording in the group of selected recordings as it's datum, from there all other recordings are synchronised. This approach has it's drawbacks, though a more intuitive system was not an option due to the limited timescale imposed on the group.
 
-Finally the third section is "Search" this allows the user to search for a recording using the name of that recording. This functionality unfortunately was found, during testing, to not scale as well as we might have hoped. This was down to the fact that if you did not know the name of a recording there was no other option offered to find it. Options that could have been included may have been such things as tags or by user. There was also performance issues, as it took all the recordings from the database for the autocomplete no matter what was entered into the search bar.
+Finally the third section is 'Search' this allows the user to search for a recording using the name of that recording. This functionality unfortunately was found, during testing, to not scale as well as we might have hoped. This was down to the fact that if you did not know the name of a recording there was no other option offered to find it. Options that could have been included may have been such things as tags or by user. There was also performance issues, as it took all the recordings from the database for the autocomplete no matter what was entered into the search bar.
 
 \subsubsection{Recording Box}
 
-This box displays the meta data associated with the recording that has been clicked. The colours chosen were picked to fit as closely with the sites theme as much as possible. If the description is too long to fit into to the description box it displays a custom  scroll bar. It should work in most modern browsers though degrades gracefully if it is not supported. There are a number of buttons in this box each with a separate purpose.
+This box displays the metadata associated with the recording that has been clicked. The colours chosen were picked to fit as closely with the sites theme as much as possible. If the description is too long to fit into to the description box it displays a custom  scroll bar. It should work in most modern browsers though degrades gracefully if it is not supported. There are a number of buttons in this box each with a separate purpose.
 
-The first three buttons are audio controls for "Play", "Pause" and "Stop"; each are represented by the usual symbols. These buttons utilize 'Buzz!' for playing the recording associated with the record currently loaded in the box. The next button in the box is one that allows you to load the Picture Box, this is represented by an image icon on the user interface.
+The first three buttons are audio controls for 'Play', 'Pause' and 'Stop'; each are represented by the usual symbols. These buttons utilize 'Buzz!' for playing the recording associated with the record currently loaded in the box. The next button in the box is one that allows you to load the Picture Box, this is represented by an image icon on the user interface.
 
 Finally there is a button for viewing the position of a recording on the timeline, as there can be any number of recordings on the timeline all at once, to do this manually would be infeasible. So when the button is pressed, the timeline will scroll to the recording loaded in this box and will be selected on the timeline.
 
-\subsubsection{Picture Box}
-
-The Picture box was kept as simple as possible with next and previous buttons the same as the rest of the buttons in the user interface, this box displays all the images associated with a recording. It uses SlidesJS which is a plug-in for JQuery that allows you to view images in a slideshow format.
+\subsubsection{Image Viewer}		The image viewer was kept simple with next and previous buttons the same as the rest of the buttons in the user interface, this box displays all the images associated with a recording. It uses SlidesJS \footnote{SlidesJS is a plug-in for JQuery} which  allows you to view images in a slideshow format.
 
 There was a number of issues during development of this feature as dynamically changing the images in the slideshow was not something supported by this plugin. However this was neccessary in order to change the images when a different recording was selected. Workarounds were unfortunately put in place to get this feature working, however inelegantly on the backend, due to the limited timescale.
 
-\subsection{Map}
+\subsection{Map}		A number of technologies were used when implementing the map and they all had to work in harmony to effectively display to the user the recordings that were stored in the database. The major components were Google Maps, HTML5 Geolocation and JQuery. Combining these allowed the team to create a meaningful visualisation of recordings captured.
 
-A number of technologies were used when implementing the map and they all had to work in harmony to effectively display to the user the recordings that were stored in the database. These components include Google Maps, Geolocation and JQuery. The way in which these components were implemented and how they interacted together is what will be discussed in this section.
-
-\subsubsection{Map API}
-
-The Google Maps API was used extensively throughout the development of the home page with many of the Javascript classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble.
-
-In order to create an instance of the map the class that was used was:
-
+\subsubsection{Map API}		The Google Maps API was used extensively throughout the development of the home page with many of the Javascript classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble. The map was initialised using,
 \begin{verbatim}
 google.maps.Map
 \end{verbatim}
-
-To create the instance of the map, there was very little throughout the entire development process that had to be changed in the code from the example provided on the Google Maps website. This bore witness to the simplicity provided by using this API.
-
-For the appearance of the map a few simple changes were made, such as removing certain UI elements that come with the map as a standard. For example it was decided to remove "pegman" as we would not be incorporating street view into our product and the presence of this icon could prove to be an unnecessary distraction.
+For the appearance of the map a few simple changes were made such as removing certain UI elements that come with the map as a standard. For example it was decided to remove the \textit{Pegman} icon as we would not be incorporating street view into our initial product and the presence of this icon could prove to be an unnecessary distraction. The zoom controls and slider were also removed.
 
 After having created an instance of the map and styling it correctly, we were then able to receive the bounds of the map displayed on the screen, using the method:
-
 \begin{verbatim}
 getBounds()
 \end{verbatim}
-
 This was important as from this we were then able to query our database using JQuery (this method will be covered in a the JQuery section) and receive from the database only the recordings that would be currently visible on the timeline. For were we not able to receive the bounds of the map and just all the recordings were returned, this would prove a serious problem in scalability.
 
 These recordings were then plotted on the map by creating multiple instances of the marker class for each recording. These markers must be created using the object:
-
 \begin{verbatim}
 google.maps.LatLng
 \end{verbatim}
-
 In this particular case this object is being used as the latitude and longitude of the marker, which is created using the data that has been returned from the database. The co-ordinates that are used are the start position co-ordinates of the recording. We decided to use a custom icon for the default marker to give a more consistent theme, also in order to differentiate between non-selected and selected markers a separate red version of the marker was used.
 
 The behaviour of the markers had to be defined manually this was done using JavaScript. An example of such behaviour would be if the map was panned and a recording fell outwith the bounds of the current view then this pin would be removed, and then added back in again if it is brought back in to view. It was an initial requirement that support for the "selection" of multiple recordings must be incorporated into the map so that these recordings can then be played back in a synchronised form. What was written allowed a pin to remain selected even if it was not currently in the view of the map. In other words when a pin is selected it would be saved in memory until such time as it was deselected.
 
-Originally the google maps info window was used to display the metadata to the user, however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these info window’s would prove to be overly complicated. In particular through testing it was discovered that it was routinely obscuring the route of the recording, as a group it was decided to place it in the top right hand corner. However to accomplish this using the info window would mean constantly changing it's position as the map was panned, placing an unwanted burden on the performance of the webapp. for that reason it was decided that when a marker was clicked there should be a separate div component opened as shown in fig ?. Which in the long run would hopefully save time and have a more refined appearance.
+Originally the google maps info window was used to display the metadata to the user, however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these info window’s would prove to be overly complicated. In particular through testing it was discovered that it was routinely obscuring the route of the recording, as a group it was decided to place it in the top right hand corner. However to accomplish this using the info window would mean constantly changing it's position as the map was panned, placing an unwanted burden on the performance of the application. for that reason it was decided that when a marker was clicked there should be a separate div component opened as shown in fig ?. Which in the long run would hopefully save time and have a more refined appearance.
 
 There was little debate as to how routes would be displayed on the map as the only two options were Google Maps Polyline or their Directions Service. The Directions Service could only make use of roads and paths, which quickly brings up problems, for example if a recording is made inside a building or if a route is incomplete on google maps the directions service would fail to display any useful information on the map. Polylines on the other hand take an array of latitude and longitude objects to create it along with any styling of the line, this allows for a very accurate trace of the route taken, even in unorthodox areas that may crop up; with a styling that can be made to fit the theme of the website.
 
-\subsubsection{Geolocation}
-
-Getting the end users current location in order to use it as a reference point, for centering the map and flagging it with a blue dot when they open up the webapp was achieved comparatively easily. This was accomplished through the use of the \gls{W3C} Geolocation API, with only a few lines of code we were then able to track the users current position by first checking to see if the browser supports it (Which most modern browsers do) then if so; create a new marker anchoring it at their location.
-
+\subsubsection{Geolocation}		Getting the end users current location in order to use it as a reference point, for centering the map and flagging it with a blue dot when they open up MDRS was achieved with relative ease. This was accomplished through the use of the \gls{W3C} Geolocation API, with only a few lines of code we were then able to track the users current position by first checking to see if the browser supports it (Which most modern browsers do) then if so; create a new marker anchoring it at their location.
 \begin{verbatim}
 navigator.geolocation.getCurrentPosition()
 \end{verbatim}
 
-\subsubsection{JQuery}
+\subsubsection{JQuery}		JQuery only began to be fully utilised in the later stages of development, this was largely due to having very little experience in its uses for development. However after completing a few basic tutorials on Code Academy. It quickly became apparent how it could be used to effectively and easily aid in the creation of an interactive environment for the user.
 
-JQuery only began to be fully utilised in the later stages of development, this was largely due to having very little experience in it's uses for development. However after completing a few basic tutorials on the codeacademy website. It quickly became apparent how it could be used to effectively and easily aid in the creation of an interactive environment for the user.
-
-The behaviour of the boxes including dragging, animations and visibility in the user interface are all controlled using JQuery. The inclusion of JQuery to do this proved to be a great addition requiring very few lines of code and little time in order to greatly enhance the end user experience. For example to make all the boxes on the page draggable required only the line of code:
-
+The behaviour of the boxes including dragging, animations and visibility in the user interface are all controlled using JQuery. The inclusion of JQuery to do this proved to be a great addition a succinct implementation and little time required to greatly enhance the end user experience. For example to make all the boxes on the page draggable required only the line of code:
 \begin{verbatim}
 $( ".class" ).draggable();
 \end{verbatim}
-
 To query our database was made simple with the inclusion of JQuery, essentially requiring only one line of code in the JavaScript. Although the asynchronous nature of this request did at times cause confusion, once this behaviour was discovered and understood it caused far less problems.
 
 \subsubsection{Integration}
 
 During the late stages of development there was a period of many months where it was seeming impossible to integrate the timeline onto the same page as the map. Thankfully however the problem was found to be with the use of conflicting JQuery requests between the timeline and the map. These get requests were:
-
 \begin{verbatim}
 $.getJSON()
 $.get()
 \end{verbatim}
-
 Once this issue was found, there also proved to be a conflict within Google maps as well, and the maps had to be removed from the timeline in order to allow for full integration.
 
 \subsection{Timeline (Implementation)}
