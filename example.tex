@@ -784,6 +784,22 @@ Therefore we made an auto-resize javascript function to achieve this.
 When initializing the timeline, we customized the zoom level to make as many recordings as possible visible at any given time and enabled the built-in bookmark function so that recrding objects could be linked and focused on the timeline.
 Also added a Google Maps key and used the debug mode to identify potential export problems in the python template code and make their resolution easier. Another customization we made is the default initial slide - set to 0 by default - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
 
+\subsection{Buzz!}
+In this subsection we will discuss the implementation of the background audio manager. The Buzz! Javascript library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution was chosen as the first one became overcomplicated.
+
+\subsubsection{Solution with HTML5 Web Workers}
+The HTML5 Web Workers are a way to mimic concurrency in a web application. This is achieved by using timeouts and event handlers. The Web Workers interface is used to run background scripts in the web application that do not block its main execution. The interface includes handling and passing of messages between the scripts which can be leveraged in order to implement a non-busy waiting.
+
+The first implementation of the background sound management utilised the web workers interface in order to recursively create a worker subthread for each new overlapping recording that needed to be played. This solution uses hardcoded parameters at it did not get to the stage where it needs to communicate with the server. In it an array called “mySounds” which is used in order to hold all the recordings that need to be played during this iteration. This array is filled with sounds using the command buzz.sound(filepath) but the way it is filled can be changed in order to obtain it from a GET request. After obtaining the files to be played and saving them in the array a recording must be loaded for playback using soundvariable.load(). Once loaded the file is ready to be played. The pre-loading is necessary in order to eliminate any latency issues and to ensure playback happens synchronously. 
+
+This implementation uses a recursive playSound() function that loops until all files loaded in the mySounds array have been played. What the function does is through each iteration it calls mySounds[current].play() in order to play the next recording and then if there are more recordings left in the mySounds array it would load the next one for playback and create and call a worker script that would wait for a set amount of time before returning a message that it is finished waiting. This message is then handled by the main thread by calling the playSound() function again in order to start the playback of the loaded file. The time the worker script spends waiting is currently hardcoded, but it is trivial to change the meaning of the message passed to it to include the time needed for the worker to wait.
+
+This solution implements two more functions. A stop() function which can be used to stop all playing files, empty the mySounds array and terminate any worker scripts currently running. And a pause() function which can pause all currently playing recordings.
+
+Despite the extensive research undertaken in order to implement it, this solution turned out to be too complicated for the requirements set and so was discarded in favour of the solution outlined bellow.
+
+\subsubsection{Solution without HTML5 Web Workers}
+
 
 \subsection{Database}
 For this project MySQL was the database back-end the team decided to use.
