@@ -145,15 +145,15 @@ The first step in conducting our research was to research pre-existing applicati
 \subsection{Soundcloud}
 Soundcloud according to its website is:
 \blockquote{An audio platform that enables sound creators to upload, record, promote and share their originally-created sounds.}
-This website offers an excellent way for artists to share there music with many other people and for other users to comment on their tracks, even at particular points in the track. This social side of it is largely the appeal of the website. However the majority of people uploading on this website are artists uploading their music. In MDRS we aspire for everyone to be able to upload the recordings they take in many different situations.
+This website offers an excellent way for users to share their music and sounds with others and for these users to comment on their favourite part of the upload, linking their message to a timestamp. Soundcloud's main attraction is this social interaction fans can have with content creatiors. However the majority of people uploading on this website are artists uploading their music. In MDRS we aspire for everyone to be able to upload the recordings they take in many different situations.
 
 \subsection{Audacity}
 
-On the desktop there are a number of applications that allow you to manipulate audio and combine multiple files. Audacity is a popular desktop application that allows the user to record and convert audio. It also allows the user to cut, copy and splice together recordings. This aspect of being able to merge audio together is something that we would need to integrate in our web application. However it would need to be done "on the fly" so as to allow the user to quickly change which audio files were played back together. In order to accomplish this task in Audacity is too slow and technical for a typical user.
+On the desktop there are a number of applications that allow you to manipulate audio and combine multiple files. Audacity is a popular desktop application that allows the user to record and convert audio. It also allows the user to cut, copy and splice together recordings. The ability to merge audio files together was a key requirement of MDRS that the team needed to implement. However our application would need it done dynamically "on the fly" to allow the user to quickly change which audio files were played back together. In order to accomplish this task in Audacity is too slow and technical for a typical user.
 
 \subsection{Foursquare}
 
-Foursquare is a location based mobile app that the group found to incorporate much of the functionality we desired in our project as it allowed users to "check in" at certain locations and add comments or pictures about a place or event. There is also a web application allowing other users to see the most recent data in their area very easily. However this is as far as Foursquare goes, with no ability to share audio. The ability to playback audio synchronously with nearby surrounding recordings will completely change the users experience, when compared with Foursquare, as it will give a far more immersive insight into what the mobile user's surroundings were like.
+Foursquare is a location based mobile app that the group found to incorporated much of the functionality we desired in our project. It allows users to "check in" at certain locations and add comments or pictures about a place or event. There is also a web application allowing other users to see the most recent data in their area very easily. However this is as far as Foursquare goes, with no ability to share audio. The ability to playback audio synchronously with nearby surrounding recordings will completely change the user's experience offering a far more immersive insight into a user's surroundings.
 
 \begin{figure}[ht!]
   \centering
@@ -163,19 +163,19 @@ Foursquare is a location based mobile app that the group found to incorporate mu
 
 \section{Initial Research Conclusions}
 
-After this it was decided to split the project into two separate parts, the web application and the mobile application. This decision was come to by researching the research carried out, in particular Foursquare; it was found that the end users experience can be greatly enhanced with the inclusion of a web application to accompany the mobile side. This would also allow a greater number of features to be incorporated into the project, for were we to have just the mobile application with all the features intended for the web application it could lead to a user interface far too cluttered and complicated to be navigated effectively by the end user.
+After this it was decided to split the project into two separate parts, discrete web and mobile applications. This direction was chosen from the research carried out. Foursquare had a strong influence over the decision. It was found that the end users experience can be greatly enhanced with the inclusion of a web application to accompany the mobile side. This would also allow a greater number of features to be incorporated into the project. If the project had been purely mobile the limitations of the platform could lead to a poor user experience with a cluttered and confusing interface, limiting the usefulness of MDRS.
 
-The team agreed this would help make the distribution of work flow more effectively. On the other hand it was recognised that a greater amount of work would be taken on by the group to complete these two applications. However everyone was enthusiastic about making this extra effort in order to make a more rounded and complete final product.
+The team acknowledged this dual aim would also help distribute the work amongst themselves. On the other hand it was recognised that a greater amount of work would be taken on by the group to complete these two applications. However, everyone was enthusiastic about making this extra effort in order to make a more rounded and complete final product.
 
-For the recordings taken by the mobile application to be represented as clearly as possible on the web application we consulted as a group as well as with our project supervisor, it was decided that each recording would have to be represented in both time and space. To do this as effectively as possible, it was agreed visual aids would be the clearest way to represent this information. So the use of a map view was decided to represent the recordings spatially and a timeline to represent them chronologically.
+For recordings taken by the mobile application to be represented as clearly as possible on the web application we consulted as a group as well as with our project supervisor, it was decided that each recording would have to be represented in both time and space. To do this as effectively, it was agreed visual aids would be the clearest way to represent this information. So the use of a map view was decided to represent the recordings spatially and a timeline to represent them chronologically.
 
 \section{Web Technologies}
 
-With the idea of the potential for MDRS, it was essential for the team to research key features and tools that we hoped to integrate into the project and to find things that would fit well into our imagined product, the following sections outline each technology that was researched and how we came to the final decision of the technology that was used.
+With the potential MDRS possessed, realised, it was essential for the team to research key features and tools that we hoped to integrate into the project and to find things that would fit well into our imagined product. This enhanced the team's collective knowledge on a battery of topics and tools greatly, allowing us to make the right decisions for the project.
 
 \subsection{Map}
 
-OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as \gls{Leaflet}, the potential was excellent. It’s downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
+OpenStreetMap was initially the preferred choice of mapping data. Deep open source roots combined with an excellent level of detail and accuracy was attractive. When combined with the Javascript library \gls{Leaflet} to embed the map, the potential was excellent. OpenStreetMap's downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox which host this data but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
   \centering
@@ -183,9 +183,9 @@ OpenStreetMap was thoroughly researched. It's open source roots and excellent le
 \caption{OpenStreetMap (left) Google Map (right)}
 \end{figure}
 
-Google Maps was seen as an strong alternative. While it was not open source, it offered comparative quality. A weakness found in the limitations set on the free use of the \gls{API}. It was discovered that after the obtaining of an API key however we would have access to 25,000 user visits a month. It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
+Google Maps was seen as a strong alternative. While it was not open source, it offered comparative quality of mapping data. A weakness was found in the limitations set on the free use of the \gls{API}. It was found that after the obtaining of an API key however we would have access to 25,000 user visits a month.\footnote{This number of visits was derived by taking the number of map loads offered to free users of Google's API and dividing it by the number of map views estimated for each user's visit to MDRS} It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
 
-Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use as well.
+Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use.
 
 \subsection{Timeline}
 
@@ -201,14 +201,21 @@ Taking these points into account it was decided that we would use Google Maps as
 
 %After a comparison TimelineJS was chosen due to its ease of use for the end user and its attractive user interface which was deemed a more important feature than greater customisability. Also the compatibility issues of the SIMILIE timeline could have caused problems further down the line, which we may not have been able to resolve.
 
-In order to display the recording information in a convenient way for the end user, we identified the implementation of a timeline containing the recording objects as a key requirement for the MDRS project. This would give the team the opportunity to implement a user-friendly interface, enabling the user to easily switch between recording metadata and identify overlapping recordings in the database. After discussing and sharing our thoughts on the required specifications that we would expect from that component, we made a list of what it would display to the user. The recording metadata contains the following characteristics:
+In order to display the recording information in an informative format, we identified a timeline presenting the recording objects in linear time as a key requirement for MDRS. This would give the team the opportunity to implement a user-friendly interface, enabling the user to easily identify overlapping recordings in the database. Ideally the timeline would display,
 
-- recording duration
-- recording start/ end time
-- location
-- ID
-- recording description
-- images/ photos taken while recording
+\begin{itemize}
+\item{Recording's title}
+\item{A recording's duration}
+\item{A recording's start time}
+\item{A recording's end time}
+\end{itemize}
+
+When clicked on, the following information would be revealed to the user:
+\begin{itemize}
+\item{The uploader}
+\item{A recording's description}
+\item{Accompanying imagery uploaded by the user}
+\end{itemize}
 
 After having clearly specified, documented and researched the functional requirements in order to try and find the best way to implement this key component for the system, we made design decisions and integrated it in the system. Having tested a number of different open source Javascript implementations of different timelines, the final decision was based on the implementation differences and the degree of customization those products offered (all implemented in JavaScript):
 
@@ -293,20 +300,20 @@ PureCSS is described on its website as,
 
 \blockquote{“A set of small, responsive CSS modules that you can use in every web project.”}
 
-This was an ideal candidate for our front-end framework as it was minimalistic in both size and appearance with the entire set of modules coming in at only 4.5KB (compressed). The documentation for PureCSS was also extensive which would help to ease problems during the development process of the front end.
+This was an ideal candidate for our front-end framework as it was minimalistic in both size\footnote{PureCSS is 4.5KB when minified.} and appearance. The documentation for PureCSS was also extensive which would  ease problems the development process of a reactive front end.
 
-Twitter's Bootstrap framework appeared to be a more complete solution. It provides icons, styling, and a number of UI elements ready to be easily added to a webpage. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of it's own character. Performance also suffers due to the size of the Javascript and CSS files needed. The documentation with Bootstrap was also very detailed, appearing to be more extensive than that provided with PureCSS.
+Twitter's Bootstrap framework appeared to be a more complete solution. It provides icons, styling, and a number of UI elements ready to be easily added to a webpage. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of it's own character. Performance also suffers due to the size of the Javascript and CSS files required.
 
-PureCSS was chosen in the end as it was far more lightweight and met our simple requirements. It gave a solid foundation on which to build our website from. Although Bootstrap is powerful it would have complicated our application unnecessarily.
+Although Bootstrap had many more features, the majority of these were unnecessary for our project. Its inclusion would have needlessly complicated the web application whereas PureCSS gave a solid foundation to build our website upon. Its lightweight approach aligned and met our simple requirements
 
 
 \subsection{Audio Playback}
 
-Buzz is a JavaScript library that utilises the HTML5 audio element. This library worked well grouping multiple audio files together and playing them simultaneously.
+'Buzz!' is a JavaScript library that utilises the HTML5 audio element. Again touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple HTML Buttons with Javascript commands attached to them. This offered the team a lot of control over the styling their audio playback.
 
-JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface.
+JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface cluttering the design.
 
-The team took the decision to use the Buzz JavaScript library as it was exactly what we were looking for on this particular occasion.
+The team took the decision to use the 'Buzz!' JavaScript library as it was exactly what we were looking for on this particular occasion.
 
 %==============================================================================
 \chapter{Planning}
@@ -349,96 +356,79 @@ There is also the possibility of a new team member being assigned a slot in our 
 Other issues could be integrating new team members, data loss, an ineffective scrum master or client representative. In case the we find that the current master or our client representative are ineffective, we might organise a team meeting, vote and accordingly make changes if needed. We are going to organise sessions at the end of each sprint in order to gather feedback on performance - which targets have been met and whether or not the scrum master/ client rep./ developers have carried out their tasks as expected.
 
 \section{Use Cases}
-Before starting the actual implementation of the application features, we thought of, and documented, the possible use cases of the system in the form of paper-drawn user stories. These blossomed into situations that MDRS could actively improve a user's experience giving us a grounding from which to work from.
+Continuing our preparations before implementation, the team considered and documented the possible use cases of the system in the form of paper-drawn storyboards. These blossomed into situations that MDRS could actively improve a user's experience giving us a grounding from which to work from.
 
 <paper user stories images>
 
-\subsection{Recording at a Demonstration} The synchronisation of multiple audio streams at a protest or any other type of public demonstration would enable the listener to hear different perspectives of the demonstration. What is more, they can switch between the source audio streams in order to distinguish speech, conversations, etc.
+\subsection{Recording at a Demonstration} The synchronisation of multiple audio streams at a protest or any other type of public demonstration would enable the listener to hear different perspectives of the demonstration. What is more, they could switch between the source audio streams in order to distinguish speech, conversations, etc.
 
-Scenario: John is a lecturer at a public protest in Glasgow regarding the academic salaries in the UK. He is at the protest with a couple of friends - Jane and Chris, who are also a part of the academic society. However, the protest has not managed to attract that many people and there has been no effect to date.
+\textbf{Scenario:} John is a lecturer at a public protest in Glasgow regarding the academic salaries in the UK. He is at the protest with a couple of colleagues - Jane and Chris. However, the protest has not managed to attract that many people to support their cause
 
-The three friends are trying to attract their colleagues by installing the MDRS mobile application on their Android cellphones and recording conversations while at the protest. Then sharing the different views people express in their statements from multiple vantage points at the protest can be listened to by their fellow lecturers, tutors, etc. - members of the academic community in Glasgow in order to make them realise the need to take part in the event and try to change their lives for the better.
+The three friends are trying to spread their message further by installing MDRS on their Android devices and recording conversations while at the protest. Then sharing the different views people express in their statements from multiple vantage points at the protest can be listened to by their fellow colleagues and opponents in the hope of making them understand their point of view better.
 
-\subsection{Audio Syncronisation at a Music Festival} Being able to synchronize multiple recordings from a music festival for instance is also a possible use case for this application. It will give end users the opportunity to listen to the music event as if they attended it considering the various vantage points used for audio recording. Also, noisy audio streams can be switched off to improve the audio quality of the playback.
+\subsection{Music Festival} Being able to synchronise multiple recordings from a music festival is also a possible use case for this application. It will give musiclovers who missed an event the opportunity to listen to it as if they attended, listening to the various vantage points used for the recordings. Also, noisy audio streams can be switched off to improve the audio quality of the playback.
 
-Scenario: There is a music festival on a stadium in London and Tom (from Aberdeen) and Kate (originally from London), who know each other, have bought tickets and are going to attend the festival. However, they are not going together and do not know that are both going to be attending. Tom has a ticket for the front rows because he has been expecting to see his favourite band live for months, while Kate is there just for fun and has grabbed herself a cheaper ticket somewhere in the back.
+\textbf{Scenario:} There is a music festival on a stadium in London and Tom (from Aberdeen) and Kate (from London), who know each other, have bought tickets and are going to attend the festival. However, they are not going together and do not know that are both going to be attending. Tom has a ticket for the front rows because he has been expecting to see his favourite band live for months, while Kate is there just for fun and has grabbed herself a cheaper ticket somewhere in the back.
 
 They are both recording the event using the MDRS mobile app to upload it to their personal timeline later.
 
-After the event, meet each other by accident and talk to each other about how they are getting on with their lives. After uploading the recordings they made on the festival online, with the MDRS web application they will be able to compare/ switch between the audio streams and listen to both of them at the same time - the louder and clearer recording Tom made and the more noisy one Kate recorded.
+After the event, the pair meet each other by accident and talk to each other about how they are getting on with their lives. After uploading the recordings they made on the festival online, with the MDRS web application they will be able to compare switch between the audio streams and listen to both of them at the same time - the louder and clearer recording Tom made and the more noisy one Kate recorded. They would also be able to share their perspectives, Tom in the chaotic front and Kate with a great overview of the whole event unfolding.
 
-\subsection{Home Party Recording} The multi-device audio system can also be used for other entertainment purposes, such as recording conversations from different locations at a house party. Synchronized playback ofthe audio will be great fun to listen to on the next day after the party.
+\subsection{Home Party Recording} The multi-device recording system can also be used for other entertainment purposes, such as recording conversations from different locations at a house party. synchronised playback ofthe audio will be great fun to listen to on the next day after the party.
 
-Scenario: John is hosting a house party and everyone starts recording people's conversations with their mobile devices scattered around in the rooms.
+\textbf{Scenario:} David is hosting a house party and everyone starts recording people's conversations with their mobile devices scattered around in the rooms.
 
 The next day after the fun is over, it is going to be greatly entertaining to listen to all the gossip people have been discussing.
 
 \subsection{Sports Event} If there is a sports event such as a championship or a tournament which involves matches being played on numerous locations at the same time, it would be nice to be able to record commentators discussing the game and synchronizing their statements to keep track of the present result.
 
-Scenario: Mark is a great fan of tennis and is attending the tennis tournament in Dubai in 2012. He idolises Rafael Nadal and has bought tickets for his tennis match against Novak Djokovic, court 1. At the same time, however, on court 4 plays Roger Federer against Grigor Dimitrov.
+\textbf{Scenario:} Mark is a great fan of tennis and is attending a tennis tournament in France. He idolises Rafael Nadal and has bought tickets for his tennis match against Novak Djokovic, court 1. At the same time, however, on court 4 plays Roger Federer against Grigor Dimitrov.
 
-Mark is a very keen supporter of the young Bulgarian rising star but cannot be at that court at the same time. By using MDRS to record the match on court 4, one of Mark's friends who is also attending the tournament but has a ticket for the other section is able to deliver Mark the audio stream from the other tennis court, making it possible for mark to listen to judges on both courts to keep track of the result.
+Mark is a very keen supporter of the Bulgarian rising star but cannot be at that court at the same time. By using MDRS to record the match on court 4, one of Mark's friends who is also attending the tournament but has a ticket for the other section is able to deliver Mark the audio stream from the other tennis court, making it possible for mark to listen to judges on both courts to keep track of the result.
 
 \section{MoSCoW requirements}
 Listed below are the project functional requirements the team identified with their priority rating based on the MoSCoW system:
 
 \subsection{Must Have}
-	Web application:
-		- the system needs a website with a backend support for audio processing
+	\boldit{Web application:} The system needs a website with a backend support for audio processing.
 
-	Mobile application:
-		- the system also comprises of an Android application for audio capture to be submitted to the database of the website via an upload form
+	\boldit{Mobile application:} Android application for audio capture to be submitted to the database of the website via an upload form.
 
-	User Authentication:
-		- potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations
+	\boldit{User Authentication:} Potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations.
 
-	Recording audio:
-		- the system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button
+	\boldit{Recording audio:} The system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button.
 
-	Recording submission:
-		- interaction between the Android app and the webapp
+	\boldit{Recording submission:} Interaction between the Android app and the web application.
 
-	Storing audio recordings:
-		- the mobile app needs to store recordings on the server for processing
+	\boldit{Storing audio recordings:} The mobile app needs to store recordings on the server for processing.
 
-	Audio synchronisation:
-		- audio synchronization functionality on recording selection
+	\boldit{Audio synchronisation:} Audio synchronization functionality on recording selection.
 
-	Recording timeline:
-		- a timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings)
+	\boldit{Recording timeline:} A timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings).
+
+	\boldit{Map view:} Visualisation of each recordings position on a map view for a user to spacially explore.
 
 \subsection{Should Have}
-	Playback selection:
-		- users need to be able to listen to all the recordings and be able to select
+	\boldit{Playback selection:} Users need to be able to listen to all the recordings and be able to select.
 
-	Geo location:
-		- the system needs to store current user location
-
+	\boldit{HTML5 GeoLocation:} The web application should be able to find a user's current location and centre the map on this, revealling recordings in the local vicinity.
 
 \subsection{Could Have}
-	Route tracking:
-		- once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished
+	\boldit{Route tracking:} Once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished.
 
-	Taking photos:
-		- the Android application needs to enable the user to take photos while recording to make the playback experience more realistic and detailed
+	\boldit{Taking photos:} The Android application needs to enable the user to take photos while recording to enrich the playback experience.
 
-	Filter recordings depending on times:
-		- a nice feature will be to provide users the option to filter recordings and display only those from a specific time period on the map and the timeline
+	\boldit{Filter recordings by time and date:} Provide users the option to filter recordings and display only those from a specific time period on the map and the timeline.
 
 \subsection{Would Have}
-	User account enhancements:
-		- it would be nice to provide users the opportunity to change their avatar
+	\boldit{User account enhancements:} Offer enhanced user pages, friends list support and more social connections to other networks (Facebook, Twitter).
 
-	Recording grouping in events:
-		- after uploading a recording it would be a nice feature to provide the option of creating an event as a property of the recording object or selecting one from the list of events that have already been created
+	\boldit{Recording grouping in events:} Allow users to create events and link their recordings to this, facilitating the retrieval of all recordings for a single event for other users.
 
-	Recording tags:
-		- users could add relevant tags to their recordings which will enable easy search and recording filtering
+	\boldit{Descriptive Tags:} Users could add relevant tags to their recordings which will enable easy search and recording filtering.
 
 
-\section{Project Timeline}
-
-From the outset, the team laid out a flexible timetable for the project, accounting for the series of phases a project must undergo.
+\section{Project Timeline}		From the outset, the team laid out a flexible timetable for the project, accounting for the series of phases a project must undergo.
 
 During week one we filled the consent forms which were distributed to us after the group allocations were announced and submitted the ballot.
 
@@ -486,7 +476,7 @@ After the system prototype was completed, the next stage in the implementation p
 
  We managed to filter personal user recordings and display them on the user page in the form of a list in a side container and renderred on the timeline.
  The user could browse through their recordings on the timeline and play them individually using the audio controls on the home or user page.
- Recording markers on the map as well as objects from the user page list could be selected and synchronously played back if they overlap using the Buzz! JS library.
+ Recording markers on the map as well as objects from the user page list could be selected and synchronously played back if they overlap using the 'Buzz!'! JS library.
  We also modified the system's upload page in order to take a .aac file, a metadata.json and a tar archive containing the images taken while recording as input.
  Photos were integrated on the index page in the form of a pop-up box and as a mini thumbnail pop-up gallery below each recording's metadata on the user page.
 
@@ -499,7 +489,7 @@ After the system prototype was completed, the next stage in the implementation p
 
 The core of our design sprung from early storyboarding and imagined user
 profiles which informed us extensively on what a possible system might look
-like. Each team member chose a different scenario where they thought MDRS could be used and created a visual aid to describe the user's experience as they interacted with it. As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
+like. As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
 
 \begin{figure}[ht!]
 \centering
@@ -507,15 +497,15 @@ like. Each team member chose a different scenario where they thought MDRS could 
 \caption{An initial storyboard for MDRS.}
 \end{figure}
 
-The project's use in public safety was of particular interest to the team. MDRS could serve as a non-invasive and non-threatening way for police officers to monitor their patrol. It could also hold those officers and those they interact with accountable in a alternative way to current methods such as mounted video cameras.
+The project's use in public safety was of particular interest to the team. MDRS could serve as a non-invasive and non-threatening way for police officers to monitor an area. It could also hold those officers and those they interact with accountable in a alternative way to current methods such as mounted video cameras.
 
 Include another storyboard here {\bf bold}
 
-From our storyboards we realised that MDRS should be more than an audio recorder with location tracking. By allowing the user to capture images, we could combine these three information sources into a virtual environment that other users could explore.
+From our storyboards we realised that MDRS should be more than an audio recorder with location tracking. By allowing the user to capture images, we could combine these three information sources into a virtual environment that others could explore.
 
 \section{User Interface} The realisation that the project would be spread across
 both mobile and static devices raised the need for two interaction models for
-MDRS. For capturing the various forms of data a mobile implementation was key. The choice of Android was advantageous in the design stage as it has a flexible framework within which to design an application's interface compared to iOS which is much more restrictive in what is possible. A web counterpart served excellently as the best platform to portray any data collected. Visualising our complex data on a small device's screen would have been limiting. The internet meant we could take risks in how we communicated our ideas.
+MDRS. For capturing the various forms of data a mobile implementation was key. The choice of Android was advantageous in the design stage as it has a flexible framework within which to design an application's interface compared to iOS which is much more restrictive in what is possible. A web counterpart served excellently as the best platform to portray any data collected. Visualising our complex data on a small device's screen would have been limiting. A web gave the team flexibility to take risks and innovate in how we communicated our ideas.
 
 \subsection{Web Application}
 
@@ -533,7 +523,7 @@ MDRS. For capturing the various forms of data a mobile implementation was key. T
 %Progress with the web application was steady, the back-end was actually a fairly simple affair in comparison to the front-end which was heavy with scripting.
 %Back-end scripting mostly involved getting the models to suit what was needed correctly, it took several trial and error attempts however once the team managed to work out the correct collection of models it was mostly left alone. The only real issue the team ran into was some of the audio formats in the later stages of the project. At the outset OGG was decided as the format to use as it had a great compression to quality ratio; however it was discovered that Android could not, in fact, encode audio to OGG directly. Since a majority of the web code had already been written a decision was made to simply take a format Android could encode in and then convert it to OGG upon upload to the server.
 
-Given the nature of MDRS, the team looked to the Distributed Information Management course taught in second semester as a source of possible tools. The course is structured around the use of Django, a Python based web framework which we considered  would offer us the flexibility to create a rich, dynamic application easily deployable to possible users. Widely used, Django had a wide range of support materials available including Tango with Django written by Leif Azzopardi and Glasgow University postgraduate student David Maxwell. This resource and knowing we would have to learn it later through coursework made the framework choice an easy one.
+Given the nature of MDRS, the team looked to the Distributed Information Management course taught in second semester as a source of possible tools. The course is structured around the use of Django, a Python based web framework which we considered  would offer us the flexibility to create a rich, dynamic application easily deployable to possible users. Widely used, Django had a wide range of support materials available including Tango with Django written by Leif Azzopardi and Glasgow University postgraduate student David Maxwell. This resource and knowing we would have to learn it later through coursework made the framework choice an easy one. It helped to solidify in the design stage how the team could retrieve the data to then present.
 
 \begin{figure}[ht!]
 \centering
@@ -541,11 +531,11 @@ Given the nature of MDRS, the team looked to the Distributed Information Managem
 \caption{Prototype of map view.}
 \end{figure}
 
-The key interaction between the user and MDRS is location therefore it made sense to make a map the central interface. The user would be able to explore the map and click on pins representing recordings. This would then project the path of the recording, indicating where images were captured along the way. Users could then play it back individually or select multiple recordings for synchronous playback. With such an important role, the choice of which mapping API to leverage was extensive in the early stages of the project.
+The key interaction between the user and MDRS is location therefore it made sense to make a map the central interface. The user would be able to explore the map and click on pins representing recordings. This would then project the path of the recording , 'lighting the way', indicating where images were captured along the way. Users could then play it back individually or select multiple recordings for synchronous playback. With such an important role, the importance of which mapping API to implement was extensive during prototyping.
 
-Our choice of Google Maps was immediately found to be the correct one while prototyping our interface. The simple API made it easy to test out different styles of visualising recordings. To get these prototypes off the ground all the team needed to do was include the Javascript library in the HTML file. After multiple tests it was decided that a custom marker would mark the beginning of each recording. Once clicked on, this would trace the route of the recording, showing its terminus. While earlier approaches showed the paths all the time, this cluttered the interface. Another test tried having the map blank to begin with and only populate as the user chose their recordings from a list. This was found unengaging and the team felt users would lose interest without visual stimulation as soon as the page loaded.
+Our choice of Google Maps was immediately found to be the correct one while prototyping our interface. The simple API made it easy to test out different styles of visualising recordings. To get these prototypes off the ground all the team needed to do was  reference the Javascript library in the HTML file. After multiple tests it was decided that a custom marker would mark the beginning of each recording. Once clicked on, this would trace the route of the recording, showing its terminus. While earlier approaches showed the paths all the time, this cluttered the interface. Another test tried having the map blank to begin with and only populate as the user chose their recordings from a list. This was found unengaging and the team felt users would lose interest without visual stimulation as soon as the page loaded.
 
-Alongside our use of maps, early on in development we prototyped a version which would incorporate Google's Street View. This would allow the user to follow a recording's location trail even more closely. By harvesting the orientation of the recording device we could show where they were looking, showing the Street View at that angle, and overlay any of the user's own images they captured on top of this. While this immersed the user even deeper into the recording, it was unfortunately not taken beyond this prototype stage due to the complexity of implementation.
+Alongside our relatively simple use of maps, we prototyped a version which would incorporate Google's Street View. This would allow the user to follow a recording's location trail even more closely. By harvesting the orientation of the recording device we could show where they were looking, showing the Street View at that angle, and overlay any of the user's own images they captured on top of this. While this immersed the user even deeper into the recording, it was unfortunately not taken beyond this prototype stage due to the complexity of implementation required.
 
 \begin{figure}[ht!]
 \centering
@@ -553,9 +543,9 @@ Alongside our use of maps, early on in development we prototyped a version which
 \caption{An example of TimelineJS by KnightLab.}
 \end{figure}
 
-A second key component to this interface is the interactive timeline. This was hoped to show the length of each recording and where they overlapped. Upon clicking on a recording, a dialog would show its metadata such as name, description, the user who captured it and accompanying images. Early prototypes also show the ability to move the current position of playback along the timeline to skip to different positions. This level of manipulation was simplified upon selection of TimelineJS which we used to construct it.
+A second key component to this interface is the interactive timeline. This was hoped to show the length of each recording and where they overlapped. Upon clicking on a recording, a dialog would show its metadata such as name, description, the user who captured it and any accompanying images. In earlier prototypes the ability to scrub along the timeline was included. This was removed as no Timeline researched offered the functionality.
 
-Early web interface designs featured a prominent header bar and a floating menu panel which moved over the map. From early prototypes and wireframes this was realised to waste a lot of screen real estate, detracting from the reason the user was on the website. The header bar in particular became wasteful as the ability to search all recordings was downgraded in importance within the application. Through discussion in the team it was decided that users would more likely be interested in audio based on location (the key paradigm of MDRS) rather than searching through keyword. It gave us a stretch goal to aim for if development moved along smoothly. Upon research into interface frameworks the CSS library, PureCSS, was found as a replacement to create an engaging and simple menu interface. Its simplicity favoured our team's limited prior experience with web design and it’s accompanying documentation is excellent.
+Early web interface designs featured a prominent header bar and a floating menu panel which moved over the map. From early prototypes and wireframes this was realised to waste a lot of screen real estate, detracting from the reason the user was on the website. The header bar in particular became wasteful as the ability to search all recordings was downgraded in importance within the application. Through discussion in the team it was decided that users would more likely be interested in audio based on location (the key paradigm of MDRS) rather than searching through keyword. It gave us a stretch goal to aim for if development moved along smoothly. PureCSS' simplicity favoured our team's limited prior experience with web design. The elements included in the toolkit all look great and gave a lot of direction in how to integrate navigational controls.
 
 \begin{figure}[ht!]
 \centering
@@ -568,7 +558,7 @@ personalised insight into a user's recordings and activity with the application.
 It included a personalised timeline and map showing their personal contributions
 to the map from which they could play, edit details or delete them from the
 service. Along with all the other tools mentioned, the foundations of our
-web application's interface were laid.
+web application's design were laid.
 
 \subsection{Android Application} It was decided early on to approach this
 element of the project realistically and working from a simple set of requirements to
@@ -576,12 +566,11 @@ make the application simple to implement. This would allow us to make the user e
 
 To develop an engaging user interface on Android, the team looked for a scalable and intuitive design, drawing influence from a wide range of applications such as Foursquare, Snapchat and Google Play’s suite of applications. Google's Android Design Guidelines were consistently referred to throughout this process for inspiration.  Foursquare's integration of a map into a larger whole was seen as an excellent touchstone while Snapchat's unconventional, yet intuitive navigation model was seen as a strength of the application the team could borrow from. Google's applications portrayed the strength and beauty of clear typography and the undeniable rule of mobile design where less is more. Sources such as Android Niceties were also used to find innovative design that could help with MDRS. A utilitarian minimalism through design was the team's goal. The core functionality of the application was single use and the flow through it was clear, allowing for a relatively simple approach to be taken, finding a place for flair within the constructs the team placed on themselves.
 
-\begin{wrapfigure}{r}{0.35\textwidth}
-\begin{center}
-  \includegraphics[width=0.34\textwidth]{images/android-digital-prototype-1.jpg}
-\end{center}
-\caption{Initial interface design}
-\end{wrapfigure}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.34\textwidth]{images/android-digital-prototype-1.jpg}
+\caption{Intial Android interface design.}
+\end{figure}
 
 This first UI design offers a split with both a map and view through the camera
 lens. The influence for the central record button came from Foursquare’s
@@ -591,12 +580,11 @@ smaller screens and a confusing interaction model. Could a user interact and
 capture an image before hitting record? This lack of clarity lead to a
 revisionary second prototype.
 
-\begin{wrapfigure}{r}{0.35\textwidth}
-\begin{center}
-  \includegraphics[width=0.34\textwidth]{images/android-digital-prototype-2.jpg}
-\end{center}
-\caption{Initial interface design}
-\end{wrapfigure}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.34\textwidth]{images/android-digital-prototype-2.jpg}
+\caption{Second Android interface design iteration.}
+\end{figure}
 
 This prototype drew more influence from Snapchat’s sliding interface, replacing
 its horizontal movement with a vertical one. Again showing the record button on
@@ -637,34 +625,26 @@ Finally the upload screen informed them of their path through the map view. The 
 \chapter{Implementation}
 \label{impl}
 
-In this chapter, we describe how the implemented the system.
-
-%------------------------------------------------------------------------------
 \subsection{Server and Django configuration}
-
-\subsubsection{Server Configuration}
 Being granted use of a university server, the team had a server to base all of their work off of. One team member was given the task to set-up and maintain the server.
-Set-up was a simple case of installing the necessary packages from the \gls{Ubuntu} repositories such as Git, Python, Django, \gls{PIP}, \gls{MySQL} etc. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
+Set-up was a simple case of installing the necessary packages from the \gls{Ubuntu} repositories such as Git, Python, Django, \gls{PIP} and \gls{MySQL}. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
+
 This, having been completed, lead to cloning the team Git repository to the server. Some permissions teething problems were immediately encountered as some members could not edit files. However these were minor issues dealt with some basic configurations.
 Having the file set now on the server it was a simple case to initialise a database for the project and get it to a working state. However there was immediately an issue in that regular users could not host the server on port 80 (the standard port for HTTP requests and the server's only open port) without administrator privileges. This meant that each team member would need to login as our shared super user account to simply run the server; this slowed workflow and so a solution was devised. By manipulating the IP tables on the server, the team successfully managed to route port 8080 internally to port 80. Simply put this meant the team was fooling the server into thinking it was hosting harmlessly on port 8080 whereas it was getting rerouted, after the user invoked the command, to port 80. Exactly where the team needed the socket bound to.
+
 Later issues appeared as development continued, many of them minor issues such as the database needing reinitialised or the server rebooted and the IP tabled reconfigured. All issues were dealt with swiftly and with little to no impact to the development of the project.
 
-\subsubsection{Django Configuration}
-Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boiler plate, as in it is uniform across many applications with little custom settings.
-The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing Python files.
-The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
-The configuration involved in this was minimal, simply using the manage script the team created the web app partition and began work straight away.
-As development continued only minor edits had to be made to the settings of the project. One key edit made was to include the session cookie plugin to allow users to log in and maintain their sessions correctly.
+\subsubsection{Django Configuration}		Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boilerplate.\footnote{These parts are uniform across many applications with few custom settings required for MDRS.}
 
-\section{Web Application}
+The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing Python files. The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
 
-During development the web application was split into seperate parts comprising of the map, timeline, user interface and database. With team members working on different parts so as to spread the work effectively. It was sometimes necessary for a developer to carry out work in another persons area. Though for the most part this did not cause any problems, as long as an effective line of communication was maintained between those two team members. This was usually done in the form of GitHub issues or more informally through Facebook chat or "face-to-face" communication.
+The configuration involved in this was minimal, simply using the manage script the team created the web app partition and began work straight away. As development continued only minor edits had to be made to the settings of the project. One key edit made was to include the session cookie plugin to allow users to log in and maintain their sessions correctly.
 
-\subsection{User Interface}
+\section{Web Application}		During development worked required for the web application was separated into discrete parts. With team members working across these parts spread the work effectively. When extra help was required, another team member would assist the current 'specialist' of a feature. This for the most part didn't cause any issues due to effective communication between the two developers. This was usually done using GitHub Issues or more informally through Facebook chat or 'face-to-face' communication.
 
-The User Interface went through a number of iterations during the the development cycle. The early interface was built from the ground up causing innumerable problems, this was down to a lack of experience in web design by the team members. After discussions within the group however and research being carried out into suitable frameworks for the front end to ease development, it was decided to use PureCSS.
+\subsection{User Interface}		The UI went through a number of iterations during the the development cycle. The early interface was built from the ground up causing innumerable problems, this was down to a lack of experience in web design by the team members. After discussions within the group however and research being carried out into suitable frameworks for the front end to ease development, it was decided to use PureCSS.
 
-It was the aim when approaching the User Interface to try and achieve a consistency in the colour scheme and layout to make it as easy as possible for the end user to navigate. Buttons and options were kept to a minimum and functionality was designed to be as intuitive as we could make it.
+It was the aim when approaching the UI to achieve a consistency in the colour scheme and layout throughout the application to promote ease of use. Buttons and options were kept to a minimum and functionality was designed to be as clear and intuitive as possible.
 
 \begin{figure}[ht!]
 \centering
@@ -672,21 +652,17 @@ It was the aim when approaching the User Interface to try and achieve a consiste
 \caption{Navigation Menu, Control Box, Picture Box and Recording Box}
 \end{figure}
 
-\subsubsection{Navigation Menu}
-
-The navigation menu came as a layout on the PureCSS website, it was decided by the group that as opposed to trying to create what has already been created. We would use this layout and put our efforts into other areas of the project instead. Earlier on in the development all the UI controls were located within the navigation menu, however it became quickly apparent that this would leave it overly cluttered and unproffessional in appearance. So the controls for the map were relocated to a separate box, and a button opening the box was located within the navigation menu. This button also changes it's text dynamically relative to whether the box is open or closed.
+\subsubsection{Navigation Menu}		PureCSS was leveraged for the navigation of the web application. By using the framework we saved a lot of development time to focus on other areas. Earlier on in the development all the UI controls were located within the navigation menu, however it became quickly apparent that this would create an overly cluttered and unprofessional appearance. So the controls for the map were relocated to a separate box, and a button opening the box was located within the navigation menu. This button also changes it's text dynamically relative to whether the box is open or closed.
 
 This menu also utilizes Django's user authentication system, so that if a user is logged in there username is displayed on the menu item that would otherwise be named user offering a more responsive interface. The current page is also highlighted in the navigation menu, so as to cause the least amount of confusion to the user as to where they are in the sitemap. There is a button also located within the menu that allows the timeline to be hidden, just in case more space is required due to smaller screens or just to simply tidy the map view.
 
-\subsubsection{Control Box}
-
-The control box is separated into three logical sections; "Select in Range", "Audio Controls" and "Search". To keep options to a minimum within this box proved to be a challenge. For example in the "Select Range" section if the start date is left blank it is assumed that all dates prior to the end date are desired. The opposite is true for end date, however if both dates are left blank all are selected. To create options for this in the box could lead to a more complicated UI though it proved unnecessary to do this as these features were intuited by most people during testing.
+\subsubsection{Control Box}		The control box is separated into three logical sections; "Select in Range", "Audio Controls" and "Search". To keep options to a minimum within this box proved to be a challenge. For example in the "Select Range" section if the start date is left blank it is assumed that all dates prior to the end date are desired. The opposite is true for end date, however if both dates are left blank all are selected. To create options for this in the box could lead to a more complicated UI though it proved unnecessary to do this as these features were intuited by most people during testing.
 
 \gls{JQuery} Datepicker was used as the user interface for selecting a date with great success, the colours were edited to give a more consistent appearance and integrated feel. Originally when a date was selected it came up in the American format, though this was easily changed by using the documentation provided with the JavaScript library on GitHub.
 
 It was decided to use JQuery Timepicker for selecting a time, this timepicker has a similar appearance to that of the timepicker on Google calendar. It was not integrated in earlier versions, however it was quickly realised during testing that a datepicker on it's own was a fairly naive approach. Selecting recordings at a similar time by date alone was far too wide a margin for any practical use, as recordings on average were only a minute in length.
 
-The second section in the control box "Audio Controls" offers support for playing multiple recordings all at once, this feature utilises Buzz and it's support for grouping multiple audio files together. This feature works by using the earliest recording in the group of selected recordings as it's datum, from there all other recordings are synchronised. This approach has it's drawbacks, though a more intuitive system was not an option due to the limited timescale imposed on the group.
+The second section in the control box "Audio Controls" offers support for playing multiple recordings all at once, this feature utilises 'Buzz!' and it's support for grouping multiple audio files together. This feature works by using the earliest recording in the group of selected recordings as it's datum, from there all other recordings are synchronised. This approach has it's drawbacks, though a more intuitive system was not an option due to the limited timescale imposed on the group.
 
 Finally the third section is "Search" this allows the user to search for a recording using the name of that recording. This functionality unfortunately was found, during testing, to not scale as well as we might have hoped. This was down to the fact that if you did not know the name of a recording there was no other option offered to find it. Options that could have been included may have been such things as tags or by user. There was also performance issues, as it took all the recordings from the database for the autocomplete no matter what was entered into the search bar.
 
@@ -694,7 +670,7 @@ Finally the third section is "Search" this allows the user to search for a recor
 
 This box displays the meta data associated with the recording that has been clicked. The colours chosen were picked to fit as closely with the sites theme as much as possible. If the description is too long to fit into to the description box it displays a custom  scroll bar. It should work in most modern browsers though degrades gracefully if it is not supported. There are a number of buttons in this box each with a separate purpose.
 
-The first three buttons are audio controls for "Play", "Pause" and "Stop"; each are represented by the usual symbols. These buttons utilize buzz for playing the recording associated with the record currently loaded in the box. The next button in the box is one that allows you to load the Picture Box, this is represented by an image icon on the user interface.
+The first three buttons are audio controls for "Play", "Pause" and "Stop"; each are represented by the usual symbols. These buttons utilize 'Buzz!' for playing the recording associated with the record currently loaded in the box. The next button in the box is one that allows you to load the Picture Box, this is represented by an image icon on the user interface.
 
 Finally there is a button for viewing the position of a recording on the timeline, as there can be any number of recordings on the timeline all at once, to do this manually would be infeasible. So when the button is pressed, the timeline will scroll to the recording loaded in this box and will be selected on the timeline.
 
@@ -882,7 +858,7 @@ Overall, the application met the 'must have' requirements while offering an easy
 This chapter contains information on the steps we took in order to evaluate the system - how we gathered feedback and analyzed it in order to be able to draw conclusions regarding the application usability.
 
 We evaluated the project by creating an online survey with a small number of basic tasks to be completed on the web application in order to test the intuitivity of the user interface.
-Those tasks involved testing the key functionality of the system - being able to find specific recordings and play them individually as well as identify overlapping ones and synchronize them accordingly.
+Those tasks involved testing the key functionality of the system - being able to find specific recordings and play them individually as well as identify overlapping ones and synchronise them accordingly.
 
 The tasks become more and more complex in an iterative manner and are designed in a way to prepare the user for what functional effects to expect.
 The first one requires them to navigate to the home page of the web site and listen to any recording by clicking the map markers.
