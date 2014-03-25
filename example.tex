@@ -1,6 +1,6 @@
 % Modified
 \documentclass{l3proj}
-\usepackage{wrapfig}
+\usepackage{hyperref}
 \usepackage{csquotes}
 \usepackage{glossaries}
 \usepackage{url}
@@ -90,7 +90,7 @@
 \maketitle
 \begin{abstract}
 
-Surrounding us in city life there are unique moments missed everyday by experiencing  them through the lens of a smartphone instead of being 'in the moment'. That instance is lost in time and never fully appreciated. The video or images captured are then restricted to that specific person, only able to relive the moment from their limited perspective. By creating a mobile first approach to capturing locational audio centred around these moments MDRS can offer new insights and crowdsource distinctive, new  perspectives of life in our cities. This aim was successfully achieved with a functioning web and mobile application to allow users to gather this information while still enjoying the moment, then later explore their perspective and others in a unique way. Our testing has shown...
+Surrounding us in city life there are unique moments missed everyday by experiencing  them through the lens of a smartphone instead of being 'in the moment'. That instance is lost in time and never fully appreciated. The video or images captured are then restricted to that specific person, only able to relive the moment from their limited perspective. By creating a mobile first approach to capturing locational audio centred around these moments our project can offer new insights and crowdsource distinctive, new  perspectives of life in our cities. This aim was successfully achieved with a functioning web and mobile application to allow users to gather this information while still enjoying the moment, then later explore their perspective and others in a unique way. Our testing has shown users are intrigued by our new ideas and realise the potential value of a multi-device recording system
 
 \end{abstract}
 \educationalconsent
@@ -396,43 +396,68 @@ Mark is a very keen supporter of the Bulgarian rising star but cannot be at that
 Listed below are the project functional requirements the team identified with their priority rating based on the MoSCoW system:
 
 \subsection{Must Have}
-	\boldit{Web application:} The system needs a website with a backend support for audio processing.
 
-	\boldit{Mobile application:} Android application for audio capture to be submitted to the database of the website via an upload form.
 
-	\boldit{User Authentication:} Potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations.
+	\begin{itemize}
 
-	\boldit{Recording audio:} The system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button.
+	\item \boldit{Web application:} The system needs a website with a backend support for audio processing.
 
-	\boldit{Recording submission:} Interaction between the Android app and the web application.
+	\item \boldit{Mobile application:} Android application for audio capture to be submitted to the database of the website via an upload form.
 
-	\boldit{Storing audio recordings:} The mobile app needs to store recordings on the server for processing.
+	\item \boldit{User Authentication:} Potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations.
 
-	\boldit{Audio synchronisation:} Audio synchronization functionality on recording selection.
+	\item \boldit{Recording audio:} The system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button.
 
-	\boldit{Recording timeline:} A timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings).
+	\item \boldit{Recording submission:} Interaction between the Android app and the web application.
 
-	\boldit{Map view:} Visualisation of each recordings position on a map view for a user to spacially explore.
+	\item \boldit{Storing audio recordings:} The mobile app needs to store recordings on the server for processing.
+
+	\item \boldit{Audio synchronisation:} Audio synchronization functionality on recording selection.
+
+	\item \boldit{Recording timeline:} A timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings).
+
+	\item \boldit{Map view:} Visualisation of each recordings position on a map view for a user to spacially explore.
+
+	\end{itemize}
+
 
 \subsection{Should Have}
-	\boldit{Playback selection:} Users need to be able to listen to all the recordings and be able to select.
 
-	\boldit{HTML5 GeoLocation:} The web application should be able to find a user's current location and centre the map on this, revealling recordings in the local vicinity.
+	\begin{itemize}
+
+	\item \boldit{Playback selection:} Users need to be able to listen to all the recordings and be able to select.
+
+	\item \boldit{HTML5 GeoLocation:} The web application should be able to find a user's current location and centre the map on this, revealling recordings in the local vicinity.
+
+	\end{itemize}
 
 \subsection{Could Have}
-	\boldit{Route tracking:} Once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished.
 
-	\boldit{Taking photos:} The Android application needs to enable the user to take photos while recording to enrich the playback experience.
 
-	\boldit{Filter recordings by time and date:} Provide users the option to filter recordings and display only those from a specific time period on the map and the timeline.
+	\begin{itemize}
+
+	\item \boldit{Route tracking:} Once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished.
+
+	\item \boldit{Taking photos:} The Android application needs to enable the user to take photos while recording to enrich the playback experience.
+
+	\item \boldit{Filter recordings by time and date:} Provide users the option to filter recordings and display only those from a specific time period on the map and the timeline.
+
+	\end{itemize}
+	
 
 \subsection{Would Have}
-	\boldit{User account enhancements:} Offer enhanced user pages, friends list support and more social connections to other networks (Facebook, Twitter).
 
-	\boldit{Recording grouping in events:} Allow users to create events and link their recordings to this, facilitating the retrieval of all recordings for a single event for other users.
 
-	\boldit{Descriptive Tags:} Users could add relevant tags to their recordings which will enable easy search and recording filtering.
+	\begin{itemize}
 
+	\item \boldit{User account enhancements:} Offer enhanced user pages, friends list support and more social connections to other networks (Facebook, Twitter).
+
+	\item \boldit{Recording grouping in events:} Allow users to create events and link their recordings to this, facilitating the retrieval of all recordings for a single event for other users.
+
+	\item \boldit{Descriptive Tags:} Users could add relevant tags to their recordings which will enable easy search and recording filtering.
+
+	\end{itemize}
+	
 
 \section{Project Timeline}		From the outset, the team laid out a flexible timetable for the project, accounting for the series of phases a project must undergo.
 
@@ -482,12 +507,9 @@ After the system prototype was completed, the next stage in the implementation p
 
  We managed to filter personal user recordings and display them on the user page in the form of a list in a side container and renderred on the timeline.
  The user could browse through their recordings on the timeline and play them individually using the audio controls on the home or user page.
- Recording markers on the map as well as objects from the user page list could be selected and synchronously played back if they overlap using the 'Buzz!'! JS library.
+ Recording markers on the map as well as objects from the user page list could be selected and synchronously played back if they overlap using the 'Buzz!' JS library.
  We also modified the system's upload page in order to take a .aac file, a metadata.json and a tar archive containing the images taken while recording as input.
  Photos were integrated on the index page in the form of a pop-up box and as a mini thumbnail pop-up gallery below each recording's metadata on the user page.
-
-
-
 
 %==============================================================================
 \chapter{Design}
@@ -962,16 +984,35 @@ As briefly mentioned in the design chapter, the team would also hope to use the 
 
 The Android application would ideally be completely rebuilt. While the current iteration meets most of our functional and non-functional requirements, it has fundamental flaws associated with the severely limited development resources. Login with Social Auth would be integrated and background recording would be a 'must have' feature from the beginning.
 
+As user numbers increased, scalability of our system would be a key concern. Uploads to MDRS are storage intensive. The team would look at ways of resizing and reducing the memory required to store any images a user uploaded. Audio could also be compressed but  care would be required not to detrimentally effect the quality of recordings. The method in which recordings are stored on the server would need to be rethought. Currently each day has subfolders for every recording uploaded that day. Consideration to the fastest access time to storage organisation would have to be thought about.
+
 %==============================================================================
 \chapter{Conclusion}
 
-A great project!
+In conclusion, overall MDRS been a success. Taking our design brief and tweaking it gave the team an excellent premise to work from. Transforming the project into something the team were not only interested in but passionate about meant we could create something special.
+
+Where other projects stayed within comfortable boundaries of what was normal, we tried to make something that hadn't been done before. Combining both the web and Android in retrospect was a success. The team worked more efficiently and gave a better grounding to communicate our ideas. Throughout the industry people are creating devices and services that can observe the world around us in new ways and extrapolate meaning. These observations can lead to improving people's everyday lives, making the technology they interact with more enjoyable.
+
+Our evaluation has shown that MDRS has been successful in meeting this goal. Our interaction model, once explained, is intuitive and lets the user sift through large amounts of data to find the recordings meaningful to them. The accompanying Android application has been a success. Finding new ways to use the smartphones everyone carries in their pocket has been a point of pride within the team. Leveraging the vast array of sensors has proved to be a success.
+
+Overall, the project has been a success in educating the team in the dynamics of collaborative work. Through difficulties, mistakes and successes, everyone has improved their development and interpersonal skills. We each leave the project meeting the requirements set of us while having improved ourselves and hopefully each other's skills.
 
 %==============================================================================
 \section{Contributions}
 
 %Wasn't this written somewhere?
 Conclusion here
+
+%==============================================================================
+\section{Appendices}
+\subsection{Code Repositories}
+Our code and dissertation are distributed amongst three GitHub repositories. One for the Django applicaton, the Android application and the dissertation LaTeX.
+
+\href{https://github.com/Kaffse/multi-device-audio-project}{Django Application - Multi Device Recording System}
+\href{https://github.com/allyjweir/mdrs-mobile}{Android Application - MDRS Mobile}
+\href{https://github.com/allyjweir/dissertation-teamt-tp3}{Dissertation}
+
+\subsection{Diagrams and Prototype Images}
 
 %==============================================================================
 \bibliographystyle{plain}
