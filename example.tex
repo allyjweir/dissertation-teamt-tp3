@@ -140,10 +140,7 @@ To fully understand this dissertation, the following knowledege would be benefic
 \chapter{Research}
 \label{Research}
 
-The first step in conducting our research was to research pre-existing applications both on mobile and the web.
-
-\section{Pre-Existing Applications}
-We investigated a number of applications that were already established on the market, in order to learn what had been proven not to work and new areas of untapped potential.
+The first step in conducting our research was to research pre-existing applications both on mobile and the web. We investigated applications that were already established on the market with similar features in order to learn what had been proven not to work and new areas of untapped potential.
 
 \subsection{Soundcloud}
 Soundcloud according to its website is:
@@ -178,7 +175,7 @@ With the idea of the potential for MDRS, it was essential for the team to resear
 
 \subsection{Map}
 
-OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as \gls{Leaflet}, the potential was excellent. It’s downfall lay in the fact that we would have to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
+OpenStreetMap was thoroughly researched. It's open source roots and excellent level of detail and accuracy was attractive. When combined with a Javascript library such as \gls{Leaflet}, the potential was excellent. It’s downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
   \centering
@@ -612,7 +609,7 @@ While these both informed the team in the direction of the application's design 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{android-home-view.jpg}
+\includegraphics[width=90mm]{images/android-home-view.jpg}
 \caption{Final design prototype}
 \label{overflow}
 \end{figure}
@@ -621,7 +618,7 @@ This final design exudes simplicity with a single actionable button on the main 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{android-recording-view.jpg}
+\includegraphics[width=90mm]{images/android-recording-view.jpg}
 \caption{Recording view of final prototype}
 \label{overflow}
 \end{figure}
@@ -630,7 +627,7 @@ When the record button was pressed the entire screen would transistion to this v
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{android-upload-view.jpg}
+\includegraphics[width=90mm]{images/android-upload-view.jpg}
 \caption{Final upload view prototype}
 \label{overflow}
 \end{figure}
@@ -691,11 +688,11 @@ It was decided to use JQuery Timepicker for selecting a time, this timepicker ha
 
 The second section in the control box "Audio Controls" offers support for playing multiple recordings all at once, this feature utilises Buzz and it's support for grouping multiple audio files together. This feature works by using the earliest recording in the group of selected recordings as it's datum, from there all other recordings are synchronised. This approach has it's drawbacks, though a more intuitive system was not an option due to the limited timescale imposed on the group.
 
-Finally the third section is "Search" this allows the user to search for a recording using the name of that recording. This functionality unfortunately was found, during testing, to not scale as well as we might have hoped. This was down to the fact that if you did not know the name of a recording there was no other option offered to find it. Options that could have been included may have been such things as tags or by user. There was also performance issues, as it took all the recordings from the database for the autocomplete no matter what was entered into the search bar. 
+Finally the third section is "Search" this allows the user to search for a recording using the name of that recording. This functionality unfortunately was found, during testing, to not scale as well as we might have hoped. This was down to the fact that if you did not know the name of a recording there was no other option offered to find it. Options that could have been included may have been such things as tags or by user. There was also performance issues, as it took all the recordings from the database for the autocomplete no matter what was entered into the search bar.
 
 \subsubsection{Recording Box}
 
-This box displays the meta data associated with the recording that has been clicked. The colours chosen were picked to fit as closely with the sites theme as much as possible. If the description is too long to fit into to the description box it displays a custom  scroll bar. It should work in most modern browsers though degrades gracefully if it is not supported. There are a number of buttons in this box each with a separate purpose. 
+This box displays the meta data associated with the recording that has been clicked. The colours chosen were picked to fit as closely with the sites theme as much as possible. If the description is too long to fit into to the description box it displays a custom  scroll bar. It should work in most modern browsers though degrades gracefully if it is not supported. There are a number of buttons in this box each with a separate purpose.
 
 The first three buttons are audio controls for "Play", "Pause" and "Stop"; each are represented by the usual symbols. These buttons utilize buzz for playing the recording associated with the record currently loaded in the box. The next button in the box is one that allows you to load the Picture Box, this is represented by an image icon on the user interface.
 
@@ -721,7 +718,7 @@ In order to create an instance of the map the class that was used was:
 google.maps.Map
 \end{verbatim}
 
-To create the instance of the map, there was very little throughout the entire development process that had to be changed in the code from the example provided on the Google Maps website. This bore witness to the simplicity provided by using this API. 
+To create the instance of the map, there was very little throughout the entire development process that had to be changed in the code from the example provided on the Google Maps website. This bore witness to the simplicity provided by using this API.
 
 For the appearance of the map a few simple changes were made, such as removing certain UI elements that come with the map as a standard. For example it was decided to remove "pegman" as we would not be incorporating street view into our product and the presence of this icon could prove to be an unnecessary distraction.
 
@@ -824,7 +821,7 @@ During development there were several occasions in which the models had to be ed
 
 \subsubsection{Learning Resources and Tools} Google's Android tutorials served as an early touchstone in development, offering an understanding of an application's structure and layout in development. These go into great depth about most of the classes and APIs useful to MDRS but often this depth made them inpenetrable. For example, you can either implement an interface for an Activity though your Activity's .java file programmatically or in a separate layout .xml file. Google's tutorials would switch between these methods, muddying the team's understanding of how to work in this new development environment while adhering to good code standards.
 
-Other learning resources were scarce and when found usually weren't to a good enough standard to be useful. This meant that alongside Google's tutorials, Stack Overflow was the main resource used to aid development. This crowdsourced Q&A service served invaluable in fixing bugs and explaining topics. The answers far exceeded the quality found in some textbooks that were used. Twitter also served as a direct communication to the development community with advice and encouragement coming from other Android developers.
+Other learning resources were scarce and when found usually weren't to a good enough standard to be useful. This meant that alongside Google's tutorials, Stack Overflow was the main resource used to aid development. This crowdsourced Q\&A service served invaluable in fixing bugs and explaining topics. The answers far exceeded the quality found in some textbooks that were used. Twitter also served as a direct communication to the development community with advice and encouragement coming from other Android developers.
 
 As development began, an early decision made was to not use Google's new Android Studio and use Eclipse with the ADT (Android Development Tools) plugin. This reduced the number of new tools to learn and avoided using unstable software while trying to learn a new SDK. All of the development was done on personal devices due to the University's lab machines not having the required software and refusal from technicians to have it installed in a useful manner. This limited development time as it had to be carried out almost exclusively at home in off-hours. It also limited the chance of gaining any help from other student's insights to solve common issues in Android development. Overall poor access to tools caused extensive issues in the protracted  development cycle.
 
