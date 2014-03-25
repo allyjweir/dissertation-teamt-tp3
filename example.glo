@@ -1,14 +1,13 @@
-\glossaryentry{HTML?\glossentry{HTML}|setentrycounter[]{page}\glsnumberformat}{4}
-\glossaryentry{CSS?\glossentry{CSS}|setentrycounter[]{page}\glsnumberformat}{4}
-\glossaryentry{JavaScript?\glossentry{Javascript}|setentrycounter[]{page}\glsnumberformat}{5}
-\glossaryentry{Python?\glossentry{Python}|setentrycounter[]{page}\glsnumberformat}{5}
-\glossaryentry{Django?\glossentry{Django}|setentrycounter[]{page}\glsnumberformat}{5}
-\glossaryentry{Leaflet?\glossentry{Leaflet}|setentrycounter[]{page}\glsnumberformat}{8}
-\glossaryentry{API?\glossentry{API}|setentrycounter[]{page}\glsnumberformat}{8}
-\glossaryentry{Git?\glossentry{Git}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{Ubuntu?\glossentry{Ubuntu}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{PIP?\glossentry{PIP}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{MySQL?\glossentry{MySQL}|setentrycounter[]{page}\glsnumberformat}{30}
-\glossaryentry{JQuery?\glossentry{JQuery}|setentrycounter[]{page}\glsnumberformat}{32}
-\glossaryentry{W3C?\glossentry{W3C}|setentrycounter[]{page}\glsnumberformat}{35}
-\glossaryentry{AJAX?\glossentry{AJAX}|setentrycounter[]{page}\glsnumberformat}{52}
+\glossaryentry{HTML?\glossaryentryfield{HTML}{\glsnamefont{HTML}}{HyperText Markup Language, the authoring language used to create documents on the World Wide Web.}{\relax }|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{CSS?\glossaryentryfield{CSS}{\glsnamefont{CSS}}{Short for Cascading Style Sheets, a new feature being added to HTML that gives both Web site developers and users more control over how pages are displayed}{\relax }|setentrycounter[]{page}\glsnumberformat}{6}
+\glossaryentry{JavaScript?\glossaryentryfield{Javascript}{\glsnamefont{JavaScript}}{A scripting language developed by Netscape to enable Web authors to design interactive sites.}{\relax }|setentrycounter[]{page}\glsnumberformat}{7}
+\glossaryentry{Python?\glossaryentryfield{Python}{\glsnamefont{Python}}{An interpreted, object-oriented programming language developed by Guido van Rossum.}{\relax }|setentrycounter[]{page}\glsnumberformat}{7}
+\glossaryentry{Django?\glossaryentryfield{Django}{\glsnamefont{Django}}{A free and open source web application framework, written in Python, which follows the model–view–controller architectural pattern.}{\relax }|setentrycounter[]{page}\glsnumberformat}{7}
+\glossaryentry{Leaflet?\glossaryentryfield{Leaflet}{\glsnamefont{Leaflet}}{A modern open-source JavaScript library for mobile-friendly interactive maps.}{\relax }|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{API?\glossaryentryfield{API}{\glsnamefont{API}}{Application Program Interface, is a set of routines, protocols, and tools for building software applications. }{\relax }|setentrycounter[]{page}\glsnumberformat}{10}
+\glossaryentry{Git?\glossaryentryfield{Git}{\glsnamefont{Git}}{A distributed revision control and source code management system with an emphasis on speed.}{\relax }|setentrycounter[]{page}\glsnumberformat}{18}
+\glossaryentry{Ubuntu?\glossaryentryfield{Ubuntu}{\glsnamefont{Ubuntu}}{A community-developed Linux-based operating system that can be used on desktops, laptops and servers.}{\relax }|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{PIP?\glossaryentryfield{PIP}{\glsnamefont{PIP}}{A package management system used to install and manage software packages written in Python}{\relax }|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{MySQL?\glossaryentryfield{MySQL}{\glsnamefont{MySQL}}{MySQL is an open source relational database management system that relies on SQL for processing the data in the database.}{\relax }|setentrycounter[]{page}\glsnumberformat}{31}
+\glossaryentry{JQuery?\glossaryentryfield{JQuery}{\glsnamefont{JQuery}}{A free and open source JavaScript library that is used by Web developers to navigate HTML documents, handle events, perform animations and add \gls {AJAX} interactions to Web pages}{\relax }|setentrycounter[]{page}\glsnumberformat}{33}
+\glossaryentry{W3C?\glossaryentryfield{W3C}{\glsnamefont{W3C}}{World Wide Web Consortium, an international consortium of companies involved with the Internet and the Web.}{\relax }|setentrycounter[]{page}\glsnumberformat}{36}
