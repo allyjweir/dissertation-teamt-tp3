@@ -212,7 +212,6 @@ In order to display the recording information in an informative format, we ident
 
 When clicked on, the following information would be revealed to the user:
 \begin{itemize}
-\item{The uploader}
 \item{A recording's description}
 \item{Accompanying imagery uploaded by the user}
 \end{itemize}
@@ -771,30 +770,34 @@ Once this issue was found, there also proved to be a conflict within Google maps
 
 \subsection{Timeline (Implementation)}
 
-The actual implementation of the KnightLab Timeline JS took some time and required customization to fit the needs of our project. We started by inspecting the json structure Timeline JS requires to interpret information it is fed with.
-Its JSON is structured in the following way - there is a big dictionary, holding all of the objects that are to be presented, having an 'asset' key for the first slide.
-The object dictionary itself is placed in the value of the 'date' key. Each object has its own attributes which were too many for our needs - we only used the 'startDate', 'endDate', 'headline', 'asset' and 'text' fields, the last one being filled with the duration and recording description as well as the event (originally the team was planning to associate recordings to events so that we could group them together).
+The actual implementation of the KnightLab Timeline JS took some time and required customization to fit the needs of our system. We started by inspecting the json structure Timeline JS requires to interpret information it is fed with.
+Its JSON is structured in the following way - there is a big dictionary, holding all of the objects that are to be presented, having an 'asset' key for the first default slide which the team used for a short introduction explaining the purpose of this component.
+The object dictionary itself is placed in the value of the 'date' key. Each object has its own available attributes from which we only used the 'startDate', 'endDate', 'headline', 'asset' and 'text' fields, the last one being filled with the duration and recording description as well as the event (originally the team was planning to associate recordings to events so that we could group them together).
 
-In each recording's asset a link to a random image from the list of pictures associated with it is inserted or, if there are no photos for this recording, a link to the MDRS logo is placed. Considering all this, we made a python template code which exports recording objects' metadata following the template structure KnightLab's Timeline JS uses. What the python function does is it generates a JSON formatted script which is saved in a data.json file in the static directory and used as a source for the timeline objects we generate (one on the home page and another on the user page). If the timeline is rendered on the homepage, all recordings are exported by the function and therefore visible to enable the user to see what everyone has uploaded without even being logged in or registered.
+In each recording's asset a link to a random image from the list of pictures associated with it is inserted (as only a single photo can be showcased, the rest are available on the side in the form of a mini gallery with pop-up thumbnails on hover) or, if there are no photos for this recording, a link to the MDRS logo is placed. Considering all this, we made a python template code which exports recording objects' metadata following the template structure KnightLab's Timeline JS uses. What the python function does is it generates a JSON formatted script which is saved in a data.json file in the static directory and used as a source for the timeline objects we generate (one on the home page and another on the user page). If the timeline is rendered on the homepage, all recordings are exported by the function and therefore visible to enable the user to see what everyone has uploaded without even being logged in or registered.
 
 Also, only the bottom part is displayed on the main page in order to view only the chronological arrangement of the recordings since their metadata is easily accessible by clicking the marker pins on the map.
-If the user would like to upload their own recordings and store their settings they need to register a new account in the system.
-Then, going to the user page the timeline initially shows all database recordings as the user does not have any uploads currently.
+If the user would like to upload their own recordings and store their settings they need to register a new account on the website.
+Then, going to the user page the timeline initially shows all database recordings as the user does not have any uploads at first.
 
-However, when the user makes a new recording and uploads it the timeline on the user page displays only this recording and user's personal recordings in general.
-It can be used to provide a visual aid in identifying recordings that overlap and trying to play them synchronously, and also to display metadata such as - name, start time, duration, and description.
+However, when the user makes a new recording and uploads it the timeline on the user page displays only this recording and a user's personal recordings in general.
+It can be used to provide a visual aid in identifying recordings that overlap and trying to play them synchronously, and also displays the following metadata - name, start/end time, duration, and description.
 
-Timeline JS originally has a default object icon when displaying information - we changed this to display a microphone instead in order to make it better fitted to the MDRS system.
+Timeline JS originally has a default object icon when displaying information - we changed this to display a microphone instead in order to make it better fitted to the multi-device recording system.
 
-Integrating the timeline on the homepage caused some minor problems at first as depending on which Javascript file was included in the head section of the website first, it would show either the map or the timeline. However, as it turned out later, this was due to the formatting of get requests to the database - once we changed the $.get() to $.getJSON() the issue disappeared immediately. We also added a button on the navigation for easy toggle between showing and hiding the timeline to make the visible map surface bigger.
+Integrating the timeline on the homepage caused some minor problems at first as depending on which JavaScript file was included in the head section of the website first, it would show either the map or the timeline. However, as it turned out later, this was due to the formatting of get requests to the database - once we changed the $.get() to $.getJSON() the issue disappeared immediately. We also added a button for easy toggle between showing and hiding the timeline to make the visible map surface bigger and improve navigation in general.
 Other than that the embedding process for the main page did not require much more further changing.
 
 The timeline instance for the user page, though needed more attention as it was displayed in full-scale. What the user page displays except the timeline is a right panel containing a list of user's personal recordings which can be switched to show a list of all recordings in the database along with their metadata, photos taken etc.
 Those recordings can be played individually or, if they overlap, synchronously. This right container and the timeline need to be resized appropriately when the browser window is re-scaled in order to ensure compatibility for mobile devices.
 Therefore we made an auto-resize Javascript function to achieve this.
 
-When initializing the timeline, we customized the zoom level to make as many recordings as possible visible at any given time and enabled the built-in bookmark function so that recrding objects could be linked and focused on the timeline.
-Also added a Google Maps key and used the debug mode to identify potential export problems in the python template code and make their resolution easier. Another customization we made is the default initial slide - set to 0 by default - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
+When initializing the timeline, we customized the zoom level to make as many recordings as possible visible at any given time and used the bookmark function so that recrding objects could be linked and focused on the timeline for improved usability.
+Also added a Google Maps key and used the debug mode to identify potential export problems in the python template code and make their resolution easier. Another minor customization we made is the default initial slide - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
+
+Below is a final look of the user page with the timeline and the side menu showing a list of recordings with the related images:
+
+
 
 \subsection{Buzz!}
 In this subsection we will discuss the implementation of the background audio manager. The Buzz! Javascript library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution was chosen as the first one became overcomplicated.
