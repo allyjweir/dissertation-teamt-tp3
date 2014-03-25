@@ -771,10 +771,12 @@ This implementation uses a recursive playSound() function that loops until all f
 
 This solution implements two more functions. A stop() function which can be used to stop all playing files, empty the mySounds array and terminate any worker scripts currently running. And a pause() function which can pause all currently playing recordings.
 
-Despite the extensive research undertaken in order to implement it, this solution turned out to be too complicated for the requirements set and so was discarded in favour of the solution outlined bellow.
+Despite the extensive research undertaken in order to implement it, this solution turned out to be too complicated for the requirements set and so was discarded in favour of the solution outlined below.
 
 \subsubsection{Solution without HTML5 Web Workers}
+The second implementation utilises the Buzz! “group” function to collect the recordings that need to be synchronously played and store them in ordered manner in an array. All the recordings currently selected for playback are saved and a check is run in order to determine if they overlap. If that is the case they are sorted by their start time. The sync_group array holds the sorted Buzz! sound objects. These are played in a sequential order and using the start time difference the synchronisation is calibrated. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files. 
 
+In this implementation GET requests are used in order to query the database through the Django views. This allows for dynamic file acquisition.
 
 \subsection{Database}
 For this project MySQL was the database back-end the team decided to use.
