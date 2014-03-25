@@ -3,6 +3,7 @@
 \usepackage{wrapfig}
 \usepackage{csquotes}
 \usepackage{glossaries}
+\usepackage{url}
 
 \newglossaryentry{JQuery}
 {
@@ -220,16 +221,21 @@ When clicked on, the following information would be revealed to the user:
 After having clearly specified, documented and researched the functional requirements in order to try and find the best way to implement this key component for the system, we made design decisions and integrated it in the system. Having tested a number of different open source Javascript implementations of different timelines, the final decision was based on the implementation differences and the degree of customization those products offered (all implemented in JavaScript):
 
 
-- \textbf{SIMILE timeline} - http://www.simile-widgets.org/timeline/
+\begin{itemize}
 
-- \textbf{Timeline JS} - http://timeline.knightlab.com/ (GitHub repository - https://github.com/NUKnightLab/TimelineJS)
 
-- \textbf{Chronoline} - http://stoicloofah.github.io/chronoline.js/
+\item{\textbf{SIMILE timeline} \cite{SIMILE}}
 
-- \textbf{TimeGlider} - https://github.com/timeglider/jquery_widget (moved here a year ago: http://timeglider.com/widget/)
+\item{\textbf{Timeline JS} \cite{TimelineJS} (GitHub repository \cite{TimelineJSGithub})}
 
-- \textbf{Chaps Timeline} - http://almende.github.io/chap-links-library/timeline.html
+\item{\textbf{Chronoline} \cite{Chronoline}}
 
+\item{\textbf{TimeGlider} \cite{TimegliderGithub} (moved a year ago \cite{Timeglider})}
+
+\item{\textbf{Chaps Timeline} - \cite{Chaps}}
+
+
+\end{itemize}
 
 
 \textbf{SIMILE}
@@ -240,7 +246,7 @@ After having clearly specified, documented and researched the functional require
 \caption{SIMILE timeline}
 \end{figure}
 
-The SIMILE timeline (this product is implemented in javascript), is a very good example of an efficient and compact timebar able to accommodate a number of events in a relatively small space without looking too clustered with unnecessary information. It also supports scrolldown horizontal movement and  you can click and drag to navigate between objects using your mouse. However, there are a number of drawbacks associated with this open source implementation. To start with, its maintainability is poor - the last change that was made to the source code was in May 2009 which is very very long ago. We also researched the opinions of people who have tested it online and found out that there are mixed feelings regarding the SIMILE timebar. One of the issues people had experienced was memory leaks that were caused especially when dynamically loading and unloading events to the timeline. The poor maintenance of this product also had caused numerous people troubles with the implementation in different browsers as apparently there are many unidentified bugs that continue to increase with each browser update. Some people even had strange experiences of browser crashing as a result of using SIMILE (more information can be seen in this StackOverflow topic: http://stackoverflow.com/questions/4700419/alternative-to-simile-timeline-for-timeline-visualization). Customisation and updates are also very difficult considering the relative lack of documentation or poorly documented code segments which was also one of the main reasons why we decided that it will not be the most suitable option for what the user interface requires.
+The SIMILE timeline (this product is implemented in javascript), is a very good example of an efficient and compact timebar able to accommodate a number of events in a relatively small space without looking too clustered with unnecessary information. It also supports scrolldown horizontal movement and  you can click and drag to navigate between objects using your mouse. However, there are a number of drawbacks associated with this open source implementation. To start with, its maintainability is poor - the last change that was made to the source code was in May 2009 which is very very long ago. We also researched the opinions of people who have tested it online and found out that there are mixed feelings regarding the SIMILE timebar. One of the issues people had experienced was memory leaks that were caused especially when dynamically loading and unloading events to the timeline. The poor maintenance of this product also had caused numerous people troubles with the implementation in different browsers as apparently there are many unidentified bugs that continue to increase with each browser update. Some people even had strange experiences of browser crashing as a result of using SIMILE (more information can be seen in StackOverflow \cite{StackOverflow}). Customisation and updates are also very difficult considering the relative lack of documentation or poorly documented code segments which was also one of the main reasons why we decided that it will not be the most suitable option for what the user interface requires.
 
 
 \textbf{Chronoline}
@@ -321,39 +327,39 @@ The team took the decision to use the 'Buzz!' JavaScript library as it was exact
 
 \section{Team Structure}This section will outline the organisational methodology used by the team during the lifespan of the project. This includes: the roles of each team member as well as their responsibilities, how is authority distributed amongst members, a conflict resolution strategy, communication and information management within the team, any identified risks involving the organisational approach chosen and the organisational model itself.
 
-\subsection{Roles}After discussion, we have decided to use agile development, specifically scrums, to build our system. As part of this technique we need both a scrum master and a client representative, these roles will be outlined below. We chose this model considering a combination of different factors that influenced our final decision. For instance, the relatively small size of our team - there are five of us. Also, we needed to carry out rapid iteration cycles in order to meet the assignment delivery deadlines.
+\subsection{Roles}After discussion, we decided to use agile development, specifically scrums, to build our system. As part of this technique we needed both a scrum master and a client representative, these roles will be outlined below. We chose this model considering a combination of different factors that influenced our final decision. For instance, the relatively small size of our team - there are five of us. Also, we needed to carry out rapid iteration cycles in order to meet the assignment delivery deadlines.
 
-{\bf Scrum Master (Keir Smith)} - The scrum master will organise times and locations for the team to meet every week then chair the meeting, talking about progress and future development. The scrum master will also assign jobs and roles to developers as the project progresses and oversee their completion. In case we have some kind of a disagreement between the group members, the scrum master will mediate the situation and find a solution.
+{\bf Scrum Master (Keir Smith)} - The scrum master organised times and locations for the team to meet every week then chaired the meeting, talking about progress and future development. The scrum master also assigned jobs and roles to developers as the project progressed and oversee their completion. In case we had some kind of a disagreement between the group members, the scrum master would mediate the situation and find a solution.
 
-{\bf Client Representative (Gordon Adam)} - The main communicator with our project supervisor. He must remain impartial to the project and view it with the same mind set as the client would. The client representative will also be responsible for organisation of testers.
+{\bf Client Representative (Gordon Adam)} - The main communicator with our project supervisor. He had to remain impartial to the project and view it with the same mind set as the client would. The client representative was also responsible for organisation of testers.
 
-{\bf Developers (Alastair Weir, Petar Yordanov, Georgi Dimitrov)} - Despite the use of agile organisation there are still many traditional roles in software development such as Librarian, GUI designer and Architect.  These roles will be filled on an ad-hoc basis when and where needed and on people’s interest. We will not set them in stone.
+{\bf Developers (Alastair Weir, Petar Yordanov, Georgi Dimitrov)} - Despite the use of agile organisation there were still many traditional roles in software development such as Librarian, GUI designer and Architect.  These roles were filled on an ad-hoc basis when and where needed and on people’s interest. We did not set them in stone.
 
-All team members will be developers working on the different facets of our wide ranging project. Some members may take preference to certain areas of the project but ultimately it is down to the scrum master, after consultation, to what each member will be working on at any one time.
+All team members were developers working on the different facets of our wide ranging project. Some members took preference to certain areas of the project but ultimately it was down to the scrum master, after consultation, to what each member would be working on at any one time.
 
-\subsection{Authority}Decisions in the group will be based on a democratic structure. Decisions shall firstly be discussed between the team members, either face to face or via one of our stated methods of communication. If we have a case where all team members agree on a given solution during discussion, there will be no need for a vote or further discussion.
+\subsection{Authority}Decisions in the group were based on a democratic structure. Decisions were firstly be discussed between the team members, either face to face or via one of our stated methods of communication. If we had a case where all team members agree on a given solution during discussion, there was no need for a vote or further discussion.
 
-If there is however a conflict between three or more members, the scrum master is to take control and a vote shall be cast and/or further discussion shall be held and led by the scrum master until a decision is made.
+If there was however a conflict between three or more members, the scrum master was to take control and a vote would be cast and/or further discussion shall be held and led by the scrum master until a decision is made.
 
-In case the conflict cannot be resolved by the steps taken as described above, we are going to contact (schedule a meeting for instance) our project supervisor and ask him to assist us in the resolution process.
+In case the conflict could not be resolved by the steps taken as described above, we were going to contact (schedule a meeting for instance) our project supervisor and ask him to assist us in the resolution process.
 
-\subsection{Communication}From the outset our group was keen to leverage the use of the third year lab space and regularly meet face to face. As we all have the same timetable and everyone is in the habit of spending time at the lab, we intend on having regular interactions to communicate issues. We we will also make use of the common room in the Sir Alwyn Williams building as it is not as busy as the lab. At minimum we will hold one formal meeting each week. Of course, asynchronous communication is also essential. We quickly set up a Facebook group within which we can post key information and decide on meeting times and share articles or documents that relate to our project. This was chosen as it is accessible from all platforms. To foster a greater sense of camaraderie, a group IM chat has been set up for unimportant communication and general chat.
+\subsection{Communication}From the outset our group was keen to leverage the use of the third year lab space and regularly meet face to face. As we all have the same timetable and everyone is in the habit of spending time at the lab, we intended on having regular interactions to communicate issues. We also made use of the common room in the Sir Alwyn Williams building as it is not as busy as the lab. At minimum we held one formal meeting each week. Of course, asynchronous communication was also essential. We quickly set up a Facebook group within which we could post key information and decide on meeting times and share articles or documents that relate to our project. This was chosen as it is accessible from all platforms. To foster a greater sense of camaraderie, a group IM chat was set up for unimportant communication and general chat.
 
-All communication amongst the team will be transparent and visible to all. The tools we have selected will hopefully facilitate this successfully.
+All communication amongst the team was transparent and visible to all. The tools we selected facilitated this successfully.
 
-\subsection{Information Management}Our prefered methods of communication all keep logs of our conversations which allows us to review why we made decisions. In face to face meetings a secretary will take notes, so we can review our meetings and record how we have progressed through the development cycle.
+\subsection{Information Management}Our prefered methods of communication all keep logs of our conversations which allowed us to review why we made decisions. In face to face meetings a secretary took notes, so we could review our meetings and record how we have progressed through the development cycle.
 
-For more indepth organisation we have set up a Redmine instance; this will allow us to keep track of our project, keep up with issues, track bugs, keep a wiki and assign roles/jobs. This is the project management system where we are going to record minutes of meetings as well as important discussions and decision.
+For more indepth organisation set up a Redmine instance; this allowed us to keep track of our project, keep up with issues, track bugs, keep a wiki and assign roles/jobs. This was the project management system where we were going to record minutes of meetings as well as important discussions and decision.
 
-We have decided to use \gls{Git} for version control as it’s a fantastic, free platform for multiple concurrent users working on a single project. We can also track this Git project via Redmine and keep the whole team up to date.
+We have decided to use \gls{Git} for version control as it’s a fantastic, free platform for multiple concurrent users working on a single project. We could also track this Git project via Redmine and keep the whole team up to date.
 
-Also available is a shared team Dropbox for backup purposes. We will also use Google Drive’s collaborative documents feature when working on our dissertation and other hand-ins.
+Also available is a shared team Dropbox for backup purposes. We also used Google Drive’s collaborative documents feature when working on our dissertation and other hand-ins.
 
-\subsection{Organisational Risks}The major identified risk is if one of our team members leaves or falls ill. Our agile team structure will hopefully manage to sidestep this danger. Another consideration we will take to prevent this issue is make sure more than one person is involved in each perceived division in the project. At the beginning of the project we have identified numerous sections: mobile, web, backend. By spreading the work amongst us we will avoid this danger.
+\subsection{Organisational Risks}The major identified risk was if one of our team members leaves or falls ill. Our agile team structure managed to sidestep this danger. Another consideration we took to prevent this issue was making sure more than one person is involved in each perceived division in the project. At the beginning of the project we identified numerous sections: mobile, web, backend. By spreading the work amongst us we avoided this danger.
 
-There is also the possibility of a new team member being assigned a slot in our team. In such a case we are going to need to bring them up to speed with a training session which cannot be specifically limited in time as it depends on how far in the development process we have managed to get.
+There was also the possibility of a new team member being assigned a slot in our team. In such a case we were going to need to bring them up to speed with a training session which could not be specifically limited in time as it depended on how far in the development process we had managed to get.
 
-Other issues could be integrating new team members, data loss, an ineffective scrum master or client representative. In case the we find that the current master or our client representative are ineffective, we might organise a team meeting, vote and accordingly make changes if needed. We are going to organise sessions at the end of each sprint in order to gather feedback on performance - which targets have been met and whether or not the scrum master/ client rep./ developers have carried out their tasks as expected.
+Other issues could have been integrating new team members, data loss, an ineffective scrum master or client representative. In case the we found that the current master or our client representative were ineffective, we might have organised a team meeting, vote and accordingly made changes if needed. We organised sessions at the end of each sprint in order to gather feedback on performance - which targets were met and whether or not the scrum master/ client rep./ developers have carried out their tasks as expected.
 
 \section{Use Cases}
 Continuing our preparations before implementation, the team considered and documented the possible use cases of the system in the form of paper-drawn storyboards. These blossomed into situations that MDRS could actively improve a user's experience giving us a grounding from which to work from.
@@ -752,6 +758,22 @@ Therefore we made an auto-resize javascript function to achieve this.
 
 When initializing the timeline, we customized the zoom level to make as many recordings as possible visible at any given time and enabled the built-in bookmark function so that recrding objects could be linked and focused on the timeline.
 Also added a Google Maps key and used the debug mode to identify potential export problems in the python template code and make their resolution easier. Another customization we made is the default initial slide - set to 0 by default - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
+
+\subsection{Buzz!}
+In this subsection we will discuss the implementation of the background audio manager. The Buzz! Javascript library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution was chosen as the first one became overcomplicated.
+
+\subsubsection{Solution with HTML5 Web Workers}
+The HTML5 Web Workers are a way to mimic concurrency in a web application. This is achieved by using timeouts and event handlers. The Web Workers interface is used to run background scripts in the web application that do not block its main execution. The interface includes handling and passing of messages between the scripts which can be leveraged in order to implement a non-busy waiting.
+
+The first implementation of the background sound management utilised the web workers interface in order to recursively create a worker subthread for each new overlapping recording that needed to be played. This solution uses hardcoded parameters at it did not get to the stage where it needs to communicate with the server. In it an array called “mySounds” which is used in order to hold all the recordings that need to be played during this iteration. This array is filled with sounds using the command buzz.sound(filepath) but the way it is filled can be changed in order to obtain it from a GET request. After obtaining the files to be played and saving them in the array a recording must be loaded for playback using soundvariable.load(). Once loaded the file is ready to be played. The pre-loading is necessary in order to eliminate any latency issues and to ensure playback happens synchronously. 
+
+This implementation uses a recursive playSound() function that loops until all files loaded in the mySounds array have been played. What the function does is through each iteration it calls mySounds[current].play() in order to play the next recording and then if there are more recordings left in the mySounds array it would load the next one for playback and create and call a worker script that would wait for a set amount of time before returning a message that it is finished waiting. This message is then handled by the main thread by calling the playSound() function again in order to start the playback of the loaded file. The time the worker script spends waiting is currently hardcoded, but it is trivial to change the meaning of the message passed to it to include the time needed for the worker to wait.
+
+This solution implements two more functions. A stop() function which can be used to stop all playing files, empty the mySounds array and terminate any worker scripts currently running. And a pause() function which can pause all currently playing recordings.
+
+Despite the extensive research undertaken in order to implement it, this solution turned out to be too complicated for the requirements set and so was discarded in favour of the solution outlined bellow.
+
+\subsubsection{Solution without HTML5 Web Workers}
 
 
 \subsection{Database}
