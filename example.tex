@@ -25,7 +25,7 @@
 	name=Python,
 	description={An interpreted, object-oriented programming language developed by Guido van Rossum.}
 }
-\newglossaryentry{Javascript}
+\newglossaryentry{JavaScript}
 {
 	name=JavaScript,
 	description={A scripting language developed by Netscape to enable Web authors to design interactive sites.}
@@ -120,7 +120,7 @@ A web application will allow users to explore the recordings uploaded in an inte
 \section{Background}
 Mobile was an interest in many of the team members and a trending sector in the technology industry. These devices have surpassed the use of computers in the home and are of particular interest to User Interface/User Experience designers. Their screen sizes, use cases and interaction models are very different to traditional devices and developers are constantly finding new innovations in this field. With the proliferation of wearable devices such as smartwatches with arrays of sensors embedded, finding new use cases are an area of interest.  Android’s support for varied screen sizes and device types gives the team a welcome technical challenge while making use of our existing knowledge of Java.
 
-Designing for the web incorporates numerous disciplines and a good foundation in a number of syntaxes. This makes for a steep learning curve but by leveraging previous experience and through other coursework undertaken throughout the year, acquisition of the required skills becomes much easier. To build a lightweight web client means leveraging core web technologies such as \gls{HTML} and \gls{CSS} to their fullest to improve the user’s experience as much as possible while keeping the application lean and fast. Where needed \gls{Javascript} is used to add more dynamic features desired to the project.
+Designing for the web incorporates numerous disciplines and a good foundation in a number of syntaxes. This makes for a steep learning curve but by leveraging previous experience and through other coursework undertaken throughout the year, acquisition of the required skills becomes much easier. To build a lightweight web client means leveraging core web technologies such as \gls{HTML} and \gls{CSS} to their fullest to improve the user’s experience as much as possible while keeping the application lean and fast. Where needed \gls{JavaScript} is used to add more dynamic features desired to the project.
 
 Deploying a web application can be done in many different ways with innumerable frameworks and tools available to use. Again, hoping to use pre-existing skills we researched and hoped to use a \gls{Python} based framework as the basis for MDRS’ backend.  The language's versatility made it an ideal choice while not adding to the heavy workload the project demanded with another new language to learn.
 
@@ -133,7 +133,7 @@ To fully understand this dissertation, the following knowledege would be benefic
 \begin{itemize}
 \item A basic understanding of the construction of an Android application
 \item A basic understanding of how \gls{Django} projects function
-\item Syntactic understanding of Java, Javascript and Python
+\item Syntactic understanding of Java, JavaScript and Python
 \item Willingness to follow the links to the various resources used as part of MDRS
 \end{itemize}
 
@@ -176,7 +176,7 @@ With the potential MDRS possessed, realised, it was essential for the team to re
 
 \subsection{Map}
 
-OpenStreetMap was initially the preferred choice of mapping data. Deep open source roots combined with an excellent level of detail and accuracy was attractive. When combined with the Javascript library \gls{Leaflet} to embed the map, the potential was excellent. OpenStreetMap's downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox which host this data but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
+OpenStreetMap was initially the preferred choice of mapping data. Deep open source roots combined with an excellent level of detail and accuracy was attractive. When combined with the JavaScript library \gls{Leaflet} to embed the map, the potential was excellent. OpenStreetMap's downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox which host this data but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
   \centering
@@ -306,14 +306,14 @@ PureCSS is described on its website as,
 
 This was an ideal candidate for our front-end framework as it was minimalistic in both size\footnote{PureCSS is 4.5KB when minified.} and appearance. The documentation for PureCSS was also extensive which would  ease problems the development process of a reactive front end.
 
-Twitter's Bootstrap framework appeared to be a more complete solution. It provides icons, styling, and a number of UI elements ready to be easily added to a webpage. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of its own character. Performance also suffers due to the size of the Javascript and CSS files required.
+Twitter's Bootstrap framework appeared to be a more complete solution. It provides icons, styling, and a number of UI elements ready to be easily added to a webpage. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of its own character. Performance also suffers due to the size of the \gls{JavaScript} and CSS files required.
 
 Although Bootstrap had many more features, the majority of these were unnecessary for our project. Its inclusion would have needlessly complicated the web application whereas PureCSS gave a solid foundation to build our website upon. Its lightweight approach aligned and met our simple requirements
 
 
 \subsection{Audio Playback}
 
-'Buzz!' is a JavaScript library that utilises the HTML5 audio element. Again touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple HTML Buttons with Javascript commands attached to them. This offered the team a lot of control over the styling their audio playback.
+'Buzz!' is a JavaScript library that utilises the HTML5 audio element. Again touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple HTML Buttons with JavaScript commands attached to them. This offered the team a lot of control over the styling their audio playback.
 
 JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface cluttering the design.
 
@@ -561,7 +561,7 @@ Given the nature of MDRS, the team looked to the Distributed Information Managem
 
 The key interaction between the user and MDRS is location therefore it made sense to make a map the central interface. The user would be able to explore the map and click on pins representing recordings. This would then project the path of the recording , 'lighting the way', indicating where images were captured along the way. Users could then play it back individually or select multiple recordings for synchronous playback. With such an important role, the importance of which mapping API to implement was extensive during prototyping.
 
-Google Maps was immediately found to be a good choice while prototyping our interface. The simple API made it easy to test out different styles of visualising recordings. To get these prototypes off the ground all the team needed to do was  reference the Javascript library in the HTML file. After multiple tests it was decided that a custom marker would mark the beginning of each recording. Once clicked on, this would trace the route of the recording, showing its terminus. While earlier approaches showed the paths all the time, this cluttered the interface. Another test tried having the map blank to begin with and only populate as the user chose their recordings from a list. This was found unengaging and the team felt users would lose interest without visual stimulation as soon as the page loaded.
+Google Maps was immediately found to be a good choice while prototyping our interface. The simple API made it easy to test out different styles of visualising recordings. To get these prototypes off the ground all the team needed to do was  reference the JavaScript library in the HTML file. After multiple tests it was decided that a custom marker would mark the beginning of each recording. Once clicked on, this would trace the route of the recording, showing its terminus. While earlier approaches showed the paths all the time, this cluttered the interface. Another test tried having the map blank to begin with and only populate as the user chose their recordings from a list. This was found unengaging and the team felt users would lose interest without visual stimulation as soon as the page loaded.
 
 Alongside our relatively simple use of maps, we prototyped a version which would incorporate Google's Street View. This would allow the user to follow a recording's location trail even more closely. By harvesting the orientation of the recording device we could show where they were looking, showing the Street View at that angle, and overlay any of the user's own images they captured on top of this. While this immersed the user even deeper into the recording, it was unfortunately not taken beyond this prototype stage due to the complexity of implementation required.
 
@@ -722,7 +722,7 @@ There was a number of issues during development of this feature as dynamically c
 
 \subsection{Map}		A number of technologies were used when implementing the map and they all had to work in harmony to effectively display to the user the recordings that were stored in the database. The major components were Google Maps, HTML5 Geolocation and JQuery. Combining these allowed the team to create a meaningful visualisation of recordings captured.
 
-\subsubsection{Map API}		The Google Maps API was used extensively throughout the development of the home page with many of the Javascript classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble. The map was initialised using,
+\subsubsection{Map API}		The Google Maps API was used extensively throughout the development of the home page with many of the JavaScript classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble. The map was initialised using,
 \begin{verbatim}
 google.maps.Map
 \end{verbatim}
@@ -774,7 +774,7 @@ The actual implementation of the KnightLab Timeline JS took some time and requir
 Its JSON is structured in the following way - there is a big dictionary, holding all of the objects that are to be presented, having an 'asset' key for the first default slide which the team used for a short introduction explaining the purpose of this component.
 The object dictionary itself is placed in the value of the 'date' key. Each object has its own available attributes from which we only used the 'startDate', 'endDate', 'headline', 'asset' and 'text' fields, the last one being filled with the duration and recording description as well as the event (originally the team was planning to associate recordings to events so that we could group them together).
 
-In each recording's asset a link to a random image from the list of pictures associated with it is inserted (as only a single photo can be showcased, the rest are available on the side in the form of a mini gallery with pop-up thumbnails on hover) or, if there are no photos for this recording, a link to the MDRS logo is placed. Considering all this, we made a python template code which exports recording objects' metadata following the template structure KnightLab's Timeline JS uses. What the python function does is it generates a JSON formatted script which is saved in a data.json file in the static directory and used as a source for the timeline objects we generate (one on the home page and another on the user page). If the timeline is rendered on the homepage, all recordings are exported by the function and therefore visible to enable the user to see what everyone has uploaded without even being logged in or registered.
+In each recording's asset a link to a random image from the list of pictures associated with it is inserted (as only a single photo can be showcased, the rest are available on the side in the form of a mini gallery with pop-up thumbnails on hover) or, if there are no photos for this recording, a link to the MDRS logo is placed. Considering all this, we made a \gls{Python} template code which exports recording objects' metadata following the template structure KnightLab's Timeline JS uses. What the Python function does is it generates a JSON formatted script which is saved in a data.json file in the static directory and used as a source for the timeline objects we generate (one on the home page and another on the user page). If the timeline is rendered on the homepage, all recordings are exported by the function and therefore visible to enable the user to see what everyone has uploaded without even being logged in or registered.
 
 Also, only the bottom part is displayed on the main page in order to view only the chronological arrangement of the recordings since their metadata is easily accessible by clicking the marker pins on the map.
 If the user would like to upload their own recordings and store their settings they need to register a new account on the website.
@@ -790,10 +790,10 @@ Other than that the embedding process for the main page did not require much mor
 
 The timeline instance for the user page, though needed more attention as it was displayed in full-scale. What the user page displays except the timeline is a right panel containing a list of user's personal recordings which can be switched to show a list of all recordings in the database along with their metadata, photos taken etc.
 Those recordings can be played individually or, if they overlap, synchronously. This right container and the timeline need to be resized appropriately when the browser window is re-scaled in order to ensure compatibility for mobile devices.
-Therefore we made an auto-resize Javascript function to achieve this.
+Therefore we made an auto-resize JavaScript function to achieve this.
 
 When initializing the timeline, we customized the zoom level to make as many recordings as possible visible at any given time and used the bookmark function so that recrding objects could be linked and focused on the timeline for improved usability.
-Also added a Google Maps key and used the debug mode to identify potential export problems in the python template code and make their resolution easier. Another minor customization we made is the default initial slide - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
+Also added a Google Maps key and used the debug mode to identify potential export problems in the Python template code and make their resolution easier. Another minor customization we made is the default initial slide - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
 
 Below is a final look of the user page with the timeline and the side menu showing a list of recordings with the related images:
 
@@ -806,7 +806,7 @@ Below is a final look of the user page with the timeline and the side menu showi
 
 
 \subsection{Buzz!}
-In this subsection we will discuss the implementation of the background audio manager. The Buzz! Javascript library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution was chosen as the first one became overcomplicated.
+In this subsection we will discuss the implementation of the background audio manager. The Buzz! JavaScript library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution was chosen as the first one became overcomplicated.
 
 \subsubsection{Solution with HTML5 Web Workers}
 The HTML5 Web Workers are a way to mimic concurrency in a web application. This is achieved by using timeouts and event handlers. The Web Workers interface is used to run background scripts in the web application that do not block its main execution. The interface includes handling and passing of messages between the scripts which can be leveraged in order to implement a non-busy waiting.
