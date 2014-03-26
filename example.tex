@@ -100,7 +100,7 @@ Surrounding us in city life there are unique moments missed everyday by experien
 \label{intro}
 
 \section{Motivations}
-Around the world, ubiquitous connectivity is giving users a new avenue to make their voices heard and share their stories. With MDRS (multiple device recording system) we leverage a mobile device’s sensors and give everyone a platform on which share their story, or experience, in a specific place and time. These all join to form a map where others can explore and listen to these experiences synchronously in chronological order. If more than one recording happens in the same area at the same time they will playback together, melding to create an unique and richer insight into an event such as a concert.
+Around the world ubiquitous connectivity is giving users a new avenue to make their voices heard and share their stories. With MDRS (multiple device recording system) we leverage a mobile device’s sensors and give everyone a platform on which share their story, or experience, in a specific place and time. These all join to form a map where others can explore and listen to these experiences synchronously in chronological order. If more than one recording happens in the same area at the same time they will playback together, melding to create an unique and richer insight into an event such as a concert.
 
 In recent years concert attendees have derided a rising trend of viewing an amazing live performance, happening mere metres away, through a sea of smartphone screens in front of them. These screens detract from an attendee's enjoyment to the extent that  some bands ask their fans to not use their phones during their performance. MDRS is a step beyond this frustration as it's passive, letting a user record clips of the concert to share with their friends later while their phone is still in their pocket. This frees their attention to immerse themselves in what is happening. Users can actively improve the experience of the concert for everyone while still creating something they can share with friends later.
 
@@ -184,9 +184,7 @@ OpenStreetMap\cite{openStreetMap} was initially the preferred choice of mapping 
 \caption{OpenStreetMap (left) Google Map (right)}
 \end{figure}
 
-Google Maps\cite{googleMaps} was seen as a strong alternative. While it was not open source, it offered comparative quality of mapping data. A weakness was found in the limitations set on the free use of the \gls{API}. It was found that after the obtaining of an API key however we would have access to 25,000 user visits a month.\footnote{This number of visits was derived by taking the number of map loads offered to free users of Google's API and dividing it by the number of map views estimated for each user's visit to MDRS} It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
-
-Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use.
+Google Maps\cite{googleMaps} was seen as a strong alternative. While it was not open source, it offered comparative quality of mapping data. A weakness was found in the limitations set on the free use of the \gls{API}. It was found that after the obtaining of an API key however we would have access to 25,000 user visits a month.\footnote{This number of visits was derived by taking the number of map loads offered to free users of Google's API and dividing it by the number of map views estimated for each user's visit to MDRS} It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing. Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use.
 
 \subsection{Timeline}
 
@@ -217,15 +215,13 @@ When clicked on, the timeline would also display,
 \end{itemize}
 
 After verbose specification and documentation of what the team wanted from a timeline, research was carried out to find a suitable Javascript implementation. Initially five different options were considered.
-
 \begin{itemize}
-\item{\textbf{SIMILE timeline} \cite{SIMILE}}
-\item{\textbf{Timeline JS} \cite{TimelineJS}}
-\item{\textbf{Chronoline} \cite{Chronoline}}
-\item{\textbf{TimeGlider} \cite{TimegliderGithub}}
-\item{\textbf{Chaps Timeline} - \cite{Chaps}}
+\item{SIMILE timeline\cite{SIMILE}}
+\item{Timeline JS\cite{TimelineJS}}
+\item{Chronoline\cite{Chronoline}}
+\item{TimeGlider\cite{TimegliderGithub}}
+\item{Chaps Timeline\cite{Chaps}}
 \end{itemize}
-
 The two which stood out the most as viable options were Timeline JS and Chronoline.
 
 \textbf{Chronoline}
@@ -314,8 +310,6 @@ Other issues could have been integrating new team members, data loss, an ineffec
 \section{Use Cases}
 Continuing our preparations before implementation, the team considered and documented the possible use cases of the system in the form of paper-drawn storyboards. These blossomed into situations that MDRS could actively improve a user's experience giving us a grounding from which to work from.
 
-<paper user stories images>
-
 \subsection{Recording at a Demonstration} The synchronisation of multiple audio streams at a protest or any other type of public demonstration would enable the listener to hear different perspectives of the demonstration. What is more, they could switch between the source audio streams in order to distinguish speech, conversations, etc.
 
 \textbf{Scenario:} John is a lecturer at a public protest in Glasgow regarding the academic salaries in the UK. He is at the protest with a couple of colleagues - Jane and Chris. However, the protest has not managed to attract that many people to support their cause
@@ -347,35 +341,35 @@ Listed below are the project functional requirements the team identified with th
 
 \subsection{Must Have}
 	\begin{itemize}
-	\item{ \boldit{Web application:} The system needs a website with a backend support for audio processing.}
-	\item{ \boldit{Mobile application:} Android application for audio capture to be submitted to the database of the website via an upload form.}
-	\item{ \boldit{User Authentication:} Potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations.}
-	\item{ \boldit{Recording audio:} The system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button.}
-	\item{ \boldit{Recording submission:} Interaction between the Android app and the web application.}
-	\item{ \boldit{Storing audio recordings:} The mobile app needs to store recordings on the server for processing.}
-	\item{ \boldit{Audio synchronisation:} Audio synchronization functionality on recording selection.}
-	\item{ \boldit{Recording timeline:} A timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings).}
-	\item{ \boldit{Map view:} Visualisation of each recordings position on a map view for a user to spacially explore.}
+	\item{ \textit{Web application:} The system needs a website with a backend support for audio processing.}
+	\item{ \textit{Mobile application:} Android application for audio capture to be submitted to the database of the website via an upload form.}
+	\item{ \textit{User Authentication:} Potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations.}
+	\item{ \textit{Recording audio:} The system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button.}
+	\item{ \textit{Recording submission:} Interaction between the Android app and the web application.}
+	\item{ \textit{Storing audio recordings:} The mobile app needs to store recordings on the server for processing.}
+	\item{ \textit{Audio synchronisation:} Audio synchronization functionality on recording selection.}
+	\item{ \textit{Recording timeline:} A timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings).}
+	\item{ \textit{Map view:} Visualisation of each recordings position on a map view for a user to spacially explore.}
 	\end{itemize}
 
 \subsection{Should Have}
 	\begin{itemize}
-	\item{ \boldit{Playback selection:} Users need to be able to listen to all the recordings and be able to select.}
-	\item{ \boldit{HTML5 GeoLocation:} The web application should be able to find a user's current location and centre the map on this, revealling recordings in the local vicinity.}
+	\item{ \textit{Playback selection:} Users need to be able to listen to all the recordings and be able to select.}
+	\item{ \textit{HTML5 GeoLocation:} The web application should be able to find a user's current location and centre the map on this, revealling recordings in the local vicinity.}
 	\end{itemize}
 
 \subsection{Could Have}
 	\begin{itemize}
-	\item{ \boldit{Route tracking:} Once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished.}
-	\item{ \boldit{Taking photos:} The Android application needs to enable the user to take photos while recording to enrich the playback experience.}
-	\item{ \boldit{Filter recordings by time and date:} Provide users the option to filter recordings and display only those from a specific time period on the map and the timeline.}
+	\item{ \textit{Route tracking:} Once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished.}
+	\item{ \textit{Taking photos:} The Android application needs to enable the user to take photos while recording to enrich the playback experience.}
+	\item{ \textit{Filter recordings by time and date:} Provide users the option to filter recordings and display only those from a specific time period on the map and the timeline.}
 	\end{itemize}
 
 \subsection{Would Have}
 	\begin{itemize}
-	\item{ \boldit{User account enhancements:} Offer enhanced user pages, friends list support and more social connections to other networks (Facebook, Twitter).}
-	\item{ \boldit{Recording grouping in events:} Allow users to create events and link their recordings to this, facilitating the retrieval of all recordings for a single event for other users.}
-	\item{ \boldit{Descriptive Tags:} Users could add relevant tags to their recordings which will enable easy search and recording filtering.}
+	\item{ \textit{User account enhancements:} Offer enhanced user pages, friends list support and more social connections to other networks (Facebook, Twitter).}
+	\item{ \textit{Recording grouping in events:} Allow users to create events and link their recordings to this, facilitating the retrieval of all recordings for a single event for other users.}
+	\item{ \textit{Descriptive Tags:} Users could add relevant tags to their recordings which will enable easy search and recording filtering.}
 	\end{itemize}
 
 \section{Project Timeline}
@@ -398,17 +392,17 @@ Listed below are the project functional requirements the team identified with th
 
 The timeline of our project was split into four main sections as shown in Figure 3.1 these sections are:
 \begin{itemize}
-\item{ \boldit{Project Planning:} We gave a large amount of time for the project planning, altogether comprising six weeks. This entailed carefully outlining our MoSCoW requirements and researching the technology we would use to fulfill these requirements. The time was spent on this to ensure that we all knew what we were embarking upon, and how we would accomplish it.}
-\item{ \boldit{Prototype Implementation:} Nine weeks was set aside from November to January for implementing a prototype of the two applications. We gave it ample time so as to ensure we got the bare functionality in place, before we thought about getting it ready for the client.}
-\item{ \boldit{Final Implementation and Refinements:} After the prototype was complete the rest of the time, a total of seven weeks, was spent implementing the final product with bug fixing continuing even throughout the final stage of evaluation and testing}
-\item{ \boldit{Evaluation and Testing:} There was a period of one week at the end of the timeline spent on this part of the project, the reason there was such a comparatively small amount of time set aside for this task. Was to ensure the product was as complete as possible before releasing it to users for testing.}
+	\item{ \textit{Project Planning:} We gave a large amount of time for the project planning, altogether comprising six weeks. This entailed carefully outlining our MoSCoW requirements and researching the technology we would use to fulfill these requirements. The time was spent on this to ensure that we all knew what we were embarking upon, and how we would accomplish it.}
+	\item{ \textit{Prototype Implementation:} Nine weeks was set aside from November to January for implementing a prototype of the two applications. We gave it ample time so as to ensure we got the bare functionality in place, before we thought about getting it ready for the client.}
+	\item{ \textit{Final Implementation and Refinements:} After the prototype was complete the rest of the time, a total of seven weeks, was spent implementing the final product with bug fixing continuing even throughout the final stage of evaluation and testing}
+	\item{ \textit{Evaluation and Testing:} There was a period of one week at the end of the timeline spent on this part of the project, the reason there was such a comparatively small amount of time set aside for this task. Was to ensure the product was as complete as possible before releasing it to users for testing.}
 \end{itemize}
+
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.9\textwidth]{images/gantt.png}
 \caption{Project Gantt Chart Showcasing Planning, Implementation, Evaluation and Testing, Dissertation}
 \end{figure}
-
 
 %\subsection{Research}		As the planning process continued, the following couple of weeks were spent thinking of user interface ideas/mock-ups for the web and mobile application. Some quick sketches where prepared which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system.
 
@@ -861,7 +855,7 @@ To evaluate the project, a variety of approaches was taken to gather both qualit
 
 These tasks emulated what was considered as a possible user's path through the website. They would look at some of the existing recorings, see what was possible with the system and then log in to an account and play with the user page features. The login process was streamlined by offering a tester account already populated with recordings for users to test the service with. Results were captured on a scale of 1-10, one being 'very easy' to complete a task and ten as 'very hard'. This was accompanied with general feedback fields for user's comments on each task. Finally testers were asked their general opinion of the website and its functionality.
 
-After distributing the link to possible testers, asking them to try and complete the tasks, we gathered a responses and were able to make an initial evaluation of effective the system was and what the potential user's thoughts on it were. Where possible, 'Think Alouds' were used while completing the survey and this made the evaluation picture richer and more detailed. This gave the team a deeper insight into the thought processes of a user.
+\subsection{Results}		After distributing the link to possible testers, asking them to try and complete the tasks, we gathered a responses and were able to make an initial evaluation of effective the system was and what the potential user's thoughts on it were. Where possible, 'Think Alouds' were used while completing the survey and this made the evaluation picture richer and more detailed. This gave the team a deeper insight into the thought processes of a user.
 
 Throughout all tests, users were overwhelmed by the site initially. A tutorial was repeatedly requested and users found the task 2 particularly difficult. The team realised this was an oversight that could be solved in future work with relative ease. Where the development team felt abstracting these controls to a control panel away from the users would streamline the interface, in reality it hid away MDRS' standout feature making it obtuse to find. This was felt to be a big failure for the team's modifications to initial designs. This could be solved by bringing these controls to the front and making clear their functions.
 
