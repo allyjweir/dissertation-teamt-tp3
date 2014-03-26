@@ -441,9 +441,7 @@ And last but not least, implementing all of the required functionality, doing an
 \end{figure}
 
 
-\subsection{Research}
-
-As the planning process continued, the following couple of weeks were spent thinking of user interface ideas/mock-ups for the web and mobile application. Some quick sketches where prepared which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system.
+\subsection{Research}		As the planning process continued, the following couple of weeks were spent thinking of user interface ideas/mock-ups for the web and mobile application. Some quick sketches where prepared which we presented on the supervisor meetings. We also set up our GitHub repository and as most of us had not used it before, started making test push, pull, commit, etc. commands to familiarise ourselves with the version control system.
 
 We started thinking about what technology our project is going to utilise and how to implement the key features we had identified. One of the main tasks was to make a decision on audio time synchronisation, which could be done in a number of ways; a great deal of research had to be undertaken before making a final decision. A possible option was to use an NTP - network time protocol with a reference clock. Other viable options were GPS clock synchronisation or OS clock synchronisation. NTP was chosen as it seemed the most reliable and easy to implement option.
 
@@ -889,7 +887,7 @@ Overall, the application met the 'must have' requirements while offering an easy
 
 This chapter contains information on the steps we took in order to evaluate the system - how we gathered feedback and analyzed it in order to be able to draw conclusions regarding the application usability.
 
-We evaluated the project by creating an online survey with a small number of basic tasks to be completed on the web application in order to test the intuitivity of the user interface.
+\section{Web Application}		We evaluated the project by creating an online survey with a small number of basic tasks to be completed on the web application in order to test the intuitivity of the user interface.
 Those tasks involved testing the key functionality of the system - being able to find specific recordings and play them individually as well as identify overlapping ones and synchronise them accordingly.
 
 The tasks become more and more complex in an iterative manner and are designed in a way to prepare the user for what functional effects to expect.
@@ -922,6 +920,19 @@ However, we believe that once more people register and start using the system th
 Also, in order to play back two or more overlapping recordings, users needed to be pointed to the timeline as a visual aid to help them identify which recordings should be selected and then they were able to successfully play them back. Also, users liked the image integration on the user page and the fact that the mobile application provides the functionality of taking photos while recording and also tracks the route using GPS.
 
 Overally, people think that the website has a clear and easy-to-use navigation which is elegant. They feel that an about page where the purpose of the project is explained in more detail and a simple very basic tutorial is provided might come in handy. This will serve as a guide to potential users and make it even more clear how they could benefit from the system and use all of its functionality. Considering the original idea behind this multi-device recording system this would really be an important component that will give new users the basics and reassure us that they know exactly what they are doing and how.
+
+\section{Android}		Due to its reliance on the web application, the testing for MDRS Mobile was more limited. There wasn't always available access to the server and due to the mobile upload feature being unfunctional because of server side issues, testing was limited to colleagues in the lab.
+
+The aim of the test was to see if they could grasp what the application was going to do and if they could get through to the upload screen and save to their device successfully. Their actions were observed and noted by the team member administering the test. Once, the tester would describe what they had done and a conversation followed. This allowed for extensive qualitative testing. The tester explained their decision process and any reasoning they had for their choices.
+
+In testing, on the whole, users could pick up what actions the app was taking but felt that it dropped you into it too quickly. Through discussion they appreciated the quickness was to facilitate recordings as fast as possible but they would have liked to explore the application a bit more. This could be corrected with a 'quickstart' widget to keep that speed of starting a recording and improvements to the navigation controls of the app. This would let users ground themselves and explore their options rather than the single choice they have with the current iteration. While being complemented for its "simplistic but attractive UI", ultimately the lack of options was too limiting for testers.
+
+Other UI choices such as the freeze frame in image capture were complimented for indicating to the user what the application was doing. The tap to capture was also appreciated. The location tracking however was felt to be unclear. While showing a map with your current location to start, it is unclear that it is tracking you as you traverse. With privacy concerns and awareness, this could be improved through modification to the recording screen.
+
+Throughout testing the application's unreliability cropped up. Certain button presses could derail the current activity and sometimes the application would crash on its own for no reason. These usually occured when recordings were more than 5 to 10 minutes long. On certain testing devices the compression of images could almost freeze the device because of the CPU required to do this. In retrospect this was missed in testing due to the high end devices MDRS was designed on and in future the team would do tests across more devices in earlier stages of implementation.
+
+While this evaluation was effective in testing the idea of the project and the user interface, it did not offer much quantitive data. In future the team would use a testing framework such as Robolectric or Robotium to develop unit tests. This would clarify the reliability of the application and allow the team to see any performance issues from a data-centric position instead of anicdotal observations when run on devices. Overall the evaluation revealed the application as a whole was successful in its aims but could still be improved in clarifying its function and choices to the user.
+
 
 %==============================================================================
 \chapter{Challenges}
