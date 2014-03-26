@@ -210,87 +210,49 @@ In order to display the recording information in an informative format, we ident
 \item{A recording's start and end time}
 \end{itemize}
 
-When clicked on, the following information would be revealed to the user:
+When clicked on, the timeline would also display,
 \begin{itemize}
 \item{A recording's description}
 \item{Accompanying imagery uploaded by the user}
 \end{itemize}
 
-After having clearly specified, documented and researched the functional requirements in order to try and find the best way to implement this key component for the project, we made design decisions and integrated it in the system. Having tested a number of different open source JavaScript implementations of different timelines, the final decision was based on the implementation differences and the degree of customization those products offered:
-
+After verbose specification and documentation of what the team wanted from a timeline, research was carried out to find a suitable Javascript implementation. Initially five different options were considered.
 
 \begin{itemize}
 \item{\textbf{SIMILE timeline} \cite{SIMILE}}
-\item{\textbf{Timeline JS} \cite{TimelineJS} (GitHub repository \cite{TimelineJSGithub})}
+\item{\textbf{Timeline JS} \cite{TimelineJS}}
 \item{\textbf{Chronoline} \cite{Chronoline}}
-\item{\textbf{TimeGlider} \cite{TimegliderGithub} (moved a year ago \cite{Timeglider})}
+\item{\textbf{TimeGlider} \cite{TimegliderGithub}}
 \item{\textbf{Chaps Timeline} - \cite{Chaps}}
 \end{itemize}
 
-
-\textbf{SIMILE}
-\begin{figure}[ht!]
-  \centering
-\includegraphics[width=0.75\textwidth]{images/SIMILE.png}
-\caption{SIMILE timeline}
-\end{figure}
-The SIMILE timeline, is a very good example of an efficient and compact timebar able to accommodate a number of events in a relatively small space without looking too clustered with unnecessary information. It also supports scrolldown horizontal movement and  you can click and drag to navigate between objects using your mouse. However, there are a number of drawbacks associated with this open source implementation. The last change made to the codebase was in 2009. This aging codebase could cause conflicts with more up to date libraries being used. We also researched the opinions of people who have tested it online and found out that there are mixed feelings regarding the SIMILE timebar. One of the issues people had experienced was memory leaks that were caused especially when dynamically loading and unloading events to the timeline. The poor maintenance of this product also had caused numerous people troubles with the implementation in different browsers as apparently there are many unidentified bugs that continue to increase with each browser update. Some people even had strange experiences of browser crashing as a result of using SIMILE (more information can be seen in StackOverflow \cite{StackOverflow}). Customisation and updates are also very difficult considering the relative lack of documentation or poorly documented code segments which was also one of the main reasons why we decided that it will not be the most suitable option for what the user interface requires.
-
+The two which stood out the most as viable options were Timeline JS and Chronoline.
 
 \textbf{Chronoline}
-
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.75\textwidth]{images/Chronoline.png}
 \caption{Chronoline timeline}
 \end{figure}
 
-The Chronoline timeline was also a very attractive alternative and it is really compact indeed. However, for the purposes of the multi-device recording system, it looked too simplistic and did not provide enough options for further customization in order to make it work as we would require. It also does not support mouse dragging when switching between objects. After a thorough research we discovered a number of people that were having issues with this timeline as well and, although it is indeed a well maintained project, its documentation is poor.
-
-
-\textbf{Timeglider JS}
-
-\begin{figure}[ht!]
-  \centering
-\includegraphics[width=0.75\textwidth]{images/Timeglider.png}
-\caption{Timeglider timeline}
-\end{figure}
-
-Timeglider JS was an option which really captured the attention and took some time to test in order to determine whether it would be a suitable alternative for our project. It supports many features and has a number of sub-components however they were making it a little bit too complicated for what we actually needed and it looked kind of too demanding for the average user as it required some time to get used to and understand how to interact with it. This product is clearly documented, containing detailed information on how to use the API to customize it on the website - timeglider.com. After carefully considering this option, we decided to continue searching before making a final decision.
-
-
-\textbf{Chaps}
-
-\begin{figure}[ht!]
-  \centering
-\includegraphics[width=0.75\textwidth]{images/Chaps.png}
-\caption{Chaps timeline}
-\end{figure}
-
-The Chaps timeline, is also really impressive - not very heavy and at the same time, not too simplistic for what we needed for the system. It supports mouse scrolling for zoom-in / zoom-out and mouse dragging in order to slide it horizontally as most of the other alternatives. It was also one of the viable options which we left to the side before making our final decision. However, when considering it, we noted a not very serious, but still significant drawback, which was easily fixable - it does not look very elegant and is not very dynamic, not allowing the user to switch between the objects in a sequential order as most of the other alternatives. In addition, its structure would not suit very well with the rest of the user interface.
-
+The Chronoline timeline was found early in research. It was attractive to the team for its compact design and each object on the timeline having a visible start and end. Built as an in-house project for Zanbato, an investment technology company, Chronoline was open source but had limited documentation on its website and GitHub repository. Considering the scalability of our system, the team was concerned that Chronoline was too simplistic and wasn't modular enough to allow customisations to be added for our project. Its interaction model was also limited. Dragging along the timeline was unsupported and from reading around the library, other users found a number of issues. While initially attractive, Chronoline was placed as a backup choice for use in MDRS' final implementation.
 
 \textbf{KnightLab Timeline JS}
-
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.75\textwidth]{images/timeline-example.png}
 \caption{Knightlab Timeline JS}
 \end{figure}
 
-Last but not least important candidate - Timeline JS. This product is well maintained and has an active community contributing to its GitHub repository (https://github.com/NUKnightLab/TimelineJS), making it very user friendly and easy to test. It looked like a really flexible and customisable solution right from the start, but this needed to be verified by testing the product's functions.
+Through its use on news websites such as Time and Gigaom, the team discovered Timeline JS as it was already in use. Investigating how these websites made their timelines led us to the project's website. Described as intuitive and easy to use, the project's extensive documentation and active community support backed this claim. Looking at the examples on Timeline JS' website showed it being used in a variety of use cases. This flexibility offered confidence that this could be a good choice.
 
-One thing which really distinguishes it from most of the other candidates is the fact that it is thoroughly documented in the repository as well as the website. What is more, everyone is welcome to ask questions on their community forum, make changes or suggest some alterations to the code in the GitHub repository by opening new tickets for enhancements or bug fixing. We had some questions for the JSON template as we intended to use this format to dynamically feed the timeline with information extracted from the database and contacted their team. They responded quickly and gave us all the answers we needed (community forum: https://knightlab.zendesk.com/forums/22551396-TimelineJS) so this proves how well maintained this open source software is, making it even more attractive. It also provides simple and easy interaction when used from a mobile device such as a smartphone or a tablet, or any other touch-screen device.
+Following the documentation a prototype was quickly built. When the developer working on this ran into issues importing a JSON file he contacted the developers behind it and got a quick response. This again proved if it were chosen, a lot of support was available. Timeline JS was well built, with clear hooks to implement customisations to allow the team to cater it to our needs. The library is also reactive, working well across a variety of screen sizes.
 
-Furthermore, Timeline JS provides a number of customization options which are clearly showcased on the website and it has a nice display field which could be used for the recordings' metadata. The interface is extremely responsive and provides an elegant way of switching between recordings' information either by clicking a recording object or by using the provided left and right arrows for horizontal sliding. What is more, it has a bookmark built-in function which allows for recording object to be easily linked which would definitely prove useful at a later implementation phase. On top of that, we thought that being able to specify the exact starting point for the objects on the timeline was another huge benefit.
-
-After comparing timeline JS with the other viable options and having contacted their representatives or making research on other people's opinions all over the internet, we were ready to make the final decision of the implementation to use. The fact that many developers, who were looking for an elegant and easy to customize, well documented, and clearly structured open source project easy to feed with dynamically generated JSON, after trying various different options, had discovered that Knight Lab’s Timeline JS works best for them, made us confident that choosing it would be the right thing to do. And so we did.
-
-
+After comparing Timeline JS with the other viable options, it was clear it was the correct choice to use in MDRS.
 
 \subsection{Front-End Web Framework}
 
-PureCSS\cite{pureCSS} is described on its website as,
+PureCSS\cite{pureCSS} is described as,
 
 \blockquote{“A set of small, responsive CSS modules that you can use in every web project.”}
 
@@ -305,7 +267,7 @@ Although Bootstrap\cite{bootstrap} had many more features, the majority of these
 
 'Buzz!'\cite{buzz} is a JavaScript library that utilises the HTML5 audio element. Again touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple HTML Buttons with JavaScript commands attached to them. This offered the team a lot of control over the styling their audio playback.
 
-JPlayer\cite{jPlayer} was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface cluttering the design.
+JPlayer\cite{JPlayer} was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface cluttering the design.
 
 The team took the decision to use the 'Buzz!' JavaScript library as it was exactly what we were looking for on this particular occasion.
 
@@ -436,7 +398,7 @@ And last but not least, implementing all of the required functionality, doing an
 
 \begin{figure}[ht!]
   \centering
-\includegraphics[width=0.75\textwidth]{images/gantt.png}
+\includegraphics[width=1\textwidth]{images/gantt.png}
 \caption{Project Gantt Chart Showcasing Planning, Implementation, Evaluation and Testing, Dissertation}
 \end{figure}
 
