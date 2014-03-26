@@ -144,17 +144,17 @@ To fully understand this dissertation, the following knowledege would be benefic
 The first step in conducting our research was to research pre-existing applications both on mobile and the web. We investigated applications that were already established on the market with similar features in order to learn what had been proven not to work and new areas of untapped potential.
 
 \subsection{Soundcloud}
-Soundcloud according to its website is:
+Soundcloud\cite{soundcloud} according to its website is:
 \blockquote{An audio platform that enables sound creators to upload, record, promote and share their originally-created sounds.}
 This website offers an excellent way for users to share their music and sounds with others and for these users to comment on their favourite part of the upload, linking their message to a timestamp. Soundcloud's main attraction is this social interaction fans can have with content creatiors. However the majority of people uploading on this website are artists uploading their music. In MDRS we aspire for everyone to be able to upload the recordings they take in many different situations.
 
 \subsection{Audacity}
 
-On the desktop there are a number of applications that allow you to manipulate audio and combine multiple files. Audacity is a popular desktop application that allows the user to record and convert audio. It also allows the user to cut, copy and splice together recordings. The ability to merge audio files together was a key requirement of MDRS that the team needed to implement. However our application would need it done dynamically "on the fly" to allow the user to quickly change which audio files were played back together. In order to accomplish this task in Audacity is too slow and technical for a typical user.
+On the desktop there are a number of applications that allow you to manipulate audio and combine multiple files. Audacity is a popular desktop application that allows the user to record and convert audio. It also allows the user to cut, copy and splice together recordings. The ability to merge audio files together was a key requirement of MDRS that the team needed to implement. However our application would need it done dynamically "on the fly" to allow the user to quickly change which audio files were played back together. In order to accomplish this task in Audacity\cite{audacity} is too slow and technical for a typical user.
 
 \subsection{Foursquare}
 
-Foursquare is a location based mobile app that the group found to incorporated much of the functionality we desired in our project. It allows users to "check in" at certain locations and add comments or pictures about a place or event. There is also a web application allowing other users to see the most recent data in their area very easily. However this is as far as Foursquare goes, with no ability to share audio. The ability to playback audio synchronously with nearby surrounding recordings will completely change the user's experience offering a far more immersive insight into a user's surroundings.
+Foursquare\cite{foursquare} is a location based mobile app that the group found to incorporated much of the functionality we desired in our project. It allows users to "check in" at certain locations and add comments or pictures about a place or event. There is also a web application allowing other users to see the most recent data in their area very easily. However this is as far as Foursquare goes, with no ability to share audio. The ability to playback audio synchronously with nearby surrounding recordings will completely change the user's experience offering a far more immersive insight into a user's surroundings.
 
 \begin{figure}[ht!]
   \centering
@@ -176,7 +176,7 @@ With the potential MDRS possessed, realised, it was essential for the team to re
 
 \subsection{Map}
 
-OpenStreetMap was initially the preferred choice of mapping data. Deep open source roots combined with an excellent level of detail and accuracy was attractive. When combined with the JavaScript library \gls{Leaflet} to embed the map, the potential was excellent. OpenStreetMap's downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox which host this data but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
+OpenStreetMap\cite{openStreetMap} was initially the preferred choice of mapping data. Deep open source roots combined with an excellent level of detail and accuracy was attractive. When combined with the JavaScript library \gls{Leaflet} to embed the map, the potential was excellent. OpenStreetMap's downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox which host this data but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
   \centering
@@ -184,7 +184,7 @@ OpenStreetMap was initially the preferred choice of mapping data. Deep open sour
 \caption{OpenStreetMap (left) Google Map (right)}
 \end{figure}
 
-Google Maps was seen as a strong alternative. While it was not open source, it offered comparative quality of mapping data. A weakness was found in the limitations set on the free use of the \gls{API}. It was found that after the obtaining of an API key however we would have access to 25,000 user visits a month.\footnote{This number of visits was derived by taking the number of map loads offered to free users of Google's API and dividing it by the number of map views estimated for each user's visit to MDRS} It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
+Google Maps\cite{googleMaps} was seen as a strong alternative. While it was not open source, it offered comparative quality of mapping data. A weakness was found in the limitations set on the free use of the \gls{API}. It was found that after the obtaining of an API key however we would have access to 25,000 user visits a month.\footnote{This number of visits was derived by taking the number of map loads offered to free users of Google's API and dividing it by the number of map views estimated for each user's visit to MDRS} It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing.
 
 Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use.
 
@@ -300,7 +300,7 @@ After comparing timeline JS with the other viable options and having contacted t
 
 \subsection{Front-End Web Framework}
 
-PureCSS is described on its website as,
+PureCSS\cite{pureCSS} is described on its website as,
 
 \blockquote{“A set of small, responsive CSS modules that you can use in every web project.”}
 
@@ -308,14 +308,14 @@ This was an ideal candidate for our front-end framework as it was minimalistic i
 
 Twitter's Bootstrap framework appeared to be a more complete solution. It provides icons, styling, and a number of UI elements ready to be easily added to a webpage. However in being the complete package, less flexibility would be offered in the appearance and the front end could end up having very little of its own character. Performance also suffers due to the size of the \gls{JavaScript} and CSS files required.
 
-Although Bootstrap had many more features, the majority of these were unnecessary for our project. Its inclusion would have needlessly complicated the web application whereas PureCSS gave a solid foundation to build our website upon. Its lightweight approach aligned and met our simple requirements
+Although Bootstrap\cite{bootstrap} had many more features, the majority of these were unnecessary for our project. Its inclusion would have needlessly complicated the web application whereas PureCSS gave a solid foundation to build our website upon. Its lightweight approach aligned and met our simple requirements
 
 
 \subsection{Audio Playback}
 
-'Buzz!' is a JavaScript library that utilises the HTML5 audio element. Again touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple HTML Buttons with JavaScript commands attached to them. This offered the team a lot of control over the styling their audio playback.
+'Buzz!'\cite{buzz} is a JavaScript library that utilises the HTML5 audio element. Again touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple HTML Buttons with JavaScript commands attached to them. This offered the team a lot of control over the styling their audio playback.
 
-JPlayer was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface cluttering the design.
+JPlayer\cite{jPlayer} was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface cluttering the design.
 
 The team took the decision to use the 'Buzz!' JavaScript library as it was exactly what we were looking for on this particular occasion.
 
@@ -670,7 +670,7 @@ Having the file set now on the server it was a simple case to initialise a datab
 
 Later issues appeared as development continued, many of them minor issues such as the database needing reinitialised or the server rebooted and the IP tabled reconfigured. All issues were dealt with swiftly and with little to no impact to the development of the project.
 
-\subsection{Django Configuration}		Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boilerplate.\footnote{These parts are uniform across many applications with few custom settings required for MDRS.}
+\subsection{Django Configuration}		Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book\cite{tangoWithDjango} to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boilerplate.\footnote{These parts are uniform across many applications with few custom settings required for MDRS.}
 
 The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing Python files. The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
 
@@ -700,9 +700,9 @@ This menu also utilizes Django's object relational mapping (ORM), so that if a u
 
 \subsubsection{Control Box}		Another feature created to keep the interface simplified was the control box. This dialog holds a number of controls over the application as a whole. The control box is separated into three logical sections; 'Select in Range', 'Audio Controls' and 'Search'. Only including options that were useful and could meaningfully modify the data was key in the construction of this dialog. For example in the 'Select Range' section if the start date is left blank it is assumed that all dates prior to the end date are desired. The opposite is true for end date, however if both dates are left blank all are selected. To create options for this in the box could lead to a more complicated UI though it proved unnecessary to do this as these features were intuited by most people during testing.
 
-\gls{JQuery} Datepicker was used as the user interface for selecting a date with great success, the colours were edited to give a more consistent appearance and integrated feel. Originally when a date was selected it came up in the American format, though this was easily changed by using the documentation provided with the JavaScript library on GitHub.
+\gls{JQuery} Datepicker\cite{jQueryDatepicker} was used as the user interface for selecting a date with great success, the colours were edited to give a more consistent appearance and integrated feel. Originally when a date was selected it came up in the American format, though this was easily changed by using the documentation provided with the JavaScript library on GitHub.
 
-During internal testing, the team realised filtering by date alone was not enough as the scope of recordings narrowed down to could still be huge. It was decided to use JQuery Timepicker for selecting a time. This had a similar appearance to that of the timepicker on Google Calendar.
+During internal testing, the team realised filtering by date alone was not enough as the scope of recordings narrowed down to could still be huge. It was decided to use JQuery Timepicker\cite{jQueryTimepicker} for selecting a time. This had a similar appearance to that of the timepicker on Google Calendar\cite{googleCalendar}.
 
 The second section in the control box 'Audio Controls' offers the ability to play multiple recordings all at once, this feature utilises 'Buzz!' and its support for grouping multiple audio files together. This feature works by using the earliest recording in the group of selected recordings as it's datum, from there all other recordings are synchronised. This approach has it's drawbacks, though a more intuitive system was not an option due to the limited timescale imposed on the group.
 
