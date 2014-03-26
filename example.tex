@@ -18,7 +18,7 @@
 \newglossaryentry{CSS}
 {
 	name=CSS,
-	description={Short for Cascading Style Sheets, a new feature being added to HTML that gives both Web site developers and users more control over how pages are displayed}
+	description={Short for Cascading Style Sheets, a new feature being added to \gls{HTML} that gives both Web site developers and users more control over how pages are displayed}
 }
 \newglossaryentry{Python}
 {
@@ -43,7 +43,7 @@
 \newglossaryentry{Django}
 {
 	name=Django,
-	description={A free and open source web application framework, written in Python, which follows the model–view–controller architectural pattern.}
+	description={A free and open source web application framework, written in \gls{Python}, which follows the model–view–controller architectural pattern.}
 }
 \newglossaryentry{MySQL}
 {
@@ -58,7 +58,7 @@
 \newglossaryentry{PIP}
 {
 	name=PIP,
-	description={A package management system used to install and manage software packages written in Python}
+	description={A package management system used to install and manage software packages written in \gls{Python}}
 }
 \newglossaryentry{Ubuntu}
 {
@@ -73,7 +73,7 @@
 \newglossaryentry{AJAX}
 {
 	name=AJAX,
-	description={Asynchronous JavaScript and XML, it is a term that describes a new approach to using a number of existing technologies together.}
+	description={Asynchronous \gls{JavaScript} and XML, it is a term that describes a new approach to using a number of existing technologies together.}
 }
 
 \makeglossaries
@@ -133,7 +133,7 @@ To fully understand this dissertation, the following knowledege would be benefic
 \begin{itemize}
 \item A basic understanding of the construction of an Android application
 \item A basic understanding of how \gls{Django} projects function
-\item Syntactic understanding of Java, JavaScript and Python
+\item Syntactic understanding of Java, \gls{JavaScript} and \gls{Python}
 \item Willingness to follow the links to the various resources used as part of MDRS
 \end{itemize}
 
@@ -176,7 +176,7 @@ With the potential MDRS possessed, realised, it was essential for the team to re
 
 \subsection{Map}
 
-OpenStreetMap\cite{openStreetMap} was initially the preferred choice of mapping data. Deep open source roots combined with an excellent level of detail and accuracy was attractive. When combined with the JavaScript library \gls{Leaflet} to embed the map, the potential was excellent. OpenStreetMap's downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox which host this data but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
+OpenStreetMap\cite{openStreetMap} was initially the preferred choice of mapping data. Deep open source roots combined with an excellent level of detail and accuracy was attractive. When combined with the \gls{JavaScript} library \gls{Leaflet} to embed the map, the potential was excellent. OpenStreetMap's downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox which host this data but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
   \centering
@@ -214,7 +214,7 @@ When clicked on, the timeline would also display,
 \item{Accompanying imagery uploaded by the user}
 \end{itemize}
 
-After verbose specification and documentation of what the team wanted from a timeline, research was carried out to find a suitable Javascript implementation. Initially five different options were considered.
+After verbose specification and documentation of what the team wanted from a timeline, research was carried out to find a suitable \gls{Javascript} implementation. Initially five different options were considered.
 \begin{itemize}
 \item{SIMILE timeline\cite{SIMILE}}
 \item{Timeline JS\cite{TimelineJS}}
@@ -261,7 +261,7 @@ Although Bootstrap\cite{bootstrap} had many more features, the majority of these
 
 \subsection{Audio Playback}
 
-'Buzz!'\cite{buzz} is a JavaScript library that utilises the HTML5 audio element. Again touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple HTML Buttons with JavaScript commands attached to them. This offered the team a lot of control over the styling their audio playback.
+'Buzz!'\cite{buzz} is a \gls{JavaScript} library that utilises the HTML5 audio element. Again touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple \gls{HTML} Buttons with JavaScript commands attached to them. This offered the team a lot of control over the styling their audio playback.
 
 JPlayer\cite{JPlayer} was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface cluttering the design.
 
@@ -475,7 +475,7 @@ MDRS. For capturing the various forms of data a mobile implementation was key. T
 %Progress with the web application was steady, the back-end was actually a fairly simple affair in comparison to the front-end which was heavy with scripting.
 %Back-end scripting mostly involved getting the models to suit what was needed correctly, it took several trial and error attempts however once the team managed to work out the correct collection of models it was mostly left alone. The only real issue the team ran into was some of the audio formats in the later stages of the project. At the outset OGG was decided as the format to use as it had a great compression to quality ratio; however it was discovered that Android could not, in fact, encode audio to OGG directly. Since a majority of the web code had already been written a decision was made to simply take a format Android could encode in and then convert it to OGG upon upload to the server.
 
-Given the nature of MDRS, the team looked to the Distributed Information Management course taught in second semester as a source of possible tools. The course is structured around the use of Django, a Python based web framework which we considered  would offer us the flexibility to create a rich, dynamic application easily deployable to possible users. Widely used, Django had a wide range of support materials available including Tango with Django written by Leif Azzopardi and Glasgow University postgraduate student David Maxwell. This resource and knowing we would have to learn it later through coursework made the framework choice an easy one. It helped to solidify in the design stage how the team could retrieve the data to then present.
+Given the nature of MDRS, the team looked to the Distributed Information Management course taught in second semester as a source of possible tools. The course is structured around the use of \gls{Django}, a \gls{Python} based web framework which we considered  would offer us the flexibility to create a rich, dynamic application easily deployable to possible users. Widely used, Django had a wide range of support materials available including Tango with Django written by Leif Azzopardi and Glasgow University postgraduate student David Maxwell. This resource and knowing we would have to learn it later through coursework made the framework choice an easy one. It helped to solidify in the design stage how the team could retrieve the data to then present.
 
 \begin{figure}[ht!]
 \centering
@@ -483,9 +483,9 @@ Given the nature of MDRS, the team looked to the Distributed Information Managem
 \caption{Prototype of map view.}
 \end{figure}
 
-The key interaction between the user and MDRS is location therefore it made sense to make a map the central interface. The user would be able to explore the map and click on pins representing recordings. This would then project the path of the recording , 'lighting the way', indicating where images were captured along the way. Users could then play it back individually or select multiple recordings for synchronous playback. With such an important role, the importance of which mapping API to implement was extensive during prototyping.
+The key interaction between the user and MDRS is location therefore it made sense to make a map the central interface. The user would be able to explore the map and click on pins representing recordings. This would then project the path of the recording , 'lighting the way', indicating where images were captured along the way. Users could then play it back individually or select multiple recordings for synchronous playback. With such an important role, the importance of which mapping \gls{API} to implement was extensive during prototyping.
 
-Google Maps was immediately found to be a good choice while prototyping our interface. The simple API made it easy to test out different styles of visualising recordings. To get these prototypes off the ground all the team needed to do was  reference the JavaScript library in the HTML file. After multiple tests it was decided that a custom marker would mark the beginning of each recording. Once clicked on, this would trace the route of the recording, showing its terminus. While earlier approaches showed the paths all the time, this cluttered the interface. Another test tried having the map blank to begin with and only populate as the user chose their recordings from a list. This was found unengaging and the team felt users would lose interest without visual stimulation as soon as the page loaded.
+Google Maps was immediately found to be a good choice while prototyping our interface. The simple API made it easy to test out different styles of visualising recordings. To get these prototypes off the ground all the team needed to do was  reference the \gls{JavaScript} library in the \gls{HTML} file. After multiple tests it was decided that a custom marker would mark the beginning of each recording. Once clicked on, this would trace the route of the recording, showing its terminus. While earlier approaches showed the paths all the time, this cluttered the interface. Another test tried having the map blank to begin with and only populate as the user chose their recordings from a list. This was found unengaging and the team felt users would lose interest without visual stimulation as soon as the page loaded.
 
 Alongside our relatively simple use of maps, we prototyped a version which would incorporate Google's Street View. This would allow the user to follow a recording's location trail even more closely. By harvesting the orientation of the recording device we could show where they were looking, showing the Street View at that angle, and overlay any of the user's own images they captured on top of this. While this immersed the user even deeper into the recording, it was unfortunately not taken beyond this prototype stage due to the complexity of implementation required.
 
@@ -587,7 +587,7 @@ Before work was undertaken on the implementation of the product, we first identi
 
 \section{Server and Django configuration}
 Being granted use of a university server, the team had a server to base all of their work off of. One team member was given the task to set-up and maintain the server.
-Set-up was a simple case of installing the necessary packages from the \gls{Ubuntu} repositories such as Git, Python, Django, \gls{PIP} and \gls{MySQL}. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
+Set-up was a simple case of installing the necessary packages from the \gls{Ubuntu} repositories such as \gls{Git}, \gls{Python}, \gls{Django}, \gls{PIP} and \gls{MySQL}. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
 
 This, having been completed, lead to cloning the team Git repository to the server. Some permissions teething problems were immediately encountered as some members could not edit files. However these were minor issues dealt with some basic configurations.
 Having the file set now on the server it was a simple case to initialise a database for the project and get it to a working state. However there was immediately an issue in that regular users could not host the server on port 80 (the standard port for HTTP requests and the server's only open port) without administrator privileges. This meant that each team member would need to login as our shared super user account to simply run the server; this slowed workflow and so a solution was devised. By manipulating the IP tables on the server, the team successfully managed to route port 8080 internally to port 80. Simply put this meant the team was fooling the server into thinking it was hosting harmlessly on port 8080 whereas it was getting rerouted, after the user invoked the command, to port 80. Exactly where the team needed the socket bound to.
@@ -596,7 +596,7 @@ Later issues appeared as development continued, many of them minor issues such a
 
 \subsection{Django Configuration}		Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book\cite{tangoWithDjango} to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boilerplate.\footnote{These parts are uniform across many applications with few custom settings required for MDRS.}
 
-The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing Python files. The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
+The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing \gls{Python} files. The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
 
 The configuration involved in this was minimal, simply using the manage script the team created the web app partition and began work straight away. As development continued only minor edits had to be made to the settings of the project. One key edit made was to include the session cookie plugin to allow users to log in and maintain their sessions correctly.
 
@@ -624,9 +624,9 @@ This menu also utilizes Django's object relational mapping (ORM), so that if a u
 
 \subsubsection{Control Box}		Another feature created to keep the interface simplified was the control box. This dialog holds a number of controls over the application as a whole. The control box is separated into three logical sections; 'Select in Range', 'Audio Controls' and 'Search'. Only including options that were useful and could meaningfully modify the data was key in the construction of this dialog. For example in the 'Select Range' section if the start date is left blank it is assumed that all dates prior to the end date are desired. The opposite is true for end date, however if both dates are left blank all are selected. To create options for this in the box could lead to a more complicated UI though it proved unnecessary to do this as these features were intuited by most people during testing.
 
-\gls{JQuery} Datepicker\cite{jQueryDatepicker} was used as the user interface for selecting a date with great success, the colours were edited to give a more consistent appearance and integrated feel. Originally when a date was selected it came up in the American format, though this was easily changed by using the documentation provided with the JavaScript library on GitHub.
+\gls{JQuery} Datepicker\cite{jQueryDatepicker} was used as the user interface for selecting a date with great success, the colours were edited to give a more consistent appearance and integrated feel. Originally when a date was selected it came up in the American format, though this was easily changed by using the documentation provided with the \gls{JavaScript} library on GitHub.
 
-During internal testing, the team realised filtering by date alone was not enough as the scope of recordings narrowed down to could still be huge. It was decided to use JQuery Timepicker\cite{jQueryTimepicker} for selecting a time. This had a similar appearance to that of the timepicker on Google Calendar\cite{googleCalendar}.
+During internal testing, the team realised filtering by date alone was not enough as the scope of recordings narrowed down to could still be huge. It was decided to use \gls{JQuery} Timepicker\cite{jQueryTimepicker} for selecting a time. This had a similar appearance to that of the timepicker on Google Calendar\cite{googleCalendar}.
 
 The second section in the control box 'Audio Controls' offers the ability to play multiple recordings all at once, this feature utilises 'Buzz!' and its support for grouping multiple audio files together. This feature works by using the earliest recording in the group of selected recordings as it's datum, from there all other recordings are synchronised. This approach has it's drawbacks, though a more intuitive system was not an option due to the limited timescale imposed on the group.
 
@@ -644,9 +644,9 @@ Finally there is a button for viewing the position of a recording on the timelin
 
 There was a number of issues during development of this feature as dynamically changing the images in the slideshow was not something supported by this plugin. However this was neccessary in order to change the images when a different recording was selected. Workarounds were unfortunately put in place to get this feature working, however inelegantly on the backend, due to the limited timescale.
 
-\subsection{Map}		A number of technologies were used when implementing the map and they all had to work in harmony to effectively display to the user the recordings that were stored in the database. The major components were Google Maps, HTML5 Geolocation and JQuery. Combining these allowed the team to create a meaningful visualisation of recordings captured.
+\subsection{Map}		A number of technologies were used when implementing the map and they all had to work in harmony to effectively display to the user the recordings that were stored in the database. The major components were Google Maps, HTML5 Geolocation and \gls{JQuery}. Combining these allowed the team to create a meaningful visualisation of recordings captured.
 
-\subsubsection{Map API}		The Google Maps API was used extensively throughout the development of the home page with many of the JavaScript classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble. The map was initialised using,
+\subsubsection{Map API}		The Google Maps \gls{API} was used extensively throughout the development of the home page with many of the \gls{JavaScript} classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble. The map was initialised using,
 \begin{verbatim}
 google.maps.Map
 \end{verbatim}
@@ -656,7 +656,7 @@ After having created an instance of the map and styling it correctly, we were th
 \begin{verbatim}
 getBounds()
 \end{verbatim}
-This was important as from this we were then able to query our database using JQuery (this method will be covered in a the JQuery section) and receive from the database only the recordings that would be currently visible on the timeline. For were we not able to receive the bounds of the map and just all the recordings were returned, this would prove a serious problem in scalability.
+This was important as from this we were then able to query our database using \gls{JQuery} (this method will be covered in a the JQuery section) and receive from the database only the recordings that would be currently visible on the timeline. For were we not able to receive the bounds of the map and just all the recordings were returned, this would prove a serious problem in scalability.
 
 These recordings were then plotted on the map by creating multiple instances of the marker class for each recording. These markers must be created using the object:
 \begin{verbatim}
@@ -664,25 +664,25 @@ google.maps.LatLng
 \end{verbatim}
 In this particular case this object is being used as the latitude and longitude of the marker, which is created using the data that has been returned from the database. The co-ordinates that are used are the start position co-ordinates of the recording. We decided to use a custom icon for the default marker to give a more consistent theme, also in order to differentiate between non-selected and selected markers a separate red version of the marker was used.
 
-The behaviour of the markers had to be defined manually this was done using JavaScript. An example of such behaviour would be if the map was panned and a recording fell outwith the bounds of the current view then this pin would be removed, and then added back in again if it is brought back in to view. It was an initial requirement that support for the "selection" of multiple recordings must be incorporated into the map so that these recordings can then be played back in a synchronised form. What was written allowed a pin to remain selected even if it was not currently in the view of the map. In other words when a pin is selected it would be saved in memory until such time as it was deselected.
+The behaviour of the markers had to be defined manually this was done using \gls{JavaScript}. An example of such behaviour would be if the map was panned and a recording fell outwith the bounds of the current view then this pin would be removed, and then added back in again if it is brought back in to view. It was an initial requirement that support for the "selection" of multiple recordings must be incorporated into the map so that these recordings can then be played back in a synchronised form. What was written allowed a pin to remain selected even if it was not currently in the view of the map. In other words when a pin is selected it would be saved in memory until such time as it was deselected.
 
 Originally the Google Maps info window was used to display the metadata to the user, however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these info window’s would prove to be overly complicated. In particular through testing it was discovered that it was routinely obscuring the route of the recording, as a group it was decided to place it in the top right hand corner. However to accomplish this using the info window would mean constantly changing it's position as the map was panned, placing an unwanted burden on the performance of the application. for that reason it was decided that when a marker was clicked there should be a separate div component opened. Which in the long run would hopefully save time and have a more refined appearance.
 
 There was little debate as to how routes would be displayed on the map as the only two options were Google Maps Polyline or their Directions Service. The Directions Service could only make use of roads and paths, which quickly brings up problems, for example if a recording is made inside a building or if a route is incomplete on google maps the directions service would fail to display any useful information on the map. Polylines on the other hand take an array of latitude and longitude objects to create it along with any styling of the line, this allows for a very accurate trace of the route taken, even in unorthodox areas that may crop up; with a styling that can be made to fit the theme of the website.
 
-\subsubsection{Geolocation}		Getting the end users current location in order to use it as a reference point, for centering the map and flagging it with a blue dot when they open up MDRS was achieved with relative ease. This was accomplished through the use of the \gls{W3C} Geolocation API, with only a few lines of code we were then able to track the users current position by first checking to see if the browser supports it (most modern browsers do) then if so; create a new marker anchoring it at their location.
+\subsubsection{Geolocation}		Getting the end users current location in order to use it as a reference point, for centering the map and flagging it with a blue dot when they open up MDRS was achieved with relative ease. This was accomplished through the use of the \gls{W3C} Geolocation \gls{API}, with only a few lines of code we were then able to track the users current position by first checking to see if the browser supports it (most modern browsers do) then if so; create a new marker anchoring it at their location.
 \begin{verbatim}
 navigator.geolocation.getCurrentPosition()
 \end{verbatim}
 There was some problems with the accuracy of geolocation, with some users reporting that it could show them in a seperate nearby location. It was found to be a problem, after researching the subject\cite{geolocation}, to be with "IP geolocation" where gaining even the city from an IP address could have an accuracy of between 50\% - 80\%. This however never proved a major issue in the end product as it would show the rough area of the user, meaning they could navigate there nearby location without having to find it manually.
 
-\subsubsection{JQuery}		JQuery only began to be fully utilised in the later stages of development, this was largely due to having very little experience in its uses for development. However after completing a few basic tutorials on Code Academy\cite{codeacademy}. It quickly became apparent how it could be used to effectively and easily aid in the creation of an interactive environment for the user.
+\subsubsection{JQuery}		\gls{JQuery} only began to be fully utilised in the later stages of development, this was largely due to having very little experience in its uses for development. However after completing a few basic tutorials on Code Academy\cite{codeacademy} it quickly became apparent how it could be used to effectively and easily aid in the creation of an interactive environment for the user.
 
 The behaviour of the boxes including dragging, animations and visibility in the user interface are all controlled using JQuery. The inclusion of JQuery to do this proved to be a great addition a succinct implementation and little time required to greatly enhance the end user experience. For example to make all the boxes on the page draggable required only the line of code:
 \begin{verbatim}
 $( ".class" ).draggable();
 \end{verbatim}
-To query our database was made simple with the inclusion of JQuery, essentially requiring only one line of code in the JavaScript. Although the asynchronous nature of this request did at times cause confusion, once this behaviour was discovered and understood it caused far less problems.
+To query our database was made simple with the inclusion of JQuery, essentially requiring only one line of code in the \gls{JavaScript}. Although the asynchronous nature of this request did at times cause confusion, once this behaviour was discovered and understood it caused far less problems.
 
 \subsubsection{Integration}
 
@@ -710,7 +710,7 @@ It can be used to provide a visual aid in identifying recordings that overlap an
 
 Timeline JS originally has a default object icon when displaying information - we changed this to display a microphone instead in order to make it better fitted to the multi-device recording system.
 
-Integrating the timeline on the homepage caused some minor problems at first as depending on which JavaScript file was included in the head section of the website first, it would show either the map or the timeline. However, as it turned out later, this was due to the formatting of get requests to the database - once we changed the $.get() to $.getJSON() the issue disappeared immediately. We also added a button for easy toggle between showing and hiding the timeline to make the visible map surface bigger and improve navigation in general.
+Integrating the timeline on the homepage caused some minor problems at first as depending on which \gls{JavaScript} file was included in the head section of the website first, it would show either the map or the timeline. However, as it turned out later, this was due to the formatting of get requests to the database - once we changed the $.get() to $.getJSON() the issue disappeared immediately. We also added a button for easy toggle between showing and hiding the timeline to make the visible map surface bigger and improve navigation in general.
 Other than that the embedding process for the main page did not require much more further changing.
 
 The timeline instance for the user page, though needed more attention as it was displayed in full-scale. What the user page displays except the timeline is a right panel containing a list of user's personal recordings which can be switched to show a list of all recordings in the database along with their metadata, photos taken etc.
@@ -718,7 +718,7 @@ Those recordings can be played individually or, if they overlap, synchronously. 
 Therefore we made an auto-resize JavaScript function to achieve this.
 
 When initializing the timeline, we customized the zoom level to make as many recordings as possible visible at any given time and used the bookmark function so that recrding objects could be linked and focused on the timeline for improved usability.
-Also added a Google Maps key and used the debug mode to identify potential export problems in the Python template code and make their resolution easier. Another minor customization we made is the default initial slide - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
+Also added a Google Maps key and used the debug mode to identify potential export problems in the \gls{Python} template code and make their resolution easier. Another minor customization we made is the default initial slide - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
 
 \begin{figure}[ht!]
   \centering
@@ -727,7 +727,7 @@ Also added a Google Maps key and used the debug mode to identify potential expor
 \end{figure}
 
 \subsection{Buzz!}
-In this section implementation of the background audio manager will be discussed. The Buzz! JavaScript library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution without web workers was chosen as the other became overly complicated.
+In this section implementation of the background audio manager will be discussed. The Buzz! \gls{JavaScript} library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution without web workers was chosen as the other became overly complicated.
 
 \subsubsection{Solution with HTML5 Web Workers}
 The HTML5 Web Workers are a way to mimic concurrency in a web application. This is achieved by using timeouts and event handlers. The Web Workers interface is used to run background scripts in a web application that do not block its main execution. The interface includes the handling and passing of messages between scripts which can then be leveraged in order to implement a non-busy waiting.
@@ -753,12 +753,12 @@ This solution implements two more functions. A stop() function which can be used
 Despite the extensive research undertaken in order to implement it, this solution turned out to be too complicated for the requirements set and so was discarded in favour of the simpler solution outlined below.
 
 \subsubsection{Solution without HTML5 Web Workers}
-The second implementation utilises the Buzz! “group” function to collect the recordings that need to be synchronously played and store them in an ordered manner in an array. All the recordings currently selected for playback are saved and a check is then run to determine whether they overlap or not. If it is the case those recordings will be sorted by their start time. The sync\_group array holds the sorted Buzz! sound objects. These are played in a sequential order and the synchronisation is calibrated using the start time difference. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files. In this implementation GET requests are used in order to query the database through the Django views. This allows for dynamic file acquisition.
+The second implementation utilises the Buzz! “group” function to collect the recordings that need to be synchronously played and store them in an ordered manner in an array. All the recordings currently selected for playback are saved and a check is then run to determine whether they overlap or not. If it is the case those recordings will be sorted by their start time. The sync\_group array holds the sorted Buzz! sound objects. These are played in a sequential order and the synchronisation is calibrated using the start time difference. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files. In this implementation GET requests are used in order to query the database through the \gls{Django} views. This allows for dynamic file acquisition.
 
 \subsection{Database}
-For this project MySQL was the database back-end the team decided to use. Once the university server was set-up correctly, the team could initialise the database and write the Django models for it. To explain further, Django supports a high level model based abstraction from the database. This allows developers to avoid tedious database manipulations and allows great flexibility in the structure of the overall application.
+For this project \gls{MySQL} was the database back-end the team decided to use. Once the university server was set-up correctly, the team could initialise the database and write the Django models for it. To explain further, Django supports a high level model based abstraction from the database. This allows developers to avoid tedious database manipulations and allows great flexibility in the structure of the overall application.
 
-Using previously designed models and an entity relation (ER) diagram it was a case of filling in the gaps using a Python script in Django's syntax to populate and give structure to the database.
+Using previously designed models and an entity relation (ER) diagram it was a case of filling in the gaps using a \gls{Python} script in Django's syntax to populate and give structure to the database.
 
 Once this script had been created a blank database, Django to access, was created. Simply invoking Django's built in function to synchronise the database created all the tables and relations needed for the project to function.
 
@@ -788,7 +788,7 @@ For MDRS we required two map views, one as the main point of interest on the sta
 
 The main issue that was found with the implementation of maps was a bug which crashed the app if it was opened before another app that uses Google Maps had been open. This puzzling and initially demonstrated an erratic manifestation pattern, mainly due to the irregular reboots that mobile devices need. When found, it was discovered that MDRS was referencing the device's last location and couldn't handle the null value sometimes passed to it. This would crash the app. The problem was discovered so late in development that the team did not have time to correct it, though a fix would be simple to implement.
 
-Placing the map into an activity's layout was done by referring to a map fragment element which was then initialised programmatically. This displayed the benefits of Android's flexibility. Where initially having the option to programmatically do the layout or use XML was confusing, in this case it allowed the map to be placed in XML then modified in code. This made populating the map with pins and other markers a simple call of a method and feeding in data from the Location API.
+Placing the map into an activity's layout was done by referring to a map fragment element which was then initialised programmatically. This displayed the benefits of Android's flexibility. Where initially having the option to programmatically do the layout or use XML was confusing, in this case it allowed the map to be placed in XML then modified in code. This made populating the map with pins and other markers a simple call of a method and feeding in data from the Location \gls{API}.
 
 While Android has its own Location classes, the Play Services' API was chosen for its higher level abstraction and excellent learning resources. While Android only had the reference documents, Play Services' was accompanied by tutorials and getting started guides. This sped up development, saving the a lot of time researching for good learning resources. Making use of the LocationService and LocationManagers allowed the application to gather information from the device's GPS module or the next most accurate source of positional data. This was then stored in a LinkedHashMap. Using this data structure allowed the Location objects collected to be stored in a chronological order with their timestamp acting as each object's key. Parsing this information into JSON later in the upload process was trivial due to this structured approach at the data capture stage.
 
@@ -837,7 +837,7 @@ With the high resolution of images being captured, compression was essential for
 \caption{Final iteration of upload screen on Android app.}
 \end{figure}
 
-With a ‘should have’ status, the ability to upload directly from the device was one of the final features to be implemented. After research, Android Asynchronous Http Client was chosen. This library is used in applications ranging from online multiplayer games to Instagram. It is a great option for efficiently transferring data to and from servers from within an Android application. It's continual development and widespread use made the support surrounding it easier to find. This again was easily implemented within the application, supporting direct upload from the application to the web app. Unfortunately the server side processing could not handle POST requests from the app. This was found out at an extremely late stage in development. Alternative implementations using (INCLUDE LINKS!!) Square's okhttp and Retrofit libraries and Apache’s Java HttpClient were attempted to alleviate the issue. These offered no better results and with no time to refactor large sections of the Django back-end, this feature had to be left written but unsupported.
+With a ‘should have’ status, the ability to upload directly from the device was one of the final features to be implemented. After research, Android Asynchronous Http Client was chosen. This library is used in applications ranging from online multiplayer games to Instagram. It is a great option for efficiently transferring data to and from servers from within an Android application. It's continual development and widespread use made the support surrounding it easier to find. This again was easily implemented within the application, supporting direct upload from the application to the web app. Unfortunately the server side processing could not handle POST requests from the app. This was found out at an extremely late stage in development. Alternative implementations using (INCLUDE LINKS!!) Square's okhttp and Retrofit libraries and Apache’s Java HttpClient were attempted to alleviate the issue. These offered no better results and with no time to refactor large sections of the \gls{Django} back-end, this feature had to be left written but unsupported.
 
 \subsubsection{Aside}
 Another feature which the team tried to implement was background recording. To make a truly useful application, it would have to let the user conserve their battery life by being able to turn their screens off while still capturing audio and location. They could then reopen the app to capture images as and when they pleased. An extensive amount of development time was dedicated to this ‘should have’ feature. Unfortunately this was attempted in the middle of development and, again, time constraints limited the team's ability to refactor large amounts of the application to make this work. Many parts would have needed completely rewritten. This feature was dropped in favour for completing the key requirements.
@@ -913,7 +913,7 @@ We also found by replacing web-based interaction with face to face communication
 
 In future, due to the distributed nature of the team and constantly shifting focus of attention for different deadlines, the team would leverage email more. Weekly status reports would serve as talking points to hopefully make meetings more productive, giving members time to prepare their thoughts. These would also serve as evidence of communication and would be easily accessible at a later date in a chronological order. While the agile principles can definitely be applied to a distributed workforce, using the methodology when the team cannot focus on one project for an extended period of time does not work in our experience. Switching between various projects and deadlines meant the agile manifesto was reduced to always taking the next task off the list for one of the many projects due.
 
-\subsection{Technological}		Most technological issues revolved around a lack of experience and knowledge at the beginning of the project. Issues such as handling dependencies with the package management system \textit{pip} with, initially, no requirements.txt file made setting up a new virtual environment a challenge. Everything had to be manually installed allowing for greater risk of failure and variation between team member's development environment. Our ignorance regarding virutal environments also made maintaining consistency harder throughout development. After working on Django development using \textit{Tango with Django}, the team studied and began to use virtual environments to simplify development. Until resolved, these issues caused a lot of problems for certain team members. In future development the team would take this further creating a Vagrant virtual environment which could be shared between team members and reliably reproduced on multiple machines. This would exclude any Operating System issues affecting the work of the team as well as removing difficulties in accessing dependencies.
+\subsection{Technological}		Most technological issues revolved around a lack of experience and knowledge at the beginning of the project. Issues such as handling dependencies with the package management system \textit{pip} with, initially, no requirements.txt file made setting up a new virtual environment a challenge. Everything had to be manually installed allowing for greater risk of failure and variation between team member's development environment. Our ignorance regarding virutal environments also made maintaining consistency harder throughout development. After working on \gls{Django} development using \textit{Tango with Django}, the team studied and began to use virtual environments to simplify development. Until resolved, these issues caused a lot of problems for certain team members. In future development the team would take this further creating a Vagrant virtual environment which could be shared between team members and reliably reproduced on multiple machines. This would exclude any Operating System issues affecting the work of the team as well as removing difficulties in accessing dependencies.
 
 Another major misunderstanding came with the team misusing our version control system, git. If used correctly, git allows each developer to work on their local machine, testing and committing any changes to the repository. Initially we were all using SSH to access our server and then working directly in the terminal, creating conflicts and locking file issues. The team should have been working on their own machines and then the server pulling these updates, effectively 'deploying' our changes to the server automatically. This was quickly resolved when the team researched the issue, changing to the correct workflow.
 
@@ -929,7 +929,7 @@ As modification to the project's central vision, the team would include search a
 
 From discussion within the team, the need for a tutorial was also realised. In evaluation, it was required for a user to be explained the concept of MDRS and what it could be used for. In a real release, the project could quickly fail without proper explaination. This could either be implemented as a video, interactive guide of the site or even a landing page that could explain MDRS and its unique features.
 
-With the integration of these features to the web application, the user interface would have to be rethought. The use of a responsive framework such as Twitter's Bootstrap or Zurb's Foundation could offer a streamlined interface and improved interaction models. The team would also make changes to the timeline feature. While TimelineJS offered a flexible model, recent research has shown that we could have taken advantage of Django itself to more efficiently populate and render the timeline in our web application. This refactoring would greatly simplify our current codebase and improve performance significantly. The team have also recognised that giving users options to log into MDRS through existing social accounts (through systems such as OpenID) would be beneficial and smooth their introduction to the system as a whole.
+With the integration of these features to the web application, the user interface would have to be rethought. The use of a responsive framework such as Twitter's Bootstrap or Zurb's Foundation could offer a streamlined interface and improved interaction models. The team would also make changes to the timeline feature. While TimelineJS offered a flexible model, recent research has shown that we could have taken advantage of \gls{Django} itself to more efficiently populate and render the timeline in our web application. This refactoring would greatly simplify our current codebase and improve performance significantly. The team have also recognised that giving users options to log into MDRS through existing social accounts (through systems such as OpenID) would be beneficial and smooth their introduction to the system as a whole.
 
 As briefly mentioned in the design chapter, the team would also hope to use the orientation data being pulled from the Android device to create an enhanced ‘Street View’. When viewing an individual recording, MDRS could display the recorder’s perspective as they moved and overlay their images on top of Google’s Street View imagery. This innovative perspective would help further differentiate MDRS from its competitors, offering a unique comparison of the constantly changing state of our cityscapes, depending on events or times of year.
 
