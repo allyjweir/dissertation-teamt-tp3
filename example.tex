@@ -90,7 +90,7 @@
 \maketitle
 \begin{abstract}
 
-Surrounding us in city life there are unique moments missed everyday by experiencing  them through the lens of a smartphone instead of being 'in the moment'. That instance is lost in time and never fully appreciated. The video or images captured are then restricted to that specific person, only able to relive the moment from their limited perspective. By creating a mobile first approach to capturing locational audio centred around these moments our project can offer new insights and crowdsource distinctive, new  perspectives of life in our cities. This aim was successfully achieved with a functioning web and mobile application to allow users to gather this information while still enjoying the moment, then later explore their perspective and others in a unique way. Our testing has shown users are intrigued by our new ideas and realise the potential value of a multi-device recording system
+Surrounding us in city life there are unique moments missed everyday by experiencing  them through the lens of a smartphone instead of being 'in the moment'. That instance is lost in time and never fully appreciated. The video or images captured are then restricted to that specific person, only able to relive the moment from their limited perspective. By creating a mobile first approach to capturing locational audio centred around these moments our project can offer new insights and crowdsource distinctive, new  perspectives of life in our cities. This aim was successfully achieved with a functioning web and mobile application to allow users to gather this information while still enjoying the moment, then later explore their perspective and others in a unique way. Our testing has shown users realise the potential of the team's ideas and are intrigued by our implementation.
 
 \end{abstract}
 \educationalconsent
@@ -445,7 +445,7 @@ And last but not least, implementing all of the required functionality, doing an
 
 We started thinking about what technology our project is going to utilise and how to implement the key features we had identified. One of the main tasks was to make a decision on audio time synchronisation, which could be done in a number of ways; a great deal of research had to be undertaken before making a final decision. A possible option was to use an NTP - network time protocol with a reference clock. Other viable options were GPS clock synchronisation or OS clock synchronisation. NTP was chosen as it seemed the most reliable and easy to implement option.
 
-At the end of October we decided to make a choice on the web middleware framework for our project. The main candidates were Django (Python based) and the SPRING (Java oriented) development frameworks, both of which are well designed, simple to understand and make code maintainability very efficient. After considering the pros and cons of the two frameworks, we chose to use Django as it seemed to be better documented and would perfectly suit the needs of the multi-device-audio project web application. Apart from that, we also knew that our coursework and material in the second semester's Distributed Information Management 3 course would require us to learn how to use Django, further strengthening our choice.
+At the end of October we decided to make a choice on the web middleware framework for our project. The main candidates were Django (Python based) and the SPRING (Java based) development frameworks, both of which are well designed, simple to understand and make code maintainability very efficient. After considering the pros and cons of the two frameworks, we chose to use Django as it seemed to be better documented and would perfectly suit the needs of the multi-device-audio project web application. Apart from that, we also knew that our coursework and material in the second semester's Distributed Information Management 3 course would require us to learn how to use Django, further strengthening our choice.
 
 \subsection{Design}
 
@@ -490,8 +490,6 @@ like. As previously discussed, MDRS was viewed as a tool to democratise access t
 
 The project's use in public safety was of particular interest to the team. MDRS could serve as a non-invasive and non-threatening way for police officers to monitor an area. It could also hold those officers and those they interact with accountable in a alternative way to current methods such as mounted video cameras.
 
-Include another storyboard here {\bf bold}
-
 From our storyboards we realised that MDRS should be more than an audio recorder with location tracking. By allowing the user to capture images, we could combine these three information sources into a virtual environment that others could explore.
 
 \section{User Interface} The realisation that the project would be spread across
@@ -518,7 +516,7 @@ Given the nature of MDRS, the team looked to the Distributed Information Managem
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.75\textwidth]{images/web-map-view.jpg}
+\includegraphics[width=1\textwidth]{images/web-map-view.jpg}
 \caption{Prototype of map view.}
 \end{figure}
 
@@ -530,7 +528,7 @@ Alongside our relatively simple use of maps, we prototyped a version which would
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.5\textwidth]{images/timeline-example.png}
+\includegraphics[width=1\textwidth]{images/timeline-example.png}
 \caption{An example of TimelineJS by KnightLab.}
 \end{figure}
 
@@ -540,7 +538,7 @@ Early web interface designs featured a prominent header bar and a floating menu 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.5\textwidth]{images/web-recording-view.jpg}
+\includegraphics[width=1\textwidth]{images/web-recording-view.jpg}
 \caption{Recording specific prototype for web application.}
 \end{figure}
 
@@ -705,7 +703,7 @@ In this particular case this object is being used as the latitude and longitude 
 
 The behaviour of the markers had to be defined manually this was done using JavaScript. An example of such behaviour would be if the map was panned and a recording fell outwith the bounds of the current view then this pin would be removed, and then added back in again if it is brought back in to view. It was an initial requirement that support for the "selection" of multiple recordings must be incorporated into the map so that these recordings can then be played back in a synchronised form. What was written allowed a pin to remain selected even if it was not currently in the view of the map. In other words when a pin is selected it would be saved in memory until such time as it was deselected.
 
-Originally the Google Maps info window was used to display the metadata to the user, however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these info window’s would prove to be overly complicated. In particular through testing it was discovered that it was routinely obscuring the route of the recording, as a group it was decided to place it in the top right hand corner. However to accomplish this using the info window would mean constantly changing it's position as the map was panned, placing an unwanted burden on the performance of the application. for that reason it was decided that when a marker was clicked there should be a separate div component opened as shown in \textbf{fig ?}. Which in the long run would hopefully save time and have a more refined appearance.
+Originally the Google Maps info window was used to display the metadata to the user, however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these info window’s would prove to be overly complicated. In particular through testing it was discovered that it was routinely obscuring the route of the recording, as a group it was decided to place it in the top right hand corner. However to accomplish this using the info window would mean constantly changing it's position as the map was panned, placing an unwanted burden on the performance of the application. for that reason it was decided that when a marker was clicked there should be a separate div component opened. Which in the long run would hopefully save time and have a more refined appearance.
 
 There was little debate as to how routes would be displayed on the map as the only two options were Google Maps Polyline or their Directions Service. The Directions Service could only make use of roads and paths, which quickly brings up problems, for example if a recording is made inside a building or if a route is incomplete on google maps the directions service would fail to display any useful information on the map. Polylines on the other hand take an array of latitude and longitude objects to create it along with any styling of the line, this allows for a very accurate trace of the route taken, even in unorthodox areas that may crop up; with a styling that can be made to fit the theme of the website.
 
@@ -759,15 +757,11 @@ Therefore we made an auto-resize JavaScript function to achieve this.
 When initializing the timeline, we customized the zoom level to make as many recordings as possible visible at any given time and used the bookmark function so that recrding objects could be linked and focused on the timeline for improved usability.
 Also added a Google Maps key and used the debug mode to identify potential export problems in the Python template code and make their resolution easier. Another minor customization we made is the default initial slide - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
 
-Below is a final look of the user page with the timeline and the side menu showing a list of recordings with the related images:
-
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.75\textwidth]{images/timeline_final.png}
 \caption{Final look of the timeline on the user page with uploaded recordings. Showcasing recording photos and displaying metadata.}
 \end{figure}
-
-
 
 \subsection{Buzz!}
 In this subsection we will discuss the implementation of the background audio manager. The Buzz! JavaScript library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution was chosen as the first one became overcomplicated.
@@ -777,20 +771,17 @@ The HTML5 Web Workers are a way to mimic concurrency in a web application. This 
 
 The first implementation of the background sound management utilised the web workers interface in order to recursively create a worker subthread for each new overlapping recording that needed to be played. This solution uses hardcoded parameters at it did not get to the stage where it needs to communicate with the server. In it an array called “mySounds” which is used in order to hold all the recordings that need to be played during this iteration. This array is filled with sounds using the command buzz.sound(filepath) but the way it is filled can be changed in order to obtain it from a GET request. After obtaining the files to be played and saving them in the array a recording must be loaded for playback using soundvariable.load(). Once loaded the file is ready to be played. The pre-loading is necessary in order to eliminate any latency issues and to ensure playback happens synchronously.
 
-This implementation uses a recursive playSound() function that loops until all files loaded in the mySounds array have been played. What the function does is through each iteration it calls mySounds[current].play() in order to play the next recording and then if there are more recordings left in the mySounds array it would load the next one for playback and create and call a worker script that would wait for a set amount of time before returning a message that it is finished waiting. This message is then handled by the main thread by calling the playSound() function again in order to start the playback of the loaded file. The time the worker script spends waiting is currently hardcoded, but it is trivial to change the meaning of the message passed to it to include the time needed for the worker to wait.
+This implementation uses a recursive playSound() function that loops until all files loaded in the mySounds array have been played. What the function does is through each iteration it calls \verbose{mySounds[current].play()} in order to play the next recording and then if there are more recordings left in the mySounds array it would load the next one for playback and create and call a worker script that would wait for a set amount of time before returning a message that it is finished waiting. This message is then handled by the main thread by calling the playSound() function again in order to start the playback of the loaded file. The time the worker script spends waiting is currently hardcoded, but it is trivial to change the meaning of the message passed to it to include the time needed for the worker to wait.
 
 This solution implements two more functions. A stop() function which can be used to stop all playing files, empty the mySounds array and terminate any worker scripts currently running. And a pause() function which can pause all currently playing recordings.
 
 Despite the extensive research undertaken in order to implement it, this solution turned out to be too complicated for the requirements set and so was discarded in favour of the solution outlined below.
 
 \subsubsection{Solution without HTML5 Web Workers}
-The second implementation utilises the Buzz! “group” function to collect the recordings that need to be synchronously played and store them in ordered manner in an array. All the recordings currently selected for playback are saved and a check is run in order to determine if they overlap. If that is the case they are sorted by their start time. The sync_group array holds the sorted Buzz! sound objects. These are played in a sequential order and using the start time difference the synchronisation is calibrated. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files.
-
-In this implementation GET requests are used in order to query the database through the Django views. This allows for dynamic file acquisition.
+The second implementation utilises the Buzz! “group” function to collect the recordings that need to be synchronously played and store them in ordered manner in an array. All the recordings currently selected for playback are saved and a check is run in order to determine if they overlap. If that is the case they are sorted by their start time. The sync\_group array holds the sorted Buzz! sound objects. These are played in a sequential order and using the start time difference the synchronisation is calibrated. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files. In this implementation GET requests are used in order to query the database through the Django views. This allows for dynamic file acquisition.
 
 \subsection{Database}
-For this project MySQL was the database back-end the team decided to use.
-Once the university server was set-up correctly, the team could initialise the database and write the Django models for it. To explain further, Django supports a high level model based abstraction from the database. This allows developers to avoid tedious database manipulations and allows great flexibility in the structure of the overall application.
+For this project MySQL was the database back-end the team decided to use. Once the university server was set-up correctly, the team could initialise the database and write the Django models for it. To explain further, Django supports a high level model based abstraction from the database. This allows developers to avoid tedious database manipulations and allows great flexibility in the structure of the overall application.
 
 Using previously designed models and an entity relation (ER) diagram it was a case of filling in the gaps using a Python script in Django's syntax to populate and give structure to the database.
 
