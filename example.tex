@@ -838,41 +838,29 @@ Overall, the application met the 'must have' requirements while offering an easy
 %==============================================================================
 \chapter{Evaluation}
 
-This chapter contains information on the steps we took in order to evaluate the system - how we gathered feedback and analyzed it in order to be able to draw conclusions regarding the application usability.
+To evaluate the project, a variety of approaches was taken to gather both qualitative and quantitive results. Looking for fresh eyes and perspectives, the system was presented to both users with technical and non-technical backgrounds. The usability and functionality were the main focuses of evaluation.
 
-\section{Web Application}		We evaluated the project by creating an online survey with a small number of basic tasks to be completed on the web application in order to test the intuitivity of the user interface.
-Those tasks involved testing the key functionality of the system - being able to find specific recordings and play them individually as well as identify overlapping ones and synchronise them accordingly.
+\section{Web}
+\subsection{Approach}		To distribute our questions, an online survey was created. This offered streamlined analysis and easier distribution to testers. It also meant that some testers would undertake their evaluation without any team members there to assist them. This gave a more realistic reproduction of a user's first encounter with the project. Some testing was also carried out with team members present. The survey consisted of six tasks:
 
-The tasks become more and more complex in an iterative manner and are designed in a way to prepare the user for what functional effects to expect.
-The first one requires them to navigate to the home page of the web site and listen to any recording by clicking the map markers.
+\begin{enumerate}
+\item{Listen to an individual recording.}
+\item{Listen to multiple overlapping recordings simultaneously.}
+\item{Log into MDRS.}
+\item{Navigate to user page and listen to one of the recordings.}
+\item{Listen to overlapping recordings on the user page simultaneously.}
+\item{Upload a recording using test data provided or from the Android app.}
+\end{enumerate}
 
-The second task involves synchronous playback of audio and asks testers to try and identify overlapping recordings and then play them back simultaneously.
+These tasks emulated what was considered as a possible user's path through the website. They would look at some of the existing recorings, see what was possible with the system and then log in to an account and play with the user page features. The login process was streamlined by offering a tester account already populated with recordings for users to test the service with. Results were captured on a scale of 1-10, one being 'very easy' to complete a task and ten as 'very hard'. This was accompanied with general feedback fields for user's comments on each task. Finally testers were asked their general opinion of the website and its functionality.
 
-After those basic tasks have been completed, the user needs to be provided with log in details or asked to register a new account on the system in order to be able to access the user page and view either personal recordings or all the recordings in the database.
+After distributing the link to possible testers, asking them to try and complete the tasks, we gathered a responses and were able to make an initial evaluation of effective the system was and what the potential user's thoughts on it were. Where possible, 'Think Alouds' were used while completing the survey and this made the evaluation picture richer and more detailed. This gave the team a deeper insight into the thought processes of a user.
 
-The next task on the list challenges the user to listen any single recording on the user page and then try to select multiple overlapping recordings from the list and listen to them synchronously.
-The team thought those tasks need to be executed both on the homepage, before the user has logged in, and on the user page into a user account, in order to assess how well structured and intuitive those pages are and determine whether the users will be able to easily navigate through to the user page from the user page.
+Throughout all tests, users were overwhelmed by the site initially. A tutorial was repeatedly requested and users found the task 2 particularly difficult. The team realised this was an oversight that could be solved in future work with relative ease. Where the development team felt abstracting these controls to a control panel away from the users would streamline the interface, in reality it hid away MDRS' standout feature making it obtuse to find. This was felt to be a big failure for the team's modifications to initial designs. This could be solved by bringing these controls to the front and making clear their functions.
 
-The final task from the list is conditional and requires the tester to try and upload some test data to a newly created account.
-This should be completed only if the user is supplied with test data.
-The upload task is beneficial for the evaluation process as it gives the user the chance to try and find the recording they have just submitted in their list of recordings on the user page, check out the photos and metadata, and of course, play it back and see if its location on the map is correct.
+Other users noted that some buttons were unresponsive and that they didn't work as anticipated. One user highlighted the ability to rewind recordings as a future feature that could be implmented. The general consensus was that testers didn't have enough control over the website. While it let them explore the data in a visually attractive way, their control over it lacked heavily. When attempting to play multiple recordings back at the same time, user's didn't realise the importance of the timeline for finding recordings which overlapped. This could have been due to our database's poor population but some of the blame must be attributed to the presentation of the timeline itself. However the presentation of images was highlighted as an excellent feature by many of the testers.
 
-The survey captures the answers on a scale from 1-10 having values 'Very Easy' and 'Very Hard' accrodingly.
-It also has comment boxes to accommodate further thoughts on the tasks and the web application in general.
-
-After distributing the link to friends and asking them to try and complete the tasks, we gathered a few responses and were able to make an initial evaluation of how user-friendly the system is and what the potential user's thoughts on it are.
-Where possible, we were aiming to capture users' 'Think Alouds' while completing the survey and this made the evaluation picture richer and more detailed.
-Some testers were interested in the technology used and others asked additional questions if they felt some things were not clearly explained.
-
-Generally, users tended to feel a little confused by the web application at first glimpse as they did not know what the purpose of the system was.
-But once they gained more information about how it all works and tried to play with the user interface, it did not take much time for them to complete most of the tasks with ease.
-Some of them expressed that they feel the reason for this being the initial map zoom not covering a surface big enough to show at least a single recording pin and were confused by what they are expected to do in order to play back one.
-They were struggling to find recordings as we currently have uploaded only around 10 and they are scattered accross Glasgow.
-However, we believe that once more people register and start using the system this issue will disappear.
-
-Also, in order to play back two or more overlapping recordings, users needed to be pointed to the timeline as a visual aid to help them identify which recordings should be selected and then they were able to successfully play them back. Also, users liked the image integration on the user page and the fact that the mobile application provides the functionality of taking photos while recording and also tracks the route using GPS.
-
-Overally, people think that the website has a clear and easy-to-use navigation which is elegant. They feel that an about page where the purpose of the project is explained in more detail and a simple very basic tutorial is provided might come in handy. This will serve as a guide to potential users and make it even more clear how they could benefit from the system and use all of its functionality. Considering the original idea behind this multi-device recording system this would really be an important component that will give new users the basics and reassure us that they know exactly what they are doing and how.
+Overall the general feeling was that the idea behind the project was interesting but the execution fell short. It was not robust and some functions were unresponsive and didn't work as expected. Where the navigation around the site was simple, the menu on the side felt unusual and distracting. The key takeaway from the evaluation was that it wasn't started early enough in development. This feedback reflected our final implementation whereas if prototypes and design documents had been shared earlier on, the information gathered could have avoided some of these issues. In summary, feedback was indecisive with a range of opinions but underlying them was an appreciation for the aims of MDRS.
 
 \section{Android}		Due to its reliance on the web application, the testing for MDRS Mobile was more limited. There wasn't always available access to the server and due to the mobile upload feature being unfunctional because of server side issues, testing was limited to colleagues in the lab.
 
@@ -891,11 +879,7 @@ While this evaluation was effective in testing the idea of the project and the u
 \chapter{Challenges}
 \label{Challenges}
 
-A number of the challenges we encountered were through a lack of previous
-experience and unrealistic expectations held by each member of the team. The
-development process offered a lot of flexibility in finding weaknesses in our
-ideas and restructuring them forged better working practices and developed new
-insights into the workings of a small scale agile team.
+A number of the challenges we encountered were through a lack of previous experience and unrealistic expectations held by each member of the team. The development process offered a lot of flexibility in finding weaknesses in our ideas and restructuring them forged better working practices and developed new insights into the workings of a small scale agile team.
 
 \subsection{Communicational}
 Our main communication issues was the over-complication and over dependence on multiple services for specific channels of communication. This diffused each team member's attention, turning a lot of communication into asking where other information was kept instead of working on the project.
@@ -915,16 +899,9 @@ Surprisingly email notifications became a great source of information. As defaul
 
 We also found by replacing web-based interaction with face to face communication improved our productivity immensely. Even a quick 2 minute conversation could convey the same information a 20 minute IM chat could. While each team member kept their own schedule, we always took advantage of these conversations to keep one another up to date. Another way we discovered
 
-In future, due to the distributed nature of the team and constantly shifting
-focus of attention for different deadlines, the team would leverage email more.
-Weekly status reports would serve as talking points to hopefully make meetings
-more productive, giving members time to prepare their thoughts. These would also
-serve as evidence of communication and would be easily accessible at a later
-date in a chronological order. While the agile principles can definitely be applied to a distributed workforce, using the methodology when the team cannot focus on one project for an extended period of time does not work in our experience. Switching between various projects and deadlines meant the agile manifesto was reduced to always taking the next task off the list for one of the many projects due.
+In future, due to the distributed nature of the team and constantly shifting focus of attention for different deadlines, the team would leverage email more. Weekly status reports would serve as talking points to hopefully make meetings more productive, giving members time to prepare their thoughts. These would also serve as evidence of communication and would be easily accessible at a later date in a chronological order. While the agile principles can definitely be applied to a distributed workforce, using the methodology when the team cannot focus on one project for an extended period of time does not work in our experience. Switching between various projects and deadlines meant the agile manifesto was reduced to always taking the next task off the list for one of the many projects due.
 
-\subsection{Technological}
-Most technological issues revolved around a lack of experience and knowledge at
-the beginning of the project. Issues such as handling dependencies with the package management system \textit{pip} with, initially, no requirements.txt file made setting up a new virtual environment a challenge. Everything had to be manually installed allowing for greater risk of failure and variation between team member's development environment. Our ignorance regarding virutal environments also made maintaining consistency harder throughout development. After working on Django development using \textit{Tango with Django}, the team studied and began to use virtual environments to simplify development. Until resolved, these issues caused a lot of problems for certain team members. In future development the team would take this further creating a Vagrant virtual environment which could be shared between team members and reliably reproduced on multiple machines. This would exclude any Operating System issues affecting the work of the team as well as removing difficulties in accessing dependencies.
+\subsection{Technological}		Most technological issues revolved around a lack of experience and knowledge at the beginning of the project. Issues such as handling dependencies with the package management system \textit{pip} with, initially, no requirements.txt file made setting up a new virtual environment a challenge. Everything had to be manually installed allowing for greater risk of failure and variation between team member's development environment. Our ignorance regarding virutal environments also made maintaining consistency harder throughout development. After working on Django development using \textit{Tango with Django}, the team studied and began to use virtual environments to simplify development. Until resolved, these issues caused a lot of problems for certain team members. In future development the team would take this further creating a Vagrant virtual environment which could be shared between team members and reliably reproduced on multiple machines. This would exclude any Operating System issues affecting the work of the team as well as removing difficulties in accessing dependencies.
 
 Another major misunderstanding came with the team misusing our version control system, git. If used correctly, git allows each developer to work on their local machine, testing and committing any changes to the repository. Initially we were all using SSH to access our server and then working directly in the terminal, creating conflicts and locking file issues. The team should have been working on their own machines and then the server pulling these updates, effectively 'deploying' our changes to the server automatically. This was quickly resolved when the team researched the issue, changing to the correct workflow.
 
