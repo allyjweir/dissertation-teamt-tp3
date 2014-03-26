@@ -220,30 +220,20 @@ After having clearly specified, documented and researched the functional require
 
 
 \begin{itemize}
-
-
 \item{\textbf{SIMILE timeline} \cite{SIMILE}}
-
 \item{\textbf{Timeline JS} \cite{TimelineJS} (GitHub repository \cite{TimelineJSGithub})}
-
 \item{\textbf{Chronoline} \cite{Chronoline}}
-
 \item{\textbf{TimeGlider} \cite{TimegliderGithub} (moved a year ago \cite{Timeglider})}
-
 \item{\textbf{Chaps Timeline} - \cite{Chaps}}
-
-
 \end{itemize}
 
 
 \textbf{SIMILE}
-
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.75\textwidth]{images/SIMILE.png}
 \caption{SIMILE timeline}
 \end{figure}
-
 The SIMILE timeline, is a very good example of an efficient and compact timebar able to accommodate a number of events in a relatively small space without looking too clustered with unnecessary information. It also supports scrolldown horizontal movement and  you can click and drag to navigate between objects using your mouse. However, there are a number of drawbacks associated with this open source implementation. The last change made to the codebase was in 2009. This aging codebase could cause conflicts with more up to date libraries being used. We also researched the opinions of people who have tested it online and found out that there are mixed feelings regarding the SIMILE timebar. One of the issues people had experienced was memory leaks that were caused especially when dynamically loading and unloading events to the timeline. The poor maintenance of this product also had caused numerous people troubles with the implementation in different browsers as apparently there are many unidentified bugs that continue to increase with each browser update. Some people even had strange experiences of browser crashing as a result of using SIMILE (more information can be seen in StackOverflow \cite{StackOverflow}). Customisation and updates are also very difficult considering the relative lack of documentation or poorly documented code segments which was also one of the main reasons why we decided that it will not be the most suitable option for what the user interface requires.
 
 
@@ -394,70 +384,39 @@ Mark is a very keen supporter of the Bulgarian rising star but cannot be at that
 Listed below are the project functional requirements the team identified with their priority rating based on the MoSCoW system:
 
 \subsection{Must Have}
-
-
 	\begin{itemize}
-
-	\item \boldit{Web application:} The system needs a website with a backend support for audio processing.
-
-	\item \boldit{Mobile application:} Android application for audio capture to be submitted to the database of the website via an upload form.
-
-	\item \boldit{User Authentication:} Potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations.
-
-	\item \boldit{Recording audio:} The system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button.
-
-	\item \boldit{Recording submission:} Interaction between the Android app and the web application.
-
-	\item \boldit{Storing audio recordings:} The mobile app needs to store recordings on the server for processing.
-
-	\item \boldit{Audio synchronisation:} Audio synchronization functionality on recording selection.
-
-	\item \boldit{Recording timeline:} A timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings).
-
-	\item \boldit{Map view:} Visualisation of each recordings position on a map view for a user to spacially explore.
-
+	\item{ \boldit{Web application:} The system needs a website with a backend support for audio processing.}
+	\item{ \boldit{Mobile application:} Android application for audio capture to be submitted to the database of the website via an upload form.}
+	\item{ \boldit{User Authentication:} Potential users need to be able to register on the web application in order to keep track of each person's individual audio recordings and visited locations.}
+	\item{ \boldit{Recording audio:} The system mobile application needs audio recording functionality so that the user could quickly capture audio with the click of a button.}
+	\item{ \boldit{Recording submission:} Interaction between the Android app and the web application.}
+	\item{ \boldit{Storing audio recordings:} The mobile app needs to store recordings on the server for processing.}
+	\item{ \boldit{Audio synchronisation:} Audio synchronization functionality on recording selection.}
+	\item{ \boldit{Recording timeline:} A timeline to show database recordings based on their start and end time (as well as provide a temporal visualisation of overlapping recordings).}
+	\item{ \boldit{Map view:} Visualisation of each recordings position on a map view for a user to spacially explore.}
 	\end{itemize}
 
-
 \subsection{Should Have}
-
 	\begin{itemize}
-
-	\item \boldit{Playback selection:} Users need to be able to listen to all the recordings and be able to select.
-
-	\item \boldit{HTML5 GeoLocation:} The web application should be able to find a user's current location and centre the map on this, revealling recordings in the local vicinity.
-
+	\item{ \boldit{Playback selection:} Users need to be able to listen to all the recordings and be able to select.}
+	\item{ \boldit{HTML5 GeoLocation:} The web application should be able to find a user's current location and centre the map on this, revealling recordings in the local vicinity.}
 	\end{itemize}
 
 \subsection{Could Have}
-
-
 	\begin{itemize}
-
-	\item \boldit{Route tracking:} Once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished.
-
-	\item \boldit{Taking photos:} The Android application needs to enable the user to take photos while recording to enrich the playback experience.
-
-	\item \boldit{Filter recordings by time and date:} Provide users the option to filter recordings and display only those from a specific time period on the map and the timeline.
-
+	\item{ \boldit{Route tracking:} Once a user has started recording, the system needs to use GPS tracking to update current location and save it to the database when recording activity has finished.}
+	\item{ \boldit{Taking photos:} The Android application needs to enable the user to take photos while recording to enrich the playback experience.}
+	\item{ \boldit{Filter recordings by time and date:} Provide users the option to filter recordings and display only those from a specific time period on the map and the timeline.}
 	\end{itemize}
-
 
 \subsection{Would Have}
-
-
 	\begin{itemize}
-
-	\item \boldit{User account enhancements:} Offer enhanced user pages, friends list support and more social connections to other networks (Facebook, Twitter).
-
-	\item \boldit{Recording grouping in events:} Allow users to create events and link their recordings to this, facilitating the retrieval of all recordings for a single event for other users.
-
-	\item \boldit{Descriptive Tags:} Users could add relevant tags to their recordings which will enable easy search and recording filtering.
-
+	\item{ \boldit{User account enhancements:} Offer enhanced user pages, friends list support and more social connections to other networks (Facebook, Twitter).}
+	\item{ \boldit{Recording grouping in events:} Allow users to create events and link their recordings to this, facilitating the retrieval of all recordings for a single event for other users.}
+	\item{ \boldit{Descriptive Tags:} Users could add relevant tags to their recordings which will enable easy search and recording filtering.}
 	\end{itemize}
 
-
-\section{Project Timeline}		
+\section{Project Timeline}
 
 From the outset, the team laid out a flexible timetable for the project, accounting for the series of phases a project must undergo.
 
@@ -471,11 +430,9 @@ During this period we also made important communication decisions. The team deci
 
 According to our plans, by the end of October/ early November we should have completed the design process and be ready to commence actual development and basic features implementation.
 
-After having consulted the project suprevisor we set a deadline for a prototype with basic features implemented and working by the end of January. This prototype needed to have all the 'MUST HAVE' requirements we had identified implemented and functional on a basic level.
+After having consulted the project suprevisor we set a deadline for a prototype with basic features implemented and working by the end of January. This prototype needed to have all the 'must have' requirements we had identified implemented and functional on a basic level.
 
 And last but not least, implementing all of the required functionality, doing any refinements and imrpovements, testing and evaluation, should be completed around the middle of March. With all the major deadlines set, we were able to distribute the tasks in time and balance the workload between the team members.
-
-A rough project schedule gantt chart is displayed below:
 
 \begin{figure}[ht!]
   \centering
@@ -754,7 +711,7 @@ Originally the Google Maps info window was used to display the metadata to the u
 
 There was little debate as to how routes would be displayed on the map as the only two options were Google Maps Polyline or their Directions Service. The Directions Service could only make use of roads and paths, which quickly brings up problems, for example if a recording is made inside a building or if a route is incomplete on google maps the directions service would fail to display any useful information on the map. Polylines on the other hand take an array of latitude and longitude objects to create it along with any styling of the line, this allows for a very accurate trace of the route taken, even in unorthodox areas that may crop up; with a styling that can be made to fit the theme of the website.
 
-\subsubsection{Geolocation}		Getting the end users current location in order to use it as a reference point, for centering the map and flagging it with a blue dot when they open up MDRS was achieved with relative ease. This was accomplished through the use of the \gls{W3C} Geolocation API, with only a few lines of code we were then able to track the users current position by first checking to see if the browser supports it (most modern browsers do) then if so; create a new marker anchoring it at their location. 
+\subsubsection{Geolocation}		Getting the end users current location in order to use it as a reference point, for centering the map and flagging it with a blue dot when they open up MDRS was achieved with relative ease. This was accomplished through the use of the \gls{W3C} Geolocation API, with only a few lines of code we were then able to track the users current position by first checking to see if the browser supports it (most modern browsers do) then if so; create a new marker anchoring it at their location.
 \begin{verbatim}
 navigator.geolocation.getCurrentPosition()
 \end{verbatim}
