@@ -443,9 +443,7 @@ The timeline of our project was split into four main sections as shown in Figure
 \chapter{Design}
 \label{design}
 
-The core of our design sprung from early storyboarding and imagined user
-profiles which informed us extensively on what a possible system might look
-like. As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
+The core of our design sprung from early storyboarding and imagined user profiles which extensively informed the team what a possible system might look like. As previously discussed, MDRS was viewed as a tool to democratise access to moments through an interactive medium. Storyboards served as an excellent tool to realise the potential of the project and its uses in such varied settings as public safety, political protests, music concerts and disaster areas.
 
 \begin{figure}[ht!]
 \centering
@@ -481,7 +479,7 @@ Given the nature of MDRS, the team looked to the Distributed Information Managem
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=1\textwidth]{images/web-map-view.jpg}
+\includegraphics[width=.85\textwidth]{images/web-map-view.jpg}
 \caption{Prototype of map view.}
 \end{figure}
 
@@ -493,7 +491,7 @@ Alongside our relatively simple use of maps, we prototyped a version which would
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=1\textwidth]{images/timeline-example.png}
+\includegraphics[width=.85\textwidth]{images/timeline-example.png}
 \caption{An example of TimelineJS by KnightLab.}
 \end{figure}
 
@@ -503,20 +501,13 @@ Early web interface designs featured a prominent header bar and a floating menu 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=1\textwidth]{images/web-recording-view.jpg}
+\includegraphics[width=.85\textwidth]{images/web-recording-view.jpg}
 \caption{Recording specific prototype for web application.}
 \end{figure}
 
-To accompany this main map view of MDRS was a user page which offered a
-personalised insight into a user's recordings and activity with the application.
-It included a personalised timeline and map showing their personal contributions
-to the map from which they could play, edit details or delete them from the
-service. Along with all the other tools mentioned, the foundations of our
-web application's design were laid.
+To accompany this main map view of MDRS was a user page which offered a personalised insight into a user's recordings and activity with the application. It included a personalised timeline and map showing their personal contributions to the map from which they could play, edit details or delete them from the service. Along with all the other tools mentioned, the foundations of our web application's design were laid.
 
-\subsection{Android Application} It was decided early on to approach this
-element of the project realistically and working from a simple set of requirements to
-make the application easier to implement. This would allow us to make the user experience focused on the core of MDRS, capturing information from the world around us. This meant it was purely a capture and upload system and it wouldn't be an alternative to the desktop viewing interface for interaction with other user's recordings. Our focus made the application more achievable while leaving scope for extension in future development for these playback features.
+\subsection{Android Application} It was decided early on to approach this element of the project realistically and working from a simple set of requirements to make the application easier to implement. This would allow us to make the user experience focused on the core of MDRS, capturing information from the world around us. This meant it was purely a capture and upload system and it wouldn't be an alternative to the desktop viewing interface for interaction with other user's recordings. Our focus made the application more achievable while leaving scope for extension in future development for these playback features.
 
 To develop an engaging user interface on Android, the team looked for a scalable and intuitive design, drawing influence from a wide range of applications such as Foursquare, Snapchat and Google Play’s suite of applications. Google's Android Design Guidelines were consistently referred to throughout this process for inspiration.  Foursquare's integration of a map into a larger whole was seen as an excellent touchstone while Snapchat's unconventional, yet intuitive navigation model was seen as a strength of the application the team could borrow from. Google's applications portrayed the strength and beauty of clear typography and the undeniable rule of mobile design where less is more. Sources such as Android Niceties were also used to find innovative design that could help with MDRS. A utilitarian minimalism through design was the team's goal. The core functionality of the application was single use and the flow through it was clear, allowing for a relatively simple approach to be taken, finding a place for flair within the constructs the team placed on themselves.
 
@@ -551,7 +542,7 @@ While these both informed the team in the direction of the application's design 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{images/android-home-view.jpg}
+\includegraphics[width=.85\textwidth]{images/android-home-view.jpg}
 \caption{Final design prototype}
 \end{figure}
 
@@ -559,7 +550,7 @@ This final design exudes simplicity with a single actionable button on the main 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{images/android-recording-view.jpg}
+\includegraphics[width=.85\textwidth]{images/android-recording-view.jpg}
 \caption{Recording view of final prototype}
 \end{figure}
 
@@ -567,7 +558,7 @@ When the record button was pressed the entire screen would transistion to this v
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{images/android-upload-view.jpg}
+\includegraphics[width=.85\textwidth]{images/android-upload-view.jpg}
 \caption{Final upload view prototype}
 \end{figure}
 
@@ -576,7 +567,7 @@ Finally the upload screen informed them of their path through the map view. The 
 \chapter{Implementation}
 \label{impl}
 
-Before work was undertaken on the implementation of the product, we first identified the seperate parts that would comprise the project as a whole and how they would then interact with one another. These seperate parts are displayed in Figure 5.1, in particular note that the mobile app intends to upload directly to the web app, bypassing the need to do this from a browser. After these components were identified developers were then assigned to particular areas where they could focus and specialise. How these parts were implemented and combined together to create the end product is what will be discussed throughout this chapter.
+Before work was undertaken on the implementation of the product, we first identified the seperate parts that would comprise the project as a whole and how they would then interact with one another. These seperate parts are displayed in Figure 5.1, in particular note that the mobile app intends to upload directly to the web app, bypassing the need to do this from a browser. After these components were identified, developers were then assigned to particular areas where they could focus and specialise. How these parts were implemented and combined together to create the end product is what will be discussed throughout this chapter.
 
 \begin{figure}[ht!]
 \centering
@@ -585,15 +576,14 @@ Before work was undertaken on the implementation of the product, we first identi
 \end{figure}
 
 \section{Server and Django configuration}
-Being granted use of a university server, the team had a server to base all of their work off of. One team member was given the task to set-up and maintain the server.
-Set-up was a simple case of installing the necessary packages from the \gls{Ubuntu} repositories such as \gls{Git}, \gls{Python}, \gls{Django}, \gls{PIP} and \gls{MySQL}. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
+Being granted use of a University server, the team had a server to base all of their work off of. One team member was given the task to set-up and maintain the server. Set-up was a simple case of installing the necessary packages from the \gls{Ubuntu} repositories such as \gls{Git}, \gls{Python}, \gls{Django}, \gls{PIP} and \gls{MySQL}. After downloading and installing packages some configuration had to be completed. This mostly involved setting up user accounts for each team member, a shared workspace for everyone to work in, set up permissions and make sure every member had sufficient access to all the needed tools.
 
 This, having been completed, lead to cloning the team Git repository to the server. Some permissions teething problems were immediately encountered as some members could not edit files. However these were minor issues dealt with some basic configurations.
 Having the file set now on the server it was a simple case to initialise a database for the project and get it to a working state. However there was immediately an issue in that regular users could not host the server on port 80 (the standard port for HTTP requests and the server's only open port) without administrator privileges. This meant that each team member would need to login as our shared super user account to simply run the server; this slowed workflow and so a solution was devised. By manipulating the IP tables on the server, the team successfully managed to route port 8080 internally to port 80. Simply put this meant the team was fooling the server into thinking it was hosting harmlessly on port 8080 whereas it was getting rerouted, after the user invoked the command, to port 80. Exactly where the team needed the socket bound to.
 
 Later issues appeared as development continued, many of them minor issues such as the database needing reinitialised or the server rebooted and the IP tabled reconfigured. All issues were dealt with swiftly and with little to no impact to the development of the project.
 
-\subsection{Django Configuration}		Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book\cite{tangoWithDjango} to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration is boilerplate.\footnote{These parts are uniform across many applications with few custom settings required for MDRS.}
+\subsection{Django Configuration}		Having no experience with Django before this project, the team had to rely heavily on the 'Tango with Django' book\cite{tangoWithDjango} to understand and continue with development. When it came around to configuring the server there was little to no resistance however. A lot of the Django settings and configuration was  boilerplate.\footnote{These parts are uniform across many applications with few custom settings required for MDRS.}
 
 The team made the initial decision to split the application into two sections. The main section, simply titled after the project MDRS, contained the settings and main routing \gls{Python} files. The second section, entitled web app, dealt with all functionality of the application. Web app contained scripts for routing requests, parsing them, passing back templates; also dealing with all POST requests and file handling.
 
@@ -604,7 +594,7 @@ The configuration involved in this was minimal, simply using the manage script t
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.85\textwidth]{images/webapp-imp.jpg}
-\caption{Seperate components of the webapp}
+\caption{Seperate components of the web application}
 \end{figure}
 
 \subsection{User Interface}		The UI went through a number of iterations during the the development cycle. The early interface was built from the ground up causing innumerable problems, this was down to a lack of experience in web design by the team members. Once a PureCSS alternative was put in place, the development's pace recouperated and continued.
@@ -645,7 +635,7 @@ There was a number of issues during development of this feature as dynamically c
 
 \subsection{Map}		A number of technologies were used when implementing the map and they all had to work in harmony to effectively display to the user the recordings that were stored in the database. The major components were Google Maps, HTML5 Geolocation and \gls{JQuery}. Combining these allowed the team to create a meaningful visualisation of recordings captured.
 
-\subsubsection{Map API}		The Google Maps \gls{API} was used extensively throughout the development of the home page with many of the \gls{JavaScript} classes and objects used. On the Google Maps API website there was many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble. The map was initialised using,
+\subsubsection{Map API}		The Google Maps \gls{API} was used extensively throughout the development of the home page with many of the \gls{Javascript} classes and objects used. On the Google Map's developer page there were many examples given showing how these could be used, these resources were invaluable during the development process, especially during the early development process allowing rough prototypes of certain features to be created with very little trouble. The map was initialised using,
 \begin{verbatim}
 google.maps.Map
 \end{verbatim}
@@ -667,7 +657,7 @@ The behaviour of the markers had to be defined manually this was done using \gls
 
 Originally the Google Maps info window was used to display the metadata to the user, however in the late stages of development this approach proved to be inflexible as any minor changes to the appearance or positioning of these info window’s would prove to be overly complicated. In particular through testing it was discovered that it was routinely obscuring the route of the recording, as a group it was decided to place it in the top right hand corner. However to accomplish this using the info window would mean constantly changing it's position as the map was panned, placing an unwanted burden on the performance of the application. for that reason it was decided that when a marker was clicked there should be a separate div component opened. Which in the long run would hopefully save time and have a more refined appearance.
 
-There was little debate as to how routes would be displayed on the map as the only two options were Google Maps Polyline or their Directions Service. The Directions Service could only make use of roads and paths, which quickly brings up problems, for example if a recording is made inside a building or if a route is incomplete on google maps the directions service would fail to display any useful information on the map. Polylines on the other hand take an array of latitude and longitude objects to create it along with any styling of the line, this allows for a very accurate trace of the route taken, even in unorthodox areas that may crop up; with a styling that can be made to fit the theme of the website.
+There was little debate as to how routes would be displayed on the map as the only two options were Google Map's polyline or their Directions Service. The Directions Service could only make use of roads and paths, which quickly brings up problems, for example if a recording is made inside a building or if a route is incomplete on Google Maps the directions service would fail to display any useful information on the map. Polylines on the other hand take an array of latitude and longitude objects to create it along with any styling of the line, this allows for a very accurate trace of the route taken, even in unorthodox areas that may crop up; with a styling that can be made to fit the theme of the website.
 
 \subsubsection{Geolocation}		Getting the end users current location in order to use it as a reference point, for centering the map and flagging it with a blue dot when they open up MDRS was achieved with relative ease. This was accomplished through the use of the \gls{W3C} Geolocation \gls{API}, with only a few lines of code we were then able to track the users current position by first checking to see if the browser supports it (most modern browsers do) then if so; create a new marker anchoring it at their location.
 \begin{verbatim}
@@ -675,7 +665,7 @@ navigator.geolocation.getCurrentPosition()
 \end{verbatim}
 There was some problems with the accuracy of geolocation, with some users reporting that it could show them in a seperate nearby location. It was found to be a problem, after researching the subject\cite{geolocation}, to be with "IP geolocation" where gaining even the city from an IP address could have an accuracy of between 50\% - 80\%. This however never proved a major issue in the end product as it would show the rough area of the user, meaning they could navigate there nearby location without having to find it manually.
 
-\subsubsection{JQuery}		\gls{JQuery} only began to be fully utilised in the later stages of development, this was largely due to having very little experience in its uses for development. However after completing a few basic tutorials on Code Academy\cite{codeacademy} it quickly became apparent how it could be used to effectively and easily aid in the creation of an interactive environment for the user.
+\subsubsection{JQuery}		\gls{JQuery} only began to be fully utilised in the later stages of development, this was largely due to having very little experience in its uses for development. After completing basic tutorials on Code Academy\cite{codeacademy} it quickly became apparent how it could be used to effectively and easily aid in the creation of an interactive environment for the user.
 
 The behaviour of the boxes including dragging, animations and visibility in the user interface are all controlled using JQuery. The inclusion of JQuery to do this proved to be a great addition a succinct implementation and little time required to greatly enhance the end user experience. For example to make all the boxes on the page draggable required only the line of code:
 \begin{verbatim}
@@ -690,9 +680,9 @@ During the late stages of development there was a period of many months where it
 $.getJSON()
 $.get()
 \end{verbatim}
-Once this issue was found, there also proved to be a conflict within Google maps as well, and the maps had to be removed from the timeline in order to allow for full integration.
+Once this issue was found, there also proved to be a conflict within Google Maps as well, and the maps had to be removed from the timeline in order to allow for full integration.
 
-\subsection{Timeline (Implementation)}
+\subsection{Timeline}
 
 The actual implementation of the KnightLab Timeline JS took some time and required customization to fit the needs of our system. We started by inspecting the json structure Timeline JS requires to interpret information it is fed with.
 Its JSON is structured in the following way - there is a big dictionary, holding all of the objects that are to be presented, having an 'asset' key for the first default slide which the team used for a short introduction explaining the purpose of this component.
@@ -735,9 +725,7 @@ All the recording metadata is stored in the 'recording_data' array.
 
 In each recording's asset a link to a random image from the list of pictures associated with it is inserted (as only a single photo can be showcased, the rest are available on the side in the form of a mini gallery with pop-up thumbnails on hover) or, if there are no photos for this recording, a link to the MDRS logo is placed. Considering all this, we made a \gls{Python} template code which exports recording objects' metadata following the template structure KnightLab's Timeline JS uses. What the Python function does is it generates a JSON formatted script which is saved in a data.json file in the static directory and used as a source for the timeline objects we generate (one on the home page and another on the user page). If the timeline is rendered on the homepage, all recordings are exported by the function and therefore visible to enable the user to see what everyone has uploaded without even being logged in or registered.
 
-Also, only the bottom part is displayed on the main page in order to view only the chronological arrangement of the recordings since their metadata is easily accessible by clicking the marker pins on the map.
-If the user would like to upload their own recordings and store their settings they need to register a new account on the website.
-Then, going to the user page the timeline initially shows all database recordings as the user does not have any uploads at first.
+Also, only the bottom part is displayed on the main page in order to view only the chronological arrangement of the recordings since their metadata is easily accessible by clicking the marker pins on the map. If the user would like to upload their own recordings and store their settings they need to register a new account on the website. Then, going to the user page the timeline initially shows all database recordings as the user does not have any uploads at first.
 
 However, when the user makes a new recording and uploads it the timeline on the user page displays only this recording and a user's personal recordings in general.
 It can be used to provide a visual aid in identifying recordings that overlap and trying to play them synchronously, and also displays the following metadata - name, start/end time, duration, and description.
@@ -850,11 +838,11 @@ In case the recordings in the current selection of IDs do not overlap based on t
 
 
 \subsection{Database}
-For this project \gls{MySQL} was the database back-end the team decided to use. Once the university server was set-up correctly, the team could initialise the database and write the Django models for it. To explain further, Django supports a high level model based abstraction from the database. This allows developers to avoid tedious database manipulations and allows great flexibility in the structure of the overall application.
+For this project \gls{MySQL} was the database back-end the team decided to use. Once the University server was set-up correctly, the team could initialise the database and write the Django models for it. To explain further, Django supports a high level model based abstraction from the database. This allows developers to avoid tedious database manipulations and allows great flexibility in the structure of the overall application.
 
 Using previously designed models and an entity relation (ER) diagram it was a case of filling in the gaps using a \gls{Python} script in Django's syntax to populate and give structure to the database.
 
-Once this script had been created a blank database, Django to access, was created. Simply invoking Django's built in function to synchronise the database created all the tables and relations needed for the project to function.
+Once this script had been created a blank database was created. Simply invoking Django's built in function to synchronise the database created all the tables and relations needed for the project to function.
 
 During development there were several occasions in which the models had to be edited and therefore the database had to be dropped and re-synchronised to continue. This did cause hick-ups in development but overall had little impact as a database re-sync only took 5 minutes to preform. The biggest issue was the loss of any test data originally in the database when dropped, as this had to be re-added. However most of the time it was redundant data as changes had been made significant enough to render the old data useless. This was later mitigated through the use of South, a database migration tool for Django.
 %------------------------------------------------------------------------------
@@ -944,7 +932,7 @@ Overall, the application met the 'must have' requirements while offering an easy
 %==============================================================================
 \chapter{Evaluation}
 
-To evaluate the project, a variety of approaches was taken to gather both qualitative and quantitive results. Looking for fresh eyes and perspectives, the system was presented to both users with technical and non-technical backgrounds. The usability and functionality were the main focuses of evaluation.
+To evaluate the project, a variety of approaches were taken to gather both qualitative and quantitive results. Looking for fresh eyes and perspectives, the system was presented to both users with technical and non-technical backgrounds. The usability and functionality were the main focuses of evaluation.
 
 \section{Web}
 \subsection{Approach}		To distribute our questions, an online survey was created. This offered streamlined analysis and easier distribution to testers. It also meant that some testers would undertake their evaluation without any team members there to assist them. This gave a more realistic reproduction of a user's first encounter with the project. Some testing was also carried out with team members present. The survey consisted of six tasks:
@@ -958,13 +946,15 @@ To evaluate the project, a variety of approaches was taken to gather both qualit
 \item{Upload a recording using test data provided or from the Android app.}
 \end{enumerate}
 
-These tasks emulated what was considered as a possible user's path through the website. They would look at some of the existing recorings, see what was possible with the system and then log in to an account and play with the user page features. The login process was streamlined by offering a tester account already populated with recordings for users to test the service with. Results were captured on a scale of 1-10, one being 'very easy' to complete a task and ten as 'very hard'. This was accompanied with general feedback fields for user's comments on each task. Finally testers were asked their general opinion of the website and its functionality.
+These tasks emulated what was considered as a possible user's path through the website. They would look at some of the existing recordings, see what was possible with the system and then log in to an account and play with the user page features. The login process was streamlined by offering a tester account already populated with recordings for users to test the service with.
 
-\subsection{Results}		After distributing the link to possible testers, asking them to try and complete the tasks, we gathered a responses and were able to make an initial evaluation of effective the system was and what the potential user's thoughts on it were. Where possible, 'Think Alouds' were used while completing the survey and this made the evaluation picture richer and more detailed. This gave the team a deeper insight into the thought processes of a user.
+Results were captured on a scale of 1-10, one being 'very easy' to complete a task and ten as 'very hard'. This was accompanied with general feedback fields for user's comments on each task. Finally testers were asked their general opinion of the website and its functionality.
 
-Throughout all tests, users were overwhelmed by the site initially. A tutorial was repeatedly requested and users found the task 2 particularly difficult. The team realised this was an oversight that could be solved in future work with relative ease. Where the development team felt abstracting these controls to a control panel away from the users would streamline the interface, in reality it hid away MDRS' standout feature making it obtuse to find. This was felt to be a big failure for the team's modifications to initial designs. This could be solved by bringing these controls to the front and making clear their functions.
+\subsection{Results}		After distributing the survey to possible testers we gathered responses and were able to make an initial evaluation of effective the system was and what potential user's thoughts on it were. Where possible, 'Think Alouds' were used while completing the survey and this made the evaluation picture richer and more detailed. This gave the team a deeper insight into the thought processes of a user.
 
-Other users noted that some buttons were unresponsive and that they didn't work as anticipated. One user highlighted the ability to rewind recordings as a future feature that could be implmented. The general consensus was that testers didn't have enough control over the website. While it let them explore the data in a visually attractive way, their control over it lacked heavily. When attempting to play multiple recordings back at the same time, user's didn't realise the importance of the timeline for finding recordings which overlapped. This could have been due to our database's poor population but some of the blame must be attributed to the presentation of the timeline itself. However the presentation of images was highlighted as an excellent feature by many of the testers.
+Throughout all tests, users were overwhelmed by the site initially. A tutorial was repeatedly requested and users found the task two particularly difficult. The team realised this was an oversight that could be solved in future work with relative ease. Where the development team felt abstracting these controls to a control panel away from the users would streamline the interface, in reality it hid away MDRS' standout feature making it obtuse to find. This was felt to be a big failure for the team's modifications to initial designs. This could be solved by bringing these controls to the front and making clear their functions.
+
+Other users noted that some buttons were unresponsive and didn't work as anticipated. One user highlighted the ability to rewind recordings as a future feature that could be implmented. The general consensus was that testers didn't have enough control over the website. While it let them explore the data in a visually attractive way, their control over it was heavily lacking. When attempting to play multiple recordings back at the same time, user's didn't realise the importance of the timeline for finding recordings which overlapped. This could have been due to our database's poor population but some of the blame must be attributed to the presentation of the timeline itself. However the presentation of images was highlighted as an excellent feature by many of the testers.
 
 Overall the general feeling was that the idea behind the project was interesting but the execution fell short. It was not robust and some functions were unresponsive and didn't work as expected. Where the navigation around the site was simple, the menu on the side felt unusual and distracting. The key takeaway from the evaluation was that it wasn't started early enough in development. This feedback reflected our final implementation whereas if prototypes and design documents had been shared earlier on, the information gathered could have avoided some of these issues. In summary, feedback was indecisive with a range of opinions but underlying them was an appreciation for the aims of MDRS.
 
@@ -974,7 +964,7 @@ The aim of the test was to see if they could grasp what the application was goin
 
 In testing, on the whole, users could pick up what actions the app was taking but felt that it dropped you into it too quickly. Through discussion they appreciated the quickness was to facilitate recordings as fast as possible but they would have liked to explore the application a bit more. This could be corrected with a 'quickstart' widget to keep that speed of starting a recording and improvements to the navigation controls of the app. This would let users ground themselves and explore their options rather than the single choice they have with the current iteration. While being complemented for its "simplistic but attractive UI", ultimately the lack of options was too limiting for testers.
 
-Other UI choices such as the freeze frame in image capture were complimented for indicating to the user what the application was doing. The tap to capture was also appreciated. The location tracking however was felt to be unclear. While showing a map with your current location to start, it is unclear that it is tracking you as you traverse. With privacy concerns and awareness, this could be improved through modification to the recording screen.
+Other UI choices, such as the freeze frame in image capture, were complimented for indicating to the user what the application was doing. The tap to capture was also appreciated. The location tracking however was felt to be unclear. While showing a map with your current location to start, it is unclear that it is tracking you as you traverse. With privacy concerns and awareness, this could be improved through modification to the recording screen.
 
 Throughout testing the application's unreliability cropped up. Certain button presses could derail the current activity and sometimes the application would crash on its own for no reason. These usually occured when recordings were more than 5 to 10 minutes long. On certain testing devices the compression of images could almost freeze the device because of the CPU required to do this. In retrospect this was missed in testing due to the high end devices MDRS was designed on and in future the team would do tests across more devices in earlier stages of implementation.
 
@@ -1019,7 +1009,7 @@ Another major misunderstanding came with the team misusing our version control s
 
 Throughout development, a number of compromises and mistakes were made due to inexperience and limited development time. In retrospect, the team has acknowledged and recognised a number of improvements that could be made to the project as a whole that could be worked on in the future.
 
-As modification to the project's central vision, the team would include search as a key feature. While the current project's timeline and map offer a unique way to explore the recordings, this wouldn't scale well to thousands of recordings. It was also found that our initial ideas of a user's expectations were wrong. They would want to find recordings based on location and on a common theme. Integrating search engine alongside the introduction of tags would offer this level of filtering. Hopefully it would spur users to stay on the website for longer. They would be able to explore all the recordings better and find more relevant content. Ultimately MDRS could produce large sets of data and not integrating a proper search functionality would be detrimental.
+As modification to the project's central vision, the team would include search as a key feature. While the current project's timeline and map offer a unique way to explore recordings, this wouldn't scale well to thousands of uploads. It was also found that our initial ideas of a user's expectations were wrong. They would want to find recordings based on location and on a common theme. Integrating search engine alongside the introduction of tags would offer this level of filtering. Hopefully it would spur users to stay on the website for longer. They would be able to explore all the recordings better and find more relevant content. Ultimately MDRS could produce large sets of data and not integrating a proper search functionality would be detrimental.
 
 From discussion within the team, the need for a tutorial was also realised. In evaluation, it was required for a user to be explained the concept of MDRS and what it could be used for. In a real release, the project could quickly fail without proper explaination. This could either be implemented as a video, interactive guide of the site or even a landing page that could explain MDRS and its unique features.
 
@@ -1034,20 +1024,57 @@ As user numbers increased, scalability of our system would be a key concern. Upl
 %==============================================================================
 \chapter{Conclusion}
 
-In conclusion, overall MDRS been a success. Taking our design brief and tweaking it gave the team an excellent premise to work from. Transforming the project into something the team were not only interested in but passionate about meant we could create something special.
+In conclusion, the team feels MDRS has been a success. Taking our design brief and tweaking it gave the team an excellent premise to work from. From the outset, the concept of the project was exciting and incorporated many fields of interest for the team. Transforming that into something the team were not only interested in but passionate about generated the dedication to work hard to build a worthwhile product.
 
-Where other projects stayed within comfortable boundaries of what was normal, we tried to make something that hadn't been done before. Combining both the web and Android in retrospect was a success. The team worked more efficiently and gave a better grounding to communicate our ideas. Throughout the industry people are creating devices and services that can observe the world around us in new ways and extrapolate meaning. These observations can lead to improving people's everyday lives, making the technology they interact with more enjoyable.
+Where other projects stayed within comfortable boundaries and familiar territories, we tried to make something that hadn't been tried before. Taking our unique approch to audio synchronisation was a risk. Combining both the web and Android in retrospect was a success. The team worked more efficiently and gave a better grounding to communicate our ideas. Throughout the computing industry people are creating devices and services that can observe the world around us in new ways and extrapolate meaning. These observations can lead to improving people's everyday lives, making the technology they interact with more enjoyable. MDRS can be easily placed within this stable of developments.
 
-Our evaluation has shown that MDRS has been successful in meeting this goal. Our interaction model, once explained, is intuitive and lets the user sift through large amounts of data to find the recordings meaningful to them. The accompanying Android application has been a success. Finding new ways to use the smartphones everyone carries in their pocket has been a point of pride within the team. Leveraging the vast array of sensors has proved to be a success.
+Our evaluation has shown that MDRS has been successful in meeting its goal. Our interaction model, once explained, is intuitive and lets the user sift through large amounts of data to find recordings meaningful to them. The accompanying Android application has also been a success. Its functionality compliments the web application while presenting itself in an attractive way. Finding new ways to use the smartphones everyone carries in their pocket has been a point of pride within the team. Leveraging the vast array of sensors has also proved to be a success.
 
 Overall, the project has been a success in educating the team in the dynamics of collaborative work. Through difficulties, mistakes and successes, everyone has improved their development and interpersonal skills. We each leave the project meeting the requirements set of us while having improved ourselves and hopefully each other's skills.
+
+While there are a lot of changes and improvements that could be made, the work produced effectively demonstrates the key ideas behind the brief given and offers a great grounding for future work to be continued
 
 %==============================================================================
 \section{Contributions}
 
-%Wasn't this written somewhere?
-Conclusion here
+Work carried out can be split into five areas:
 
+\textbf{Server Maintainance:} Keir Smith
+
+\textbf{Interface and Interaction Design:} Alastair Weir
+
+\textbf{Django Web Application:}
+\begin{itemize}
+	\item{Initial Setup: Alastair Weir and Keir Smith}
+	\item{Map and Web Site prototypes: Gordon Adam}
+	\item{Final Website implementation: Gordon Adam and Peter Yordanov}
+	\begin{itemize}
+		\item{Map: Gordon Adam}
+		\item{Geolocation: Gordon Adam}
+		\item{Audio Controls: Gordon Adam and Peter Yordanov}
+		\item{Timeline: Peter Yordanov}
+		\item{Buzz Implementation: Peter Yordanov}
+		\item{Upload: Gordon Adam and Keir Smith}
+	\end{itemize}
+	\item{Feedback and Testing: Alastair Weir}
+\end{itemize}
+
+\textbf{Android Application:} All development from initial design to final implementation was completed by Alastair Weir
+
+\textbf{Dissertation Chapter Writing:}
+\begin{itemize}
+	\item{Introduction: Alastair Weir}
+	\item{Research: Gordon Adam and Peter Yordanov}
+	\item{Planning: Peter Yordanov and previous writings (written collaboratively) integrated by George Dimitrov}
+	\item{Design: Alastair Weir}
+	\item{Implementation - Web: Keir Smith, Gordon Adam, Peter Yordanov and George Dimitrov}
+	\item{Implementation - Android: Alastair Weir}
+	\item{Evaluation: Alastair Weir and Peter Yordanov}
+	\item{Challenges: Alastair Weir}
+	\item{Future Work: Alastair Weir}
+	\item{Conclusion: Alastair Weir}
+	\item{Glossary: Gordon Adam}
+\end{itemize}
 %==============================================================================
 \section{Appendices}
 \subsection{Code Repositories}
