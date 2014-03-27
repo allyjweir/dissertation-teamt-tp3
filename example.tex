@@ -718,6 +718,7 @@ Therefore we made an auto-resize JavaScript function to achieve this.
 When initializing the timeline, we customized the zoom level to make as many recordings as possible visible at any given time and used the bookmark function so that recrding objects could be linked and focused on the timeline for improved usability.
 Also added a Google Maps key and used the debug mode to identify potential export problems in the \gls{Python} template code and make their resolution easier. Another minor customization we made is the default initial slide - the timeline was configured to initialize at the last object meaning that it always shows the latest recording to users.
 
+
 \begin{figure}[ht!]
   \centering
 \includegraphics[width=0.75\textwidth]{images/timeline_final.png}
@@ -744,14 +745,14 @@ This implementation uses a recursive playSound() function that loops until all f
 \begin{verbatim}
 mySounds[current].play()
 \end{verbatim}
-is called in order to play the next recording. The playSound() function is called again once the the file is loaded in order to start the playback. The idea is that the waiting time of the worker thread depends on the difference in recording start times.
+is called in order to play the next recording. The idea is that the waiting time of the worker thread before playing a file depends on the difference in recording start times.
 
 This solution implements two more functions. A stop() function which can be used to stop all playing files, empty the mySounds array and terminate any worker scripts currently running. And a pause() function which can pause all currently playing recordings.
 
 Despite the extensive research undertaken in order to implement it, this solution turned out to be too complicated for the requirements set and so was discarded in favour of the simpler solution outlined below.
 
 \subsubsection{Implementation Using \gls{AJAX} Database Calls}
-The second implementation utilises the Buzz! 'group' function to collect the recordings that need to be synchronously played and store them in an ordered manner in an array. All the recordings currently selected for playback are saved and a check is then run to determine whether they overlap or not. If it is the case those recordings are sorted and pushed to an array. These are played in a sequential order and the synchronisation is calibrated using the start time difference. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files. In this implementation GET requests are used in order to query the database through the \gls{Django} views. This allows for dynamic file acquisition.
+The second implementation utilises the Buzz! 'group' function to collect the recordings that need to be synchronously played and store them in an ordered manner in an array. All the recordings currently selected for playback are saved and a check is then run to determine whether they overlap or not. If it is the case those recordings are sorted and pushed to an array. These are played in a sequential order and the synchronisation is calibrated using the start time difference. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files. In this implementation GET requests are used in order to query the database through the \gls{Django} views. This allows for dynamic file acquisition. In order to check if recordings overlap, however, we needed to choose a relative 'starting point'. We decided that sorting the selection array by the start time attribute of the recording objects and then using the one with earliest start time was the most suitable option (then we could check the rest of the recordings for overlapping with regard to that first one).
 
 There are a few important \gls{JavaScript} functions that are used for synchronised playback - 'process\_data', 'load\_data', 'synchronise', 'syncArray', 'play', 'stop'.
 
@@ -761,7 +762,7 @@ These functions are used on the homepage and the user page of the web applicatio
 syncArray(IDs)
 \end{verbatim}
 
-This function checks if the user is currently logged in on the website and takes an array of file identification numbers to be checked for overlapping. If the user is logged in, their recordings are processed (using the specifically designed for this GET request - 'getUserRecs:username' - where 'username' is a parameter), if not - the script checks all recordings in the database (using the GET request - 'getRecs'). Those requests both return data formatted in JSON and ready to process. The function then filters the returned database objects and, selecting those with corresponding IDs, adds them to the 'arrInfo' array, which is then sorted according to the start times of the recordings (a comparison function implemented in the script is used for this). The one with earliest start time is the last element of the sorted array (then stored in the 'curr\_rec' variable).
+This function checks if the user is currently logged in on the website and takes an array of file identification numbers to be checked for overlapping. If the user is logged in, their recordings are processed (using the specifically designed for this GET request - 'getUserRecs:username' - where 'username' is a parameter), if not - the script checks all recordings in the database (using the GET request - 'getRecs'). Those requests both return data formatted in JSON and ready to process. The function then filters the returned database objects and, selecting those with corresponding IDs, adds them to the 'arrInfo' array, which is then sorted according to the start times of the recordings (a comparison function implemented in the script is used for this). The one with earliest start time is the last element of the sorted array (then stored in the 'curr\_rec' variable for further referencing).
 
 \begin{verbatim}
 process_data(recs)
@@ -773,7 +774,7 @@ Within the 'syncArray' function, the functions 'load\_data' and 'process\_data' 
 load_data(sync)
 \end{verbatim}
 
-This function takes the 'sync' array containing the recordings to be synchronised as a parameter and loops through it, creating new Buzz! sound objects using the objects' filepaths and adds them to the playback array - 'sync\_group'. However, before this happens, the start time offset is calculated as a time difference and the 'setTime()' Buzz! function is used to set the recording times relevantly to the 'curr\_rec' (which is always the recording having earliest start time from the selection of IDs). The 'sync\_group' array is then used to generate a Buzz! playback group which is loaded via the 'load()' function.
+This function takes the 'sync' array containing the recordings to be synchronised as a parameter and loops through it, creating new Buzz! sound objects using the objects' filepaths and adds them to the playback array - 'sync\_group'. However, before this happens, the start time offset is calculated as a time difference and the 'setTime()' Buzz! function is used to set the recording times relevantly to the 'curr\_rec' (which is always the recording having earliest start time from the selection of IDs). This difference should always be a positive integer or 0 in case the recording process has started at exactly the same time. If that is not the case, the user is alerted that there is a problem with the script (luckily this situation has never happened even while testing). The 'sync\_group' array is then used to generate a Buzz! playback group which is loaded via the 'load()' function. Pre-loading of the buzz newly created objects in the group means that playback delays and latency will be decreased to a minimum so it is a very important task.
 
 Having completed the steps above, the 'play()' and 'stop()' can be used to toggle play and stop playback accordingly.
 
