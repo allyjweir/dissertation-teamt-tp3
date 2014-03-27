@@ -728,9 +728,9 @@ Also added a Google Maps key and used the debug mode to identify potential expor
 In this section implementation of the background audio manager will be discussed. The Buzz! \gls{JavaScript} library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution without web workers was chosen as the other became overly complicated.
 
 \subsubsection{Solution with HTML5 Web Workers}
-The HTML5 Web Workers are a way to mimic concurrency in a web application. This is achieved by using timeouts and event handlers. The Web Workers interface is used to run background scripts in a web application that do not block its main execution. The interface includes the handling and passing of messages between scripts which can then be leveraged in order to implement a non-busy waiting.
+The HTML5 Web Workers are a way to mimic concurrency in a web application by using timeouts and event handlers. The Web Workers interface deals with handling and passing of messages between scripts which can then be leveraged in order to implement a non-busy waiting.
 
-The first implementation of the background sound management utilised the web workers interface. It recursively created a worker subthread for each new overlapping recording that needed to be played. This solution used hardcoded parameters as it did not get to the stage where it needed to communicate with the server. An array called 'mySounds' which was used in to hold all the recordings that need to be played during a single iteration was created. This array was then filled with sounds using the command:
+One of the possible implementations recursively created a worker subthread for each new overlapping recording that needed to be played.  An array called 'mySounds' which was used in to hold all the recordings that need to be played during a single iteration was created. This array was then filled with sounds using the command:
 \begin{verbatim}
 buzz.sound(filepath)
 \end{verbatim}
@@ -738,34 +738,50 @@ The way the array is filled can be changed in order to obtain the recordings fro
 \begin{verbatim}
 soundvariable.load()
 \end{verbatim}
-Once loaded the file is ready to be played. This pre-loading is necessary in order to eliminate any latency issues and to ensure playback happens synchronously.
+File pre-loading is necessary in order to eliminate any latency issues and to ensure playback happens synchronously.
 
 This implementation uses a recursive playSound() function that loops until all files loaded into the the mySounds array have starting playing. In each iteration of the function the command: 
 \begin{verbatim}
 mySounds[current].play()
 \end{verbatim}
-is called in order to play the next recording and then if there are more recordings left in the mySounds array it would load the next one for playback and create and call a worker script that would wait for a set amount of time before returning a message that it is finished waiting. This message is then handled by the main thread by calling the playSound() function again in order to start the playback of the loaded file. The time the worker script spends waiting is currently hardcoded, but it is trivial to change the meaning of the message passed to it to include the time needed for the worker to wait.
+is called in order to play the next recording. The playSound() function is called again once the the file is loaded in order to start the playback. The idea is that the waiting time of the worker thread depends on the difference in recording start times.
 
 This solution implements two more functions. A stop() function which can be used to stop all playing files, empty the mySounds array and terminate any worker scripts currently running. And a pause() function which can pause all currently playing recordings.
 
 Despite the extensive research undertaken in order to implement it, this solution turned out to be too complicated for the requirements set and so was discarded in favour of the simpler solution outlined below.
 
-\subsubsection{Solution without HTML5 Web Workers}
+\subsubsection{Implementation Using \gls{AJAX} Database Calls}
 The second implementation utilises the Buzz! 'group' function to collect the recordings that need to be synchronously played and store them in an ordered manner in an array. All the recordings currently selected for playback are saved and a check is then run to determine whether they overlap or not. If it is the case those recordings are sorted and pushed to an array. These are played in a sequential order and the synchronisation is calibrated using the start time difference. The script checks if the browser currently running supports HTML5  and .OGG file format before playing the files. In this implementation GET requests are used in order to query the database through the \gls{Django} views. This allows for dynamic file acquisition.
 
 There are a few important \gls{JavaScript} functions that are used for synchronised playback - 'process\_data', 'load\_data', 'synchronise', 'syncArray', 'play', 'stop'.
 
 These functions are used on the homepage and the user page of the web application. Selection of recordings to be checked for overlapping is done either via clicking on the map pins on the map or by using the check boxes in the recording list which is displayed on the user page (both of which feature multiple selection and initialize calls to the 'syncArray' function).
 
-The 'syncArray(IDs)' function checks if the user is currently logged in on the website and takes an array of file identification numbers to be checked for overlapping. If the user is logged in, their recordings are processed (using the specifically designed for this GET request - 'getUserRecs:username' - where 'username' is a parameter), if not - the script checks all recordings in the database (using the GET request - 'getRecs'). Those requests both return data formatted in JSON and ready to process. The function then filters the returned database objects and, selecting those with corresponding IDs, adds them to the 'arrInfo' array, which is then sorted according to the start times of the recordings (a comparison function implemented in the script is used for this). The one with earliest start time is the last element of the sorted array (then stored in the 'curr\_rec' variable).
+\begin{verbatim}
+syncArray(IDs)
+\end{verbatim}
+
+This function checks if the user is currently logged in on the website and takes an array of file identification numbers to be checked for overlapping. If the user is logged in, their recordings are processed (using the specifically designed for this GET request - 'getUserRecs:username' - where 'username' is a parameter), if not - the script checks all recordings in the database (using the GET request - 'getRecs'). Those requests both return data formatted in JSON and ready to process. The function then filters the returned database objects and, selecting those with corresponding IDs, adds them to the 'arrInfo' array, which is then sorted according to the start times of the recordings (a comparison function implemented in the script is used for this). The one with earliest start time is the last element of the sorted array (then stored in the 'curr\_rec' variable).
+
+\begin{verbatim}
+process_data(recs)
+\end{verbatim}
 
 Within the 'syncArray' function, the functions 'load\_data' and 'process\_data' are called. The function 'process\_data(recs)' takes the array of sorted recording objects and looping through all of them compares their start and end time fields to the start/end time of the 'curr\_rec' which has been recorded the earliest. If there are any overlapping sections (the script uses 3 main conditions, either of which should return true for this requirement to be satisfied), recordings are added to the 'sync' array.
 
-The 'load\_data(sync)' function takes the 'sync' array containing the recordings to be synchronised as a parameter and loops through it, creating new Buzz! sound objects using the objects' filepaths and adds them to the playback array - 'sync\_group'. However, before this happens, the start time offset is calculated as a time difference and the 'setTime()' Buzz! function is used to set the recording times relevantly to the 'curr\_rec' (which is always the recording having earliest start time from the selection of IDs). The 'sync\_group' array is then used to generate a Buzz! playback group which is loaded via the 'load()' function.
+\begin{verbatim}
+load_data(sync)
+\end{verbatim}
+
+This function takes the 'sync' array containing the recordings to be synchronised as a parameter and loops through it, creating new Buzz! sound objects using the objects' filepaths and adds them to the playback array - 'sync\_group'. However, before this happens, the start time offset is calculated as a time difference and the 'setTime()' Buzz! function is used to set the recording times relevantly to the 'curr\_rec' (which is always the recording having earliest start time from the selection of IDs). The 'sync\_group' array is then used to generate a Buzz! playback group which is loaded via the 'load()' function.
 
 Having completed the steps above, the 'play()' and 'stop()' can be used to toggle play and stop playback accordingly.
 
 The 'stop()' function stops the 's\_group' Buzz! object and empties it as well as deselects all of the check boxes on the user page.
+
+\begin{verbatim}
+synchronise(id, user)
+\end{verbatim}
 
 What the function 'synchronise(id, user)' does, is very similar to the syncArray function. However, overlapping recording are identified relative to the recording ID supplied as an input parameter (rather than the one with earliest start time).
 
