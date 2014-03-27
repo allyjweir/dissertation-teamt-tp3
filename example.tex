@@ -784,9 +784,26 @@ The 'stop()' function stops the 's\_group' Buzz! object and empties it as well a
 synchronise(id, user)
 \end{verbatim}
 
-What the function 'synchronise(id, user)' does, is very similar to the syncArray function. However, overlapping recording are identified relative to the recording ID supplied as an input parameter (rather than the one with earliest start time).
+What the function 'synchronise(id, user)' does, is very similar to the 'syncArray' function. However, overlapping recording are identified relative to the recording ID supplied as an input parameter (rather than the one with earliest start time).
+
+\paragraph{User Page Recording List}
+
+In order navigate through the controls described above, the user needs to log in on the website and access their user page. On the right side of the timeline there is a container containing a list of recordings that can be toggled via two radio buttons to thow either personal or all database recordings (they both make AJAX calls to the database to retrieve relevant information and use the command
+
+\begin{verbatim}
+document.getElementById('uRecs').innerHTML
+\end{verbatim}
+
+to dynamically load those resources). Each recording box in this list contains HTML5 audio controls for individual playback (if the browser supports that), metadata (download button, start time, end time, ID, name, description) and a check box for dynamic selection. The check boxes can be used to control the selection array as each change of their state results in a call to the
+
+\begin{verbatim}
+selectRec()
+\end{verbatim}
+
+function which is the event listener of this configuration. Each time it is called the selection array is updated and synchronised via an indirect call to 'syncArray(IDs)' (the input being the current check box selection of file IDs). There is also a check box 'Select All' to select all the recordings in the list. The buttons 'Play/Pause Sync' and 'Stop' have their 'onclick' actions set to execute the functions 'play()' and 'stop()' accordingly.
 
 In case the recordings in the current selection of IDs do not overlap based on the criteria presented above, a pop-up informs the user that there is no synchronised playback for that selection, the check boxes are deselected using the 'deSelectAll()' function and the 's\_group' is emptied consecutively.
+
 
 \subsection{Database}
 For this project \gls{MySQL} was the database back-end the team decided to use. Once the university server was set-up correctly, the team could initialise the database and write the Django models for it. To explain further, Django supports a high level model based abstraction from the database. This allows developers to avoid tedious database manipulations and allows great flexibility in the structure of the overall application.
