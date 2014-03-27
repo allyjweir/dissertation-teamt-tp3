@@ -707,7 +707,7 @@ serialized = {
 }
 \end{verbatim}
 
-All the recording metadata is stored in the 'recording_data' array.
+All the recording metadata is stored in the 'recording\_data' array.
 
 
 In each recording's asset a link to a random image from the list of pictures associated with it is inserted (as only a single photo can be showcased, the rest are available on the side in the form of a mini gallery with pop-up thumbnails on hover) or, if there are no photos for this recording, a link to the MDRS logo is placed. Considering all this, we made a \gls{Python} template code which exports recording objects' metadata following the template structure KnightLab's Timeline JS uses. What the Python function does is it generates a JSON formatted script which is saved in a data.json file in the static directory and used as a source for the timeline objects we generate (one on the home page and another on the user page). If the timeline is rendered on the homepage, all recordings are exported by the function and therefore visible to enable the user to see what everyone has uploaded without even being logged in or registered.
