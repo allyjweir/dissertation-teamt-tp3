@@ -215,7 +215,7 @@ When clicked on, the timeline would also display,
 \item{Accompanying imagery uploaded by the user}
 \end{itemize}
 
-After verbose specification and documentation of what the team wanted from a timeline, research was carried out to find a suitable \gls{Javascript} implementation. Initially five different options were considered.
+After verbose specification and documentation of what the team wanted from a timeline, research was carried out to find a suitable \gls{JavaScript} implementation. Initially five different options were considered.
 \begin{itemize}
 \item{SIMILE timeline\cite{SIMILE}}
 \item{Timeline JS\cite{TimelineJS}}
@@ -759,7 +759,7 @@ These functions are used on the homepage and the user page of the web applicatio
 
 The 'syncArray(IDs)' function checks if the user is currently logged in on the website and takes an array of file identification numbers to be checked for overlapping. If the user is logged in, their recordings are processed (using the specifically designed for this GET request - 'getUserRecs:username' - where 'username' is a parameter), if not - the script checks all recordings in the database (using the GET request - 'getRecs'). Those requests both return data formatted in JSON and ready to process. The function then filters the returned database objects and, selecting those with corresponding IDs, adds them to the 'arrInfo' array, which is then sorted according to the start times of the recordings (a comparison function implemented in the script is used for this). The one with earliest start time is the last element of the sorted array (then stored in the 'curr\_rec' variable).
 
-Within the 'syncArray' function, the functions 'load\_data' and 'process\_data' are called. The function 'process_data(recs)' takes the array of sorted recording objects and looping through all of them compares their start and end time fields to the start/end time of the 'curr\_rec' which has been recorded the earliest. If there are any overlapping sections (the script uses 3 main conditions, either of which should return true for this requirement to be satisfied), recordings are added to the 'sync' array.
+Within the 'syncArray' function, the functions 'load\_data' and 'process\_data' are called. The function 'process\_data(recs)' takes the array of sorted recording objects and looping through all of them compares their start and end time fields to the start/end time of the 'curr\_rec' which has been recorded the earliest. If there are any overlapping sections (the script uses 3 main conditions, either of which should return true for this requirement to be satisfied), recordings are added to the 'sync' array.
 
 The 'load\_data(sync)' function takes the 'sync' array containing the recordings to be synchronised as a parameter and loops through it, creating new Buzz! sound objects using the objects' filepaths and adds them to the playback array - 'sync\_group'. However, before this happens, the start time offset is calculated as a time difference and the 'setTime()' Buzz! function is used to set the recording times relevantly to the 'curr_rec' (which is always the recording having earliest start time from the selection of IDs). The 'sync\_group' array is then used to generate a Buzz! playback group which is loaded via the 'load()' function.
 
@@ -1013,42 +1013,42 @@ https://github.com/allyjweir/dissertation-teamt-tp3
 % Question 1 - Statistical Results
 \begin{figure}[ht!]
 \centering
-\includegraphics[angle=270, width=0.7\textwidth]{images/question-1-stats.jpg}
+\includegraphics[width=\textwidth]{images/question-1-stats.jpg}
+\caption{Q1. Listen to any one recording}
 \end{figure}
-
 % Question 2 - Statistical Results
-\newpage
 \begin{figure}[ht!]
 \centering
-\includegraphics[angle=270, width=0.7\textwidth]{images/question-2-stats.jpg}
+\includegraphics[width=\textwidth]{images/question-2-stats.jpg}
+\caption{Q2. Listen to any number of overlapping recordings at the same time}
 \end{figure}
 
 % Question 3 - Statistical Results
 \newpage
 \begin{figure}[ht!]
 \centering
-\includegraphics[angle=270, width=0.7\textwidth]{images/question-3-stats.jpg}
+\includegraphics[width=\textwidth]{images/question-3-stats.jpg}
+\caption{Q3. Log-in using details provided by your tester}
 \end{figure}
-
 % Question 4 - Statistical Results
-\newpage
 \begin{figure}[ht!]
 \centering
-\includegraphics[angle=270, width=0.7\textwidth]{images/question-4-stats.jpg}
+\includegraphics[width=\textwidth]{images/question-4-stats.jpg}
+\caption{Q4. Browse to the user page and listen to any oone recording}
 \end{figure}
 
 % Question 5 - Statistical Results
 \newpage
 \begin{figure}[ht!]
 \centering
-\includegraphics[angle=270, width=0.7\textwidth]{images/question-5-stats.jpg}
+\includegraphics[width=\textwidth]{images/question-5-stats.jpg}
+\caption{Q5. Listen to any number of overlapping recordings at the same time on the user page}
 \end{figure}
-
 % Question 6 - Statistical Results
-\newpage
 \begin{figure}[ht!]
 \centering
-\includegraphics[angle=270, width=0.7\textwidth]{images/question-6-stats.jpg}
+\includegraphics[width=\textwidth]{images/question-6-stats.jpg}
+\caption{Q6. Create an account and upload the test data as that new user}
 \end{figure}
 
 \newpage
