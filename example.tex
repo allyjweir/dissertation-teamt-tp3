@@ -697,6 +697,41 @@ The actual implementation of the KnightLab Timeline JS took some time and requir
 Its JSON is structured in the following way - there is a big dictionary, holding all of the objects that are to be presented, having an 'asset' key for the first default slide which the team used for a short introduction explaining the purpose of this component.
 The object dictionary itself is placed in the value of the 'date' key. Each object has its own available attributes from which we only used the 'startDate', 'endDate', 'headline', 'asset' and 'text' fields, the last one being filled with the duration and recording description (originally the team was planning to associate recordings to events so that we could group them together and this should have been displayed on the timeline but we decided that we will not be implementing this attribute).
 
+
+In order to implement the export function, we created a basic template for the metadata that we needed to extract and display on the timeline. A simplified version of this conceptual template is shown below:
+
+
+\begin{verbatim}
+recording_data = [{
+	"startDate": startDate,
+	"endDate": endDate,
+	"headline": fileName,
+	"text": "duration, description",
+
+	"asset": {
+		"media": image,
+		"caption": "caption"
+	}
+}]
+
+serialized = {
+	"timeline": {
+		"headline": "MDAP timeline",
+		"type": "default",
+		"text": "MDAP timeline",
+		"asset": {
+			"media": image,
+			"caption": "caption"
+		},
+		"date": recording_data
+
+	}
+}
+\end{verbatim}
+
+All the recording metadata is stored in the 'recording_data' array.
+
+
 In each recording's asset a link to a random image from the list of pictures associated with it is inserted (as only a single photo can be showcased, the rest are available on the side in the form of a mini gallery with pop-up thumbnails on hover) or, if there are no photos for this recording, a link to the MDRS logo is placed. Considering all this, we made a \gls{Python} template code which exports recording objects' metadata following the template structure KnightLab's Timeline JS uses. What the Python function does is it generates a JSON formatted script which is saved in a data.json file in the static directory and used as a source for the timeline objects we generate (one on the home page and another on the user page). If the timeline is rendered on the homepage, all recordings are exported by the function and therefore visible to enable the user to see what everyone has uploaded without even being logged in or registered.
 
 Also, only the bottom part is displayed on the main page in order to view only the chronological arrangement of the recordings since their metadata is easily accessible by clicking the marker pins on the map.
@@ -727,6 +762,14 @@ Also added a Google Maps key and used the debug mode to identify potential expor
 
 \subsection{Buzz!}
 In this section implementation of the background audio manager will be discussed. The Buzz! \gls{JavaScript} library was used in order to manipulate the recordings and simplify the user experience. We used Buzz! so we can combine the different audio files together and play them synchronously. The library`s website provided all the documentation needed in order to use it as well as a few examples showing off the library`s capabilities. During the lifecycle of the project we took two different approaches towards the problem of combining the audio files - one that used HTML5 web workers and one without them. In the end the second solution without web workers was chosen as the other became overly complicated.
+
+The Buzz! library supports a number of audio file formats. After reviewing the alternatives at the start, we agreed to use the '.ogg' audio extension as it provides good audio compression without loosing audio quality. We needed to implement a file conversion function in order to create an '.ogg' file from the '.aac' files the mobile application was saving. This was achieved by implementing a \gls{Python} function using a subprocess call and executing a bash command in the shell calling the avconv software with 'input', 'output' and 'conversion codec to be used' parameters:
+
+\begin{verbatim}
+simplifiedConvert(path)
+\end{verbatim}
+
+The 'path' input parameter represents the audio input filepath.
 
 \subsubsection{Solution with HTML5 Web Workers}
 The HTML5 Web Workers are a way to mimic concurrency in a web application by using timeouts and event handlers. The Web Workers interface deals with handling and passing of messages between scripts which can then be leveraged in order to implement a non-busy waiting.
