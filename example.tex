@@ -133,8 +133,8 @@ The only product which aligns with MDRS' aims closely is Broadcastr. A New York 
 To fully understand this dissertation, the following knowledege would be beneficial:
 \begin{itemize}
 \item A basic understanding of the construction of an Android application
-\item A basic understanding of how \gls{Django} projects function
-\item Syntactic understanding of Java, \gls{JavaScript} and \gls{Python}
+\item A basic understanding of how a \gls{Django} project functions
+\item Syntactic understanding of Java, \gls{JavaScript}, HTML and \gls{Python}
 \item Willingness to follow the links to the various resources used as part of MDRS
 \end{itemize}
 
@@ -145,17 +145,17 @@ To fully understand this dissertation, the following knowledege would be benefic
 The first step in conducting our research was to research pre-existing applications both on mobile and the web. We investigated applications that were already established on the market with similar features in order to learn what had been proven not to work and new areas of untapped potential.
 
 \subsection{Soundcloud}
-Soundcloud\cite{soundcloud} according to its website is:
+Soundcloud\cite{soundcloud} is described on its website as:
 \blockquote{An audio platform that enables sound creators to upload, record, promote and share their originally-created sounds.}
-This website offers an excellent way for users to share their music and sounds with others and for these users to comment on their favourite part of the upload, linking their message to a timestamp. Soundcloud's main attraction is this social interaction fans can have with content creatiors. However the majority of people uploading on this website are artists uploading their music. In MDRS we aspire for everyone to be able to upload the recordings they take in many different situations.
+This website offers an excellent way for users to share their music and sounds with others and for these users to comment on their favourite part of the upload, linking their message to a timestamp. Soundcloud's main attraction is this social interaction fans can have with content creatiors. However the majority of people uploading on this website are artists uploading their music. With MDRS we aspire for everyone to be able to upload the recordings they take in many different situations.
 
 \subsection{Audacity}
 
-On the desktop there are a number of applications that allow you to manipulate audio and combine multiple files. Audacity is a popular desktop application that allows the user to record and convert audio. It also allows the user to cut, copy and splice together recordings. The ability to merge audio files together was a key requirement of MDRS that the team needed to implement. However our application would need it done dynamically "on the fly" to allow the user to quickly change which audio files were played back together. In order to accomplish this task in Audacity\cite{audacity} is too slow and technical for a typical user.
+On the desktop there are a number of applications that allow you to manipulate audio and combine multiple files. Audacity is a popular desktop application that allows the user to record and convert audio. It also allows the user to cut, copy and splice together recordings. The ability to merge audio files together was a key requirement of MDRS that the team needed to implement. However our application would need it done dynamically 'on the fly' to allow the user to quickly change which audio files were played back together. In order to accomplish this task in Audacity\cite{audacity} is too slow and technical for a typical user.
 
 \subsection{Foursquare}
 
-Foursquare\cite{foursquare} is a location based mobile app that the group found to incorporated much of the functionality we desired in our project. It allows users to "check in" at certain locations and add comments or pictures about a place or event. There is also a web application allowing other users to see the most recent data in their area very easily. However this is as far as Foursquare goes, with no ability to share audio. The ability to playback audio synchronously with nearby surrounding recordings will completely change the user's experience offering a far more immersive insight into a user's surroundings.
+Foursquare\cite{foursquare} is a location based mobile app that the group found to incorporated much of the functionality we desired in our project. It allows users to 'check in' at certain locations and add comments or pictures about a place or event. There is also a web application allowing other users to see the most recent data in their area very easily. However this is as far as Foursquare goes, with no ability to share audio. The ability to playback audio synchronously with nearby surrounding recordings will completely change the user's experience offering a far more immersive insight into a user's surroundings.
 
 \begin{figure}[ht!]
   \centering
@@ -165,19 +165,19 @@ Foursquare\cite{foursquare} is a location based mobile app that the group found 
 
 \section{Initial Research Conclusions}
 
-After this it was decided to split the project into two separate parts, discrete web and mobile applications. This direction was chosen from the research carried out. Foursquare had a strong influence over the decision. It was found that the end users experience can be greatly enhanced with the inclusion of a web application to accompany the mobile side. This would also allow a greater number of features to be incorporated into the project. If the project had been purely mobile the limitations of the platform could lead to a poor user experience with a cluttered and confusing interface, limiting the usefulness of MDRS.
+After this it was decided to split the project into two discrete web and mobile applications. This direction was chosen from the research carried out. Foursquare had a strong influence over the decision. It was found that the end users experience can be greatly enhanced with the inclusion of a web application to accompany the mobile side. This would also allow a greater number of features to be incorporated into the project. If it had been purely mobile the limitations of the platform could lead to a poor user experience with a cluttered and confusing interface, limiting the usefulness of MDRS.
 
-The team acknowledged this dual aim would also help distribute the work amongst themselves. On the other hand it was recognised that a greater amount of work would be taken on by the group to complete these two applications. However, everyone was enthusiastic about making this extra effort in order to make a more rounded and complete final product.
+The team acknowledged this dual aim would also help the distribution of work. On the other hand it was recognised that a greater amount of work would be taken on by the group to complete these two applications. However, everyone was enthusiastic about making this extra effort in order to make a more rounded and complete final product.
 
 For recordings taken by the mobile application to be represented as clearly as possible on the web application we consulted as a group as well as with our project supervisor, it was decided that each recording would have to be represented in both time and space. To do this as effectively, it was agreed visual aids would be the clearest way to represent this information. So the use of a map view was decided to represent the recordings spatially and a timeline to represent them chronologically.
 
 \section{Web Technologies}
 
-With the potential MDRS possessed, realised, it was essential for the team to research key features and tools that we hoped to integrate into the project and to find things that would fit well into our imagined product. This enhanced the team's collective knowledge on a battery of topics and tools greatly, allowing us to make the right decisions for the project.
+With MDRS' potential realised, it was essential for the team to research key features and tools that we hoped to integrate into the project and to find things that would fit well into our imagined product. This greatly enhanced the team's collective knowledge on a battery of topics and tools, allowing us to make the right decisions for the project.
 
 \subsection{Map}
 
-OpenStreetMap\cite{openStreetMap} was initially the preferred choice of mapping data. Deep open source roots combined with an excellent level of detail and accuracy was attractive. When combined with the \gls{JavaScript} library \gls{Leaflet} to embed the map, the potential was excellent. OpenStreetMap's downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox which host this data but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
+OpenStreetMap\cite{openStreetMap} was initially the preferred choice of mapping data. Deep open source roots combined with an excellent level of detail and accuracy was attractive. When combined with the \gls{JavaScript} library \gls{Leaflet} to embed the map, it had excellent potential. OpenStreetMap's downfall lay the need to store the raw map data, which uncompressed could comprise up to 400GB. Storing this on our server would be an impossibility. Some commecial options were available such as MapBox which host this data but these services offered very little in their free products. And while Leaflet would support our central aims, its limited functionality restricted the possible direction the team could take MDRS in. The default style for OpenStreetMap was also far more detailed, reducing readability and cluttering an interface we aimed to keep simple.
 
 \begin{figure}[ht!]
   \centering
@@ -185,7 +185,7 @@ OpenStreetMap\cite{openStreetMap} was initially the preferred choice of mapping 
 \caption{OpenStreetMap (left) Google Map (right)}
 \end{figure}
 
-Google Maps\cite{googleMaps} was seen as a strong alternative. While it was not open source, it offered comparative quality of mapping data. A weakness was found in the limitations set on the free use of the \gls{API}. It was found that after the obtaining of an API key however we would have access to 25,000 user visits a month.\footnote{This number of visits was derived by taking the number of map loads offered to free users of Google's API and dividing it by the number of map views estimated for each user's visit to MDRS} It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic  fitting more neatly with our designs. The API documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing. Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use.
+Google Maps\cite{googleMaps} was seen as a strong alternative. While it was not open source, it offered comparative quality of mapping data. A weakness was found in the limitations set on the free use of the \gls{API}. It was found that after the obtaining of an API key however we would have access to 25,000 user visits a month.\footnote{This number of visits was derived by taking the number of map loads offered to free users of Google's API and dividing it by the number of map views estimated for each user's visit to MDRS} It was decided this limitation would not affect MDRS in its early stages. The default map style for Google Maps was far more simplistic fitting more neatly with our designs. Documentation for Google Maps was also excellent giving many examples and walkthroughs which would help make development considerably less confusing. Taking these points into account it was decided that we would use Google Maps as no extraneous data would be stored on our server and the API appeared to be easier to use.
 
 \subsection{Timeline}
 
@@ -232,7 +232,7 @@ The two which stood out the most as viable options were Timeline JS and Chronoli
 \caption{Chronoline timeline}
 \end{figure}
 
-The Chronoline timeline was found early in research. It was attractive to the team for its compact design and each object on the timeline having a visible start and end. Built as an in-house project for Zanbato, an investment technology company, Chronoline was open source but had limited documentation on its website and GitHub repository. Considering the scalability of our system, the team was concerned that Chronoline was too simplistic and wasn't modular enough to allow customisations to be added for our project. Its interaction model was also limited. Dragging along the timeline was unsupported and from reading around the library, other users found a number of issues. While initially attractive, Chronoline was placed as a backup choice for use in MDRS' final implementation.
+The Chronoline timeline was found early in research. It was attractive to the team for its compact design and each object on the timeline having a visible start and end. Built as an in-house project for Zanbato, an investment technology company, Chronoline was open source but had limited documentation on its website and GitHub repository. Considering the scalability of our system, the team was concerned that Chronoline was too simplistic and wasn't modular enough to allow customisations to be added for our project. Its interaction model was also limited. Dragging along the timeline was unsupported and from reading around the  project, other users found a number of issues. While initially attractive, Chronoline was placed as a backup choice for use in MDRS' final implementation.
 
 \textbf{KnightLab Timeline JS}
 \begin{figure}[ht!]
@@ -243,7 +243,7 @@ The Chronoline timeline was found early in research. It was attractive to the te
 
 Through its use on news websites such as Time and Gigaom, the team discovered Timeline JS as it was already in use. Investigating how these websites made their timelines led us to the project's website. Described as intuitive and easy to use, the project's extensive documentation and active community support backed this claim. Looking at the examples on Timeline JS' website showed it being used in a variety of use cases. This flexibility offered confidence that this could be a good choice.
 
-Following the documentation a prototype was quickly built. When the developer working on this ran into issues importing a JSON file he contacted the developers behind it and got a quick response. This again proved if it were chosen, a lot of support was available. Timeline JS was well built, with clear hooks to implement customisations to allow the team to cater it to our needs. The library is also reactive, working well across a variety of screen sizes.
+Following instructions in the documentation, a prototype was quickly built. When the team member working on this ran into issues importing a JSON file he contacted the developers behind it and got a quick response. This again proved if it were chosen, a lot of support was available. Timeline JS was well built, with clear hooks to implement customisations to allow the team to cater it to our needs. The library is also reactive, working well across a variety of screen sizes.
 
 After comparing Timeline JS with the other viable options, it was clear it was the correct choice to use in MDRS.
 
@@ -262,7 +262,7 @@ Although Bootstrap\cite{bootstrap} had many more features, the majority of these
 
 \subsection{Audio Playback}
 
-'Buzz!'\cite{buzz} is a \gls{JavaScript} library that utilises the HTML5 audio element. Again touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple \gls{HTML} Buttons with JavaScript commands attached to them. This offered the team a lot of control over the styling their audio playback.
+'Buzz!'\cite{buzz} is a \gls{JavaScript} library that utilises the HTML5 audio element. Touted as a lightweight implementation, this library excelled grouping multiple audio files together and playing them simultaneously. It worked in the background requiring no user interface unless one was required of it. When implemented these could be simple \gls{HTML} Buttons with JavaScript commands attached to them. This offered the team a lot of control over the styling their audio playback.
 
 JPlayer\cite{JPlayer} was also considered though it had drawbacks in playing multiple files as there appeared to be no obvious way to play multiple files without having multiple instances of the player UI. This had the potential to negatively impact performance in a big way. The JPlayer's unattractive, heavy UI would also have to be repeatedly used within our interface cluttering the design.
 
@@ -272,7 +272,7 @@ The team took the decision to use the 'Buzz!' JavaScript library as it was exact
 \chapter{Planning}
 \label{Planning}
 
-\section{Team Structure}This section will outline the organisational methodology used by the team during the lifespan of the project. This includes: the roles of each team member as well as their responsibilities, how is authority distributed amongst members, a conflict resolution strategy, communication and information management within the team, any identified risks involving the organisational approach chosen and the organisational model itself.
+\section{Team Structure}		As research was completed, the team considered how to best organise themselves to be as productive as possible. This included: the roles of each team member as well as their responsibilities, distribution of authority, a conflict resolution strategy, communication and information management and any identified risks involving the organisational approach chosen.
 
 \subsection{Roles}After discussion, we decided to use agile development, specifically scrums, to build our system. As part of this technique we needed both a scrum master and a client representative, these roles will be outlined below. We chose this model considering a combination of different factors that influenced our final decision. For instance, the relatively small size of our team - there are five of us. Also, we needed to carry out rapid iteration cycles in order to meet the assignment delivery deadlines.
 
@@ -784,7 +784,7 @@ soundvariable.load()
 \end{verbatim}
 File pre-loading is necessary in order to eliminate any latency issues and to ensure playback happens synchronously.
 
-This implementation uses a recursive playSound() function that loops until all files loaded into the the mySounds array have starting playing. In each iteration of the function the command: 
+This implementation uses a recursive playSound() function that loops until all files loaded into the the mySounds array have starting playing. In each iteration of the function the command:
 \begin{verbatim}
 mySounds[current].play()
 \end{verbatim}
